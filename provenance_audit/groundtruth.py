@@ -1,7 +1,7 @@
 """Derive a canonical ground-truth record from a collected project record.
 
-This is the answer key Corpus C (AI comprehension) scores against, AND the
-verified facts Corpus B (channel-provenance) assesses. Every field carries its
+This is the set of verified facts the channel-provenance assessment relies on.
+Every field carries its
 source and a `verified` flag defaulting to False: the collector proposes, the
 human confirms. Filling in/confirming these fields is the hand-verification
 step that turns automated collection into trustworthy ground truth.

@@ -8,7 +8,7 @@ the four-category framework, and writes:
   - gap_analysis.json          signals unique to this framework vs. covered by existing tools
 
 Usage:
-    python -m provenance_audit.score --in outputs/corpus_b --out outputs/corpus_b_scored
+    python -m provenance_audit.score --in outputs/corpus_keep --out outputs/corpus_keep_scored
 
 "auto" signals are computed here. "manual" signals are emitted as checklist items
 (value null) for you to fill during ground-truth verification; rerun any time.

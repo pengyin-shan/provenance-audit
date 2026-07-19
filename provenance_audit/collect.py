@@ -1,8 +1,8 @@
 """Collection CLI.
 
 Usage:
-    python -m provenance_audit.collect --registry registry/corpus_b_projects.yaml --out outputs/corpus_b
-    python -m provenance_audit.collect --registry registry/corpus_a_projects.yaml --out outputs/corpus_a
+    python -m provenance_audit.collect --registry registry/corpus_keep.yaml --out outputs/corpus_keep
+    python -m provenance_audit.collect --registry registry/corpus_keep.yaml --out outputs/corpus_keep --only kokkos
 
 Reads a registry YAML (list of projects), runs the GitHub + metadata + registry
 + archive collectors for each, derives a draft ground-truth record, and writes

@@ -1,9 +1,8 @@
 """GitHub collector.
 
-Pulls the repository-level facts needed for BOTH corpora:
-- Corpus B (channel-provenance): default branch, latest release/version, pushed_at,
-  archived flag, topics, license, presence of SECURITY.md.
-- Corpus A (citation): raw text of CITATION.cff and codemeta.json for parsing.
+Pulls the repository-level facts the assessment needs: default branch, latest
+release/version, pushed_at, archived flag, topics, license, presence of
+SECURITY.md, and the raw text of CITATION.cff and codemeta.json for parsing.
 
 Only the public GitHub REST API + raw.githubusercontent.com are used (both reachable
 without scraping). Set GITHUB_TOKEN to lift the unauthenticated 60 req/hr limit to 5000.

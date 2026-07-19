@@ -6,8 +6,8 @@ means: stratified by domain (hpc/qc) and by auto-score tercile (weak/mid/strong
 posture), with a fixed random seed so the selection is reproducible and defensible.
 
 Usage:
-    python -m provenance_audit.subsample --scored outputs/corpus_100_scored --n 24 --seed 7 \
-        --out outputs/verify_subsample.csv
+    python -m provenance_audit.subsample --scored outputs/corpus_keep_scored --n 30 --seed 7 \
+        --out outputs/verify_subsample_30.csv
 
 Produces a CSV listing the chosen projects, their domain, their mean auto-score, and
 their stratum — hand this list down your manual_checklist.csv and verify only these.
