@@ -174,11 +174,7 @@ the corpus is a point-in-time snapshot collected in July 2026.
 
 ## Acknowledgments
 
-Conducted under the author's 2025-2026 Trusted CI Fellowship. Portions of the
-code and documentation in this repository were drafted with assistance from
-Claude (Anthropic), which therefore appears as a co-author on commits and in
-the contributor list; all content, code, and data were reviewed and verified
-by the maintainer.
+Portions of the code and documentation were drafted with assistance from Claude (Anthropic); this assistance is recorded via `Co-Authored-By` trailers in the commit history. All content, code, and data were reviewed and verified by the maintainer, who is the sole author of this work.
 
 ## License, security, governance
 
