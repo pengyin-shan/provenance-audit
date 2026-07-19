@@ -132,6 +132,41 @@ Append to the registry YAML. Minimum is `name` + `repo: owner/name`. Add
 `registries:` (e.g. `- {registry: pypi, package: numpy}`) and
 `zenodo: {record_id: ...}` when you know them.
 
+## This repository scores itself
+
+A framework for assessing channel-based provenance should withstand its own
+assessment. The table below applies all 18 signals of
+`provenance_audit/framework.py` to this repository. One signal,
+`multi_maintainer`, is honestly "no": this is a solo-maintainer project, and we
+document that status and its mitigations rather than presenting redundancy the
+project does not have. Signals tied to the release process take effect when the
+v1.0.0 tag is pushed; they are marked accordingly.
+
+| Signal | Status | Satisfied by | How to do this in your project |
+|---|---|---|---|
+| **C1: Identity and access** | | | |
+| `multi_maintainer` | No, with documented mitigation | [GOVERNANCE.md](GOVERNANCE.md) | If you are a solo maintainer, say so in a governance file and list your mitigations: branch protection, MFA, an organizational backup contact, and a succession plan. A documented single point of failure is assessable; an undocumented one is not. |
+| `contributing_doc` | Yes | [CONTRIBUTING.md](CONTRIBUTING.md) | Add a CONTRIBUTING.md stating how to submit changes and what response time to expect. State the review expectations you can actually keep. |
+| `governance_doc` | Yes | [GOVERNANCE.md](GOVERNANCE.md) | Write down who decides what, in a file named GOVERNANCE.md at the repository root so tools and agents can find it. |
+| `mfa_on_channel_admins` | Yes, stated | [SECURITY.md](SECURITY.md#account-security) | Enable MFA on every account that controls the repository or a distribution channel, then state that fact in SECURITY.md. External assessors cannot observe MFA; the statement is the observable signal. |
+| `channel_admin_transfer` | Yes | [GOVERNANCE.md](GOVERNANCE.md#solo-maintainer) | Document what happens if a maintainer leaves or becomes unreachable. For personal accounts, designate a GitHub account successor and name an organizational backup contact. |
+| **C2: Communication channels** | | | |
+| `channels_declared` | Yes | [README](#official-channels) | List every official channel in the README. |
+| `channels_documented` | Yes | [README](#official-channels) | State each channel's purpose, so users know where a given kind of message belongs. |
+| `official_channel_statement` | Yes | [README](#official-channels) | Add one sentence: any account, package, or channel not on this list is not official. This is the sentence an AI agent can check a claimed channel against. |
+| `impersonation_reporting` | Yes | [SECURITY.md](SECURITY.md#reporting-impersonation) | Tell people how to report fake accounts, spoofed packages, and lookalike channels, and where to escalate on the hosting platform. |
+| **C3: Knowledge infrastructure** | | | |
+| `security_policy` | Yes | [SECURITY.md](SECURITY.md) | Add a SECURITY.md at the repository root. GitHub surfaces it automatically. |
+| `changelog` | Yes | [CHANGELOG.md](CHANGELOG.md) | Keep a changelog in Keep a Changelog format. If the project predates version control, reconstruct honestly and say so. |
+| `release_notes` | Yes (at v1.0.0 tag) | [.github/RELEASE_NOTES_v1.0.0.md](.github/RELEASE_NOTES_v1.0.0.md) | Write release notes per release describing what is in the artifacts and how to verify them. |
+| `disclosure_depth` | Yes | [SECURITY.md](SECURITY.md#reporting-a-vulnerability) | Beyond a contact address, state the process: acknowledgment window, triage, disclosure timeline, and scope. |
+| **C4: Distribution metadata** | | | |
+| `has_release` | Yes (at v1.0.0 tag) | [Releases](https://github.com/pengyin-shan/provenance-audit/releases) | Publish tagged, versioned releases rather than pointing users at the default branch. |
+| `archival_doi` | Pending Zenodo deposit (TODO) | [CITATION.cff](CITATION.cff) | Link the repository to Zenodo, publish a release, and record the concept DOI in CITATION.cff. |
+| `signed_releases` | Yes (at v1.0.0 tag) | [release.yml](.github/workflows/release.yml) | Publish checksums and a provenance attestation with every release. Signing that assessors can verify beats signing that they cannot. |
+| `sbom` | Yes (at v1.0.0 tag) | [release.yml](.github/workflows/release.yml) | Generate an SPDX or CycloneDX SBOM in CI and attach it to the release. One workflow step (for example anchore/sbom-action) is sufficient. |
+| `provenance_attestation` | Yes (at v1.0.0 tag) | [release.yml](.github/workflows/release.yml) | Generate SLSA build provenance in CI (slsa-github-generator or GitHub artifact attestations) so consumers can verify artifacts came from your repository's CI, not from a hijacked account. |
+
 ## Citing
 
 See [CITATION.cff](CITATION.cff). The dataset is archived on Zenodo
