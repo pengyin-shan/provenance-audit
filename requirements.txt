@@ -1,6 +1,9 @@
-requests>=2.28
-PyYAML>=6.0
-matplotlib>=3.5
+# Pinned to the versions used for the July 2026 SC26 corpus run (Python 3.11).
+requests==2.34.2
+PyYAML==6.0.3
+matplotlib==3.11.0
+numpy==2.4.6
+
 # optional, richer parsing (see README):
 # cffconvert>=2.0.0
 # somef
