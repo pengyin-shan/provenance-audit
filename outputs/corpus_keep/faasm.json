@@ -1,0 +1,106 @@
+{
+  "name": "faasm",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:43:57Z",
+  "errors": {},
+  "github": {
+    "owner": "faasm",
+    "repo": "faasm",
+    "errors": {},
+    "full_name": "faasm/faasm",
+    "description": "High-performance stateful serverless runtime based on WebAssembly",
+    "homepage": "https://faasm.readthedocs.io",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2025-12-23T17:03:48Z",
+    "stars": 925,
+    "topics": [
+      "cpp",
+      "faas",
+      "kubernetes",
+      "mpi",
+      "openmp",
+      "serverless",
+      "wasi",
+      "wasm",
+      "webassembly"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v0.29.0",
+      "name": "Faasm 0.29.0",
+      "published_at": "2024-10-25T08:05:24Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "<div align=\"center\">\n<img src=\"https://raw.githubusercontent.com/faasm/faasm/main/faasm_logo.png\"></img>\n</div>\n\n# Faasm [![Tests](https://github.com/faasm/faasm/workflows/Tests/badge.svg?branch=main)](https://github.com/faasm/faasm/actions)  [![License](https://img.shields.io/github/license/faasm/faasm.svg)](https://github.com/faasm/faasm/blob/main/LICENSE.md)  [![Release](https://img.shields.io/github/release/faasm/faasm.svg)](https://github.com/faasm/faasm/releases/)  [![Contributors](https://img.shields.io/github/contributors/faasm/faasm.svg)](https://github.com/faasm/faasm/graphs/contributors/) [![codecov](https://codecov.io/gh/faasm/faasm/branch/main/graph/badge.svg?token=F7HBQ84OSD)](https://codecov.io/gh/faasm/faasm)\n\nFaasm is a high-performance stateful serverless runtime.\n\nFaasm provides multi-tenant isolation, yet allows functions to share regions of\nmemory. These shared memory regions give low-latency concurrent access to data,\nand are synchronised globally to support large-scale parallelism across multiple\nhosts.\n\nFaasm combines software fault isolation from WebAssembly with standard Linux\ntooling, to provide security and resource isolation at low cost. Faasm runs\nfunctions side-by-side as threads of a single runtime process, with low\noverheads and fast boot times.\n\nFaasm defines a custom host interface that extends [WASI](https://wasi.dev/) to\ninclude function inputs and outputs, chaining functions, managing state,\naccessing the distributed filesystem, dynamic linking, pthreads, OpenMP and MPI.\n\nIn our [paper from USENIX ATC 20](\nhttps://www.usenix.org/conference/atc20/presentation/shillaker) we present\nthe initial Faasm design and evaluate it in the context of stateful serverless\nfunctions.\n\nIn our [paper from USENIX NSDI'25, GRANNY](\nhttps://www.usenix.org/conference/nsdi25/presentation/segarra), we present the\ndesign of the OpenMP and MPI runtimes, as well as new dynamic resource\nmanagement policies, all implemented in the [faabric](\nhttps://github.com/faasm/faabric) library.\n\nPlease see the [full documentation](https://faasm.readthedocs.io/en/latest/) for\nmore details on the code and architecture.\n\n## Quick start\n\nUpdate submodules and activate the virtual environment:\n\n```bash\ngit submodule update --init --recursive\nsource ./bin/workon.sh\n```\n\nStart a Faasm cluster locally using `docker compose`:\n\n```bash\nfaasmctl deploy.compose\n```\n\nTo compile, upload and invoke a C++ function using this local cluster you can\nuse the [faasm/cpp](https://github.com/faasm/cpp) container:\n\n```bash\nfaasmctl cli.cpp\n\n# Compile the demo function\ninv func demo hello\n\n# Upload the demo \"hello\" function\ninv func.upload demo hello\n\n# Invoke the function\ninv func.invoke demo hello\n```\n\nFor more information on next steps you can look at the [getting started\ndocs](https://faasm.readthedocs.io/en/latest/source/getting_started.html)\n\n## Acknowledgements\n\nThis project has received funding from the European Union's Horizon 2020\nresearch and innovation programme under grant agreements No 825184 (CloudButton),\nNo 101086248 (CloudStars), and No 101092646 (CloudSKin), the UK Engineering and\nPhysical Sciences Research Council (EPSRC) award 1973141, and a gift from Intel\nCorporation under the TFaaS project.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "readthedocs": [
+      "https://faasm.readthedocs.io/en/latest/",
+      "https://faasm.readthedocs.io/en/latest/source/getting_started.html",
+      "https://faasm.readthedocs.io"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "faasm",
+    "repo": "faasm/faasm",
+    "current_version": {
+      "value": "v0.29.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "faasm"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "readthedocs": [
+          "https://faasm.readthedocs.io/en/latest/",
+          "https://faasm.readthedocs.io/en/latest/source/getting_started.html",
+          "https://faasm.readthedocs.io"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://faasm.readthedocs.io",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

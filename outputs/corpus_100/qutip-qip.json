@@ -1,0 +1,113 @@
+{
+  "name": "qutip-qip",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:44:03Z",
+  "errors": {},
+  "github": {
+    "owner": "qutip",
+    "repo": "qutip-qip",
+    "errors": {},
+    "full_name": "qutip/qutip-qip",
+    "description": "The QuTiP quantum information processing package",
+    "homepage": "https://qutip-qip.readthedocs.io/en/stable/",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-07-02T06:59:10Z",
+    "stars": 156,
+    "topics": [],
+    "license": "BSD-3-Clause",
+    "latest_release": {
+      "tag": "v0.4.2",
+      "name": "qutip-qip v0.4.2",
+      "published_at": "2026-06-23T08:17:10Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "# qutip-qip\n\n[![Tests](https://github.com/qutip/qutip-qip/actions/workflows/test.yaml/badge.svg?branch=master)](https://github.com/qutip/qutip-qip/actions/workflows/test.yaml)\n[![Documentation Status](https://readthedocs.org/projects/qutip-qip/badge/?version=latest)](https://qutip-qip.readthedocs.io/en/latest/)\n[![Coverage Status](https://coveralls.io/repos/github/qutip/qutip-qip/badge.svg)](https://coveralls.io/github/qutip/qutip-qip)\n[![Maintainability](https://qlty.sh/gh/qutip/projects/qutip-qip/maintainability.svg)](https://qlty.sh/gh/qutip/projects/qutip-qip)\n[![PyPI version](https://badge.fury.io/py/qutip-qip.svg)](https://badge.fury.io/py/qutip-qip)\n![Python Version](https://img.shields.io/badge/python-3.11+-blue)\n[![DOI](https://img.shields.io/badge/DOI-10.22331%2Fq--2022--01--24--630-blue.svg)](https://doi.org/10.22331/q-2022-01-24-630)\n[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)\n\nQuTiP-QIP is the QuTiP package for Quantum Information Processing. Compared to other libraries, QuTiP-QIP places stronger emphasis on the underlying physics and seamless integration with QuTiP.\n\nThe package offers two approaches for simulating quantum circuits:\n- A standard matrix-based approach for unitary evolution under quantum gates.\n- A Pulse level approach to simulate Quantum Circuits on noisy Quantum devices (e.g. Superconducting Qubits, Spin Chains) using QuTiP's open system solvers.\n\n\n## Quick start\n\nTo install the package, use\n\n```bash\npip install qutip-qip\n```\n\nYou may refer to the [Installation guide](https://qutip-qip.readthedocs.io/en/latest/installation.html) for details on optional dependencies (feature-sets) available, installing `qutip-qip` from source etc.\n\n```python\nfrom qutip_qip.circuit import QubitCircuit\nfrom qutip_qip.operations.gates import H, CX\n\nqc = QubitCircuit(2)\nqc.add_gate(H, 0)\nqc.add_gate(CX, 0, 1)\nstate = qc.run()\nprint(state)\n\n# You can optionally draw the circuit if you have matplotlib installed\nqc.draw()\n```\n\nThis simple example creates an entangled state known as a Bell state. We can run the above circuit on a Spin Chain Processor.\n\n```python\nfrom qutip import basis\nfrom qutip_qip.device import LinearSpinChain\n\nprocessor = LinearSpinChain(num_qubits=2)\nprocessor.load_circuit(qc)\ninit_state = basis([2, 2], [0, 0]) # |00> state\nresult = processor.run_state(init_state)\n\nfinal_state = result.states[-1]\nprint(final_state)\n```\nWe can compare the fidelity between the Pulse level simulation (similar to how circuits run on actual QPU backends) vs state from perfect matrix product based simulation.\n\n```python\nfrom qutip import fidelity\n\nprint(fidelity(state, final_state))\n```\n\n\n## Documentation and Tutorials\n\nDocumentation and tutorials for `qutip-qip` can be found at [qutip-qip.readthedocs.io/](https://qutip-qip.readthedocs.io/en/stable/).\n\nCode examples used in the publication *[Pulse-level noisy quantum circuits with QuTiP](https://quantum-journal.org/papers/q-2022-01-24-630)* updated for the latest version of `qutip-qip`, can be found in the [pulse-paper](https://github.com/qutip/qutip-qip/tree/master/pulse-paper) folder.\n\n\n## Migrating from qutip.qip\n\nThe `qutip-qip` package was previously a module ``qutip.qip`` under [QuTiP (Quantum Toolbox in Python)](https://qutip.readthedocs.io/en/stable/). Starting from QuTiP 5.0, the community decided to decrease the size of the core QuTiP package, in order to simplify maintenance and for the sub-packages to evolve more quickly. If you were using qutip `4.x` and now want to try out the new features included in this package, you can simply install this package and replace all the `qutip.qip` in your import statement with `qutip_qip`. Everything should work smoothly as usual.\n\n# Community\n\nThis project and everyone participating in it are governed by the [Code of Conduct](https://github.com/qutip/qutip-qip/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.\n\n## Questions & Discussions\nYou can ask questions or answer other users' questions on our [Discussion Forum](https://github.com/qutip/qutip-qip/discussions) on GitHub or in the [QuTiP Discussion group](https://groups.google.com/forum/#!forum/qutip). You may also suggest new features or improvements you would like to see in the project.\n\n## Reporting Bugs & Issues\nThe list of existing issues can be found [here](https://github.com/qutip/qutip-qip/issues). If you encounter a bug during your workflow, please first search the existing issues to check if it has already been reported. You may also contribute by adding additional details or context to open issues.\n\nIf you do not find a related issue, please open a new [Issue](https://github.com/qutip/qutip-qip/issues/new) on GitHub. We will review and address it as soon as possible.\n\n## Contributing\nContributions to `qutip-qip` are welcome. Please read [CONTRIBUTING.md](https://github.com/qutip/qutip-qip/blob/master/CONTRIBUTING.md) for details.\n\n## Citing qutip-qip\nIf you use `qutip-qip` in your research, please cite this [paper](https://quantum-journal.org/papers/q-2022-01-24-630). The BibTeX file can be found [here](https://github.com/qutip/qutip-qip/tree/master/doc/source/qutip_qip.bib).\n\n## Support\n\n[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)\n[![Unitary Fund](https://img.shields.io/badge/Supported%20By-UNITARY%20FUND-brightgreen.svg?style=flat)](https://unitary.fund)\n\nThis package is supported and maintained by the same developers group as QuTiP.\n\nQuTiP development is supported by [Nori's lab](https://nori-physics.org/) at RIKEN, by the University of Sherbrooke, by Chalmers University of Technology, by Macquarie University and by Aberystwyth University, [among other supporting organizations](http://qutip.org/#supporting-organizations). We also thank the [Google Summer of Code Programme](https://summerofcode.withgoogle.com/) for supporting students to work on QuTiP and related projects over the years.\n",
+      "CONTRIBUTING.md": "# Contributing to qutip-qip\n\nFirst off, thanks for taking the time to contribute! ❤️\n\nAll types of contributions are encouraged and valued. Please make sure to read the relevant sections before making your contribution.\n\n## Table of Contents\n\n- [Contributing to Code](#contributing-to-code)\n    - [Before you start](#before-you-start)\n    - [Choose an issue to work on](#choose-an-issue-to-work-on)\n    - [Assigning Issues](#assigning-issues)\n    - [Development Workflow](#development-workflow)\n    - [Code Review](#code-review)\n- [Contributing to Documentation](#contributing-to-documentation)\n    - [Getting started](#getting-started)\n    - [How to Contribute](#how-to-contribute)\n    - [Tutorials](#tutorials)\n- [AI Tools Usage Policy](#ai-tools-usage-policy)\n\n<br>\n\n## Contributing to Code\n\n### Before you start\nIt is best to familiarize yourself with the project. You can start by reading the [documentation](https://qutip-qip.readthedocs.io/en/latest/) and trying out the examples provided in the [tutorials](https://qutip-qip.readthedocs.io/en/latest/tutorials_v5.html).\n\n### Choose an issue to work on\nQuTiP-QIP uses the following labels to help non-maintainers find issues best suited to their interests and experience level:\n\n- [good first issue](https://github.com/qutip/qutip-qip/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) - these issues are typically the simplest available to work on, ideal for newcomers. They should typically be fully scoped, with a clear approach outlined in the descriptions.\n- [help wanted](https://github.com/qutip/qutip-qip/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) - these issues are generally more complex than good first issues. They typically cover work that core maintainers don't currently have capacity to implement and may require more investigation/discussion. These are a great option for experienced contributors looking for something a bit more challenging.\n\n### Assigning Issues\nIn our workflow, we generally avoid formally assigning issues to contributors. This approach is intentional — it keeps the project open and flexible, allowing anyone from the community to explore and work on problems that interest them, without waiting for explicit assignment or approval.\n\nThe only exception to this is a small subset of “core” issues. These are typically more complex, sensitive, or tightly coupled to ongoing development efforts, and are therefore handled directly by maintainers or core contributors.\n\n### Development Workflow\nPlease refer to the [Contributing to Code](https://qutip-qip.readthedocs.io/en/latest/contribution-code.html) section of the documentation for details on our development workflow, including how to set up the Python environment, style code, run tests and submit Pull Requests (PR).\n\nYou may also open a draft PR with changes in order to discuss and receive feedback on the best approach if you are not sure what the best way forward is.\n\n### Code Review\nCode review is conducted openly and is accessible to everyone. While only maintainers have access to merge commits, community feedback on Pull Requests is extremely valuable. It is also a good mechanism to learn about the code base both for contributors and reviewers.\n\nResponse times may vary for your PR due to other commitments the maintainers have. If you have been waiting over a week for a review on your PR, feel free to tag a maintainer in a comment to gently remind them to review your work.\n\n<br>\n\n## Contributing to Documentation\nAccurate and well-structured documentation is essential for making QuTiP-QIP accessible and easy to use. We welcome contributions of all sizes — from small typo fixes to entirely new sections or tutorials.\n\n### Getting started\nBefore contributing, please read the [documentation guide](https://qutip-qip.readthedocs.io/en/latest/contribution-docs.html). It explains how to build the docs locally and outlines formatting and style conventions.\n\n### How to Contribute\n\n- **Minor fixes:** For small changes such as typos, broken links, or minor corrections, you can open a Pull Request directly.\n\n- **Larger improvements or additions:** If your contribution involves significant changes — such as rewriting sections, adding new content, or restructuring existing material. Please open an issue first to outline the changes, once discussed you can submit a Pull Request. \n\n### Tutorials\nTutorials are maintained in a separate repository: [qutip-tutorials](http://github.com/qutip/qutip-tutorials/). If you wish to add a new tutorial or update an existing one, open a Pull Request directly in the qutip-tutorials repository. If you're unsure about the changes, you may open a draft PR in order to discuss and receive feedback.\n\n<br>\n\n## AI Tools Usage Policy\nWe acknowledge the use of AI tools to improve efficiency and enhance quality of work. Contributors may use such tools, provided they adhere to the following guidelines:\n\n### 1. Accountability\n\nThe human contributor is solely responsible for their contribution i.e. all the AI-generated outputs can be considered their own work. If you're submitting a Pull Request that includes AI-generated code or documentation:\n\n- You are responsible for ensuring that code you submit meets the project's standards.\n- You must fully understand every line of code in the submission.\n- You must be able to explain the \"why\" behind the implementation during the review process.\n\n### 2. Transparency\n\nAll Pull Requests must fill the **AI Tools Usage Disclosure** in the PR template. This disclosure is mandatory and must accurately reflect how AI Tools were used.\n\n### 3. Copyright & Legal\n\nBy submitting a contribution to qutip-qip, you agree to\n\n1. Submit your contribution under the project's license.\n\n2. The contribution does not violate any third-party rights or the terms of service of the AI provider. And does not include \"regurgitated\" code from libraries with incompatible licenses (e.g., GPL-licensed code) being suggested into our BSD-3-clause licensed project.\n\n3. AI agents must not sign commits or be added to commit message trailer `Co-authored-by:` since copyright is fundamentally tied to the concept of human authorship as per the US Copyright law. You can instead use `Assisted-by: AI Model/Tool` as commit message trailer e.g. `Assisted-by: Cursor with Opus 4.6`.\n\n### 4. Good Use Cases\n\n- **Understand the codebase:** AI can be used to explore unfamiliar parts of the repository, summarize modules, and clarify how components interact. It helps build the mental model of the project faster. \n\n- **Brainstorming and Design:**  AI may assist in generating ideas, evaluating different approaches, and structuring designs. However, all final decisions regarding design and architecture should be independently validated and be made by the contributor.\n\n- **Reviewing your implementation:**  AI can be used to spot potential bugs, suggest improvements, and help clarify unexpected behavior in code. Contributors should verify the correctness and relevance of AI-generated feedback before applying it.\n\n### 5. Prohibited Use\n\nThe following use cases are prohibited:\n\n- **Communication:** In project communications (GitHub Issues, Discussion, PR descriptions and review comments), we personally expect to communicate directly with other humans not with automated systems. Use of translation tools is completely welcome.\n\n- **Ban on Bots/Agents:** Fully autonomous or unsupervised AI agents (e.g. OpenClaw, SWE-agent) are not allowed to submit Pull Requests.\n\n- **Stance on Good First Issues:** The main purpose of a “good first issue” is to allow new human contributors to get familiar with `qutip-qip`, with the GitHub workflow and to engage with the community. Submitting a fully AI-generated PR defeats that purpose. AI can be used as a learning aid to understand the codebase, but the final implementation must be your own.\n\n### 6. Enforcement\n\nMaintainers reserve the right to close any Pull Request that violates this Policy. Maintainers may restrict participation or report users to GitHub for repeated violations of this policy.\n",
+      "SECURITY.md": "# Security Policy\n\n## Reporting a Vulnerability\n\nSecurity vulnerability in `qutip-qip` is taken seriously. We appreciate your efforts to responsibly disclose your findings,\nand will make every effort to acknowledge your contributions.\n\nPlease **do not** use GitHub issues to report security vulnerabilities. GitHub issues are public, and doing so could allow someone\nto exploit the information before the problem can be addressed. Instead, please use the GitHub\n[\"Report a Vulnerability\"](https://github.com/qutip/qutip-qip/security/advisories/new) interface from the *Security* tab of the qutip-qip repository.\nYou can find more details on the security vulnerability feature in the GitHub documentation\n[here](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)\n\nPlease report security issues in third-party modules to the person or team maintaining the module rather than the `qutip-qip` project,\nunless you believe that some action needs to be taken with `qutip-qip` in order to guard against the effects of a security vulnerability in a\nthird-party module.\n\n## Additional points of contact\n\nPlease contact the QuTiP admin team at via email at qutip-admin@googlegroups.com. if you have questions or other concerns.\n"
+    },
+    "has_security_md": true,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## Citing qutip-qip\nIf you use `qutip-qip` in your research, please cite this [paper](https://quantum-journal.org/papers/q-2022-01-24-630). The BibTeX file can be found [here](https://github.com/qutip/qutip-qip/tree/master/doc/source/qutip_qip.bib).",
+    "doi": null
+  },
+  "channels": {
+    "gh_discussions": [
+      "https://github.com/qutip/qutip-qip/discussions"
+    ],
+    "google_group": [
+      "https://groups.google.com/forum/#!forum/qutip"
+    ],
+    "readthedocs": [
+      "https://qutip-qip.readthedocs.io/en/latest/",
+      "https://qutip-qip.readthedocs.io/en/latest/installation.html",
+      "https://qutip-qip.readthedocs.io/en/stable/",
+      "https://qutip.readthedocs.io/en/stable/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "qutip-qip",
+    "repo": "qutip/qutip-qip",
+    "current_version": {
+      "value": "v0.4.2",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "qutip"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "gh_discussions": [
+          "https://github.com/qutip/qutip-qip/discussions"
+        ],
+        "google_group": [
+          "https://groups.google.com/forum/#!forum/qutip"
+        ],
+        "readthedocs": [
+          "https://qutip-qip.readthedocs.io/en/latest/",
+          "https://qutip-qip.readthedocs.io/en/latest/installation.html",
+          "https://qutip-qip.readthedocs.io/en/stable/",
+          "https://qutip.readthedocs.io/en/stable/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": "SECURITY.md present",
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://qutip-qip.readthedocs.io/en/stable/",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "vectorious",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:41:30Z",
+  "errors": {},
+  "github": {
+    "owner": "mateogianolio",
+    "repo": "vectorious",
+    "errors": {},
+    "full_name": "mateogianolio/vectorious",
+    "description": "Linear algebra in TypeScript.",
+    "homepage": "https://docs.vectorious.org",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2024-06-16T09:54:25Z",
+    "stars": 918,
+    "topics": [
+      "blas",
+      "high-performance-computing",
+      "javascript",
+      "linear-algebra",
+      "linear-algebra-library",
+      "machine-learning",
+      "matrix",
+      "typescript",
+      "vector"
+    ],
+    "license": "MIT",
+    "latest_release": {
+      "tag": "5.3.0",
+      "name": "5.3.0",
+      "published_at": "2019-03-04T23:04:27Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "<p align=\"center\">\n  <img src=\"https://github.com/mateogianolio/vectorious/raw/master/logo.gif\" alt=\"Vectorious Logo\" />\n</p>\n\n<p align=\"center\">\n  A linear algebra library, written in TypeScript and accelerated with C++ bindings to BLAS and LAPACK.\n</p>\n\n<p align=\"center\">\n  <img src=\"https://img.shields.io/npm/v/vectorious.svg\" /> <img src=\"https://img.shields.io/npm/dm/vectorious\" /> <img src=\"https://img.shields.io/github/actions/workflow/status/mateogianolio/vectorious/release.yml?branch=master\" /> <img src=\"https://img.shields.io/codeclimate/maintainability/mateogianolio/vectorious\" /> <img src=\"https://img.shields.io/codeclimate/coverage/mateogianolio/vectorious\" />\n</p>\n\n### Installation\n\nFollow the installation instructions in [nlapack](https://github.com/nperf/nlapack) and [nblas](https://github.com/nperf/nblas) to get maximum performance.\n\n```bash\n# with C++ bindings\n$ npm install vectorious\n\n# or, if you don't want C++ bindings\n$ npm install vectorious --no-optional\n```\n\nThere are three output bundles exposed in this package.\n\n#### CommonJS\n\nA node.js bundle, can be found in `dist/index.js` and imported with the `require()` syntax:\n\n```typescript\nconst v = require('vectorious');\n```\n\n#### Browser\n\nA browser bundle, can be found in `dist/index.browser.js` and imported with the `<script>` tag:\n\n```html\n<script src=\"dist/index.browser.js\" />\n```\n\nIt exposes a global variable named `v` in the `window` object and can be accessed like this:\n\n```html\n<script>\n  const x = v.array([1, 2, 3]);\n</script>\n```\n\n#### ES module\n\nAdded in version 6.1.0, vectorious exposes an ES module bundle at `dist/index.mjs` which can be imported using the `import` syntax:\n\n```typescript\nimport { array } from 'vectorious';\n\nconst x = array([1, 2, 3]);\n```\n\n### Usage\n\nUnless stated otherwise, all operations are in-place, meaning that the result of the operation overwrites data in the current (or in the static case leftmost) array. To avoid this, an explicit `copy` call is needed before the operation (`copy(x)` or `x.copy()`).\n\n```javascript\nimport { array, random, range } from 'vectorious';\n\n// Create a random 2x2 matrix\nconst x = random(2, 2);\n/*\narray([\n  [\n    0.26472008228302,\n    0.4102575480937958\n  ],\n  [\n    0.4068726599216461,\n    0.4589384198188782\n  ]\n], dtype=float64)\n*/\n\n// Create a one-dimensional vector with values from\n// 0 through 8 and reshape it into a 3x3 matrix\nconst y = range(0, 9).reshape(3, 3);\n/*\narray([\n  [ 0, 1, 2 ],\n  [ 3, 4, 5 ],\n  [ 6, 7, 8 ]\n], dtype=float64)\n*/\n\n// Add the second row of x to the first row of x\ny.slice(0, 1).add(y.slice(1, 2));\n/*\narray([\n  [ 3, 5, 7 ],\n  [ 3, 4, 5 ],\n  [ 6, 7, 8 ]\n], dtype=float64)\n*/\n\n// Swap the first and second rows of x\ny.swap(0, 1);\n/*\narray([\n  [ 3, 4, 5 ],\n  [ 3, 5, 7 ],\n  [ 6, 7, 8 ]\n], dtype=float64)\n*/\n\n// Create a 2x2x1 tensor\nconst z = array([\n  [[1], [2]],\n  [[3], [4]],\n]);\n/*\narray([\n  [ [ 1 ], [ 2 ] ],\n  [ [ 3 ], [ 4 ] ]\n], dtype=float64)\n*/\n```\n\n### Documentation\n\n- [**API Documentation**](https://docs.vectorious.org/vectorious/6.1.0/)\n\n### Examples\n\n**Basic**\n\n- [**Solving linear systems of equations**](https://github.com/mateogianolio/vectorious/tree/master/examples/solve.ts)\n- [**Using low-level BLAS routines**](https://github.com/mateogianolio/vectorious/tree/master/examples/blas.ts)\n\n**Machine learning**\n\n- [**Neural network**](https://github.com/mateogianolio/vectorious/tree/master/examples/neural-network.ts) (by [@lucidrains](https://github.com/lucidrains))\n- [**Logistic regression**](https://github.com/mateogianolio/vectorious/tree/master/examples/logistic-regression.ts)\n\n### Testing\n\nAll functions are accompanied with a `.spec.ts` file.\n\nThe Jest testing framework is used for testing and the whole test suite can be run using a single command:\n\n```sh\n$ npm test\n```\n\n### Benchmarks\n\nAll functions are accompanied with a `.bench.ts` file.\n\nRun all benchmarks with:\n\n```bash\n$ npm run benchmark\n```\n\nOr for a single function with:\n\n```\n$ npx ts-node src/core/abs.bench.ts\n```\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "vectorious",
+    "repo": "mateogianolio/vectorious",
+    "current_version": {
+      "value": "5.3.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "mateogianolio"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://docs.vectorious.org",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

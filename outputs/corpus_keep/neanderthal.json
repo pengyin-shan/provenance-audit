@@ -1,0 +1,98 @@
+{
+  "name": "neanderthal",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:18Z",
+  "errors": {},
+  "github": {
+    "owner": "uncomplicate",
+    "repo": "neanderthal",
+    "errors": {},
+    "full_name": "uncomplicate/neanderthal",
+    "description": "Fast Clojure Matrix Library",
+    "homepage": "http://neanderthal.uncomplicate.org",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-07-01T21:29:44Z",
+    "stars": 1124,
+    "topics": [
+      "api",
+      "clojure",
+      "clojure-library",
+      "cuda",
+      "gpgpu",
+      "gpu",
+      "gpu-computing",
+      "high-performance-computing",
+      "java",
+      "matrix",
+      "matrix-calculations",
+      "matrix-factorization",
+      "matrix-functions",
+      "matrix-multiplication",
+      "opencl",
+      "vectorization"
+    ],
+    "license": "EPL-1.0",
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "[New books available for subscription](https://aiprobook.com)\n\n<img src=\"http://aiprobook.com/img/dlfp-cover.png\" alt=\"Deep Learning for Programmers\" title=\"Deep Learning for Programmers\" align=\"left\" width=\"250\"/>\n\n<img src=\"http://aiprobook.com/img/lafp-cover.png\" alt=\"Numerical Linear Algebra for Programmers\" title=\"Numerical Linear Algebra for Programmers\" align=\"right\" width=\"250\"/>\n\n# Neanderthal\n\n[Adopt your pet function](https://dragan.rocks/articles/18/Patreon-Announcement-Adopt-a-Function) and [become a patron](https://patreon.com/draganrocks).\n\nNeanderthal is a Clojure library for fast matrix and linear algebra computations based on the highly optimized native libraries of [BLAS](http://netlib.org/blas/) and [LAPACK](http://www.netlib.org/lapack/) computation routines for both CPU and GPU..\n\n## How to use it\n\nRead the documentation at [Neanderthal Web Site](https://neanderthal.uncomplicate.org).\n\n## License\n\nCopyright © 2014-2026 Dragan Djuric\n\nDistributed under the Eclipse Public License either version 1.0 or (at your option) any later version.\n",
+      "CHANGELOG.md": "# [Neanderthal](http://neanderthal.uncomplicate.org) - notable changes between versions\n\n# 0.63.0\n\n* Support Half-precision floats (only containers, backed by Float16 and Short)\n* Phased out Java 8 support\n* Compiled for Java 21, requires at least Java 20 source compatibility\n\n# 0.62.0\n\n* Update Clojure to 1.12.5\n* Update Uncomplicate Commons to 0.20.0.\n* Update Fluokitten to 0.10.2\n* Update ClojureCPP to 0.8.0.\n\n# 0.61.0\n\n* Update JavaCPP to 1.5.13.\n* Update CUDA to 13.1\n* Update Clojure to 1.12.4.\n* Update MKL to 2025.3\n* Update OpenBLAS to 0.3.31\n\n# 0.60.0\n\n* Implement integer GE matrices and cover more Blas/BlasPlus/VectMath api for integer vectors and matrices.\n\n# 0.59.0\n\n* Update CUDA to 13.0\n* Update Clojure to 1.12.3\n\n# 0.58.0\n\n* Use improved CUDA redist artifacts distribution (multiple smaller artifacts)\n* New snapshot repository necessary for CUDA (temporary fix, will be obsolete when JavaCPP 1.5.13 is released)\n* Now requires only cuda and cublas instead of the whole nvidia megapackage.\n\n# 0.57.2\n\n* Improve RNG seed\n\n# 0.56.0\n\n* Update Clojure to 1.12.2\n* Improve the info message about the search for an engine and the start of loading.\n\n# 0.55.0\n\n* Update MKL to 2025.2.\n* Update core.async to the latest version.\n* Fix a cuda transfer bug.\n* Update all Uncomplicate dependencies.\n\n# 0.54.0\n\n* Backends are now AOT-compiled by default, but not mandatory (neanderthal-aot vs. neanderthal-*).\n* Apple Accelerate engine implemented.\n* Broken-down into engine-specific projects (neanderthal-mkl, neanderthal-accelerate, etc.).\n* Support math functions in non-contiguous structures in mkl and accelerate engines.\n* Support learnable, vector/matrix alpha in relu and elu functions (a slight breaking change).\n* Update JavaCPP to 1.5.12.\n* Update CUDA to 12.9 and cuDNN to 9.10.\n* Update uncomplicate commons, clojure cuda, and clojure-cpp.\n* Improved CUDA vector transfer!\n* Various assorted improvements and fixes (see changes).\n\n# 0.53.0\n\n* OpenBLAS engine (all operating systems supported by JavaCPP).\n\n# 0.51.0\n\n* Updated to JavaCPP 1.5.11\n* Updated to MKL 2025.0\n* Updated uncomplicate commons and clojure-cpp\n\n# 0.50.0\n\n* Bugfixes.\n\n# 0.49.0\n\n* Built with Java 8 bytecode compatibility.\n\n# 0.48.0\n\n* Completely moved CPU engine to JavaCPP (and removed Neanderthal Native)\n* Support for sparse matrices\n* Support for integers in Fluokitten functions\n* More operations supported by integer engines\n* Major internal engine re-coding\n* Upgrade to CUDA 12.3\n* Upgrade to MKL 2024.0\n\n# 0.47.0\n\nSkipped\n\n# 0.46.0\n\n* Upgrade CUDA to 11.8.\n* Upgrade neanderthal-native MKL native dependency to oneAPI MKL 2022.2 on Linux and Windows, and 2021.1 on Mac (the latest that my mac 10.12 supports).\n\n# 0.45.0\n\n* Upgrade CUDA to 11.7. It should work with 11.6, too!\n\n# 0.44.0\n\n* Upgrade CUDA to 11.6.\n\n# 0.43.0\n\n* Upgrade CUDA to 11.4.\n\n# 0.42.0\n\n* Fixed a few issues with devices that miss some hardware support for various OpenCL features.\n\n# 0.38.0\n\n* Upgrade CUDA to 11.0.\n\n# 0.37.0\n\n* Workaround the bug in Apple's OpenCL driver that doesn't support native_ functions.\n\n# 0.36.0\n\n* Viewable/view moved to commons.\n\n# 0.35.0\n\n* Does not require system-wide MKL. Uses binaries provided by the bytedeco jar if present.\n\n# 0.34.0\n\n* cublas engines support int, long, short, byte, and uint8\n\n# 0.33.0\n\n* New vect-math functions: exp2, exp10, log2, and log1p\n* Fix short and byte engine crash.\n\n# 0.32.0\n\n* Enable submatrix of (tri)diagonal matrix when appropriate.\n\n# 0.31.0\n\n* Fix regression in core.rk! caused by 0.30.0 update.\n\n# 0.30.0\n\n* New function mmt! for symmetric matrix multiply with its transpose (faster than mm!).\n* Support for symmetric rk! of a vector with its transpose.\n\n# 0.29.0\n\n* Support mapping a vector to a file channel.\n* Support int, long, short, and byte vectors.\n\n# 0.28.0\n\n* Fix a subtle CUDA vect-math return object bug.\n\n# 0.27.0\n\n* Support CUDA 10.2.0\n* A bunch of bugfixes provided by Kamil Toman (katox).\n\n# 0.26.0\n\n* view and view-* behavior made more consistent.\n\n# 0.25.0\n\n* Random number generation of vector entries with uniformly and normally distributed numbers.\n* Renamed aux to auxil to work around a Windows bug of not allowing files named aux.\n\n# 0.23.0\n\n* Added copy-sign, ramp, step, and sigmoid functions to math and vect-math (MKL, CUDA, OpenCL)\n\n# 0.22.0\n\n* Introduced the Viewable/view protocol and view function (interop).\n* CLBlast bumped to 1.5.0/\n\n# 0.21.0\n\n* Clojure upgraded to 1.10.\n* Misc bugfixes.\n\n# 0.20.0\n\n* SDD available as a SVD implementation.\n* Eigenvalues and eigenvectors computing available for symmetric matrices.\n* Fluokitten performance regression (introduced in 0.18.0) fixed.\n* Fluokitten support in non-double objects.\n* Fluokitten accepts non-primitive function for Neanderthal objects.\n* Custom non-blas sum function sped up on CPU.\n* JCublas upgraded to 0.9.2.\n\n# 0.19.0\n\n* Support explicit stream in memcpy.\n* CUDA engine uses explicit context.\n* sum support in CUDA matrices.\n* TRSV in OpenCL matrices.\n* CLBlast dependency updated to 1.3.0. Context creation for OpenCL is much faster now.\n* Vertigo dependency removed.\n* view-ge supports arbitrary dimensions now.\n* ge supports nested sequence as source for its rows.\n\n## 0.18.1\n\n* Added FlowProvider/flow to internal core.\n\n## 0.18.0\n\n* Updated to Java 9 modules. Requires add-open jvm argument if run with JDK 9+.\n* Clojure dep updated to 1.9.0.\n* Upgrades JCuda dependency to 0.9.0, supports CUDA 9.\n* Core constructors accept any factory provider as factory.\n* GPU objects are safe to print after the factory has been released.\n\n## 0.17.2\n\n* Fix the uplo_modf bug (#33).\n\n## 0.17.1\n\n* Upgraded JOCLBlast dependency to 1.2.0.\n\n## 0.17.0\n\n### New features\n\n* Vectorized mathematical functions (cca 50 pieces in the vect-math namespace).\n* New functions in the math namespace to support scalar equivalents of vect-math functions.\n* Schur decomposition!\n\n### Enhancements\n\n* JOCLBlast engine upgraded to 1.1.0.\n* CUDA implementation of SY matrices.\n* OpenCL implementation of SY matrices.\n\n## 0.16.1\n\n### Bugfixes\n\n* Fixed call with wrong number of arguments for the transpose of OrthogonalFactorization.\n\n## 0.16.0\n\n### New features\n\n* Diagonal matrices (GD)\n* Tridiagonal matrices (GT)\n* Diagonally dominant tridiagonal matrices (DT)\n* Symmetric tridiagonal matrices (ST)\n\n### Enhancements\n\n* Updated JOCLBlast dependency to 1.0.1.\n* Orthogonal factorizations greatly simplified\n* Symmetric and triangular mm support more layout and a/b position variations.\n* Upgraded Intel MKL to 2018 (it should work with earlier versions, but YMMV).\n\n### Breaking changes\n\n* New simplified orthogonal factorization related functions replace the old api in linalg.\n\n### Bugfixes\n\n* Fixed TR and SY mm and mv when k=0.\n* Fixed transpose implementations in various non-GE matrices.\n\n## 0.15.0\n\n### New features\n\n* Symmetric matrices (SY)\n* Banded matrices (GB, TB, SB)\n* Packed matrices (TP, SP)\n\n### Enhancements\n\n* Better printing\n* Fluokitten protocols supported by all matrix types.\n* Overhaul of internals that opens easier path for new matrix types and specialized engines.\n* Automatized triangular factorizations and solvers.\n\n### Breaking changes\n\n* :order replaced by :layout in matrix options.\n\n### Fixes\n\n* Fix #29 - OpenCL engine does not try to load CUDA-related stuff any more.\n\n## 0.14.0\n\n### Breaking changes:\n\n* tr* work with LUFactorization instead of GEMatrix.\n\n### New features:\n\n* Matrix inverse.\n* Condition number.\n* Pure tr* methods.\n\n### Enhancements\n\n* Improved TRMatrix printing.\n\n## 0.13.0\n\n* Support for chained matrix multiplication in mm.\n\n## 0.12.0\n\n* Support for inverting matrices through trf/tri.\n\n## 0.11.0\n\n### New features:\n\n* CUDA/cuBLAS based engine (requires CUDA toolkit).\n* Additional methods from Blas supported by matrices.\n\n## 0.10.0\n\n### New features:\n\n* Added aux namespace for auxiliary functions.\n* Sorting of vectors, GE, and TR host matrices.\n* Bulk alter! method added.\n* view-vctr and view-ge support stride multiplier.\n\n### Enhancements\n\n* set-all accepts NaN\n* CL factories implement FactoryProvider.\n\n## 0.9.0\n\n### New features:\n\n* Linear algebra functions (LAPACK).\n* Support for TR matrices.\n* Pretty-printing\n* GE and TR support some more BLAS-1 functions.\n\n### Enhancements\n\n* Cheat Sheet in the docs.\n* Updated JOCLBlast dependency to 0.10.0.\n* Updated Fluokitten dependency to 0.6.0.\n* Internal api and implementations made more straightforward.\n\n### Breaking changes:\n\n* Naming scheme changed from single to float for single-precision structures.\n* sv and sge from the native namespace renamed to fv and fge.\n* core constructor functions changed from create to vctr, ge, tr, etc.\n* Core constructors no longer accept raw buffers.\n\n## 0.8.0\n\n### Changes\n\n* Removed the amd-gcn engine. Use clblast engine instead.\n\n### Enhancements\n\n* The native part is now compiled for Linux, MacOX AND Windows\n* one-argument pow function added.\n* native-factory method added to FactoryProvider protocol.\n* factories and data accessors implement the compatible method.\n* Updated JOCLBlast dependency to 0.9.0.\n\n### Bugfixes\n\n* Attempting (create -m -n) now throws IllegalArgumentException\n* Fixed a sum bug in native implementation when stride is not 1.\n\n## 0.7.0\n\n### New features:\n\n* scal implementation for matrices.\n\n### Bugfixes:\n\n* Fixed a Buffer.limit bug in subvector and submatrix.\n* Fixes #15\n\n### Enhancements\n\n* native function in core\n* one-argument fold now use sum instead of looping.\n* Updated JOCLBlast dependency to 0.8.0 (also fixes #15)\n\n## 0.6.2\n\n* Updated ClojureCL dependency to 0.6.4\n\n## 0.6.1\n\n* Updated ClojureCL dependency to 0.6.3\n\n## 0.6.0\n\n### New features\n\n* Completely new OpenCL engine for GPU matrix computing - **supports AMD, Nvidia, and Intel, on Linux, Windows, and OSX\n* Support Fluokitten's Monoid and Magma in vectors and matrices\n* transfer method in core that always transfers data to host memory\n\n### Changes\n\n* opencl methods renamed\n* default OpenCL engine changed to clblast\n* old amd-gcn engine deprecated\n\n## 0.5.0\n\n### New features\n\n* Streamlined dependencies: no longer need 2 dependencies in project files. The dependency on uncomplicate/neanderthal is enough\n* Comes with Mac OS X build out of the box. No need even for external ATLAS.\n* release and with-release moved from ClojureCL to uncomplicate/commons\n* Support for Fluokitten's fmap!, fmap, fold, foldmap, op...\n\n## 0.4.0\n\n### New features\n\n* Streamlined factory-based constructors in core.\n* OpenCL vectors and matrices now support equality comparisons, offsets, strides,\nsubvectors, and submatrices. Matrices now can be swapped and copied.\n\n### Changes\n\n* OpenCL read! and write! replaced with generic transfer! multimethod that supports\na much wider area of memory types to move data to and from.\n* A large number of internal implementation changes that should not affect end users\n(other than as removing bugs).\n* Several important bugfixes (see git commit history).\n\n## 0.3.0\n\n### New features\n\n* Support for pluggable BLAS engines\n* GPU computing engine based on OpenCL (kernels optimized for AMD for now)\n\n### Changes\n\n* Reorganized namespaces - now almost complete public API is in the core namespace\n* Changed the order of parameters in axpy!, mv! and mm! (and their variants)\n\n## 0.2.0\n\n### New features\n\n* implemented BLAS support for floats\n* implemented fmap!, freduce, and fold functions for all existing types of matrices and vectors\n\n### Changes\n\nNo API changes were required for these features.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "neanderthal",
+    "repo": "uncomplicate/neanderthal",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "uncomplicate"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "http://neanderthal.uncomplicate.org",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

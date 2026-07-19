@@ -1,0 +1,89 @@
+{
+  "name": "quantum-neural-networks",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:43Z",
+  "errors": {},
+  "github": {
+    "owner": "XanaduAI",
+    "repo": "quantum-neural-networks",
+    "errors": {},
+    "full_name": "XanaduAI/quantum-neural-networks",
+    "description": " This repository contains the source code used to produce the results presented in the paper \"Continuous-variable quantum neural networks\". Due to subsequent interface upgrades, these scripts will work only with Strawberry Fields version <= 0.10.0.",
+    "homepage": "https://arxiv.org/abs/1806.06871",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2023-03-24T23:52:23Z",
+    "stars": 336,
+    "topics": [
+      "deep-learning",
+      "machine-learning",
+      "optimization",
+      "photonics",
+      "quantum",
+      "quantum-computing",
+      "quantum-machine-learning",
+      "tensorflow"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "<img align=\"left\" src=\"https://github.com/XanaduAI/quantum-neural-networks/blob/master/static/tetronimo.png\" width=300px>\n\n# Continuous-variable quantum neural networks\n\nThis repository contains the source code used to produce the results presented in [*\"Continuous-variable quantum neural networks\"*](https://doi.org/10.1103/PhysRevResearch.1.033063).\n\n<br/>\n\n## Requirements\n\nTo construct and optimize the variational quantum circuits, these scripts and notebooks use the TensorFlow backend of [Strawberry Fields](https://github.com/XanaduAI/strawberryfields). In addition, matplotlib is required for generating output plots.\n\n**Due to subsequent interface upgrades, these scripts will work only with the following\nconfiguration**\n \n- Strawberry Fields version 0.10.0\n- TensorFlow version 1.3\n- Python version 3.5 or 3.6\n\nYour version of Python can be checked by running `python --version`. The correct versions of\nStrawberryFields and TensorFlow can be installed by running `pip install -r requirements.txt`\nfrom the main directory of this repository. \n\n## Contents\n\n<!-- <p align=\"center\">\n\t<img src=\"https://github.com/XanaduAI/quantum-neural-networks/blob/master/static/function_fitting.png\">\n</p> -->\n\n* **Function fitting**: The folder `function_fitting` contains the Python script `function_fitting.py`, which automates the process of fitting classical functions using continuous-variable (CV) variational quantum circuits. Simply specify the function you would like to fit, along with other hyperparameters, and this script automatically constructs and optimizes the CV quantum neural network. In addition, training data is also provided.\n\n* **Quantum autoencoder**: coming soon.\n\n* **Quantum fraud detection**: The folder `fraud_detection` contains the Python script `fraud_detection.py`, which builds and trains a hybrid classical/quantum model for fraud detection. Additional scripts are provided for visualizing the results.\n\n* **Tetrominos learning**: The folder `tetrominos_learning` contains the Python script `tetrominos_learning.py`, which trains a continuous-variable (CV) quantum neural network. The task of the network is to encode 7 different 4X4 images, representing the (L,O,T,I,S,J,Z) [tetrominos](https://en.wikipedia.org/wiki/Tetromino), in the photon number distribution of two light modes. Once the training phase is completed, the script `plot_images.py` can be executed in order to generate a `.png` figure representing the final results.\n\n<img align='right' src=\"https://github.com/XanaduAI/quantum-neural-networks/blob/master/static/tetronimo_gif.gif\">\n\n## Using the scripts\n\nTo use the scripts, simply set the input data, output data, and hyperparametersby modifying the scripts directly - and then enter the subdirectory and run the script using Python 3:\n\n```bash\npython3 script_name.py\n```\n\nThe outputs of the simulations will be saved in the subdirectory.\n\nTo access any saved data, the file can be loaded using NumPy:\n\n```python\nresults = np.load('simulation_results.npz')\n```\n\n## Authors\n\nNathan Killoran, Thomas R. Bromley, Juan Miguel Arrazola, Maria Schuld, Nicolás Quesada, and Seth Lloyd.\n\nIf you are doing any research using this source code and Strawberry Fields, please cite the following two papers:\n\n> Nathan Killoran, Thomas R. Bromley, Juan Miguel Arrazola, Maria Schuld, Nicolás Quesada, and Seth Lloyd. Continuous-variable quantum neural networks. [Physical Review Research, 1(3), 033063](https://doi.org/10.1103/PhysRevResearch.1.033063) (2019).\n\n> Nathan Killoran, Josh Izaac, Nicolás Quesada, Ville Bergholm, Matthew Amy, and Christian Weedbrook. Strawberry Fields: A Software Platform for Photonic Quantum Computing. arXiv, 2018. [Quantum, 3, 129](https://quantum-journal.org/papers/q-2019-03-11-129/) (2019).\n\n## License\n\nThis source code is free and open source, released under the Apache License, Version 2.0.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": "10.1103/PhysRevResearch.1.033063"
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "quantum-neural-networks",
+    "repo": "XanaduAI/quantum-neural-networks",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "XanaduAI"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://arxiv.org/abs/1806.06871",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

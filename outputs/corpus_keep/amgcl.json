@@ -1,0 +1,113 @@
+{
+  "name": "amgcl",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:43:59Z",
+  "errors": {},
+  "github": {
+    "owner": "ddemidov",
+    "repo": "amgcl",
+    "errors": {},
+    "full_name": "ddemidov/amgcl",
+    "description": "C++ library for solving large sparse linear systems with algebraic multigrid method",
+    "homepage": "http://amgcl.readthedocs.org/",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-06-10T06:13:25Z",
+    "stars": 868,
+    "topics": [
+      "amg",
+      "c-plus-plus",
+      "cpp",
+      "cuda",
+      "gpgpu",
+      "linear-solvers",
+      "mpi",
+      "multigrid",
+      "opencl",
+      "openmp",
+      "scientific-computing",
+      "sparse-linear-systems"
+    ],
+    "license": "MIT",
+    "latest_release": {
+      "tag": "1.4.9",
+      "name": "1.4.9",
+      "published_at": "2026-06-10T06:13:25Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "# AMGCL\n\n[![Documentation Status](https://readthedocs.org/projects/amgcl/badge/?version=latest)](http://amgcl.readthedocs.io/en/latest/?badge=latest)\n[![DOI](https://zenodo.org/badge/6987353.svg)](https://zenodo.org/badge/latestdoi/6987353)\n[![Build Status](https://travis-ci.org/ddemidov/amgcl.svg?branch=master)](https://travis-ci.org/ddemidov/amgcl)\n[![Build status](https://ci.appveyor.com/api/projects/status/r0s4lbln4qf9r8aq/branch/master?svg=true)](https://ci.appveyor.com/project/ddemidov/amgcl/branch/master)\n[![codecov](https://codecov.io/gh/ddemidov/amgcl/branch/master/graph/badge.svg)](https://codecov.io/gh/ddemidov/amgcl)\n[![Coverity Scan Build Status](https://scan.coverity.com/projects/5301/badge.svg)](https://scan.coverity.com/projects/5301)\n\nAMGCL is a header-only C++ library for solving large sparse linear systems with\nalgebraic multigrid (AMG) method. AMG is one of the most effective iterative\nmethods for solution of equation systems arising, for example, from\ndiscretizing PDEs on unstructured grids. The method can be used as a black-box\nsolver for various computational problems, since it does not require any\ninformation about the underlying geometry. AMG is often used not as a\nstandalone solver but as a preconditioner within an iterative solver (e.g.\nConjugate Gradients, BiCGStab, or GMRES).\n\nAMGCL builds the AMG hierarchy on a CPU and then transfers it to one of the\nprovided backends. This allows for transparent acceleration of the solution\nphase with help of OpenCL, CUDA, or OpenMP technologies. Users may provide\ntheir own backends which enables tight integration between AMGCL and the user\ncode.\n\nSee AMGCL documentation at http://amgcl.readthedocs.io/\n\n## Referencing\n\nDemidov, Denis. AMGCL: An efficient, flexible, and extensible algebraic multigrid\nimplementation. Lobachevskii Journal of Mathematics, 40(5):535–546, May 2019.\n[doi](https://doi.org/10.1134/S1995080219050056) [pdf](https://rdcu.be/bHFsY)\n[bib](https://raw.githubusercontent.com/ddemidov/amgcl/master/docs/demidov19.bib)\n\nDemidov, Denis. AMGCL -- A C++ library for efficient solution of large sparse linear\nsystems.  Software Impacts, 6:100037, November 2020.\n[doi](https://doi.org/10.1016/j.simpa.2020.100037)\n[bib](https://raw.githubusercontent.com/ddemidov/amgcl/master/docs/demidov20.bib)\n\nDemidov, Denis, Lin Mu, and Bin Wang. Accelerating linear solvers for Stokes\nproblems with C++ metaprogramming. Journal of Computational Science (2020):\n101285.\n[doi](https://doi.org/10.1016/j.jocs.2020.101285)\n[arxiv](https://arxiv.org/pdf/2006.06052.pdf)\n[bib](https://raw.githubusercontent.com/ddemidov/amgcl/master/docs/demidov-mu-wang-20.bib)\n\n## Support\n\n* GitHub issues page: https://github.com/ddemidov/amgcl/issues\n* Mailing list: https://groups.google.com/forum/#!forum/amgcl\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": "10.1134/S1995080219050056"
+  },
+  "channels": {
+    "google_group": [
+      "https://groups.google.com/forum/#!forum/amgcl"
+    ],
+    "readthedocs": [
+      "http://amgcl.readthedocs.io/en/latest/?badge=latest",
+      "http://amgcl.readthedocs.io/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "amgcl",
+    "repo": "ddemidov/amgcl",
+    "current_version": {
+      "value": "1.4.9",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "ddemidov"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "google_group": [
+          "https://groups.google.com/forum/#!forum/amgcl"
+        ],
+        "readthedocs": [
+          "http://amgcl.readthedocs.io/en/latest/?badge=latest",
+          "http://amgcl.readthedocs.io/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "http://amgcl.readthedocs.org/",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

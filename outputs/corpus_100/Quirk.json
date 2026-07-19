@@ -1,0 +1,89 @@
+{
+  "name": "Quirk",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:42:41Z",
+  "errors": {},
+  "github": {
+    "owner": "Strilanc",
+    "repo": "Quirk",
+    "errors": {},
+    "full_name": "Strilanc/Quirk",
+    "description": "A drag-and-drop quantum circuit simulator that runs in your browser. A toy for exploring and understanding small quantum circuits.",
+    "homepage": "http://algassert.com/quirk",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2024-07-16T13:15:51Z",
+    "stars": 1088,
+    "topics": [
+      "quantum-circuit",
+      "quantum-computing",
+      "simulation"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v2.3",
+      "name": "v2.3 - September 2019",
+      "published_at": "2019-09-11T10:02:51Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "# <a href=\"http://algassert.com/quirk\">Quirk <img src=\"doc/favicon.ico\" alt=\"Icon\" title=\"Icon\" /></a>\n\n[![Build Status](https://travis-ci.org/Strilanc/Quirk.svg?branch=master)](https://travis-ci.org/Strilanc/Quirk)\n\nQuirk is a toy quantum circuit simulator, intended to help people in learning about quantum computing.\n\nIf you want to quickly explore the behavior of a small quantum circuit, Quirk is the tool for you.\nThere's no installing or configuring or scripting: just go to **[algassert.com/quirk](http://algassert.com/quirk)**, drag gates onto the circuit, and the output displays will update in real time.\n\n(If you're still trying to understand what a quantum circuit *even is*, then I recommend the video series [Quantum Computing for the Determined](https://www.youtube.com/playlist?list=PL1826E60FD05B44E4).\nQuirk assumes you already know background facts like \"each wire represents a qubit\".)\n\n**Defining features**:\n\n- Runs in web browsers.\n- Drag-and-drop circuit editing.\n- Reacts, simulates, and animates in real time.\n- Inline state displays.\n- Bookmarkable / linkable circuits.\n- Up to 16 qubits.\n\n**Notable limitations**:\n\n- Can't recohere measured qubits (because measurement is implemented as a hack based on the [deferred measurement principle](https://en.wikipedia.org/wiki/Deferred_Measurement_Principle)).\n\n**Try it out**:\n\n**[algassert.com/quirk](http://algassert.com/quirk)**\n\n# Examples\n\n**Basic usage demo**:\n\n![Demo](/doc/README_Demo.gif)\n\n**Grover search circuit** with chance and sample displays (showing that the chance of success increases):\n\n![Grover search](/doc/README_Grover.gif)\n\n**Quantum teleportation circuit** with Bloch sphere displays (showing that the qubit at the top has ended up at the bottom):\n\n![Quantum teleportation](/doc/README_Teleportation.gif)\n\n# Building\n\nIf you want to modify Quirk, this is how you get the code and turn your changes into working html/javascript.\n\n1. Have [git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/download/) installed.\n\n    `sudo add-apt-repository universe`\n    \n    `sudo apt-get update`\n    \n    `sudo apt-get install --yes git npm nodejs-legacy`\n\n2. Clone the repository.\n\n    `git clone https://github.com/Strilanc/Quirk.git`\n\n3. Install the dev dependencies.\n\n    `cd Quirk`\n    \n    `npm install`\n\n4. (*Optional*) Make your changes. Run the tests.\n\n    `npm run test-firefox`\n\n5. Build the output.\n\n    `npm run build`\n\n6. Confirm the output works by opening `out/quirk.html` with a web browser.\n\n    `firefox out/quirk.html`\n\n7. Copy `out/quirk.html` to wherever you want.\n\n# Disclaimer\n\nQuirk is not an official Google product.\n",
+      "CONTRIBUTING.md": "# How to Contribute\n\nWe'd love to accept your patches and contributions to this project. There are\njust a few small guidelines you need to follow.\n\n## Contributor License Agreement\n\nContributions to this project must be accompanied by a Contributor License\nAgreement. You (or your employer) retain the copyright to your contribution,\nthis simply gives us permission to use and redistribute your contributions as\npart of the project. Head over to <https://cla.developers.google.com/> to see\nyour current agreements on file or to sign a new one.\n\nYou generally only need to submit a CLA once, so if you've already submitted one\n(even if it was for a different project), you probably don't need to do it\nagain.\n\n## Code reviews\n\nAll submissions, including submissions by project members, require review. We\nuse GitHub pull requests for this purpose. Consult\n[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more\ninformation on using pull requests.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "Quirk",
+    "repo": "Strilanc/Quirk",
+    "current_version": {
+      "value": "v2.3",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Strilanc"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "http://algassert.com/quirk",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

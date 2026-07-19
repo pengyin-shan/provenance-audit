@@ -1,0 +1,142 @@
+{
+  "name": "mpi4py",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:43:58Z",
+  "errors": {},
+  "github": {
+    "owner": "mpi4py",
+    "repo": "mpi4py",
+    "errors": {},
+    "full_name": "mpi4py/mpi4py",
+    "description": "Python bindings for MPI",
+    "homepage": "",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-06-28T16:37:05Z",
+    "stars": 916,
+    "topics": [
+      "mpi",
+      "mpi-applications",
+      "mpi-library",
+      "mpi4py",
+      "parallel-computing",
+      "python"
+    ],
+    "license": "BSD-3-Clause",
+    "latest_release": {
+      "tag": "4.1.2",
+      "name": "4.1.2",
+      "published_at": "2026-05-16T09:26:05Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "cff-version: 1.2.0\nmessage: Please cite this software using the metadata from 'preferred-citation'.\n\ntitle: MPI for Python\nabstract: Python bindings for MPI\nlicense: BSD-3-Clause\nurl: https://mpi4py.github.io\ndoi: 10.5281/zenodo.5645087\nrepository-code: https://github.com/mpi4py/mpi4py\ncontact:\n  - name: MPI for Python\n    email: mpi4py@googlegroups.com\n    website: https://groups.google.com/g/mpi4py\nauthors:\n  - family-names: Dalcin\n    given-names: Lisandro\n    alias: dalcinl\n    orcid: https://orcid.org/0000-0001-8086-0155\n  - family-names: Fang\n    given-names: Yao-Lung L.\n    alias: leofang\n    orcid: https://orcid.org/0000-0001-7191-1651\n  - family-names: Rogowski\n    given-names: Marcin\n    alias: mrogowski\n    orcid: https://orcid.org/0000-0002-5662-2082\n\npreferred-citation:\n  type: article\n  title: \"mpi4py: Status Update After 12 Years of Development\"\n  authors:\n    - family-names: Dalcin\n      given-names: Lisandro\n      orcid: https://orcid.org/0000-0001-8086-0155\n    - family-names: Fang\n      given-names: Yao-Lung L.\n      orcid: https://orcid.org/0000-0001-7191-1651\n  journal: Computing in Science & Engineering\n  doi: 10.1109/mcse.2021.3083216\n  issn: 1558-366X\n  volume: 23\n  issue: 4\n  start: 47\n  end: 54\n  year: 2021\n",
+      "README.rst": "==============\nMPI for Python\n==============\n\n.. image::  https://github.com/mpi4py/mpi4py/workflows/ci/badge.svg?branch=master\n   :target: https://github.com/mpi4py/mpi4py/actions/\n.. image::  https://readthedocs.org/projects/mpi4py/badge/?version=latest\n   :target: https://mpi4py.readthedocs.io/en/latest/\n.. image::  https://dev.azure.com/mpi4py/mpi4py/_apis/build/status/ci?branchName=master&label=azure\n   :target: https://dev.azure.com/mpi4py/mpi4py/_build\n.. image::  https://ci.appveyor.com/api/projects/status/whh5xovp217h0f7n?svg=true\n   :target: https://ci.appveyor.com/project/mpi4py/mpi4py\n.. image::  https://circleci.com/gh/mpi4py/mpi4py.svg?style=shield\n   :target: https://circleci.com/gh/mpi4py/mpi4py\n.. image::  https://codecov.io/gh/mpi4py/mpi4py/branch/master/graph/badge.svg\n   :target: https://codecov.io/gh/mpi4py/mpi4py\n.. image::  https://scan.coverity.com/projects/mpi4py-mpi4py/badge.svg\n   :target: https://scan.coverity.com/projects/mpi4py-mpi4py\n\n| |pypy| |mpi4py| |conda-forge| |anaconda|\n| |homebrew| |fedora| |ubuntu| |debian| |archlinux|\n\n.. |pypy| image:: https://img.shields.io/pypi/v/mpi4py?logo=pypi\n   :target: https://pypi.org/project/mpi4py/\n.. |mpi4py| image::  https://img.shields.io/conda/vn/mpi4py/mpi4py?logo=pypi\n   :target: https://anaconda.org/conda-forge/mpi4py\n.. |conda-forge| image::  https://img.shields.io/conda/vn/conda-forge/mpi4py?logo=anaconda\n   :target: https://anaconda.org/conda-forge/mpi4py\n.. |anaconda| image::  https://img.shields.io/conda/vn/anaconda/mpi4py?logo=anaconda\n   :target: https://anaconda.org/anaconda/mpi4py\n\n.. |homebrew| image::  https://img.shields.io/homebrew/v/mpi4py?logo=homebrew\n   :target: https://formulae.brew.sh/formula/mpi4py\n.. |fedora| image::  https://img.shields.io/fedora/v/mpi4py-common?logo=fedora\n   :target: https://packages.fedoraproject.org/pkgs/mpi4py/\n.. |ubuntu| image::  https://img.shields.io/ubuntu/v/mpi4py/resolute?logo=ubuntu\n   :target: https://packages.ubuntu.com/source/resolute/mpi4py\n.. |debian| image::  https://img.shields.io/debian/v/mpi4py/stable?logo=debian\n   :target: https://packages.debian.org/source/stable/mpi4py\n.. |archlinux| image::  https://img.shields.io/archlinux/v/extra/x86_64/python-mpi4py?logo=archlinux\n   :target: https://archlinux.org/packages/extra/x86_64/python-mpi4py/\n\nOverview\n--------\n\nThis package provides Python bindings for the *Message Passing\nInterface* (`MPI <https://www.mpi-forum.org/>`_) standard. It is\nimplemented on top of the MPI specification and exposes an API which\ngrounds on the standard MPI-2 C++ bindings.\n\nPrerequisites\n-------------\n\n* `Python <https://www.python.org/>`_ 3.10 or above,\n  or `PyPy <https://www.pypy.org/>`_ 7.3 or above.\n\n* An MPI implementation like `MPICH <https://www.mpich.org/>`_ or\n  `Open MPI <https://www.open-mpi.org/>`_ built with shared/dynamic\n  libraries.\n\nDocumentation\n-------------\n\n* Read the Docs: https://mpi4py.readthedocs.io/\n* GitHub Pages:  https://mpi4py.github.io/\n\nSupport\n-------\n\n* Mailing List:       mpi4py@googlegroups.com\n* Google Groups:      https://groups.google.com/g/mpi4py\n* GitHub Discussions: https://github.com/mpi4py/mpi4py/discussions\n\nTestsuite\n---------\n\nThe testsuite is run periodically on\n\n* `GitHub Actions <https://github.com/mpi4py/mpi4py/actions/>`_\n\n* `Read the Docs <https://readthedocs.org/projects/mpi4py/builds/>`_\n\n* `Azure Pipelines <https://dev.azure.com/mpi4py/mpi4py>`_\n\n* `AppVeyor <https://ci.appveyor.com/project/mpi4py/mpi4py>`_\n\n* `Circle CI <https://circleci.com/gh/mpi4py/mpi4py>`_\n\n* `Codecov <https://app.codecov.io/gh/mpi4py/mpi4py>`_\n\nCitation\n--------\n\n+ L. Dalcin and Y.-L. L. Fang,\n  *mpi4py: Status Update After 12 Years of Development*,\n  Computing in Science & Engineering, 23(4):47-54, 2021.\n  https://doi.org/10.1109/MCSE.2021.3083216\n\n* M. Rogowski, S. Aseeri, D. Keyes, and L. Dalcin,\n  *mpi4py.futures: MPI-Based Asynchronous Task Execution for Python*,\n  IEEE Transactions on Parallel and Distributed Systems, 34(2):611-622, 2023.\n  https://doi.org/10.1109/TPDS.2022.3225481\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "MPI for Python",
+    "version": null,
+    "doi": "10.5281/zenodo.5645087",
+    "authors": [
+      "Lisandro Dalcin",
+      "Yao-Lung L. Fang",
+      "Marcin Rogowski"
+    ],
+    "preferred_citation": {
+      "title": "mpi4py: Status Update After 12 Years of Development",
+      "doi": "10.1109/mcse.2021.3083216",
+      "year": 2021,
+      "authors": [
+        "Lisandro Dalcin",
+        "Yao-Lung L. Fang"
+      ]
+    },
+    "identifiers": []
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": "10.1109/MCSE.2021.3083216"
+  },
+  "channels": {
+    "gh_discussions": [
+      "https://github.com/mpi4py/mpi4py/discussions"
+    ],
+    "google_group": [
+      "https://groups.google.com/g/mpi4py"
+    ],
+    "readthedocs": [
+      "https://mpi4py.readthedocs.io/en/latest/",
+      "https://mpi4py.readthedocs.io/"
+    ],
+    "gh_pages": [
+      "https://mpi4py.github.io/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "mpi4py",
+    "repo": "mpi4py/mpi4py",
+    "current_version": {
+      "value": "4.1.2",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Lisandro Dalcin",
+        "Yao-Lung L. Fang",
+        "Marcin Rogowski"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "gh_discussions": [
+          "https://github.com/mpi4py/mpi4py/discussions"
+        ],
+        "google_group": [
+          "https://groups.google.com/g/mpi4py"
+        ],
+        "readthedocs": [
+          "https://mpi4py.readthedocs.io/en/latest/",
+          "https://mpi4py.readthedocs.io/"
+        ],
+        "gh_pages": [
+          "https://mpi4py.github.io/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": "10.5281/zenodo.5645087",
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": null,
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

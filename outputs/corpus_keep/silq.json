@@ -1,0 +1,87 @@
+{
+  "name": "silq",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:20Z",
+  "errors": {},
+  "github": {
+    "owner": "silq-lang",
+    "repo": "silq",
+    "errors": {},
+    "full_name": "silq-lang/silq",
+    "description": "Silq quantum programming language type checker, compiler, and experimental interpreter.",
+    "homepage": "https://silq-lang.org",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-07-04T02:26:49Z",
+    "stars": 646,
+    "topics": [
+      "quantum-compiler",
+      "quantum-computing",
+      "quantum-programming",
+      "quantum-programming-language",
+      "quantum-type-checker",
+      "reversible-programming-language"
+    ],
+    "license": "BSL-1.0",
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "![alt text](https://raw.githubusercontent.com/silq-lang/silq/master/logo.svg \"Silq\")\n# Silq\n\nSilq is a high-level programming language for quantum computing with a strong static type system.\nMore information: https://silq.ethz.ch\n\n## Installation\nTo install via vscode without building from source, see: https://silq.ethz.ch/install\n\n## Build Instructions\n\n### GNU/Linux and OSX\n\n#### Quick build\n\n1. Run `dependencies-release.sh` to download the LDC D compiler into the local directory.\n\n2. Run `build-release.sh` to build Silq.\n\n##### Additional information\n\nSilq is written in the D programming language. D compilers are available at http://dlang.org/download.html.\n\n### FreeBSD\n\nSilq can be built from a port or installed as a binary package on FreeBSD/amd64. \nOther FreeBSD platforms do currently lack the D language support required by silq.\n\nTo install from source, assuming an up-to-date ports tree is available:\n```\n$ cd /usr/ports/lang/silq\n$ make install\n```\n(Or use portmaster or any of the other ports management tools available in FreeBSD ...)\n\nTo install from a package:\n```\n$ pkg install silq\n```\n\n### Other platforms\n\nThe build instructions given here are for GNU/Linux and OSX. Silq can also be built on other platforms.\nFeel free to write a pull request with working build scripts for your favourite platform.\n\n### Example\n\n```\n$ ./dependencies-release.sh && ./build-release.sh\n```\n\n## Using Silq\n\nRun `./silq example.slq`, where `example.slq` is a Silq source file to type check that source file.\n\nRun `./silq example.slq --run`, where `example.slq` is a Silq source file to type check and simulate the main function in that source file.\n\n### Additional command-line options\n\nRun `./silq --help` to display information about supported command-line options.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "silq",
+    "repo": "silq-lang/silq",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "silq-lang"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://silq-lang.org",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

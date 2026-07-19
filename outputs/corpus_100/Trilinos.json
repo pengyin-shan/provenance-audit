@@ -1,0 +1,160 @@
+{
+  "name": "Trilinos",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:41:10Z",
+  "errors": {},
+  "github": {
+    "owner": "trilinos",
+    "repo": "Trilinos",
+    "errors": {},
+    "full_name": "trilinos/Trilinos",
+    "description": "Primary repository for the Trilinos Project",
+    "homepage": "https://trilinos.org/",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-07-05T03:50:38Z",
+    "stars": 1400,
+    "topics": [
+      "c-plus-plus",
+      "high-performance-computing",
+      "hpc",
+      "hpsf",
+      "sandia-national-laboratories",
+      "scientific-computing",
+      "snl-science-libs",
+      "trilinos"
+    ],
+    "license": "NOASSERTION",
+    "latest_release": {
+      "tag": "trilinos-release-17-1-1",
+      "name": "Trilinos 17.1.1",
+      "published_at": "2026-05-31T19:18:34Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "cff-version: 1.2.0\nmessage: \"If you use Trilinos, please cite the following article.\"\ntitle: \"Trilinos\"\nurl: \"https://github.com/trilinos/Trilinos\"\n\npreferred-citation:\n  type: article\n  title: \"Trilinos: Enabling Scientific Computing across Diverse Hardware Architectures at Scale\"\n  journal: \"ACM Transactions on Mathematical Software\"\n  doi: \"10.1145/3802822\"\n  year: 2026\n  volume: 52\n  issue: 2\n  article-number: 12\n  authors:\n    - family-names: \"Mayr\"\n      given-names: \"Matthias\"\n      orcid: \"https://orcid.org/0000-0002-2780-1233\"\n    - family-names: \"Heinlein\"\n      given-names: \"Alexander\"\n      orcid: \"https://orcid.org/0000-0003-1578-8104\"\n    - family-names: \"Glusa\"\n      given-names: \"Christian A.\"\n      orcid: \"https://orcid.org/0000-0003-2247-1914\"\n    - family-names: \"Rajamanickam\"\n      given-names: \"Sivasankaran\"\n      orcid: \"https://orcid.org/0000-0002-5854-409X\"\n    - family-names: \"Arnst\"\n      given-names: \"Maarten\"\n      orcid: \"https://orcid.org/0000-0003-4993-0527\"\n    - family-names: \"Bartlett\"\n      given-names: \"Roscoe A.\"\n      orcid: \"https://orcid.org/0000-0002-3831-8060\"\n    - family-names: \"Berger-Vergiat\"\n      given-names: \"Luc\"\n      orcid: \"https://orcid.org/0000-0001-5550-3527\"\n    - family-names: \"Boman\"\n      given-names: \"Erik G.\"\n      orcid: \"https://orcid.org/0000-0003-2216-5546\"\n    - family-names: \"Devine\"\n      given-names: \"Karen D.\"\n      orcid: \"https://orcid.org/0000-0001-9335-4665\"\n    - family-names: \"Harper\"\n      given-names: \"Graham\"\n      orcid: \"https://orcid.org/0000-0001-5654-2384\"\n    - family-names: \"Heroux\"\n      given-names: \"Michael A.\"\n      orcid: \"https://orcid.org/0000-0002-5893-0273\"\n    - family-names: \"Hoemmen\"\n      given-names: \"Mark\"\n      orcid: \"https://orcid.org/0009-0007-4935-2743\"\n    - family-names: \"Hu\"\n      given-names: \"Jonathan J.\"\n      orcid: \"https://orcid.org/0000-0003-4636-3619\"\n    - family-names: \"Kelley\"\n      given-names: \"Brian\"\n      orcid: \"https://orcid.org/0000-0003-3607-360X\"\n    - family-names: \"Kouri\"\n      given-names: \"Drew P.\"\n      orcid: \"https://orcid.org/0000-0002-7079-3195\"\n    - family-names: \"Kuberry\"\n      given-names: \"Paul\"\n      orcid: \"https://orcid.org/0000-0002-2426-4591\"\n    - family-names: \"Kim\"\n      given-names: \"Kyungjoo\"\n      orcid: \"https://orcid.org/0000-0002-0621-0821\"\n    - family-names: \"Liegeois\"\n      given-names: \"Kim\"\n      orcid: \"https://orcid.org/0000-0002-1182-4078\"\n    - family-names: \"Ober\"\n      given-names: \"Curtis C.\"\n      orcid: \"https://orcid.org/0000-0002-1648-2521\"\n    - family-names: \"Pawlowski\"\n      given-names: \"Roger P.\"\n      orcid: \"https://orcid.org/0000-0002-2002-5577\"\n    - family-names: \"Pearson\"\n      given-names: \"Carl\"\n      orcid: \"https://orcid.org/0000-0001-6481-970X\"\n    - family-names: \"Perego\"\n      given-names: \"Mauro\"\n      orcid: \"https://orcid.org/0000-0002-2671-8032\"\n    - family-names: \"Phipps\"\n      given-names: \"Eric T.\"\n      orcid: \"https://orcid.org/0000-0002-9118-4735\"\n    - family-names: \"Ridzal\"\n      given-names: \"Denis\"\n      orcid: \"https://orcid.org/0009-0000-3286-424X\"\n    - family-names: \"Roberts\"\n      given-names: \"Nathan V.\"\n      orcid: \"https://orcid.org/0000-0003-1536-0749\"\n    - family-names: \"Siefert\"\n      given-names: \"Christopher M.\"\n      orcid: \"https://orcid.org/0009-0003-2116-125X\"\n    - family-names: \"Thornquist\"\n      given-names: \"Heidi K.\"\n      orcid: \"https://orcid.org/0009-0006-3566-9611\"\n    - family-names: \"Tomasetti\"\n      given-names: \"Romin\"\n      orcid: \"https://orcid.org/0009-0006-2839-7072\"\n    - family-names: \"Trott\"\n      given-names: \"Christian R.\"\n      orcid: \"https://orcid.org/0000-0003-0661-5594\"\n    - family-names: \"Tuminaro\"\n      given-names: \"Raymond S.\"\n      orcid: \"https://orcid.org/0009-0004-6951-973X\"\n    - family-names: \"Willenbring\"\n      given-names: \"James M.\"\n      orcid: \"https://orcid.org/0000-0002-0418-9264\"\n    - family-names: \"Wolf\"\n      given-names: \"Michael M.\"\n      orcid: \"https://orcid.org/0009-0005-2292-353X\"\n    - family-names: \"Yamazaki\"\n      given-names: \"Ichitaro\"\n      orcid: \"https://orcid.org/0009-0003-7248-573X\"",
+      "SECURITY.md": "# Security Policy\n\n## Supported Versions\n\nThe latest released version of Trilinos is the only version supported with security updates.  You can find that at: https://github.com/trilinos/Trilinos/releases.\n\n## Reporting a Vulnerability\n\nFor run-of-the mill memory errors, etc., please file a Github issue.  \n\nIf you discover a security vulnerability within Trilinos, please follow these steps to report it:\n\n1. **Do Not Create a Public Issue**: Please do not disclose the vulnerability publicly until it has been addressed.\n2. **Contact Us**: Please click on \"Report a vulnerability\" at https://github.com/trilinos/Trilinos/security.\n3. **Provide Details**: Include as much information as possible about the vulnerability, including:\n   - A description of the vulnerability\n   - Steps to reproduce the issue\n   - Any relevant logs or screenshots\n   - Your contact information (optional, but helpful for follow-up)\n  \n## Response Process\n\nWe will acknowledge your report within 5 days and aim to provide a resolution or further information within 30 days. \n\nWe appreciate your help in keeping our project secure!\n",
+      "README.md": "# Trilinos\n[<img src=\"https://github.com/trilinos/Logos/blob/master/current/RGB/Horizontal/Navy/Trilinos_Logo_RGB_Horizontal_Navy.png\" width=\"25%\" style=\"vertical-align: middle;\">](https://trilinos.org)&emsp;&emsp;\n[<img src=\"https://github.com/hpsfoundation/hpsf-logos/blob/main/Logos/PNG/Horizontal/HPSF_horizontal-tagline-color.png\" width=\"25%\" style=\"vertical-align: middle;\">](https://hpsf.io)&emsp;&emsp;\n[<img src=\"https://github.com/hpsfoundation/hpsf-logos/blob/main/Badges/HPSF_Project_Badge_Established.png\" width=\"9%\" style=\"vertical-align: middle;\">](https://hpsf.io/projects/)&emsp;&emsp;\n[<img src=\"https://www.linuxfoundation.org/hubfs/lf-stacked-color.svg\" width=\"25%\" style=\"vertical-align: middle;\">](https://linuxfoundation.org)\n\n[Website](https://trilinos.github.io) |\n[Documentation](https://trilinos.github.io/documentation.html) |\n[Contact Us](https://trilinos.github.io/support.html) |\n[Packages](https://trilinos.github.io/packages-by-area.html)\n\n\n[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/trilinos/Trilinos/badge)](https://securityscorecards.dev/viewer/?uri=github.com/trilinos/Trilinos)\n[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9452/badge)](https://www.bestpractices.dev/projects/9452)\n[![CodeFactor](https://www.codefactor.io/repository/github/trilinos/trilinos/badge)](https://www.codefactor.io/repository/github/trilinos/trilinos)\n![GitHub contributors](https://img.shields.io/github/contributors/trilinos/Trilinos)\n![GitHub commit activity](https://img.shields.io/github/commit-activity/w/trilinos/Trilinos)\n\n\nThe Trilinos Project is an effort to develop algorithms and enabling\ntechnologies within an object-oriented software framework for the solution of\nlarge-scale, complex multi-physics engineering and scientific problems. A\nunique design feature of Trilinos is its focus on packages.\n\n\n### Documentation\n\n- [Getting Started with Trilinos](https://trilinos.github.io/getting_started.html)\n\n- [General Documentation](https://trilinos.github.io/documentation.html)\n\n- [Quick configure, build and install hints for Trilinos](INSTALL.rst)\n\n- [Trilinos Configure, Build, Test, and Install Reference Guide](https://trilinos.github.io/TrilinosBuildReference.html)\n\n- To ensure appropriate parties receive your issues, please direct issues by mentioning the\n  [Trilinos package owners](https://github.com/trilinos/Trilinos/wiki/Trilinos-Package-Owners).\n  External users may not mention Github teams, but may mention individual owners instead.\n\n- For help with a particular package, see the website and accompanying\n  documentation for that package. Links to these can be found down the\n  right side of any page on the website and at [the package website](https://trilinos.github.io/packages-by-area.html).\n\n- Sample build scripts for various platforms can be found in the\n  sampleScripts directory.  Please note that these sample scripts are\n  only a starting point for you to develop a script that works for\n  your own platform.\n\n- If you have questions, please submit an issue on the Trilinos repo\n  [GitHub Issues page](https://github.com/trilinos/Trilinos/issues).\n\n### Build and Testing Dashboard\n\nTrilinos nightly and pull request testing results are available at https://my.cdash.org/index.php?project=Trilinos.\n\n### License\n\nTrilinos is licensed on a per-package basis. Most packages are now\nunder a BSD license, some are published under the (L)GPL. Details\ncan be taken from the documentation of each package.  See COPYRIGHT,\nLICENSE, https://trilinos.github.io/about.html#license-and-copyright and individual package,\ndirectory and/or file headers for additional information.\n\n### How to cite Trilinos\n\nIf you are using Trilinos, please cite our software in your publications. Below is a suitable BibTeX entry:\n\n```\n@article{TrilinosPaper,\n  author = {Mayr, Matthias and Heinlein, Alexander and Glusa, Christian A. and Rajamanickam, Sivasankaran and Arnst, Maarten and Bartlett, Roscoe A. and Berger-Vergiat, Luc and Boman, Erik G. and Devine, Karen D. and Harper, Graham and Heroux, Michael A. and Hoemmen, Mark and Hu, Jonathan J. and Kelley, Brian and Kouri, Drew P. and Kuberry, Paul and Kim, Kyungjoo and Liegois, Kim and Ober, Curtis C. and Pawlowski, Roger P. and Pearson, Carl and Perego, Mauro and Phipps, Eric T. and Ridzal, Denis and Roberts, Nathan V. and Siefert, Christopher M. and Thornquist, Heidi K. and Tomasetti, Romin and Trott, Christian R. and Tuminaro, Raymond S. and Willenbring, James M. and Wolf, Michael and Yamazaki, Ichitaro},\n  doi = {10.1145/3802822},\n  eid = {12},\n  journal = {ACM Transactions on Mathematical Software},\n  number = {2},\n  pages = {12},\n  title = {{T}rilinos: {E}nabling {S}cientific {C}omputing across {D}iverse {H}ardware {A}rchitectures at {S}cale},\n  url = {https://doi.org/10.1145/3802822},\n  volume = {52},\n  year = {2026}}\n```\n\nFor specific packages, you may additionally cite their individual papers or webpages. See the documentation of individual packages for more information.\n\n### Contributing\n\nWe appreciate your willingness to contribute to the Trilinos project.  Please\nfamiliarize yourself with our [contributing\nguidelines](https://github.com/trilinos/Trilinos/blob/master/CONTRIBUTING.md).\n",
+      "CONTRIBUTING.md": "# Contributing to Trilinos\n\nThank you for your willingness to contribute to the Trilinos project.  The procedure to do so is the following:\n\n## Create a GitHub Issue\n\nNavigate to Trilinos' [GitHub Issues page](https://github.com/trilinos/Trilinos/issues) and create a new issue.  The issue can be used for any number of things&mdash;reporting a bug, suggesting an enhancement, posing a question, etc.  On the new issue creation page, you'll notice the *Description* field will be pre-populated with some text.  Follow the instructions in that template to give us as much information as you can such that we can tackle the issue as soon as is practicable.\n\n## Work an Issue\n\nWhen work is ready to commence on an issue, the workflow to use is the following:\n\n### Fork Trilinos\n\n* If you have not already done so, create a fork of Trilinos on GitHub under your username.\n* Clone your fork of Trilinos with `git clone git@github.com:<username>/Trilinos`.\n* Each time you clone your fork, `git remote add upstream git@github.com:trilinos/Trilinos` to add the original Trilinos repository as the `upstream` remote.\n\n### Update the Main Development Branches\n\nTo keep your `master` and `develop` branches up-to-date with those from `upstream`:\n\n* `git fetch --all`\n* `git checkout master`\n* `git merge upstream/master`\n* `git push origin master`\n* `git checkout develop`\n* `git merge upstream/develop`\n* `git push origin develop`\n\nYou want to do this before starting work on a new feature branch.\n\n> **Note:**  Updating `master` is not strictly necessary, as all development work is done off of `develop`.\n\n### Create a Feature Branch\n\nCreate a local branch off of `develop` on which to make your changes:\n\n* `git checkout develop`\n* `git checkout -b <branchName>`\n\n`<branchName>` can be whatever you like, though we have some recommendations:\n* Include the issue number in it in some way, for instance, `123-<restOfBranchName>`, or `<restOfBranchName>-123`.\n* Make the branch name descriptive; that is, avoid `fixSomeStuff`, `performanceTweaks`, and generic names along those lines.\n* To indicate your branch is intended solely for your own use, preface the branch name with your username, as in `<username>/<restOfBranchName>`.\n\n### Make Your Changes\n\nDo whatever work is necessary to address the issue you're tackling, breaking your work into logical, compilable commits.  Feel free to commit small chunks early and often in your local repository and then use `git rebase -i` to reorganize your commits before sharing.  Make sure the commit messages you will be sharing reference the appropriate GitHub issue numbers.\n\nBe sure you have included tests in accordance with the [Trilinos testing policy](https://github.com/trilinos/Trilinos/wiki/Trilinos-Testing-Policy).\n\n### Update Your Branch\n\nWhile working on your feature in your local `<branchName>` branch, other commits will likely make it into the real Trilinos `develop` branch.  There are a variety of ways to merge these changes into your local feature branch.  One possibility is\n\n* `git checkout <branchName>`\n* `git fetch --all`\n* `git merge upstream/develop`\n\nthough there are others that are equally valid.\n\n### Create a Pull Request\n\nWhen your changes are ready to be integrated into Trilinos' `develop` branch:\n\n* Push your local feature branch up to your fork with `git push -u origin <branchName>`.\n* Navigate to your fork of Trilinos on GitHub and create a new pull request:\n  * Be sure you choose:\n    * base fork:  `trilinos/Trilinos`\n    * base:  `develop`\n    * head fork:  `<username>/Trilinos`\n    * compare:  `<branchName>`\n  * On the new pull request creation page, you'll notice the *Description* field will be pre-populated with some text.  Follow the instructions in that template to give us as much information as you can such that we can review and approve the issue as soon as is practicable.\n \n  \n\n### Feedback\n\nAt this point you'll enter into a stage where you and various Trilinos developers will iterate back and forth until your changes are in an acceptable state and can be merged in.  If you need to make changes to your pull request, make additional commits on your `<branchName>` branch and push them up to your fork.  Make sure you don't delete your remote feature branch or your fork of Trilinos before your pull request has been merged.\n\n\n## Sign-off Your Work\n\nThe Developer Certificate of Origin ([DCO](https://developercertificate.org)) is a lightweight way for contributors to certify that they wrote or otherwise have the right to submit the code they are contributing to the project. Contributors must sign-off that they adhere to these requirements by adding a Signed-off-by line to commit messages.\n\nExample:\n```\nThis is a commit message\n\nSigned-off-by: John A. Doe <random@example.org>\n```\n\nSee [`git commit --signoff`](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---signoff)\n"
+    },
+    "has_security_md": true,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "Trilinos",
+    "version": null,
+    "doi": null,
+    "authors": [],
+    "preferred_citation": {
+      "title": "Trilinos: Enabling Scientific Computing across Diverse Hardware Architectures at Scale",
+      "doi": "10.1145/3802822",
+      "year": 2026,
+      "authors": [
+        "Matthias Mayr",
+        "Alexander Heinlein",
+        "Christian A. Glusa",
+        "Sivasankaran Rajamanickam",
+        "Maarten Arnst",
+        "Roscoe A. Bartlett",
+        "Luc Berger-Vergiat",
+        "Erik G. Boman",
+        "Karen D. Devine",
+        "Graham Harper",
+        "Michael A. Heroux",
+        "Mark Hoemmen",
+        "Jonathan J. Hu",
+        "Brian Kelley",
+        "Drew P. Kouri",
+        "Paul Kuberry",
+        "Kyungjoo Kim",
+        "Kim Liegeois",
+        "Curtis C. Ober",
+        "Roger P. Pawlowski",
+        "Carl Pearson",
+        "Mauro Perego",
+        "Eric T. Phipps",
+        "Denis Ridzal",
+        "Nathan V. Roberts",
+        "Christopher M. Siefert",
+        "Heidi K. Thornquist",
+        "Romin Tomasetti",
+        "Christian R. Trott",
+        "Raymond S. Tuminaro",
+        "James M. Willenbring",
+        "Michael M. Wolf",
+        "Ichitaro Yamazaki"
+      ]
+    },
+    "identifiers": []
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "### How to cite Trilinos\n\nIf you are using Trilinos, please cite our software in your publications. Below is a suitable BibTeX entry:\n\n```\n@article{TrilinosPaper,\n  author = {Mayr, Matthias and Heinlein, Alexander and Glusa, Christian A. and Rajamanickam, Sivasankaran and Arnst, Maarten and Bartlett, Roscoe A. and Berger-Vergiat, Luc and Boman, Erik G. and Devine, Karen D. and Harper, Graham and Heroux, Michael A. and Hoemmen, Mark and Hu, Jonathan J. and Kelley, Brian and Kouri, Drew P. and Kuberry, Paul and Kim, Kyungjoo and Liegois, Kim and Ober, Curtis C. and Pawlowski, Roger P. and Pearson, Carl and Perego, Mauro and Phipps, Eric T. and Ridzal, Denis and Roberts, Nathan V. and Siefert, Christopher M. and Thornquist, Heidi K. and Tomasetti, Romin and Trott, Christian R. and Tuminaro, Raymond S. and Willenbring, James M. and Wolf, Michael and Yamazaki, Ichitaro},\n  doi = {10.1145/3802822},\n  eid = {12},\n  journal = {ACM Transactions on Mathematical Software},\n  number = {2},\n  pages = {12},\n  title = {{T}rilinos: {E}nabling {S}cientific {C}omputing across {D}iverse {H}ardware {A}rchitectures at {S}cale},\n  url = {https://doi.org/10.1145/3802822},\n  volume = {52},\n  year = {2026}}\n```\n\nFor specific packages, you may additionally cite their individual papers or webpages. See the documentation of individual packages for more information.",
+    "doi": "10.1145/3802822"
+  },
+  "channels": {
+    "gh_pages": [
+      "https://trilinos.github.io",
+      "https://trilinos.github.io/documentation.html",
+      "https://trilinos.github.io/support.html",
+      "https://trilinos.github.io/packages-by-area.html",
+      "https://trilinos.github.io/getting_started.html"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "Trilinos",
+    "repo": "trilinos/Trilinos",
+    "current_version": {
+      "value": "trilinos-release-17-1-1",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "trilinos"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "gh_pages": [
+          "https://trilinos.github.io",
+          "https://trilinos.github.io/documentation.html",
+          "https://trilinos.github.io/support.html",
+          "https://trilinos.github.io/packages-by-area.html",
+          "https://trilinos.github.io/getting_started.html"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": "SECURITY.md present",
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": "10.1145/3802822",
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://trilinos.org/",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

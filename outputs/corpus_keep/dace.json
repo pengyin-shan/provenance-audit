@@ -1,0 +1,180 @@
+{
+  "name": "dace",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:02Z",
+  "errors": {},
+  "github": {
+    "owner": "spcl",
+    "repo": "dace",
+    "errors": {},
+    "full_name": "spcl/dace",
+    "description": "DaCe - Data Centric Parallel Programming",
+    "homepage": "http://dace.is/fast",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-05T19:34:07Z",
+    "stars": 591,
+    "topics": [
+      "cuda",
+      "fpga",
+      "high-level-synthesis",
+      "high-performance-computing",
+      "programming-language",
+      "vivado-hls"
+    ],
+    "license": "BSD-3-Clause",
+    "latest_release": {
+      "tag": "v1.0.2",
+      "name": "v1.0.2",
+      "published_at": "2025-03-20T15:19:07Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "cff-version: 1.2.0\ntitle: \"DaCe - Data Centric Parallel Programming\"\nmessage: \"Please cite as\"\n# this can be parsed from the AUTHORS file using .github/citation_format_authors.py\nauthors:\n  - family-names: Ben-Nun\n    given-names: Tal\n  - family-names: de Fine Licht\n    given-names: Johannes\n  - family-names: Nikolaos Ziogas\n    given-names: Alexandros\n  - family-names: Schneider\n    given-names: Timo\n  - family-names: Hoefler\n    given-names: Torsten\n  - family-names: De Matteis\n    given-names: Tiziano\n  - family-names: Hofer\n    given-names: Dominic\n  - family-names: Haag\n    given-names: Roman\n  - family-names: Niederer\n    given-names: Silvan\n  - family-names: Raje\n    given-names: Saurabh\n  - family-names: Schaad\n    given-names: Philipp\n  - family-names: Rausch\n    given-names: Oliver\n  - family-names: Gavrilas\n    given-names: Gabriel\n  - family-names: Ivanov\n    given-names: Andrei\n  - family-names: Lavarini\n    given-names: Luca\n  - family-names: Burger\n    given-names: Manuel\n  - family-names: Kleine\n    given-names: Jan\n  - family-names: Groner\n    given-names: Linus\n  - family-names: Backes\n    given-names: Thierry\n  - family-names: Anklin\n    given-names: Valentin\n  - family-names: Kuster\n    given-names: Andreas\n  - family-names: Baumann\n    given-names: Thomas\n  - family-names: Ates\n    given-names: Berke\n  - family-names: Scholbe\n    given-names: Stefan\n  - family-names: Johnsen\n    given-names: Carl-Johannes\n  - family-names: Widmer\n    given-names: Jannis\n  - family-names: Walo\n    given-names: Neville\n  - family-names: Trümper\n    given-names: Lukas\npreferred-citation:\n  title: \"Stateful Dataflow Multigraphs: A Data-Centric Model for Performance Portability on Heterogeneous Architectures\"\n  year: \"2019\"\n  type: conference-paper\n  collection-title: \"Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis\"\n  conference:\n    name: \"SC '19\"\n  authors:\n    - family-names: Ben-Nun\n      given-names: Tal\n    - family-names: de Fine Licht\n      given-names: Johannes\n    - family-names: Ziogas\n      given-names: Alexandros Nikolaos\n    - family-names: Schneider\n      given-names: Timo\n    - family-names: Hoefler\n      given-names: Torsten\n",
+      "README.md": "[![General Tests](https://github.com/spcl/dace/actions/workflows/general-ci.yml/badge.svg)](https://github.com/spcl/dace/actions/workflows/general-ci.yml)\n[![GPU Tests](https://github.com/spcl/dace/actions/workflows/gpu-ci.yml/badge.svg)](https://github.com/spcl/dace/actions/workflows/gpu-ci.yml)\n[![Documentation Status](https://readthedocs.org/projects/spcldace/badge/?version=latest)](https://spcldace.readthedocs.io/en/latest/?badge=latest)\n[![PyPI version](https://badge.fury.io/py/dace.svg)](https://badge.fury.io/py/dace)\n[![codecov](https://codecov.io/gh/spcl/dace/branch/main/graph/badge.svg)](https://codecov.io/gh/spcl/dace)\n\n\n![D](dace.svg)aCe - Data-Centric Parallel Programming\n=====================================================\n\n_Decoupling domain science from performance optimization._\n\nDaCe is a [fast](https://nbviewer.org/github/spcl/dace/blob/main/tutorials/benchmarking.ipynb) parallel programming\nframework that takes code in Python/NumPy and other programming languages, and maps it to high-performance\n**CPU, GPU, and [FPGA](https://github.com/spcl/dace-fpga)** programs, which can be optimized to achieve state-of-the-art. Internally, DaCe\nuses the Stateful DataFlow multiGraph (SDFG) *data-centric intermediate\nrepresentation*: A transformable, interactive representation of code based on\ndata movement.\nSince the input code and the SDFG are separate, it is possible to optimize a\nprogram without changing its source, so that it stays readable. On the other\nhand, transformations are customizable and user-extensible, so they can be written\nonce and reused in many applications.\nWith data-centric parallel programming, we enable **direct knowledge transfer**\nof performance optimization, regardless of the application or the target processor.\n\nDaCe generates high-performance programs for:\n * Multi-core CPUs (tested on Intel, IBM POWER9, and ARM with SVE)\n * NVIDIA GPUs and AMD GPUs (with HIP)\n * [Xilinx and Intel FPGAs](https://github.com/spcl/dace-fpga)\n\nDaCe can be written inline in Python and transformed in the command-line/Jupyter\nNotebooks or SDFGs can be interactively modified using our [Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=phschaad.sdfv).\n\n## [For more information, see the documentation](https://spcldace.readthedocs.io/en/latest/)\n\nQuick Start\n-----------\n\nInstall DaCe with pip: `pip install dace`\n\nHaving issues? See our full [Installation and Troubleshooting Guide](https://spcldace.readthedocs.io/en/latest/setup/installation.html).\n\nUsing DaCe in Python is as simple as adding a `@dace` decorator:\n```python\nimport dace\nimport numpy as np\n\n@dace\ndef myprogram(a):\n    for i in range(a.shape[0]):\n        a[i] += i\n    return np.sum(a)\n```\n\nCalling `myprogram` with any NumPy array or GPU array (e.g., PyTorch, Numba, CuPy) will\ngenerate data-centric code, compile, and run it. From here on out, you can\n_optimize_ (interactively or automatically), _instrument_, and _distribute_\nyour code. The code creates a shared library (DLL/SO file) that can readily\nbe used in any C ABI compatible language (C/C++, FORTRAN, etc.).\n\nFor more information on how to use DaCe, see the [samples](samples) or tutorials below:\n\n* [Getting Started](https://nbviewer.jupyter.org/github/spcl/dace/blob/main/tutorials/getting_started.ipynb)\n* [Benchmarks, Instrumentation, and Performance Comparison with Other Python Compilers](https://nbviewer.jupyter.org/github/spcl/dace/blob/main/tutorials/benchmarking.ipynb)\n* [Explicit Dataflow in Python](https://nbviewer.jupyter.org/github/spcl/dace/blob/main/tutorials/explicit.ipynb)\n* [NumPy API Reference](https://nbviewer.jupyter.org/github/spcl/dace/blob/main/tutorials/numpy_frontend.ipynb)\n* [SDFG API](https://nbviewer.jupyter.org/github/spcl/dace/blob/main/tutorials/sdfg_api.ipynb)\n* [Using and Creating Transformations](https://nbviewer.jupyter.org/github/spcl/dace/blob/main/tutorials/transformations.ipynb)\n* [Extending the Code Generator](https://nbviewer.jupyter.org/github/spcl/dace/blob/main/tutorials/codegen.ipynb)\n\nPublication\n-----------\n\nThe paper for the SDFG IR can be found [here](http://www.arxiv.org/abs/1902.10345).\nOther DaCe-related publications are available on our [website](http://spcl.inf.ethz.ch/dace).\n\nIf you use DaCe, cite us:\n```bibtex\n@inproceedings{dace,\n  author    = {Ben-Nun, Tal and de~Fine~Licht, Johannes and Ziogas, Alexandros Nikolaos and Schneider, Timo and Hoefler, Torsten},\n  title     = {Stateful Dataflow Multigraphs: A Data-Centric Model for Performance Portability on Heterogeneous Architectures},\n  year      = {2019},\n  booktitle = {Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis},\n  series = {SC '19}\n}\n```\n\nContributing\n------------\nDaCe is an open-source project. We are happy to accept Pull Requests with your contributions! Please follow the [contribution guidelines](CONTRIBUTING.md) before submitting a pull request.\n\nLicense\n-------\nDaCe is published under the New BSD license, see [LICENSE](LICENSE).\n",
+      "CONTRIBUTING.md": "# Contribution and Coding Guidelines\n\nDaCe is an open-source project that accepts contributions from any individual or\norganization. Below are a set of guidelines that we try our best to follow during\ndevelopment and the code review process.\n\n## Code Style\n\nWe follow the [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html), with a few notable exceptions:\n\n* **\"Power Features\"**: We like Python power features. We use them both externally (to make the Python/Numpy frontend easy to use) and internally. Use of any Python power feature that increases productivity is allowed.\n    * **Note on compatibility**: DaCe currently supports Python versions 3.6 and above, please make sure that the feature is supported in those versions, and if not ([dataclasses](https://docs.python.org/3/library/dataclasses.html) for example), please make sure to add a backwards-compatibility dependency. [Example](https://github.com/spcl/dace/blob/205d7c911a74e507d2fcbcc4b6cb5819b026648a/setup.py#L71)\n* **Type Hints**: New functions must include proper Python [typing information](https://docs.python.org/3/library/typing.html), in order to support type checking and smoother development.\n* **Importing classes and functions directly**: This is disallowed, with the exception of directly importing the following main graph components (which are heavily reused throughout the framework): `SDFG, SDFGState, Memlet, InterstateEdge`.\n* **All-inclusive imports**: `import *` is disallowed.\n* **Inline imports**: Imports usually go at the top of a Python file, after the copyright statement and the file docstring. If you must place an `import` statement anywhere else, indicate the reason with an adjacent comment (e.g., `# Avoid import loop`).\n* **docstrings**: We use [Sphinx](https://www.sphinx-doc.org/) for documentation. Use type hints as much as possible (this will be automatically integrated into the documentation) and the following format:\n\n```python\ndef example_function(param_a: str, *args: Optional[SDFG]) -> bool:\n    \"\"\"\n    Explain what the function does. Note the double line break below, after\n    description and before parameter declaration! Without it Sphinx does not work.\n\n    :param param_a: What ``param_a`` does. Double backticks indicate code format in Sphinx.\n    :param args: Variable-length arguments are documented just like standard parameters.\n    :return: True if example, False otherwise.\n    :note: Some notes can be used here. See Sphinx for the full list of available annotations.\n    :note: Numbered and itemized lists must also have a blank line and must be indented.\n\n    If you want to include a code sample, use:\n\n    .. code-block:: python\n\n        # Note the empty line above\n        example_use = example_function('hello', None, None, SDFG('world'))\n    \"\"\"\n    ...\n```\n\nFor automatic styling, we rely on [pre-commit](https://pre-commit.com/) and use the [yapf](https://github.com/google/yapf) file formatter.\n**Please run `pre-commit` before making your pull request ready for review.**\n\n```bash\npre-commit run --all-files\n```\n\nFormatting will be evaluated as part of CI and you won't be able to merge unless formatting issues are resolved. To get `pre-commit` and `yapf`, be sure to install the `linting` extra, e.g. for contributors we recommend\n\n```bash\npip install -e \".[testing,linting]\"\n```\n\nto get testing and linting extras in an editable install.\n\nOne way to always ensure consistency with our coding standards is to install pre-commit hooks, which will check formatting issues of changed files before every commit. If you wish to do so, run\n\n```bash\npre-commit install\n```\n\nto install the `git` hooks for this repository.\n\n## Tests\n\nWe use [pytest](https://www.pytest.org/) for our testing infrastructure. All tests under the `tests/` folder\n(and any subfolders within) are automatically read and run. The files must be under the right subfolder\nbased on the component being tested (e.g., `tests/sdfg/` for IR-related tests), and must have the right\nsuffix: either `*_test.py` or `*_cudatest.py`. See [pytest.ini](https://github.com/spcl/dace/blob/main/pytest.ini)\nfor more information, and for the markers we use to specify software/hardware requirements.\n\nThe structure of the test file must follow `pytest` standards (i.e., free functions called `test_*`), and\nall tests must also be called at the bottom of the file, under `if __name__ == '__main__':`.\n\nTests that should be skipped **must** define the `@pytest.mark.skip` decorator with a reason parameter,\nand must also be commented out at the main section at the bottom of the file.\n\n## Dependencies\n\nPlease refrain from adding new dependencies unless necessary. If they are necessary,\nindicate the reason in the pull request description. Prefer dependencies\navailable in standard repositories (such as [PyPI](https://pypi.org/)) over git\nrepositories. Add dependencies both to the [setup.py](setup.py) and [requirements.txt](requirements.txt) files.\n\n## File Heading\n\nIn any new file created, add the following copyright statement in the first line:\n```\n# Copyright 2019-<CURRENT YEAR> ETH Zurich and the DaCe authors. All rights reserved.\n```\nwhere `<CURRENT YEAR>` should be replaced with the current year.\nIn other languages (e.g., C/C++), modify the `#` with the appropriate single-line\ncomment syntax.\n\nAn exception to the rule is empty files (such as _empty_ `__init__.py` files).\n\n## Contributor List\n\nYou are welcome to add your name to the [list of contributors](AUTHORS) as part\nof the pull request.\n\n## Documentation\n\nUse Python docstrings for function/class/file documentation. Since we use [Sphinx](https://www.sphinx-doc.org/) for our [documentation](https://spcldace.readthedocs.io/), the docstrings can use reStructuredText (rst) for formatting. For a function or a class, document the purpose, all arguments, return value, and notes. [Example](https://github.com/spcl/dace/blob/205d7c911a74e507d2fcbcc4b6cb5819b026648a/dace/dtypes.py#L1146-L1156)\n\nFile documentation is mostly one or a few sentences documenting the purpose and elements\nin a file. If your file contains more than one class/function, which share a general theme that should be documented, include a docstring for the Python file containing a general explanation (and ideally an example of the topic). [Example](dace/codegen/control_flow.py)\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "DaCe - Data Centric Parallel Programming",
+    "version": null,
+    "doi": null,
+    "authors": [
+      "Tal Ben-Nun",
+      "Johannes de Fine Licht",
+      "Alexandros Nikolaos Ziogas",
+      "Timo Schneider",
+      "Torsten Hoefler",
+      "Tiziano De Matteis",
+      "Dominic Hofer",
+      "Roman Haag",
+      "Silvan Niederer",
+      "Saurabh Raje",
+      "Philipp Schaad",
+      "Oliver Rausch",
+      "Gabriel Gavrilas",
+      "Andrei Ivanov",
+      "Luca Lavarini",
+      "Manuel Burger",
+      "Jan Kleine",
+      "Linus Groner",
+      "Thierry Backes",
+      "Valentin Anklin",
+      "Andreas Kuster",
+      "Thomas Baumann",
+      "Berke Ates",
+      "Stefan Scholbe",
+      "Carl-Johannes Johnsen",
+      "Jannis Widmer",
+      "Neville Walo",
+      "Lukas Trümper"
+    ],
+    "preferred_citation": {
+      "title": "Stateful Dataflow Multigraphs: A Data-Centric Model for Performance Portability on Heterogeneous Architectures",
+      "doi": null,
+      "year": "2019",
+      "authors": [
+        "Tal Ben-Nun",
+        "Johannes de Fine Licht",
+        "Alexandros Nikolaos Ziogas",
+        "Timo Schneider",
+        "Torsten Hoefler"
+      ]
+    },
+    "identifiers": []
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "readthedocs": [
+      "https://spcldace.readthedocs.io/en/latest/?badge=latest",
+      "https://spcldace.readthedocs.io/en/latest/",
+      "https://spcldace.readthedocs.io/en/latest/setup/installation.html"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "dace",
+    "repo": "spcl/dace",
+    "current_version": {
+      "value": "v1.0.2",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Tal Ben-Nun",
+        "Johannes de Fine Licht",
+        "Alexandros Nikolaos Ziogas",
+        "Timo Schneider",
+        "Torsten Hoefler",
+        "Tiziano De Matteis",
+        "Dominic Hofer",
+        "Roman Haag",
+        "Silvan Niederer",
+        "Saurabh Raje",
+        "Philipp Schaad",
+        "Oliver Rausch",
+        "Gabriel Gavrilas",
+        "Andrei Ivanov",
+        "Luca Lavarini",
+        "Manuel Burger",
+        "Jan Kleine",
+        "Linus Groner",
+        "Thierry Backes",
+        "Valentin Anklin",
+        "Andreas Kuster",
+        "Thomas Baumann",
+        "Berke Ates",
+        "Stefan Scholbe",
+        "Carl-Johannes Johnsen",
+        "Jannis Widmer",
+        "Neville Walo",
+        "Lukas Trümper"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "readthedocs": [
+          "https://spcldace.readthedocs.io/en/latest/?badge=latest",
+          "https://spcldace.readthedocs.io/en/latest/",
+          "https://spcldace.readthedocs.io/en/latest/setup/installation.html"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "http://dace.is/fast",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

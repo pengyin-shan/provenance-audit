@@ -1,0 +1,15 @@
+name,repo,domain,reason
+ompi,open-mpi/ompi,hpc,no CITATION/codemeta/SECURITY files and no channels detected
+chapel,chapel-lang/chapel,hpc,no CITATION/codemeta/SECURITY files and no channels detected
+neanderthal,uncomplicate/neanderthal,hpc,no CITATION/codemeta/SECURITY files and no channels detected
+ohpc,openhpc/ohpc,hpc,no CITATION/codemeta/SECURITY files and no channels detected
+precice,precice/precice,hpc,no CITATION/codemeta/SECURITY files and no channels detected
+Quirk,Strilanc/Quirk,qc,no CITATION/codemeta/SECURITY files and no channels detected
+demos,PennyLaneAI/demos,qc,no CITATION/codemeta/SECURITY files and no channels detected
+qpp,softwareQinc/qpp,qc,no CITATION/codemeta/SECURITY files and no channels detected
+silq,silq-lang/silq,qc,no CITATION/codemeta/SECURITY files and no channels detected
+pyzx,zxcalc/pyzx,qc,no CITATION/codemeta/SECURITY files and no channels detected
+dwave-ocean-sdk,dwavesystems/dwave-ocean-sdk,qc,no CITATION/codemeta/SECURITY files and no channels detected
+qulacs,qulacs/qulacs,qc,no CITATION/codemeta/SECURITY files and no channels detected
+quantum-neural-networks,XanaduAI/quantum-neural-networks,qc,no CITATION/codemeta/SECURITY files and no channels detected
+ScaffCC,epiqc/ScaffCC,qc,no CITATION/codemeta/SECURITY files and no channels detected

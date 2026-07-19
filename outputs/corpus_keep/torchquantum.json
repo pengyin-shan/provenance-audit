@@ -1,0 +1,127 @@
+{
+  "name": "torchquantum",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:06Z",
+  "errors": {},
+  "github": {
+    "owner": "mit-han-lab",
+    "repo": "torchquantum",
+    "errors": {},
+    "full_name": "mit-han-lab/torchquantum",
+    "description": "A PyTorch-based framework for Quantum Classical Simulation, Quantum Machine Learning, Quantum Neural Networks, Parameterized Quantum Circuits with support for easy deployments on real quantum computers.",
+    "homepage": "https://torchquantum.org",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-04T18:48:08Z",
+    "stars": 1635,
+    "topics": [
+      "deep-learning",
+      "machine-learning",
+      "ml-for-systems",
+      "neural-network",
+      "parameterized-quantum-circuit",
+      "pytorch",
+      "pytorch-quantum",
+      "quantum",
+      "quantum-computing",
+      "quantum-machine-learning",
+      "quantum-neural-network",
+      "quantum-simulation",
+      "system"
+    ],
+    "license": "MIT",
+    "latest_release": {
+      "tag": "v0.1.8",
+      "name": "v0.1.8",
+      "published_at": "2024-02-21T19:33:51Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "<p align=\"center\">\n<img src=\"torchquantum_logo.jpg\" alt=\"torchquantum Logo\" width=\"450\">\n</p>\n\n<h2><p align=\"center\">Quantum Computing in PyTorch</p></h2>\n<h3><p align=\"center\">Faster, Scalable, Easy Debugging, Easy Deployment on Real Machine</p></h3>\n\n\n<p align=\"center\">\n    <a href=\"https://torchquantum.readthedocs.io/\">\n        <img alt=\"Documentation\" src=\"https://img.shields.io/readthedocs/torchquantum/main\">\n    </a>\n    <a href=\"https://github.com/mit-han-lab/torchquantum/blob/master/LICENSE\">\n        <img alt=\"MIT License\" src=\"https://img.shields.io/github/license/mit-han-lab/torchquantum\">\n    </a>\n    <a href=\"https://join.slack.com/t/torchquantum/shared_invite/zt-1ghuf283a-OtP4mCPJREd~367VX~TaQQ\">\n        <img alt=\"Chat @ Slack\" src=\"https://img.shields.io/badge/slack-chat-2eb67d.svg?logo=slack\">\n    </a>\n    <a href=\"https://discord.gg/VTHZAB5E\">\n        <img alt=\"Chat @ Discord\" src=\"https://img.shields.io/badge/contact-me-blue?logo=discord&logoColor=white\">\n    </a>\n<!--     <a href=\"https://qmlsys.hanruiwang.me\">\n        <img alt=\"Forum\" src=\"https://img.shields.io/discourse/status?server=https%3A%2F%2Fqmlsys.hanruiwang.me%2F\">\n    </a> -->\n    <a href=\"https://qmlsys.mit.edu\">\n        <img alt=\"Website\" src=\"https://img.shields.io/website?up_message=qmlsys&url=https%3A%2F%2Fqmlsys.mit.edu\">\n    </a>\n   <a href=\"https://pypi.org/project/torchquantum/\">\n        <img alt=\"Pypi\" src=\"https://img.shields.io/pypi/v/torchquantum\">\n    </a>\n       <a href=\"https://unitary.fund/\">\n        <img alt=\"Pypi\" src=\"https://img.shields.io/badge/supported%20by-Unitary%20Fund-green\">\n    </a>\n   </a>\n       <a href=\"https://pytorch.org/ecosystem/\">\n        <img alt=\"Pypi\" src=\"https://img.shields.io/badge/integration%20-PyTorch%20Ecosystem-blue\">\n    </a>\n    </a>\n       <a href=\"https://qiskit.org/ecosystem/\">\n        <img alt=\"Pypi\" src=\"https://img.shields.io/badge/integration%20-Qiskit%20Ecosystem-blue\">\n    </a>\n\n</p>\n<br />\n\n\n\n# 👋 Welcome\n\n#### What it is doing\n\nSimulate quantum computations on classical hardware using PyTorch. It supports statevector simulation and pulse simulation on GPUs. It can scale up to the simulation of 30+ qubits with multiple GPUs.\n#### Who will benefit\n\nResearchers on quantum algorithm design, parameterized quantum circuit training, quantum optimal control, quantum machine learning, quantum neural networks.\n#### Differences from Qiskit/Pennylane\n\nDynamic computation graph, automatic gradient computation, fast GPU support, batch model tensorized processing.\n\n## News\n- Torchquantum is used in the winning team for ACM Quantum Computing for Drug Discovery Challenge.\n- Torchquantum is highlighted in [unitaryHACK](https://2024.unitaryhack.dev/projects/torchquantum/).\n- TorchQuantum received a [Unitary Foundation microgrant](https://unitary.foundation/grants/).\n- TorchQuantum is integrated to [IBM Qiskit Ecosystem](https://qiskit.github.io/ecosystem/).\n- TorchQuantum is integrated to [PyTorch Ecosystem](https://pytorch.org/ecosystem/).\n- v0.1.8 Available!\n- Check the [dev branch](https://github.com/mit-han-lab/torchquantum/tree/dev) for new latest features on quantum layers and quantum algorithms.\n- Join our [Slack](https://join.slack.com/t/torchquantum/shared_invite/zt-1ghuf283a-OtP4mCPJREd~367VX~TaQQ) for real time support!\n- Welcome to contribute! Please contact us or post in the Github Issues if you want to have new examples implemented by TorchQuantum or any other questions.\n- Qmlsys website goes online: [qmlsys.mit.edu](https://qmlsys.mit.edu) and [torchquantum.org](https://torchquantum.org)\n\n## Features\n\n- Easy construction and simulation of quantum circuits in **PyTorch**\n- **Dynamic computation graph** for easy debugging\n- **Gradient support** via autograd\n- **Batch mode** inference and training on **CPU/GPU**\n- Easy **deployment on real quantum devices** such as IBMQ\n- **Easy hybrid classical-quantum** model construction\n- (coming soon) **pulse-level simulation**\n\n\n## Installation\n```bash\ngit clone https://github.com/mit-han-lab/torchquantum.git\ncd torchquantum\npip install --editable .\n```\n\n## Basic Usage\n\n```python\nimport torchquantum as tq\nimport torchquantum.functional as tqf\n\nqdev = tq.QuantumDevice(n_wires=2, bsz=5, device=\"cpu\", record_op=True) # use device='cuda' for GPU\n\n# use qdev.op\nqdev.h(wires=0)\nqdev.cnot(wires=[0, 1])\n\n# use tqf\ntqf.h(qdev, wires=1)\ntqf.x(qdev, wires=1)\n\n# use tq.Operator\nop = tq.RX(has_params=True, trainable=True, init_params=0.5)\nop(qdev, wires=0)\n\n# print the current state (dynamic computation graph supported)\nprint(qdev)\n\n# obtain the qasm string\nfrom torchquantum.plugin import op_history2qasm\nprint(op_history2qasm(qdev.n_wires, qdev.op_history))\n\n# measure the state on z basis\nprint(tq.measure(qdev, n_shots=1024))\n\n# obtain the expval on a observable by stochastic sampling (doable on simulator and real quantum hardware)\nfrom torchquantum.measurement import expval_joint_sampling\nexpval_sampling = expval_joint_sampling(qdev, 'ZX', n_shots=1024)\nprint(expval_sampling)\n\n# obtain the expval on a observable by analytical computation (only doable on classical simulator)\nfrom torchquantum.measurement import expval_joint_analytical\nexpval = expval_joint_analytical(qdev, 'ZX')\nprint(expval)\n\n# obtain gradients of expval w.r.t. trainable parameters\nexpval[0].backward()\nprint(op.params.grad)\n\n\n# Apply gates to qdev with tq.QuantumModule\nops = [\n    {'name': 'hadamard', 'wires': 0}, \n    {'name': 'cnot', 'wires': [0, 1]},\n    {'name': 'rx', 'wires': 0, 'params': 0.5, 'trainable': True},\n    {'name': 'u3', 'wires': 0, 'params': [0.1, 0.2, 0.3], 'trainable': True},\n    {'name': 'h', 'wires': 1, 'inverse': True}\n]\n\nqmodule = tq.QuantumModule.from_op_history(ops)\nqmodule(qdev)\n```\n\n\n<!--\n## Basic Usage 2\n\n```python\nimport torchquantum as tq\nimport torchquantum.functional as tqf\n\nx = tq.QuantumDevice(n_wires=2)\n\ntqf.hadamard(x, wires=0)\ntqf.x(x, wires=1)\ntqf.cnot(x, wires=[0, 1])\n\n# print the current state (dynamic computation graph supported)\nprint(x.states)\n\n# obtain the classical bitstring distribution\nprint(tq.measure(x, n_shots=2048))\n```\n -->\n\n\n## Guide to the examples\n\nWe also prepare many example and tutorials using TorchQuantum.\n\nFor **beginning level**, you may check [QNN for MNIST](examples/mnist), [Quantum Convolution (Quanvolution)](examples/quanvolution) and [Quantum Kernel Method](examples/quantum_kernel_method), and [Quantum Regression](examples/regression).\n\nFor **intermediate level**, you may check [Amplitude Encoding for MNIST](examples/amplitude_encoding_mnist), [Clifford gate QNN](examples/clifford_qnn), [Save and Load QNN models](examples/save_load_example), [PauliSum Operation](examples/PauliSumOp), [How to convert tq to Qiskit](examples/converter_tq_qiskit).\n\nFor **expert**, you may check [Parameter Shift on-chip Training](examples/param_shift_onchip_training), [VQA Gradient Pruning](examples/gradient_pruning), [VQE](examples/vqe),  [VQA for State Prepration](examples/train_state_prep), [QAOA (Quantum Approximate Optimization Algorithm)](examples/qaoa).\n\n\n## Usage\n\nConstruct parameterized quantum circuit models as simple as constructing a normal pytorch model.\n```python\nimport torch.nn as nn\nimport torch.nn.functional as F\nimport torchquantum as tq\nimport torchquantum.functional as tqf\n\nclass QFCModel(nn.Module):\n  def __init__(self):\n    super().__init__()\n    self.n_wires = 4\n    self.measure = tq.MeasureAll(tq.PauliZ)\n\n    self.encoder_gates = [tqf.rx] * 4 + [tqf.ry] * 4 + \\\n                         [tqf.rz] * 4 + [tqf.rx] * 4\n    self.rx0 = tq.RX(has_params=True, trainable=True)\n    self.ry0 = tq.RY(has_params=True, trainable=True)\n    self.rz0 = tq.RZ(has_params=True, trainable=True)\n    self.crx0 = tq.CRX(has_params=True, trainable=True)\n\n  def forward(self, x):\n    bsz = x.shape[0]\n    # down-sample the image\n    x = F.avg_pool2d(x, 6).view(bsz, 16)\n\n    # create a quantum device to run the gates\n    qdev = tq.QuantumDevice(n_wires=self.n_wires, bsz=bsz, device=x.device)\n\n    # encode the classical image to quantum domain\n    for k, gate in enumerate(self.encoder_gates):\n      gate(qdev, wires=k % self.n_wires, params=x[:, k])\n\n    # add some trainable gates (need to instantiate ahead of time)\n    self.rx0(qdev, wires=0)\n    self.ry0(qdev, wires=1)\n    self.rz0(qdev, wires=3)\n    self.crx0(qdev, wires=[0, 2])\n\n    # add some more non-parameterized gates (add on-the-fly)\n    qdev.h(wires=3)\n    qdev.sx(wires=2)\n    qdev.cnot(wires=[3, 0])\n    qdev.qubitunitary(wires=[1, 2], params=[[1, 0, 0, 0],\n                                            [0, 1, 0, 0],\n                                            [0, 0, 0, 1j],\n                                            [0, 0, -1j, 0]])\n\n    # perform measurement to get expectations (back to classical domain)\n    x = self.measure(qdev).reshape(bsz, 2, 2)\n\n    # classification\n    x = x.sum(-1).squeeze()\n    x = F.log_softmax(x, dim=1)\n\n    return x\n\n```\n\n## VQE Example\n\nTrain a quantum circuit to perform VQE task.\nQuito quantum computer as in [simple_vqe.py](./examples/simple_vqe/simple_vqe.py)\nscript:\n```python\ncd examples/vqe\npython vqe.py\n```\n\n## MNIST Example\n\nTrain a quantum circuit to perform MNIST classification task and deploy on the real IBM\nQuito quantum computer as in [mnist_example.py](./examples/simple_mnist/mnist_example_no_binding.py)\nscript:\n```python\ncd examples/mnist\npython mnist.py\n```\n\n## Files\n\n| File      | Description |\n| ----------- | ----------- |\n| devices.py      | QuantumDevice class which stores the statevector |\n| encoding.py   | Encoding layers to encode classical values to quantum domain |\n| functional.py   | Quantum gate functions |\n| operators.py   | Quantum gate classes |\n| layers.py   | Layer templates such as RandomLayer |\n| measure.py   | Measurement of quantum states to get classical values |\n| graph.py   | Quantum gate graph used in static mode |\n| super_layer.py   | Layer templates for SuperCircuits |\n| plugins/qiskit*   | Convertors and processors for easy deployment on IBMQ |\n| examples/| More examples for training QML and VQE models |\n\n## Coding Style\n\ntorchquantum uses pre-commit hooks to ensure Python style consistency and prevent common mistakes in its codebase.\n\nTo enable it pre-commit hooks please reproduce:\n```bash\npip install pre-commit\npre-commit install\n```\n\n\n[comment]: <> (## More Examples)\n\n[comment]: <> (The `examples/` folder contains more examples to train the QML and VQE)\n\n[comment]: <> (models. Example usage for a QML circuit:)\n\n[comment]: <> (```python)\n\n[comment]: <> (# train the circuit with 36 params in the U3+CU3 space)\n\n[comment]: <> (python examples/train.py examples/configs/mnist/four0123/train/baseline/u3cu3_s0/rand/param36.yml)\n\n[comment]: <> (# evaluate the circuit with torchquantum)\n\n[comment]: <> (python examples/eval.py examples/configs/mnist/four0123/eval/tq/all.yml --run-dir=runs/mnist.four0123.train.baseline.u3cu3_s0.rand.param36)\n\n[comment]: <> (# evaluate the circuit with real IBMQ-Yorktown quantum computer)\n\n[comment]: <> (python examples/eval.py examples/configs/mnist/four0123/eval/x2/real/opt2/300.yml --run-dir=runs/mnist.four0123.train.baseline.u3cu3_s0.rand.param36)\n\n[comment]: <> (```)\n\n[comment]: <> (Example usage for a VQE circuit:)\n\n[comment]: <> (```python)\n\n[comment]: <> (# Train the VQE circuit for h2)\n\n[comment]: <> (python examples/train.py examples/configs/vqe/h2/train/baseline/u3cu3_s0/human/param12.yml)\n\n[comment]: <> (# evaluate the VQE circuit with torchquantum)\n\n[comment]: <> (python examples/eval.py examples/configs/vqe/h2/eval/tq/all.yml --run-dir=runs/vqe.h2.train.baseline.u3cu3_s0.human.param12/)\n\n[comment]: <> (# evaluate the VQE circuit with real IBMQ-Yorktown quantum computer)\n\n[comment]: <> (python examples/eval.py examples/configs/vqe/h2/eval/x2/real/opt2/all.yml --run-dir=runs/vqe.h2.train.baseline.u3cu3_s0.human.param12/)\n\n[comment]: <> (```)\n\n[comment]: <> (Detailed documentations coming soon.)\n\n[comment]: <> (## QuantumNAS)\n\n[comment]: <> (Quantum noise is the key challenge in Noisy Intermediate-Scale Quantum &#40;NISQ&#41; computers. Previous work for mitigating noise has primarily focused on gate-level or pulse-level noise-adaptive compilation. However, limited research efforts have explored a higher level of optimization by making the quantum circuits themselves resilient to noise. We propose QuantumNAS, a comprehensive framework for noise-adaptive co-search of the variational circuit and qubit mapping. Variational quantum circuits are a promising approach for constructing QML and quantum simulation. However, finding the best variational circuit and its optimal parameters is challenging due to the large design space and parameter training cost. We propose to decouple the circuit search and parameter training by introducing a novel SuperCircuit. The SuperCircuit is constructed with multiple layers of pre-defined parameterized gates and trained by iteratively sampling and updating the parameter subsets &#40;SubCircuits&#41; of it. It provides an accurate estimation of SubCircuits performance trained from scratch. Then we perform an evolutionary co-search of SubCircuit and its qubit mapping. The SubCircuit performance is estimated with parameters inherited from SuperCircuit and simulated with real device noise models. Finally, we perform iterative gate pruning and finetuning to remove redundant gates. Extensively evaluated with 12 QML and VQE benchmarks on 10 quantum comput, QuantumNAS significantly outperforms baselines. For QML, QuantumNAS is the first to demonstrate over 95% 2-class, 85% 4-class, and 32% 10-class classification accuracy on real QC. It also achieves the lowest eigenvalue for VQE tasks on H2, H2O, LiH, CH4, BeH2 compared with UCCSD. We also open-source torchquantum for fast training of parameterized quantum circuits to facilitate future research.)\n\n[comment]: <> (<p align=\"center\">)\n\n[comment]: <> (<img src=\"https://hanruiwang.me/project_pages/quantumnas/assets/teaser.jpg\" alt=\"torchquantum teaser\" width=\"550\">)\n\n[comment]: <> (</p>)\n\n[comment]: <> (QuantumNAS Framework overview:)\n\n[comment]: <> (<p align=\"center\">)\n\n[comment]: <> (<img src=\"https://hanruiwang.me/project_pages/quantumnas/assets/overview.jpg\" alt=\"torchquantum overview\" width=\"1000\">)\n\n[comment]: <> (</p>)\n\n[comment]: <> (QuantumNAS models achieve higher robustness and accuracy than other baseline models:)\n\n[comment]: <> (<p align=\"center\">)\n\n[comment]: <> (<img src=\"https://hanruiwang.me/project_pages/quantumnas/assets/results.jpg\" alt=\"torchquantum results\" width=\"550\">)\n\n[comment]: <> (</p>)\n\n## Papers using TorchQuantum\n\n- [HPCA'22] [Wang et al., \"QuantumNAS: Noise-Adaptive Search for Robust Quantum Circuits\"](https://arxiv.org/abs/2107.10845)\n- [DAC'22] [Wang et al., \"QuantumNAT: Quantum Noise-Aware Training with Noise Injection, Quantization and Normalization\"](https://arxiv.org/abs/2110.11331)\n- [DAC'22] [Wang et al., \"QOC: Quantum On-Chip Training with Parameter Shift and Gradient Pruning\"](https://arxiv.org/abs/2202.13239)\n- [QCE'22] [Liang et al., \"Variational Quantum Pulse Learning\"](https://arxiv.org/abs/2203.17267)\n- [ICCAD'22] [Hu et al., \"Quantum Neural Network Compression\"](https://arxiv.org/abs/2207.01578)\n- [ICCAD'22] [Wang et al., \"QuEst: Graph Transformer for Quantum Circuit Reliability Estimation\"](https://arxiv.org/abs/2210.16724)\n- [ICML Workshop] [Yun et al., \"Slimmable Quantum Federated Learning\"](https://dynn-icml2022.github.io/spapers/paper_7.pdf)\n- [IEEE ICDCS] [Yun et al., \"Quantum Multi-Agent Reinforcement Learning via Variational Quantum Circuit Design\"](https://ieeexplore.ieee.org/document/9912289)\n- [QCE'23] [Zhan et al., \"Quantum Sensor Network Algorithms for Transmitter Localization\"](https://ieeexplore.ieee.org/abstract/document/10313806)\n<details>\n  <summary>Manuscripts</summary>\n\n  ## Manuscripts\n\n  - [Yun et al., \"Projection Valued Measure-based Quantum Machine Learning for Multi-Class Classification\"](https://arxiv.org/abs/2210.16731)\n  - [Baek et al., \"3D Scalable Quantum Convolutional Neural Networks for Point Cloud Data Processing in Classification Applications\"](https://arxiv.org/abs/2210.09728)\n  - [Baek et al., \"Scalable Quantum Convolutional Neural Networks\"](https://arxiv.org/abs/2209.12372)\n  - [Yun et al., \"Quantum Multi-Agent Meta Reinforcement Learning\"](https://arxiv.org/abs/2208.11510)\n\n</details>\n\n\n\n## Dependencies\n\n- 3.9 >= Python >= 3.7 (Python 3.10 may have the `concurrent` package issue for Qiskit)\n- PyTorch >= 1.8.0\n- configargparse >= 0.14\n- GPU model training requires NVIDIA GPUs\n\n## Contact\n\nTorchQuantum [Forum](https://qmlsys.hanruiwang.me)\n\nHanrui Wang [hanrui@mit.edu](mailto:hanrui@mit.edu)\n\n## Contributors\n\nJiannan Cao, Jessica Ding, Jiai Gu, Song Han, Zhirui Hu, Zirui Li, Zhiding Liang, Pengyu Liu, Yilian Liu, Mohammadreza Tavasoli, Hanrui Wang, Zhepeng Wang, Zhuoyang Ye\n\n## Citation\n```\n@inproceedings{hanruiwang2022quantumnas,\n    title     = {Quantumnas: Noise-adaptive search for robust quantum circuits},\n    author    = {Wang, Hanrui and Ding, Yongshan and Gu, Jiaqi and Li, Zirui and Lin, Yujun and Pan, David Z and Chong, Frederic T and Han, Song},\n    booktitle = {The 28th IEEE International Symposium on High-Performance Computer Architecture (HPCA-28)},\n    year      = {2022}\n}\n```\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## Citation\n```\n@inproceedings{hanruiwang2022quantumnas,\n    title     = {Quantumnas: Noise-adaptive search for robust quantum circuits},\n    author    = {Wang, Hanrui and Ding, Yongshan and Gu, Jiaqi and Li, Zirui and Lin, Yujun and Pan, David Z and Chong, Frederic T and Han, Song},\n    booktitle = {The 28th IEEE International Symposium on High-Performance Computer Architecture (HPCA-28)},\n    year      = {2022}\n}\n```",
+    "doi": null
+  },
+  "channels": {
+    "discord": [
+      "https://discord.gg/VTHZAB5E"
+    ],
+    "slack": [
+      "https://join.slack.com/t/torchquantum/shared_invite/zt-1ghuf283a-OtP4mCPJREd~367VX~TaQQ"
+    ],
+    "readthedocs": [
+      "https://torchquantum.readthedocs.io/"
+    ],
+    "gh_pages": [
+      "https://qiskit.github.io/ecosystem/",
+      "https://dynn-icml2022.github.io/spapers/paper_7.pdf"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "torchquantum",
+    "repo": "mit-han-lab/torchquantum",
+    "current_version": {
+      "value": "v0.1.8",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "mit-han-lab"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "discord": [
+          "https://discord.gg/VTHZAB5E"
+        ],
+        "slack": [
+          "https://join.slack.com/t/torchquantum/shared_invite/zt-1ghuf283a-OtP4mCPJREd~367VX~TaQQ"
+        ],
+        "readthedocs": [
+          "https://torchquantum.readthedocs.io/"
+        ],
+        "gh_pages": [
+          "https://qiskit.github.io/ecosystem/",
+          "https://dynn-icml2022.github.io/spapers/paper_7.pdf"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://torchquantum.org",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

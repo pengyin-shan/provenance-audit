@@ -1,0 +1,107 @@
+{
+  "name": "grove",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:32Z",
+  "errors": {},
+  "github": {
+    "owner": "rigetti",
+    "repo": "grove",
+    "errors": {},
+    "full_name": "rigetti/grove",
+    "description": "Quantum algorithms built using pyQuil.",
+    "homepage": "http://rigetti.com/forest",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2021-12-02T19:36:56Z",
+    "stars": 384,
+    "topics": [
+      "forest",
+      "quantum",
+      "quantum-algorithms",
+      "quantum-computing",
+      "rigetti-forest"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v1.7.0",
+      "name": "v1.7.0",
+      "published_at": "2018-07-25T01:12:07Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "Grove\n=====\n\nA collection of quantum algorithms built using the Rigetti Forest platform.\nGrove is licensed under the [Apache 2.0 license](https://github.com/rigetticomputing/grove/blob/master/LICENSE).\n\n[![Build Status](https://semaphoreci.com/api/v1/rigetti/grove/branches/master/badge.svg)](https://semaphoreci.com/rigetti/grove)\n[![Documentation Status](https://readthedocs.org/projects/grove-docs/badge/)](http://grove-docs.readthedocs.io/en/latest/)\n\nGrove currently includes:\n\n* [The Variational-Quantum-Eigensolver (VQE)](http://grove-docs.readthedocs.io/en/latest/vqe.html)\n* [The Quantum Approximate Optimization Algorithm (QAOA)](http://grove-docs.readthedocs.io/en/latest/qaoa.html)\n* [The Quantum Fourier Transform (QFT)](http://grove-docs.readthedocs.io/en/latest/qft.html)\n* [Phase Estimation Algorithm](http://grove-docs.readthedocs.io/en/latest/phaseestimation.html)\n\nFeatures in the `alpha` package are considered experimental.\n\nDocumentation\n-------------\n\nDocumentation is hosted at [http://grove-docs.readthedocs.io/en/latest/](http://grove-docs.readthedocs.io/en/latest/)\n\nInstallation\n------------\n\nYou can install Grove directly from the Python package manager `pip` using:\n```\npip install quantum-grove\n```\n\nTo instead install Grove from source, clone this repository, `cd` into it, and run:\n```\npip install -e .\n```\n\nThis will install Grove’s dependencies if you do not already have them.\nHowever, you will still need to install pyQuil and set up a connection to\nthe Rigetti Forest (see below).\nTo enable the tomography module, you will also have to install qutip\nand cvxpy, see below for more details.\n\nForest and pyQuil\n-----------------\n\nGrove also requires the Python library for Quil, called\n[pyQuil](http://pyquil.readthedocs.io/en/latest/index.html).\n\nYou can install pyQuil directly from the Python package manager `pip` using:\n```\npip install pyquil\n```\n\nTo instead install pyQuil from source, clone the\n[pyQuil GitHub repository](https://github.com/rigetticomputing/pyquil),\n`cd` into it, and run:\n```\npip install -e .\n```\n\nYou will need to make sure that your pyQuil installation is properly\nconfigured to run with a quantum virtual machine (QVM) or real quantum processor\n(QPU) hosted on the  [Rigetti Forest](forest.rigetti.com), which requires an API key.\nSee the pyQuil [docs](http://pyquil.readthedocs.io/en/latest/index.html) for\ninstructions on how to do this.\n\nInstalling the dependencies for Quantum Tomography\n--------------------------------------------------\n\nQuantum tomography relies on the external packages qutip and and cvxpy,\nwhich can be somewhat tricky to install.\n\nYou can first attempt to just run\n```\npip install -r requirements.txt\npip install -r optional-requirements.txt\npip install quantum-grove\n```\n\nIf the installation of the optional requirements fails, you can manually\ninstall the individual packages as\n\n```\npip install cython==0.24.1 scs==1.2.6\npip install qutip==4.1 cvxpy==0.4.11\n```\nThese are not the most recent versions but they are the only ones that\nhave consistently worked for us across different platforms and python\nversions.\n\nFor **Windows users**: Both qutip and cvxpy are fairly tricky to\ninstall under windows and we therefore recommend using Anaconda's\n``conda`` package manager to install these first and then ``pip``\nto install ``quantum-grove``.\n\n\nBuilding the Docs\n-----------------\n\nWe use sphinx to build the documentation. To do this, navigate into Grove's top-level directory and run:\n\n```\nsphinx-build -b html docs/ docs/_build\n```\n\nTo view the docs navigate to the newly-created `docs/_build` directory and open\nthe `index.html` file in a browser. Note that we use the Read the Docs theme for\nour documentation, so this may need to be installed using `pip install sphinx_rtd_theme`.\n\nDevelopment and Testing\n-----------------------\n\nWe use tox and pytest for testing. Tests can be executed from the top-level directory by simply\nrunning:\n```\ntox\n```\nThe setup is currently testing Python 2.7 and Python 3.6.\n\n\n## How to cite Grove and Forest\n\nIf you use pyquil, grove or other parts of Forest in your research, please cite it as follows:\n\nbibTeX:\n```\n@misc{1608.03355,\n  title={A Practical Quantum Instruction Set Architecture},\n  author={Smith, Robert S and Curtis, Michael J and Zeng, William J},\n  journal={arXiv preprint arXiv:1608.03355},\n  year={2016}\n}\n```\n\nText:\n```\nR. Smith, M. J. Curtis and W. J. Zeng, \"A Practical Quantum Instruction Set Architecture,\" (2015), \n  arXiv:1608.03355 [quant-ph], https://arxiv.org/abs/1608.03355\n```\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## How to cite Grove and Forest\n\nIf you use pyquil, grove or other parts of Forest in your research, please cite it as follows:\n\nbibTeX:\n```\n@misc{1608.03355,\n  title={A Practical Quantum Instruction Set Architecture},\n  author={Smith, Robert S and Curtis, Michael J and Zeng, William J},\n  journal={arXiv preprint arXiv:1608.03355},\n  year={2016}\n}\n```\n\nText:\n```\nR. Smith, M. J. Curtis and W. J. Zeng, \"A Practical Quantum Instruction Set Architecture,\" (2015), \n  arXiv:1608.03355 [quant-ph], https://arxiv.org/abs/1608.03355\n```",
+    "doi": null
+  },
+  "channels": {
+    "readthedocs": [
+      "http://grove-docs.readthedocs.io/en/latest/",
+      "http://grove-docs.readthedocs.io/en/latest/vqe.html",
+      "http://grove-docs.readthedocs.io/en/latest/qaoa.html",
+      "http://grove-docs.readthedocs.io/en/latest/qft.html",
+      "http://grove-docs.readthedocs.io/en/latest/phaseestimation.html"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "grove",
+    "repo": "rigetti/grove",
+    "current_version": {
+      "value": "v1.7.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "rigetti"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "readthedocs": [
+          "http://grove-docs.readthedocs.io/en/latest/",
+          "http://grove-docs.readthedocs.io/en/latest/vqe.html",
+          "http://grove-docs.readthedocs.io/en/latest/qaoa.html",
+          "http://grove-docs.readthedocs.io/en/latest/qft.html",
+          "http://grove-docs.readthedocs.io/en/latest/phaseestimation.html"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "http://rigetti.com/forest",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

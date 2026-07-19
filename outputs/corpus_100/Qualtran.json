@@ -1,0 +1,189 @@
+{
+  "name": "Qualtran",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:36Z",
+  "errors": {},
+  "github": {
+    "owner": "quantumlib",
+    "repo": "Qualtran",
+    "errors": {},
+    "full_name": "quantumlib/Qualtran",
+    "description": "Qᴜᴀʟᴛʀᴀɴ is a Python library for expressing and analyzing Fault Tolerant Quantum algorithms.",
+    "homepage": "https://qualtran.readthedocs.io/en/latest/",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-01T18:15:10Z",
+    "stars": 366,
+    "topics": [
+      "algorithms",
+      "api",
+      "cirq",
+      "conversion",
+      "google",
+      "google-quantum",
+      "python",
+      "python3",
+      "quantum",
+      "quantum-algorithms",
+      "quantum-circuit",
+      "quantum-computing",
+      "quantum-information-science",
+      "quantum-programming",
+      "quantum-programming-language",
+      "quantum-simulation",
+      "research",
+      "resource-estimation",
+      "sdk"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v0.7.0",
+      "name": "Qualtran v0.7",
+      "published_at": "2026-01-22T23:34:29Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "# Citation information for this repository.                         -*- yaml -*-\n#\n# CITATION.cff provide human- & machine-readable citation info for software and\n# datasets. GitHub, Zenodo, and the Zotero browser plugin all use CFF files\n# automatically. Tools exist to generate CITATION.cff files from other formats\n# such as BibTeX. For more info, visit https://citation-file-format.github.io/.\n# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ncff-version: 1.2.0\nmessage: >-\n  Please cite your use of Qualtran using the reference metadata provided here.\n\n# If preferred-citation is present, GitHub uses its value for the \"cite this\n# repository\" button and ignores the rest of this file; conversely, the Zenodo-\n# GitHub integration ignores this field when archiving a new software release\n# and uses the metadata in the rest of this file.\npreferred-citation:\n  type: misc\n  authors: &authors\n    - family-names: Harrigan\n      given-names: Matthew P.\n      affiliation: Google LLC\n      orcid: https://orcid.org/0000-0001-9412-0553\n    - family-names: Khattar\n      given-names: Tanuj\n      affiliation: Google LLC\n      orcid: https://orcid.org/0009-0003-5545-3066\n    - family-names: Yuan\n      given-names: Charles\n      affiliation: Massachusetts Institute of Technology\n      orcid: https://orcid.org/0000-0002-4918-4467\n    - family-names: Peduri\n      given-names: Anurudh\n      affiliation: Ruhr University Bochum\n      orcid: https://orcid.org/0000-0002-6523-7098\n    - family-names: Yosri\n      given-names: Noureldin\n      affiliation: Google LLC\n      orcid: https://orcid.org/0000-0003-4169-5745\n    - family-names: Malone\n      given-names: Fionn D.\n      affiliation: Google LLC\n      orcid: https://orcid.org/0000-0001-9239-0162\n    - family-names: Babbush\n      given-names: Ryan\n      affiliation: Google LLC\n      orcid: https://orcid.org/0000-0001-6979-9533\n    - family-names: Rubin\n      given-names: Nicholas C.\n      affiliation: Google LLC\n      orcid: https://orcid.org/0000-0003-3963-1830\n  title: Expressing and Analyzing Quantum Algorithms with Qualtran\n  year: 2024\n  doi: 10.48550/arXiv.2409.04643\n  url: https://arxiv.org/abs/2409.04643\n  identifiers:\n    - description: arXiv identifier for the submission\n      value: 'arXiv:2409.04643'\n      type: other\n  keywords:\n    - quant-ph\n\n# The remaining metadata in this file describes the current software release.\n\ntitle: Qualtran\nauthors: *authors\nabstract: >-\n  Qualtran is a set of abstractions for representing quantum programs, and a\n  library of quantum algorithms expressed in that language to support quantum\n  algorithms research.\nversion: 0.6.0\ndate-released: 2025-04-01\nurl: https://github.com/quantumlib/Qualtran\nrepository-code: https://github.com/quantumlib/Qualtran\nlicense: Apache-2.0\ntype: software\nidentifiers:\n  - description: The home page for Qualtran\n    value: https://quantumai.google/Qualtran\n    type: url\n  - description: PyPI project for Qualtran\n    value: https://pypi.org/project/Qualtran\n    type: url\n  - description: GitHub repository for Qualtran\n    value: https://github.com/quantumlib/Qualtran\n    type: url\n  - description: DOI for the preprint\n    value: 10.48550/arXiv.2409.04643\n    type: doi\n  - description: Web page for the preprint\n    value: https://arxiv.org/abs/2409.04643\n    type: url\nkeywords:\n  - algorithms\n  - API\n  - application programming interface\n  - compilation\n  - conversion\n  - diagramming\n  - logical qubit\n  - open-source software\n  - physics\n  - Python\n  - QEC\n  - quantum\n  - quantum algorithms\n  - quantum circuits\n  - quantum computing\n  - quantum error correction\n  - quantum error decoder\n  - quantum gates\n  - quantum programming\n  - quantum programs\n  - quantum simulation\n  - quantum state\n  - qubit\n  - research\n  - resource estimation\n  - science\n  - SDK\n  - simulation\n  - simulator\n  - software\n  - software development toolkit\n  - stabilizer circuits\n  - translator\n  - visualization\n",
+      "README.md": "<!-- # Qualtran (title omitted because our logo acts as the title) -->\n\n<div align=\"center\">\n<img alt=\"Qualtran logo\" width=\"340px\" src=\"https://raw.githubusercontent.com/quantumlib/Qualtran/refs/heads/main/docs/_static/qualtran-logo-mode-sensitive.svg\">\n<br>\n\nPython package for fault-tolerant quantum algorithms research.\n\n[![Licensed under the Apache 2.0 open-source license](https://img.shields.io/badge/License-Apache%202.0-3c60b1.svg?logo=opensourceinitiative\\&logoColor=white\\&style=flat-square)](https://github.com/quantumlib/qualtran/blob/main/LICENSE)\n[![Compatible with Python versions 3.12 and higher](https://img.shields.io/badge/Python-3.12+-6828b2.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/downloads/)\n[![Qualtran project on PyPI](https://img.shields.io/pypi/v/qualtran.svg?logo=python&logoColor=white&label=PyPI&style=flat-square&color=9d3bb8)](https://pypi.org/project/qualtran)\n\n[Installation](#installation) &ndash;\n[Usage](#usage) &ndash;\n[Documentation](#documentation) &ndash;\n[Community](#community) &ndash;\n[Citation](#citation) &ndash;\n[Contact](#contact)\n\n</div>\n\nQualtran is a set of abstractions for representing quantum programs and a library of quantum\nalgorithms expressed in that language to support quantum algorithms research.\n\n## Installation\n\nQualtran is being actively developed. We recommend installing from the source code.\n\nThe following commands will clone a copy of the repository, then install the Qualtran package in\nyour local Python environment as a local editable copy:\n\n```shell\ngit clone https://github.com/quantumlib/Qualtran.git\ncd Qualtran/\npip install -e .\n```\n\nYou can also install the latest tagged release using `pip`:\n\n```shell\npip install qualtran\n```\n\nYou can also install the latest version of the main branch on GitHub:\n\n```shell\npip install git+https://github.com/quantumlib/Qualtran\n```\n\n## Usage\n\n> [!WARNING]\n> Qualtran is an experimental preview release. We provide no backwards compatibility guarantees.\n> Some algorithms or library functionality may be incomplete or contain inaccuracies. Open issues or\n> contact the authors with bug reports or feedback.\n\nYou should be able to import the `qualtran` package into your interactive Python environment as\nas well as your programs:\n\n```shell\nimport qualtran\n```\n\nIf this is successful, you can move on to learning how to\n[write bloqs](https://qualtran.readthedocs.io/en/latest/_infra/Bloqs-Tutorial.html) or investigate\nthe [bloqs library](https://qualtran.readthedocs.io/en/latest/bloqs/index.html#bloqs-library).\n\n## Documentation\n\nDocumentation is available at https://qualtran.readthedocs.io/.\n\n## Community\n\nQualtran's community is growing rapidly, and if you'd like to join the [many open-source\ncontributors] to the Qualtran project, we welcome your participation! We are dedicated to\ncultivating an open and inclusive community, and have a [code of conduct].\n\n[many open-source contributors]: https://github.com/quantumlib/Qualtran/graphs/contributors\n[code of conduct]: https://github.com/quantumlib/Qualtran/blob/main/CODE_OF_CONDUCT.md\n\n### Announcements\n\nYou can stay on top of Qualtran news using the approach that best suits your needs:\n\n*   For releases and major announcements: join the low-volume mailing list [`qualtran-announce`].\n*   For releases only:\n    *   *Via GitHub notifications*: configure [repository notifications] for Qualtran.\n    *   *Via RSS from GitHub*: subscribe to the GitHub [Qualtran releases feed].\n    *   *Via RSS from PyPI*: subscribe to the [PyPI releases feed] for Qualtran.\n\n[`qualtran-announce`]: https://groups.google.com/g/qualtran-announce\n[repository notifications]: https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/configuring-notifications\n[Qualtran releases feed]: https://github.com/quantumlib/Qualtran/releases.atom\n[PyPI releases feed]: https://pypi.org/rss/project/qualtran/releases.xml\n\n### Questions and Discussions\n\n*   If you'd like to ask questions and participate in discussions, join the [`qualtran-dev`]\n    group/mailing list. By joining [`qualtran-dev`], you will also get automated invites to the\n    biweekly _Qualtran Sync_ meeting (below).\n\n*   Would you like to get more involved in Qualtran development? The biweekly _Qualtran Sync_\n    is a virtual face-to-face meeting of contributors to discuss everything from issues to\n    ongoing efforts, as well as to ask questions. Become a member of [`qualtran-dev`] to get\n    an automatic meeting invitation!\n\n[`qualtran-dev`]: https://groups.google.com/g/qualtran-dev\n\n### Issues and Pull Requests\n\n*   Do you have a feature request or want to report a bug? [Open an issue on\n    GitHub] to report it!\n*   Do you have a code contribution? Read our [contribution guidelines], then\n    open a [pull request]!\n\n[Open an issue on GitHub]: https://github.com/quantumlib/Qualtran/issues/new/choose\n[contribution guidelines]: https://github.com/quantumlib/Qualtran/blob/main/CONTRIBUTING.md\n[pull request]: https://help.github.com/articles/about-pull-requests\n\n## Citation<a name=\"how-to-cite\"></a>\n\nWhen publishing articles or otherwise writing about Qualtran, please cite the following:\n\n```bibtex\n@misc{harrigan2024qualtran,\n    title={Expressing and Analyzing Quantum Algorithms with Qualtran},\n    author={Matthew P. Harrigan and Tanuj Khattar\n        and Charles Yuan and Anurudh Peduri and Noureldin Yosri\n        and Fionn D. Malone and Ryan Babbush and Nicholas C. Rubin},\n    year={2024},\n    eprint={2409.04643},\n    archivePrefix={arXiv},\n    primaryClass={quant-ph},\n    doi={10.48550/arXiv.2409.04643},\n    url={https://arxiv.org/abs/2409.04643},\n}\n```\n\n## Contact\n\nFor any questions or concerns not addressed here, please email quantum-oss-maintainers@google.com.\n\n## Disclaimer\n\nThis is not an officially supported Google product.\nThis project is not eligible for the [Google Open Source Software Vulnerability Rewards\nProgram](https://bughunters.google.com/open-source-security).\n\nCopyright 2025 Google LLC.\n\n<div align=\"center\">\n  <a href=\"https://quantumai.google\">\n    <img width=\"15%\" alt=\"Google Quantum AI\"\n         src=\"https://raw.githubusercontent.com/quantumlib/Qualtran/refs/heads/main/docs/_static/quantum-ai-vertical.svg\">\n  </a>\n</div>\n",
+      "CONTRIBUTING.md": "# How to contribute\n\nWe'd love to accept your patches and contributions to this project. We do have\nsome guidelines to follow, covered in this document, but don't be concerned\nabout getting everything right the first time! Create a pull request (discussed\nbelow) and we'll nudge you in the right direction.\n\n## Before you begin\n\n### Sign our Contributor License Agreement\n\nContributions to this project must be accompanied by a [Contributor License\nAgreement](https://cla.developers.google.com/about) (CLA). You (or your\nemployer) retain the copyright to your contribution; the CLA simply gives us\npermission to use and redistribute your contributions as part of the project.\nPlease visit https://cla.developers.google.com/ to see your current agreements\non file or to sign a new one. You generally only need to submit a Google CLA\nonce, so if you've already submitted one (even if it was for a different\nproject), you probably don't need to do it again.\n\n> [!WARNING]\n> Please note carefully clauses [#5](https://cla.developers.google.com/about/google-corporate#:~:text=You%20represent%20that%20each%20of%20Your%20Contributions%20is%20Your%20original%20creation)\n> and [#7](https://cla.developers.google.com/about/google-corporate#:~:text=Should%20You%20wish%20to%20submit%20work%20that%20is%20not%20Your%20original%20creation%2C%20You%20may%20submit%20it%20to%20Google%20separately)\n> in the CLA. Any code that you contribute to this project must be **your**\n> original creation. Code generated by artificial intelligence tools **does\n> not** qualify as your original creation.\n\n### Review our community guidelines\n\nWe have a [code of conduct](CODE_OF_CONDUCT.md) to make the Qualtran project an\nopen and welcoming community environment. Please make sure to read and abide by\nthe code of conduct.\n\n## Contribution process\n\nAll submissions, including submissions by project members, require review. We\nuse the tools provided by GitHub for [pull\nrequests](https://help.github.com/articles/about-pull-requests/) for this\npurpose. The preferred manner for submitting pull requests is to fork the\nQualtran [repository](https://github.com/quantumlib/Qualtran), create a [git\nbranch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)\nin this fork to do your work, and when ready, create a pull request from this\nbranch to the main Qualtran repository. The subsections below describe the\nprocess in more detail.\n\nPleae make sure to follow the [Google Style\nGuides](https://google.github.io/styleguide/) in your code, particularly the\n[style guide for Python](https://google.github.io/styleguide/pyguide.html).\n\n### Repository forks\n\n1.  Fork the Qualtran repository (you can use the _Fork_ button in upper right\n    corner of the [repository page](https://github.com/quantumlib/Qualtran)).\n    Forking creates a new GitHub repo at the location\n    `https://github.com/USERNAME/Qualtran`, where `USERNAME` is your GitHub\n    user name.\n\n1.  Clone (using `git clone`) or otherwise download your forked repository to\n    your local computer, so that you have a local copy where you can do your\n    development work using your preferred editor and development tools.\n\n1.  Check out the `main` branch and create a new git branch from `main`:\n\n    ```shell\n    git checkout main -b YOUR_BRANCH_NAME\n    ```\n\n    where `YOUR_BRANCH_NAME` is the name of your new branch.\n\n### Development and testing\n\nDo your work and `git commit` your changes to your branch as needed.\n\nWe use several tools to test code and perform other activities such as\nchecking formatting against the style guidelines. You can run those tools\nlocally during development. Wrapper scripts are located in the\n[`check/`](./check/) subdirectory to simplify running the tools.\n\n*   Run `check/pytest-quick` to run the Pytest suite\n*   Run `check/mypy` to run the Mypy type checker\n*   Run `check/pylint` to run the Pylint code linter\n\n### Pull requests and code reviews\n\n1.  If your local copy has drifted out of sync with the `main` branch of the\n    main Qualtran repo, you may need to merge the latest changes into your\n    branch. To do this, first update your local `main` and then merge your\n    local `main` into your branch:\n\n    ```shell\n    # Track the upstream repo (if your local repo hasn't):\n    git remote add upstream https://github.com/quantumlib/Qualtran.git\n\n    # Update your local main.\n    git fetch upstream\n    git checkout main\n    git merge upstream/main\n    # Merge local main into your branch.\n    git checkout YOUR_BRANCH_NAME\n    git merge main\n    ```\n\n    If git reports conflicts during one or both of these merge processes, you\n    may need to [resolve the merge conflicts](\n    https://docs.github.com/articles/about-merge-conflicts) before continuing.\n\n1.  Finally, push your changes to your fork of the Qualtran repo on GitHub:\n\n    ```shell\n    git push origin YOUR_BRANCH_NAME\n    ```\n\n1.  Now when you navigate to the Qualtran repository on GitHub\n    (https://github.com/quantumlib/Qualtran), you should see the option to\n    create a new pull request from your forked repository. Alternatively, you\n    can create the pull request by navigating to the \"Pull requests\" tab near\n    the top of the page, and selecting the appropriate branches.\n\n1.  A reviewer from the Qualtran team will comment on your code and may ask for\n    changes. You can perform the necessary changes locally, commit them to your\n    branch as usual, and then push changes to your fork on GitHub following the\n    same process as above. When you do that, GitHub will update the code in the\n    pull request automatically.\n",
+      "SECURITY.md": "# Reporting security issues\n\nThis project's developers and community are committed to addressing security\nbugs promptly and effectively. We appreciate your efforts to disclose your\nfindings responsibly, and will make every effort to acknowledge your\ncontributions.\n\nPlease **do not** use GitHub issues to report security vulnerabilities; GitHub\nissues are public, and doing so could allow someone to exploit the information\nbefore the problem can be addressed. Instead, please use the *Report a\nvulnerability* button from the *Security* tab at the top of this GitHub\nrepository page.\n\nPlease report security issues in third-party modules to the person or team\nmaintaining the module rather than this project's stewards, unless you believe\nthat some action needs to be taken specifically with this project in order to\nguard against the effects of a security vulnerability in third-party software.\n\n## Responses to security reports\n\nThe project stewards at Google Quantum AI will send a response indicating the\nnext steps in handling your report. After the initial reply to your report, the\nproject stewards will keep you informed of the progress towards a fix and full\nannouncement, and may ask for additional information or guidance.\n\n## Additional points of contact\n\nPlease contact the project stewards at Google Quantum AI via email at\nquantum-oss-maintainers@google.com if you have questions or other concerns. If\nfor any reason you are uncomfortable reaching out to the project stewards,\nplease email opensource@google.com instead.\n"
+    },
+    "has_security_md": true,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "Qualtran",
+    "version": "0.6.0",
+    "doi": null,
+    "authors": [
+      "Matthew P. Harrigan",
+      "Tanuj Khattar",
+      "Charles Yuan",
+      "Anurudh Peduri",
+      "Noureldin Yosri",
+      "Fionn D. Malone",
+      "Ryan Babbush",
+      "Nicholas C. Rubin"
+    ],
+    "preferred_citation": {
+      "title": "Expressing and Analyzing Quantum Algorithms with Qualtran",
+      "doi": "10.48550/arXiv.2409.04643",
+      "year": 2024,
+      "authors": [
+        "Matthew P. Harrigan",
+        "Tanuj Khattar",
+        "Charles Yuan",
+        "Anurudh Peduri",
+        "Noureldin Yosri",
+        "Fionn D. Malone",
+        "Ryan Babbush",
+        "Nicholas C. Rubin"
+      ]
+    },
+    "identifiers": [
+      {
+        "type": "url",
+        "value": "https://quantumai.google/Qualtran"
+      },
+      {
+        "type": "url",
+        "value": "https://pypi.org/project/Qualtran"
+      },
+      {
+        "type": "url",
+        "value": "https://github.com/quantumlib/Qualtran"
+      },
+      {
+        "type": "doi",
+        "value": "10.48550/arXiv.2409.04643"
+      },
+      {
+        "type": "url",
+        "value": "https://arxiv.org/abs/2409.04643"
+      }
+    ]
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## Citation<a name=\"how-to-cite\"></a>\n\nWhen publishing articles or otherwise writing about Qualtran, please cite the following:\n\n```bibtex\n@misc{harrigan2024qualtran,\n    title={Expressing and Analyzing Quantum Algorithms with Qualtran},\n    author={Matthew P. Harrigan and Tanuj Khattar\n        and Charles Yuan and Anurudh Peduri and Noureldin Yosri\n        and Fionn D. Malone and Ryan Babbush and Nicholas C. Rubin},\n    year={2024},\n    eprint={2409.04643},\n    archivePrefix={arXiv},\n    primaryClass={quant-ph},\n    doi={10.48550/arXiv.2409.04643},\n    url={https://arxiv.org/abs/2409.04643},\n}\n```",
+    "doi": "10.48550/arXiv.2409.04643"
+  },
+  "channels": {
+    "google_group": [
+      "https://groups.google.com/g/qualtran-announce",
+      "https://groups.google.com/g/qualtran-dev"
+    ],
+    "readthedocs": [
+      "https://qualtran.readthedocs.io/en/latest/_infra/Bloqs-Tutorial.html",
+      "https://qualtran.readthedocs.io/en/latest/bloqs/index.html#bloqs-library",
+      "https://qualtran.readthedocs.io/",
+      "https://qualtran.readthedocs.io/en/latest/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "Qualtran",
+    "repo": "quantumlib/Qualtran",
+    "current_version": {
+      "value": "v0.7.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Matthew P. Harrigan",
+        "Tanuj Khattar",
+        "Charles Yuan",
+        "Anurudh Peduri",
+        "Noureldin Yosri",
+        "Fionn D. Malone",
+        "Ryan Babbush",
+        "Nicholas C. Rubin"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "google_group": [
+          "https://groups.google.com/g/qualtran-announce",
+          "https://groups.google.com/g/qualtran-dev"
+        ],
+        "readthedocs": [
+          "https://qualtran.readthedocs.io/en/latest/_infra/Bloqs-Tutorial.html",
+          "https://qualtran.readthedocs.io/en/latest/bloqs/index.html#bloqs-library",
+          "https://qualtran.readthedocs.io/",
+          "https://qualtran.readthedocs.io/en/latest/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": "SECURITY.md present",
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": "10.48550/arXiv.2409.04643",
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://qualtran.readthedocs.io/en/latest/",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

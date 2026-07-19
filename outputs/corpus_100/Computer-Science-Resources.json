@@ -1,0 +1,101 @@
+{
+  "name": "Computer-Science-Resources",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:42:21Z",
+  "errors": {},
+  "github": {
+    "owner": "the-akira",
+    "repo": "Computer-Science-Resources",
+    "errors": {},
+    "full_name": "the-akira/Computer-Science-Resources",
+    "description": "Collection of resources spanning key areas of Computer Science",
+    "homepage": "",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2025-09-19T20:07:49Z",
+    "stars": 2784,
+    "topics": [
+      "artificial-intelligence",
+      "assembly",
+      "awesome-list",
+      "cloud-computing",
+      "computer",
+      "computervision",
+      "cryptography",
+      "cybersecurity",
+      "database",
+      "exploits",
+      "javascript",
+      "machine-learning",
+      "mathematics",
+      "networking",
+      "operating-system",
+      "physics",
+      "programming-language",
+      "python",
+      "quantum-computing",
+      "regular-expression"
+    ],
+    "license": null,
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "<h1 align=\"center\">Computer Science Resources</h1>\n\n<h1 align=\"center\">\n    <img alt=\"CS\" title=\"Computer-Science-Resources\" src=\"avatar.png\"> </br>\n</h1>\n\n<p align=\"center\">\n    A collection of learning materials across multiple fields of <b>Computer Science</b>.\n</p>\n\n## Content\n\n- Getting Started\n  - [Map of Computer Science](https://www.youtube.com/watch?v=SzJ46YA_RaA)\n  - [Map of Mathematics](https://www.youtube.com/watch?v=OmJ-4B-mS-Y)\n  - [Map of Physics](https://www.youtube.com/watch?v=ZihywtixUYo&t)\n  - [MIT Courses](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/)\n  - [MIT 6.00 Intro to Computer Science & Programming](https://www.youtube.com/watch?v=k6U-i4gXkLM&list=PL4C4720A6F225E074)\n  - [MIT 6.0001 Introduction to Computer Science & Programming in Python](https://www.youtube.com/playlist?list=PLUl4u3cNGP63WbdFxL8giv4yhgdMGaZNA)\n  - [MIT 6.0002 Introduction to Computational Thinking and Data Science](https://www.youtube.com/playlist?list=PLUl4u3cNGP619EG1wp0kT-7rDE_Az5TNd)\n  - [CS50 Harvard](https://www.youtube.com/watch?v=y62zj9ozPOM&list=PLhQjrBD2T3828ZVcVzEIhsHVgjANGZveu)\n  - [Audio/Video Courses from Colleges and Universities](http://www.infocobuild.com/education/audio-video-courses/)\n  - [Everything Computer Science](https://everythingcomputerscience.com/)\n  - [Computer Science Roadmap](https://roadmap.sh/computer-science)\n- Computer Fundamentals\n  - [Algorithms & Data Structures](https://github.com/the-akira/Computer-Science-Resources/blob/master/db/algorithms_data_structures.md)\n  - [Computer Architecture](https://github.com/the-akira/computer_science_web_resources/blob/master/db/computer_architecture.md)\n  - [Operating Systems](https://github.com/the-akira/computer_science_web_resources/blob/master/db/operating_systems.md)\n  - [Mathematics](https://github.com/the-akira/computer_science_web_resources/blob/master/db/mathematics.md)\n  - [Regular Expressions](https://github.com/the-akira/computer_science_web_resources/blob/master/db/regular_expressions.md)\n  - [Physics](https://github.com/the-akira/computer_science_web_resources/blob/master/db/physics.md)\n  - [Signals and Systems](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/signals_systems.md)\n  - [Information Theory](https://github.com/the-akira/Computer-Science-Resources/blob/master/db/information_theory.md)\n  - [Cloud Computing](https://github.com/the-akira/computer_science_web_resources/blob/master/db/cloud_computing.md)\n  - [Quantum Computing](https://github.com/the-akira/computer_science_web_resources/blob/master/db/quantum_computing.md)\n  - [Computer Networks](https://github.com/the-akira/computer_science_web_resources/blob/master/db/computer_networks.md)\n  - [Computer Graphics](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/computer_graphics.md)\n  - [Virtual Reality](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/virtual_reality.md)\n- Programming Languages\n  - [Assembly](https://github.com/the-akira/computer_science_web_resources/blob/master/db/assembly.md)\n  - [C](https://github.com/the-akira/computer_science_web_resources/blob/master/db/c.md)\n  - [C++](https://github.com/the-akira/computer_science_web_resources/blob/master/db/cpp.md)\n  - [Python](https://github.com/the-akira/computer_science_web_resources/blob/master/db/python.md)\n  - [Java](https://github.com/the-akira/computer_science_web_resources/blob/master/db/java.md)\n  - [Javascript](https://github.com/the-akira/computer_science_web_resources/blob/master/db/javascript.md)\n  - [Ruby](https://github.com/the-akira/computer_science_web_resources/blob/master/db/ruby.md)\n  - [Bash](https://github.com/the-akira/computer_science_web_resources/blob/master/db/bash.md)\n  - [Go](https://github.com/the-akira/computer_science_web_resources/blob/master/db/go.md)\n  - [PHP](https://github.com/the-akira/computer_science_web_resources/blob/master/db/php.md)\n  - [Haskell](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/haskell.md)\n  - [R](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/r.md)\n  - [Julia](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/julia.md)\n  - [Elixir](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/elixir.md)\n- Artificial Intelligence\n  - [Machine Learning](https://github.com/the-akira/computer_science_web_resources/blob/master/db/machine_learning.md)\n  - [Artificial Neural Networks](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/artificial_neural_network.md)\n  - [Natural Language Processing](https://github.com/the-akira/computer_science_web_resources/blob/master/db/natural_language_processing.md)\n  - [Computer Vision](https://github.com/the-akira/Computer_Science_Web_Resources/blob/master/db/computer_vision.md)\n  - [Cybernetics & Robotics](https://github.com/the-akira/computer_science_web_resources/blob/master/db/cybernetics_and_robotics.md)\n- Information Security\n  - [Computer Security](https://github.com/the-akira/computer_science_web_resources/blob/master/db/cyber_security.md)\n  - [Web Hacking](https://github.com/the-akira/computer_science_web_resources/blob/master/db/web_hacking.md)\n  - [Exploits](https://github.com/the-akira/computer_science_web_resources/blob/master/db/exploits.md) \n  - [Reverse Engineering](https://github.com/the-akira/computer_science_web_resources/blob/master/db/reverse_engineering.md)\n  - [Social Engineering](https://github.com/the-akira/computer_science_web_resources/blob/master/db/social_engineering.md)\n  - [Cryptography](https://github.com/the-akira/computer_science_web_resources/blob/master/db/cryptography.md)\n- Databases\n  - [SQL](https://github.com/the-akira/computer_science_web_resources/blob/master/db/sql.md)\n  - [NoSQL](https://github.com/the-akira/computer_science_web_resources/blob/master/db/nosql.md)\n  - [Big Data](https://github.com/the-akira/computer_science_web_resources/blob/master/db/big_data.md)\n  - [Data Mining](https://github.com/the-akira/computer_science_web_resources/blob/master/db/data_mining.md)\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "Computer-Science-Resources",
+    "repo": "the-akira/Computer-Science-Resources",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "the-akira"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": null,
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

@@ -1,0 +1,420 @@
+project,category,signal,covered_by,verified_value,source,notes
+Arraymancer,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,GitHub,
+Arraymancer,Identity & access infrastructure,mfa_on_channel_admins,,unknown,GitHub,
+Arraymancer,Identity & access infrastructure,channel_admin_transfer,,No,Github,not list anything in contributors.md
+Arraymancer,Communication channels,official_channel_statement,,No,GitHub,
+Arraymancer,Communication channels,impersonation_reporting,,No,GitHub,
+Arraymancer,Knowledge infrastructure,disclosure_depth,,0,GitHub,
+Arraymancer,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+Arraymancer,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,GitHub,
+Arraymancer,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,GitHub,
+GPUMD,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,GitHub,
+GPUMD,Identity & access infrastructure,mfa_on_channel_admins,,unknown,GitHub,
+GPUMD,Identity & access infrastructure,channel_admin_transfer,,no,GitHub,
+GPUMD,Communication channels,official_channel_statement,,yes,GitHub,GitHub Discussion chanel is actively used
+GPUMD,Communication channels,impersonation_reporting,,no,GitHub,
+GPUMD,Knowledge infrastructure,disclosure_depth,,0,GitHub,
+GPUMD,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,GitHub,
+GPUMD,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,GitHub,
+GPUMD,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,GitHub,
+NNPACK,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,GitHub,
+NNPACK,Identity & access infrastructure,mfa_on_channel_admins,,unknown,GitHub,
+NNPACK,Identity & access infrastructure,channel_admin_transfer,,No,GitHub,
+NNPACK,Communication channels,official_channel_statement,,No,GitHub,
+NNPACK,Communication channels,impersonation_reporting,,No,GitHub,
+NNPACK,Knowledge infrastructure,disclosure_depth,,0,GitHub,
+NNPACK,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,GitHub,
+NNPACK,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,GitHub,
+NNPACK,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,GitHub,
+OpenFermion,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,GitHub,
+OpenFermion,Identity & access infrastructure,mfa_on_channel_admins,,unknown,GitHub,
+OpenFermion,Identity & access infrastructure,channel_admin_transfer,,no,GitHub,"Github README stated that ""We use [GitHub issues](https://github.com/quantumlib/OpenFermion/issues) for tracking requests and bugs. Please post questions to the [Quantum Computing Stack Exchange](https://quantumcomputing.stackexchange.com/) with an openfermion tag"". While the official site  has contact me with youtube and x, which connects to the Googel Quantum AI site"""
+OpenFermion,Communication channels,official_channel_statement,,yes,GitHub,
+OpenFermion,Communication channels,impersonation_reporting,,no,GitHub,
+OpenFermion,Knowledge infrastructure,disclosure_depth,,2,Github,"Github has .github/SECURITY.md, states ""Reporting security issues"", ""Responses to security reports"", ""Additional points of contact"""
+OpenFermion,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+OpenFermion,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+OpenFermion,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+ProjectQ,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+ProjectQ,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+ProjectQ,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+ProjectQ,Communication channels,official_channel_statement,,No,Github,
+ProjectQ,Communication channels,impersonation_reporting,,No,Github,
+ProjectQ,Knowledge infrastructure,disclosure_depth,,0,Github,
+ProjectQ,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+ProjectQ,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+ProjectQ,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+Quirk,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+Quirk,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+Quirk,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+Quirk,Communication channels,official_channel_statement,,No,Github,"Only has contributing.md with ""How to Contribute
+We'd love to accept your patches and contributions to this project. There are just a few small guidelines you need to follow.
+
+Contributor License Agreement
+Contributions to this project must be accompanied by a Contributor License Agreement. You (or your employer) retain the copyright to your contribution, this simply gives us permission to use and redistribute your contributions as part of the project. Head over to https://cla.developers.google.com/ to see your current agreements on file or to sign a new one.
+
+You generally only need to submit a CLA once, so if you've already submitted one (even if it was for a different project), you probably don't need to do it again.
+
+Code reviews
+All submissions, including submissions by project members, require review. We use GitHub pull requests for this purpose. Consult GitHub Help for more information on using pull requests."""
+Quirk,Communication channels,impersonation_reporting,,No,Github,
+Quirk,Knowledge infrastructure,disclosure_depth,,0,Github,
+Quirk,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+Quirk,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+Quirk,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+ReCirq,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",Yes,Github,
+ReCirq,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+ReCirq,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+ReCirq,Communication channels,official_channel_statement,,yes,Github,"A through contribution guide stating: Sign our Contributor License Agreement, review code of conduct, and step by step guide including '...A reviewer from the ReCirq team will comment on your code and may ask for changes. You can perform the necessary changes locally, commit them to your branch as usual, and then push changes to your fork on GitHub following the same process as above. When you do that, GitHub will update the code in the pull request automatically.'"
+ReCirq,Communication channels,impersonation_reporting,,no,Github,"[corrected: SECURITY.md vulnerability path, not impersonation-specific] | SECURITY.md exists (vulnerability disclosure only; no impersonation-specific path)"
+ReCirq,Knowledge infrastructure,disclosure_depth,,2,Github,
+ReCirq,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+ReCirq,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+ReCirq,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+ScaffCC,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+ScaffCC,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+ScaffCC,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+ScaffCC,Communication channels,official_channel_statement,,No,Github,
+ScaffCC,Communication channels,impersonation_reporting,,No,Github,
+ScaffCC,Knowledge infrastructure,disclosure_depth,,0,Github,
+ScaffCC,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+ScaffCC,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+ScaffCC,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+Trilinos,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+Trilinos,Identity & access infrastructure,mfa_on_channel_admins,,unknown,,
+Trilinos,Identity & access infrastructure,channel_admin_transfer,,No,Official Website,"Contact information is available for many committee members, but channel switch was not stated clearly on site"
+Trilinos,Communication channels,official_channel_statement,,yes,Official Website,https://trilinos.github.io/community.html has clear instruction on developer meeting and https://trilinos.github.io/support.html is the contact us link
+Trilinos,Communication channels,impersonation_reporting,,no,,
+Trilinos,Knowledge infrastructure,disclosure_depth,,2,Github,
+Trilinos,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+Trilinos,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+Trilinos,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+amrex,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+amrex,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+amrex,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+amrex,Communication channels,official_channel_statement,,yes,GitHub,GitHub Discussion chanel is actively used
+amrex,Communication channels,impersonation_reporting,,No,GitHub,
+amrex,Knowledge infrastructure,disclosure_depth,,1,GitHub,
+amrex,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,GitHub,
+amrex,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,GitHub,
+amrex,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,GitHub,
+blis,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,GitHub,
+blis,Identity & access infrastructure,mfa_on_channel_admins,,unknown,GitHub,
+blis,Identity & access infrastructure,channel_admin_transfer,,no,Github,It states the discord channel but not clearly stated the security of this channel. I assume it use default discord settings
+blis,Communication channels,official_channel_statement,,no,Github,"README has a Discord link with joining instructions but no framing as the official channel [re-verified by author, 2026-07]"
+blis,Communication channels,impersonation_reporting,,No,GitHub,
+blis,Knowledge infrastructure,disclosure_depth,,0,Github,
+blis,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+blis,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,GitHub,
+blis,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+cuda-quantum,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",Yes,Github,
+cuda-quantum,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+cuda-quantum,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+cuda-quantum,Communication channels,official_channel_statement,,yes,Github,"Stated ""Feedback
+Please let us know your feedback and ideas for the CUDA-Q platform in the Discussions tab of this repository, or file an issue. To report security concerns or Code of Conduct violations, please reach out to cuda-quantum@nvidia.com."" in README.md in github"
+cuda-quantum,Communication channels,impersonation_reporting,,no,Github,"[corrected: SECURITY.md vulnerability path, not impersonation-specific] | SECURITY.md exists (vulnerability disclosure only; no impersonation-specific path)"
+cuda-quantum,Knowledge infrastructure,disclosure_depth,,2,Github,"With a shared NVIDIA security statement ""NVIDIA is dedicated to the security and trust of our software products and services, including all source code repositories managed through our organization.
+
+If you need to report a security issue, please use the appropriate contact points outlined below. Please do not report security vulnerabilities through GitHub.
+
+Reporting Potential Security Vulnerability in an NVIDIA Product
+To report a potential security vulnerability in any NVIDIA product:
+
+Web: Security Vulnerability Submission Form
+E-Mail: psirt@nvidia.com
+We encourage you to use the following PGP key for secure email communication: NVIDIA public PGP Key for communication
+Please include the following information:
+Product/Driver name and version/branch that contains the vulnerability
+Type of vulnerability (code execution, denial of service, buffer overflow, etc.)
+Instructions to reproduce the vulnerability
+Proof-of-concept or exploit code
+Potential impact of the vulnerability, including how an attacker could exploit the vulnerability
+While NVIDIA currently does not have a bug bounty program, we do offer acknowledgement when an externally reported security issue is addressed under our coordinated vulnerability disclosure policy. Please visit our Product Security Incident Response Team (PSIRT) policies page for more information.
+
+NVIDIA Product Security
+For all security-related concerns, please visit NVIDIA's Product Security portal."""
+cuda-quantum,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+cuda-quantum,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+cuda-quantum,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+dealii,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+dealii,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+dealii,Identity & access infrastructure,channel_admin_transfer,,No,Github,Official Site has link to an active Google Group with no such statement
+dealii,Communication channels,official_channel_statement,,yes,Official Site,Official Site has link to an active Google Group https://groups.google.com/g/dealii?pli=1
+dealii,Communication channels,impersonation_reporting,,No,Github,
+dealii,Knowledge infrastructure,disclosure_depth,,0,Github,
+dealii,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,yes,Github,With .asc version and w/out .asc version availble in release
+dealii,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+dealii,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+grove,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+grove,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+grove,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+grove,Communication channels,official_channel_statement,,Yes,Github,"Similar to the NVDIA production above, there's a contribution.md with content of ""Contribute to the grove Project
+Want to contribute to the grove project? Awesome! We only require you to sign your work as described in the following section.
+
+Sign your work
+The sign-off is a simple signature at the end of the description for the patch. Your signature certifies that you wrote the patch or otherwise have the right to pass it on as an open-source patch.
+
+The rules are pretty simple, and sign-off means that you certify the DCO below (from developercertificate.org):
+
+Developer Certificate of Origin
+Version 1.1
+
+Copyright (C) 2004, 2006 The Linux Foundation and its contributors.
+1 Letterman Drive
+Suite D4700
+San Francisco, CA, 94129
+
+Everyone is permitted to copy and distribute verbatim copies of this
+license document, but changing it is not allowed.
+
+Developer's Certificate of Origin 1.1
+
+By making a contribution to this project, I certify that:
+
+(a) The contribution was created in whole or in part by me and I
+    have the right to submit it under the open source license
+    indicated in the file; or
+
+(b) The contribution is based upon previous work that, to the best
+    of my knowledge, is covered under an appropriate open source
+    license and I have the right under that license to submit that
+    work with modifications, whether created in whole or in part
+    by me, under the same open source license (unless I am
+    permitted to submit under a different license), as indicated
+    in the file; or
+
+(c) The contribution was provided directly to me by some other
+    person who certified (a), (b) or (c) and I have not modified
+    it.
+
+(d) I understand and agree that this project and the contribution
+    are public and that a record of the contribution (including all
+    personal information I submit with it, including my sign-off) is
+    maintained indefinitely and may be redistributed consistent with
+    this project or the open source license(s) involved.
+To sign off, you just add the following line to every git commit message:
+
+Signed-off-by: Joe Smith <joe.smith@email.com>
+You must use your real name (sorry, no pseudonyms or anonymous contributions).
+
+If you set your user.name and user.email using git config, you can sign your commit automatically with git commit -s.
+
+Local Git Hooks
+This repository includes tracked hooks for local validation. Install them once per clone with:
+
+make install-hooks
+Remove them with:
+
+make uninstall-hooks
+The pre-commit hook runs make validate, which executes the same validation steps as make check without the final clean-tree assertion. The pre-push hook runs make test.
+
+Pull Request Requirements
+Every pull request must reference at least one open GitHub issue in its description. This ensures that all changes are tracked and linked to project requirements or bug reports.
+
+Valid Issue References
+Your PR description must include an issue reference in the format: #123
+
+You can use it with optional keywords like fixes, closes, or resolves, but the simple #123 format is sufficient.
+
+Examples of Valid PR Descriptions:
+
+## Summary
+Implements Redis caching layer for API responses to improve performance.
+
+Issue: #789
+
+## Changes
+- Added Redis client configuration
+- Implemented cache middleware
+- Updated API response handlers
+Requirements
+At least one open issue - The PR description must reference at least one issue that is currently open (not closed or marked as Done)
+Issue must exist - The referenced issue number must exist in the repository
+Automated validation - A GitHub Actions workflow will automatically validate all PRs"""
+grove,Communication channels,impersonation_reporting,,no,Github,"[corrected: SECURITY.md vulnerability path, not impersonation-specific] | SECURITY.md exists (vulnerability disclosure only; no impersonation-specific path)"
+grove,Knowledge infrastructure,disclosure_depth,,2,Github,Similar to the NVDIA production SECURITY.md above
+grove,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+grove,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+grove,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+horovod,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+horovod,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+horovod,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+horovod,Communication channels,official_channel_statement,,yes,Github,"In README.md, there's statement of ""Getting Involved
+Community Slack for collaboration and discussion
+Horovod Announce for updates on the project
+Horovod Technical-Discuss for public discussion
+Horovod Security to report security vulnerabilities"" with link for each item"
+horovod,Communication channels,impersonation_reporting,,no,Github and lfai security page,"Github link to lfai security page for this project: https://lists.lfaidata.foundation/g/horovod-security [corrected: SECURITY.md vulnerability path, not impersonation-specific] | SECURITY.md exists (vulnerability disclosure only; no impersonation-specific path)"
+horovod,Knowledge infrastructure,disclosure_depth,,2,lfai security page,
+horovod,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+horovod,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+horovod,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+kokkos,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+kokkos,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+kokkos,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+kokkos,Communication channels,official_channel_statement,,yes,Github,"Github README has ""For questions find us on Slack: https://kokkosteam.slack.com or open a GitHub issue.
+
+For non-public questions send an email to: crtrott(at)sandia.gov"""
+kokkos,Communication channels,impersonation_reporting,,No,Github,Note that this might be in the Slack
+kokkos,Knowledge infrastructure,disclosure_depth,,0,Github,
+kokkos,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,yes,Github,
+kokkos,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,"[corrected: .intoto.jsonl is SLSA provenance, no SPDX/CycloneDX present]"
+kokkos,Distribution metadata,provenance_attestation,SLSA; Sigstore,yes,Github,
+mpich,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+mpich,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+mpich,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+mpich,Communication channels,official_channel_statement,,yes,Official Site,Offical site stated that MPICH has a forum: https://www.mpi-forum.org/
+mpich,Communication channels,impersonation_reporting,,no,Github,Github & Offical Site has statement on creating issues but no explict statement on security
+mpich,Knowledge infrastructure,disclosure_depth,,0,Github,
+mpich,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+mpich,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+mpich,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+pennylane-qiskit,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+pennylane-qiskit,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+pennylane-qiskit,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+pennylane-qiskit,Communication channels,official_channel_statement,,yes,Github,"Github README.md stated the 'support' session with a link to forum: Support
+Source Code: https://github.com/PennyLaneAI/pennylane-qiskit
+Issue Tracker: https://github.com/PennyLaneAI/pennylane-qiskit/issues
+PennyLane Forum: https://discuss.pennylane.ai
+If you are having issues, please let us know by posting the issue on our Github issue tracker, or by asking a question in the forum."
+pennylane-qiskit,Communication channels,impersonation_reporting,,No,Github,
+pennylane-qiskit,Knowledge infrastructure,disclosure_depth,,0,Github,
+pennylane-qiskit,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+pennylane-qiskit,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+pennylane-qiskit,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+precice,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+precice,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+precice,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+precice,Communication channels,official_channel_statement,,yes,Official Site," https://precice.org/community-channels.html is the communicaiton page with link to CoC, forum, social media channels"
+precice,Communication channels,impersonation_reporting,,no,Github,
+precice,Knowledge infrastructure,disclosure_depth,,0,Github,
+precice,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+precice,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+precice,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+qibo,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+qibo,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+qibo,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+qibo,Communication channels,official_channel_statement,,yes,Github,Github page has active discussions https://github.com/qiboteam/qibo/discussions
+qibo,Communication channels,impersonation_reporting,,no,Github,
+qibo,Knowledge infrastructure,disclosure_depth,,0,Github,
+qibo,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+qibo,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+qibo,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+qiskit-aer,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+qiskit-aer,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+qiskit-aer,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+qiskit-aer,Communication channels,official_channel_statement,,yes,Github,"Github README has clear section on ""If you'd like to contribute to Aer, please take a look at our contribution guidelines. This project adheres to Qiskit's code of conduct. By participating, you are expected to uphold this code.
+
+We use GitHub issues for tracking requests and bugs. Please use our slack for discussion and simple questions. To join our Slack community use the link or submit a request to join the Qiskit slack workspace. For questions that are more suited for a forum, we use the Qiskit tag in the Stack Exchange.
+"""
+qiskit-aer,Communication channels,impersonation_reporting,,no,Github,
+qiskit-aer,Knowledge infrastructure,disclosure_depth,,0,Github,
+qiskit-aer,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+qiskit-aer,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+qiskit-aer,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+qiskit-machine-learning,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+qiskit-machine-learning,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+qiskit-machine-learning,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+qiskit-machine-learning,Communication channels,official_channel_statement,,yes,Github,"README clearly stated that ""How can I contribute?
+If you'd like to contribute to Qiskit, please take a look at our contribution guidelines. This project adheres to the Qiskit code of conduct. By participating, you are expected to uphold this code.
+
+We use GitHub issues for tracking requests and bugs. Please join the Qiskit Slack community and use the #qiskit-machine-learning channel for discussions and short questions. For questions that are more suited for a forum, you can use the Qiskit tag in Stack Overflow."""
+qiskit-machine-learning,Communication channels,impersonation_reporting,,no,Github,"[corrected: SECURITY.md vulnerability path, not impersonation-specific] | SECURITY.md exists (vulnerability disclosure only; no impersonation-specific path)"
+qiskit-machine-learning,Knowledge infrastructure,disclosure_depth,,2,,"Security.md stated that ""Include Details: In your report, please include as much information as possible to help us understand the nature and scope of the vulnerability. This might include:
+
+The link to the filed issue stub.
+A description of the vulnerability and its impact.
+Steps to reproduce the issue or a proof-of-concept (PoC) for independent confirmation.
+Any potential fixes or recommendations you might have.
+Response Time: We will acknowledge your report within 3 business days and provide you with an estimated time frame for resolving the issue."""
+qiskit-machine-learning,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+qiskit-machine-learning,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+qiskit-machine-learning,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+qiskit,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+qiskit,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+qiskit,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+qiskit,Communication channels,official_channel_statement,,yes,Github,"Github clearly stated that ""If you'd like to contribute to Qiskit, please take a look at our contribution guidelines. By participating, you are expected to uphold our code of conduct.
+
+We use GitHub issues for tracking requests and bugs. Please join the Qiskit Slack community for discussion, comments, and questions. For questions related to running or using Qiskit, Stack Overflow has a qiskit. For questions on quantum computing with Qiskit, use the qiskit tag in the Quantum Computing Stack Exchange (please, read first the guidelines on how to ask in that forum)."""
+qiskit,Communication channels,impersonation_reporting,,no,Github,"[corrected: SECURITY.md vulnerability path, not impersonation-specific] | SECURITY.md exists (vulnerability disclosure only; no impersonation-specific path)"
+qiskit,Knowledge infrastructure,disclosure_depth,,1,Github,
+qiskit,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+qiskit,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+qiskit,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+qmasm,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+qmasm,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+qmasm,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+qmasm,Communication channels,official_channel_statement,,no,Github,
+qmasm,Communication channels,impersonation_reporting,,no,Github,
+qmasm,Knowledge infrastructure,disclosure_depth,,0,Github,
+qmasm,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+qmasm,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+qmasm,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+qsim,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+qsim,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+qsim,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+qsim,Communication channels,official_channel_statement,,yes,Github,"Email in the README: For any questions or concerns not addressed here, please email quantum-oss-maintainers@google.com."
+qsim,Communication channels,impersonation_reporting,,no,Github,
+qsim,Knowledge infrastructure,disclosure_depth,,0,Github,
+qsim,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+qsim,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+qsim,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+qutip,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+qutip,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+qutip,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+qutip,Communication channels,official_channel_statement,,yes,Github,"README stated an active discussion Google Group: You are most welcome to contribute to QuTiP development by forking this repository and sending pull requests, or filing bug reports at the issues page. You can also help out with users' questions, or discuss proposed changes in the QuTiP discussion group. All code contributions are acknowledged in the contributors section in the documentation.
+
+For more information, including technical advice, please see the ""contributing to QuTiP development"" section of the documentation."
+qutip,Communication channels,impersonation_reporting,,no,Github,
+qutip,Knowledge infrastructure,disclosure_depth,,0,Github,
+qutip,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+qutip,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+qutip,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+rsmpi,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",yes,Github,
+rsmpi,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+rsmpi,Identity & access infrastructure,channel_admin_transfer,,no,Github,
+rsmpi,Communication channels,official_channel_statement,,no,Github,
+rsmpi,Communication channels,impersonation_reporting,,no,Github,
+rsmpi,Knowledge infrastructure,disclosure_depth,,0,Github,
+rsmpi,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,no,Github,
+rsmpi,Distribution metadata,sbom,Scorecard (SBOM); SLSA,no,Github,
+rsmpi,Distribution metadata,provenance_attestation,SLSA; Sigstore,no,Github,
+rustworkx,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",Yes,Github,
+rustworkx,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+rustworkx,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+rustworkx,Communication channels,official_channel_statement,,Yes,Github,"There's a clear CONTRIBUTION.md file (https://github.com/Qiskit/rustworkx?tab=contributing-ov-file) with ""NOTE: Do you still have questions about making your contribution? Contact us at the #rustworkx channel in Qiskit Slack"" for Slack link in it"
+rustworkx,Communication channels,impersonation_reporting,,no,Github,"[corrected: SECURITY.md vulnerability path, not impersonation-specific] | SECURITY.md exists (vulnerability disclosure only; no impersonation-specific path)"
+rustworkx,Knowledge infrastructure,disclosure_depth,,1,Github,"Security.md has basic link ""Supported Versions
+Rustworkx supports one minor version release at a time both for bug and security fixes. For example, if the most recent release is 0.12.1 the 0.12.x release series is currently supported.
+
+Reporting a Vulnerability
+To report vulnerabilities you can privately report a potential security issue via the Github security vulnerabilities feature. This can be done here:
+
+https://github.com/Qiskit/rustworkx/security/advisories
+
+Please do not open a public issue about a potential security vulnerability.
+
+You can find more details on the security vulnerability feature in the Github documentation here:
+
+https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability"""
+rustworkx,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+rustworkx,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+rustworkx,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+taskflow,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",Yes,Github,
+taskflow,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+taskflow,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+taskflow,Communication channels,official_channel_statement,,Yes,Github.io site,It has community chanel explaination at https://taskflow.github.io/#tag_community and a contact form at its github.io site: https://taskflow.github.io/#tag_contact
+taskflow,Communication channels,impersonation_reporting,,No,Github,
+taskflow,Knowledge infrastructure,disclosure_depth,,0,Github,
+taskflow,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+taskflow,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+taskflow,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,
+ucx,Identity & access infrastructure,multi_maintainer,"Scorecard (Code-Review/Contributors, partial)",Yes,Github,
+ucx,Identity & access infrastructure,mfa_on_channel_admins,,unknown,Github,
+ucx,Identity & access infrastructure,channel_admin_transfer,,No,Github,
+ucx,Communication channels,official_channel_statement,,Yes,Offical Site and Github,Github has a link to regiter for maillist: https://elist.ornl.gov/mailman/listinfo/ucx-group
+ucx,Communication channels,impersonation_reporting,,No,Github,
+ucx,Knowledge infrastructure,disclosure_depth,,0,Github,
+ucx,Distribution metadata,signed_releases,Scorecard (Signed-Releases); Sigstore,No,Github,
+ucx,Distribution metadata,sbom,Scorecard (SBOM); SLSA,No,Github,
+ucx,Distribution metadata,provenance_attestation,SLSA; Sigstore,No,Github,

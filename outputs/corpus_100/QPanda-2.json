@@ -1,0 +1,113 @@
+{
+  "name": "QPanda-2",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:42:39Z",
+  "errors": {},
+  "github": {
+    "owner": "OriginQ",
+    "repo": "QPanda-2",
+    "errors": {},
+    "full_name": "OriginQ/QPanda-2",
+    "description": "QPanda 2 is an open source quantum computing framework developed by  OriginQC that can be used to build, run, and optimize quantum algorithms. ",
+    "homepage": "https://originqc.com.cn/en/quantum_soft.html?type=qpanda&lv2id=43&lv3id=72",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2024-11-13T07:07:54Z",
+    "stars": 1202,
+    "topics": [
+      "cpp14",
+      "pyqpanda",
+      "python3",
+      "qpanda",
+      "quantum",
+      "quantum-algorithms",
+      "quantum-computer-simulator",
+      "quantum-computing",
+      "quantum-development-kit"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v2.2.0",
+      "name": "QPanda v2.2.0",
+      "published_at": "2024-11-04T11:01:27Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "## QPanda 2\n\n![图片: ](./Documentation/img/1.png)\n\nQPanda2 is an open source quantum computing framework developed by Origin Quantum, which can be used to build, run and optimize quantum algorithms.\nQPanda2 is the basic library of a series of software developped by  Origin Quantum, which provides core components for QRunes, Qurator and quantum computing services.\n\n| Linux                | Windows |\n|-------------------------|------------------|\n[![Build Status](https://travis-ci.org/OriginQ/QPanda-2.svg?branch=master)](https://travis-ci.org/OriginQ/QPanda-2)        |    [![Build Status](https://dev.azure.com/yekongxiaogang/QPanda2/_apis/build/status/OriginQ.QPanda-2?branchName=master)](https://dev.azure.com/yekongxiaogang/QPanda2/_build/latest?definitionId=4&branchName=master)   \n\n| C++ Documents         | Python Documents |\n|-------------------------|-----------------|\n | [![Documentation Status](https://readthedocs.org/projects/qpanda-tutorial/badge/?version=latest)](https://qpanda-tutorial.readthedocs.io/zh/latest/?badge=latest)      | [![Documentation Status](https://readthedocs.org/projects/pyqpanda-toturial/badge/?version=latest)](https://pyqpanda-toturial.readthedocs.io/zh/latest/?badge=latest)    \n\n\n## Install for Python\n\n### Python 3.6-3.9\n\nInstall using pip:\n\n    pip install pyqpanda\n    \n### Other versions of Python and C++\n\nIf you want to use other versions of Python3 or use C++ API, Compiling from source is recommended. \nReference to the [Documents for tutorials](https://pyqpanda-tutorial-en.readthedocs.io/en/latest/)\n\n### Python sample code\n\nThe following example can be used to construct quantum entanglement in a quantum computer(|0000>+|1111>), measure all qubits and run 1000 times:\n\n    from pyqpanda import *\n\n    qvm = CPUQVM()\n    qvm.init_qvm()\n    prog = QProg()\n    q = qvm.qAlloc_many(4)\n    c = qvm.cAlloc_many(4)\n    prog << H(q[0])\\\n        << CNOT(q[0:-1],q[1:])\\\n        << measure_all(q,c)\n    result = qvm.run_with_configuration(prog, c, 1000)\n    print(result)\n    qvm.finalize()\n\n Results:\n \n    {'0000': 518, '1111': 482}\n    \nSee more [examples](https://github.com/OriginQ/QPanda-Example)。\n\n## Other informations\n\n - [Introduction to Quantum Computing and Programming](https://quantum-book-by-originq.readthedocs.io/en/latest/#)\n - [Official website of Origin Quantum](http://originqc.com.cn/)\n - [OriginQ Cloud](http://www.qubitonline.cn/)\n - [OriginQ Education](https://learn-quantum.com/EDU/index.html)\n - [ReadTheDocs(C++)](https://qpanda-tutorial.readthedocs.io/zh/latest/)\n - [ReadTheDocs(Python)](https://pyqpanda-tutorial-en.readthedocs.io/en/latest/)\n - [QRunes](https://qrunes-tutorial.readthedocs.io/en/latest/)\n - [Qurator-VSCode](https://qurator-vscode.readthedocs.io/zh_CN/latest/)\n\n## How to cite\n\nPlease cite this arXiv paper: [QPanda: high-performance quantum computing framework for multiple application scenarios](https://arxiv.org/abs/2212.14201)\n\n```\n@article{dou2022qpanda,\n  title={QPanda: high-performance quantum computing framework for multiple application scenarios},\n  author={Dou, Menghan and Zou, Tianrui and Fang, Yuan and Wang, Jing and Zhao, Dongyi and Yu, Lei and Chen, Boying and Guo, Wenbo and Li, Ye and Chen, Zhaoyun and Guo, Guoping},\n  journal={arXiv preprint arXiv:2212.14201},\n  year={2022}\n}\n```\n\n## About\n\nQPanda is developed by Origin Quantum, which is committed to the development and application of quantum computers, \nIt has launched 72-Qubit wukong quantum computer and 2-Qubit semi-conducting quantum chip (XW B2-100).\nThe goal of the team is to produce more qubit chips in recent years, provide open cloud services, and realize quantum advantages and quantum applications.\nThe software team underpins the hardware,In addition to QPanda, it has also developed QRunes, Qurator, \nOriginQ Cloud service platform, OriginQ Education cloud and other products.\n\n\n ## License\n\n Apache License 2.0\n",
+      "CONTRIBUTING.md": "# 如何参与到QPanda\n\n我们很欢迎您能参与到QPanda的项目里来。不过在这之前，我们需要制定一些需要遵守的规则，以更好的发展我们的QPanda。\n\n## 推送流程\n\n为了保证项目的质量，所有的提交，包括项目成员的提交，都需要通过审查才能合并到项目中，所以我们需要使用Github pull requests。\n[GitHub Help](https://help.github.com/articles/about-pull-requests/) 包含如何创建pull request的帮助信息.\n\n在创建pull request之前，需要先fork QPanda [repo](https://github.com/OriginQ/QPanda-2)，然后使用这个fork中分支向QPanda的官方仓库创建 pull requests。在创建pull request时应选择推送到QPanda官方仓库的develop分支。\n\nfork 和 pull request的基本流程如下：\n\n1. Fork QPanda的仓库 [repo page](https://github.com/quantumlib/Cirq)。并把你的克隆仓库下载到你的本机。\n\n1. 从master分支创建一个新的分支\n    ```shell\n    git checkout master -b new_branch_name\n    ```\n     ```new_branch_name``` 是你的新分支的名称.\n1. 把你的修改提交到你自己的分支.\n1. 如果你的克隆仓库与QPanda的官方仓库不同步，你需要先更新你的克隆仓库的master分支，然后再把master分支合并到你自己的分支:\n    ```shell\n    # Update your local master.\n    git fetch upstream\n    git checkout master\n    git merge upstream/master\n    # Merge local master into your branch.\n    git checkout new_branch_name\n    git merge master\n    ```\n    在合并的过程中，你可能要修改一些合并冲突.\n1. 把你修改的推送到你克隆的仓库\n    ```shell\n    git push origin new_branch_name\n    ```\n1. 经过以上的操作，你就可以把你工作pull request给QPanda的官方仓库了，在pull request需要选择官方仓库的develop分支。我们将提供pull request的模板，请根据模板提供相关信息. \n1. 审查人员将对您的代码，并可能要求更改，您可以在本地执行这些操作，然后再次执行上述过程.\n\n# 测试\n\n在pull request您的代码之前，请针对您修改的代码编写单元测试，并需要通过现有的测试。QPanda的测试基于googletest，[googletest使用文档](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)包含如何使用googletest编写单元测试。\n\n在编写单元测试之前，您需要先注意一些规范：\n1. 单元测试文件的命名必须是你要测试的功能+.test.cpp;\n2. 使用Test(),第一个参数必须是你要测试的功能，第二个是要测试的内容；\n3. 单元测试的代码规范需要遵守QPanda的代码规范。\n",
+      "CHANGELOG.md": "# Changelog\n\n所有针对QPanda的修改都会记录在本文件中.\n\n> **修改的类型:**\n>\n> -   **Added**: 添加新的功能.\n> -   **Changed**: 对现有的功能进行修改.\n> -   **Deprecated**: 即将删除的功能.\n> -   **Removed**: 删除的功能.\n> -   **Fixed**: Bug修复.\n\n[UNRELEASED](https://github.com/OriginQ/QPanda-2/compare/v2.1.11...HEAD)\n========================================================================\n\n\n[v2.1.11](https://github.com/OriginQ/QPanda-2/compare/v2.1.10...v2.1.11) - 2021-11-29\n=====================================================================================\n\n\nQPanda\n-----------\n\nAdded\n*********\n\n- 添加GPU虚拟机\n- 添加泡利矩阵分解\n- 添加单个哈密顿量模拟\n\nChanged\n*********\n\n- 修复线路优化bug\n- 修改QPanda中QST命名冲突问题\n\npyqpanda\n-------------\n\nAdded\n*********\n\n- 添加GPU虚拟机\n- 添加泡利矩阵分解\n- 添加单个哈密顿量模拟\n\nChanged\n*********\n\n- 修复线路优化bug\n- 修改QPanda中QST命名冲突问题\n\n\n\n[v2.1.10](https://github.com/OriginQ/QPanda-2/compare/v2.1.9...v2.1.10) - 2021-11-29\n=====================================================================================\n\nQPanda\n-----------\n\nAdded\n*********\n\n- 添加LaTeX可视化量子线路方法\n\nChanged\n*********\n\n- 去除无用代码\n- 修改schmdit编码orcle实现，添加mottonen编码python实现\n- 修改qst接口使用方法\n\npyqpanda\n-------------\n\nAdded\n*********\n\n- 添加LaTeX可视化量子线路方法\n\nChanged\n*********\n\n- 去除无用代码\n- 修改schmdit编码orcle实现，添加mottonen编码python实现\n- 修改qst接口使用方法\n\n\n[v2.1.9](https://github.com/OriginQ/QPanda-2/compare/v2.1.8...v2.1.9) - 2021-10-12\n==================================================================================\n\nQPanda\n-----------\n\nAdded\n*********\n\n\n\nChanged\n*********\n\n- 线路优化算法\n- 字符画接口优化\n- 添加测试框架\n\n\npyqpanda\n-------------\n\nAdded\n*********\n\n\nChanged\n*********\n\n- 线路优化算法\n- 字符画接口优化\n- 添加测试框架\n\n[v2.1.8](https://github.com/OriginQ/QPanda-2/compare/v2.1.7...v2.1.8) - 2021-8-24\n==================================================================================\n\nQPanda\n-----------\n\nAdded\n*********\n\n\n\nChanged\n*********\n\n- 修改量子云虚拟机\n- 优化量子线路字符画接口\n- 添加测试框架\n\n\npyqpanda\n-------------\n\nAdded\n*********\n\n\nChanged\n*********\n\n- 修改量子云虚拟机\n- 优化量子线路字符画接口\n- 添加测试框架\n\n\n[v2.1.7](https://github.com/OriginQ/QPanda-2/compare/v2.1.5...v2.1.7) - 2021-7-27\n==================================================================================\n\nQPanda\n-----------\n\nAdded\n*********\n\n- 虚拟机添加同时对多种量子逻辑门噪声设置接口\n\n\nChanged\n*********\n\n- 修改control信息遍历方式\n- 修改PMeasure算法\n- 修改GTest测试框架\n- Grover测试用例整改\n\n\npyqpanda\n-------------\n\nAdded\n*********\n\n- 虚拟机添加同时对多种量子逻辑门噪声设置接口\n\n\nChanged\n*********\n\n- 修改control信息遍历方式\n- 修改PMeasure算法\n- OBMT_mapping映射算法接口优化\n- HHL应用程序优化\n\n\n[v2.1.6](https://github.com/OriginQ/QPanda-2/compare/v2.1.5...v2.1.6) - 2021-6-17\n==================================================================================\n\nQPanda\n-----------\n\nAdded\n*********\n\n- 单振幅虚拟机添加概率测量类接口\n- 部分振幅虚拟机添加概率测量类接口\n- 增加模式匹配的并行化功能\n- 添加直接通过矩阵构造U3门方法\n- 添加Toffli门支持\n\nChanged\n*********\n\n- 单振幅虚拟机算法增加路径优化功能\n- 拓展Var支持逻辑门\n- 修改线路dagger()和control()函数的内部实现\n- 在量子程序或量子线路中插入节点时修改为深拷贝的方式\n- bmt及sabre映射算法插入swap门时，直接转换成U3+cz门\n- 独立单门优化方法\n- 全振幅虚拟机算法优化\n- mingw支持大文件debug编译\n- 量子比特和经典寄存器与虚拟机解耦\n\npyqpanda\n-------------\n\nAdded\n*********\n\n- 单振幅虚拟机添加概率测量类接口\n- 部分振幅虚拟机添加概率测量类接口\n- 增加模式匹配的并行化功能\n- 添加直接通过矩阵构造U3门方法\n- bmt及sabre映射算法插入swap门时，直接转换成U3+cz门\n- 添加OBMT_mapping映射算法Python接口\n\n\nChanged\n*********\n\n- 单振幅虚拟机算法增加路径优化功能\n- 拓展Var支持逻辑门\n- 修改线路dagger()和control()函数的内部实现\n- 在量子程序或量子线路中插入节点时修改为深拷贝的方式\n- 独立单门优化方法\n- 全振幅虚拟机算法优化\n- 量子比特和经典寄存器与虚拟机解耦\n\n[v2.1.5](https://github.com/OriginQ/QPanda-2/compare/v2.1.4...v2.1.5) - 2020-2-25\n==================================================================================\n\nQPanda\n-----------\n\nAdded\n*********\n\n- 添加XEB实验功能\n- ClassicalCondition添加获取地址信息接口\n- 添加用户自定义逻辑门类型的随机线路生成接口\n- 获取QProg和QCircuit线路属性包含使用量子比特及经典寄存器个数、测量量子比特等信息属性\n- 添加获取线路期望值功能\n\nChanged\n*********\n\n- 修改U4门转换后，矩阵不一致问题\n- 优化多控门分解：单方向旋转单控门直接通过配置文件进行线路替换\n- QPE代码优化\n- 修正QFT量子比特顺序错误的问题，并修正了Shor算法涉及QFT的部分代码\n- 修改QProg转QASM双门丢失问题\n- 修改字符画写文件错位问题\n\npyqpanda\n-------------\n\nAdded\n*********\n\n- 添加XEB实验功能\n- ClassicalCondition添加获取地址信息接口\n- 添加用户自定义逻辑门类型的随机线路生成接口\n- 获取QProg和QCircuit线路属性包含使用量子比特及经典寄存器个数、测量量子比特等信息属性\n- 添加获取线路期望值功能\n\nChanged\n*********\n\n- 修改U4门转换后，矩阵不一致问题\n- 优化多控门分解：单方向旋转单控门直接通过配置文件进行线路替换\n- QPE代码优化\n- 修正QFT量子比特顺序错误的问题，并修正了Shor算法涉及QFT的部分代码\n- 修改QProg转QASM双门丢失问题\n- 修改字符画写文件错位问题\n\n[v2.1.4](https://github.com/OriginQ/QPanda-2/compare/v2.1.3...v2.1.4) - 2020-9-29\n==================================================================================\n\nQPanda\n-----------\n\nAdded\n*********\n\n- 添加线路适配异常处理\n- MPS 振幅模拟功能\n- 添加多控门分解独立接口\n- 云量子虚拟机支持链接真实芯片功能\n\nChanged\n*********\n\n- 配置文件接口可直接接收json字符串形式的配置信息\n- 修改windows控制台字符画乱码问题\n- 优化了测量部分\n- 优化Shor算法结果处理，使量子算法结果到输出逆元这一步更为可靠\n- applications 中 HHL 实例修改\n- 修改线路替换时，qubit内存错误问题\n- 更新originir支持PI，自然对数\n- 修改受控单门无法在多控门分解接口分解的问题\n\npyqpanda\n-------------\n\nAdded\n*********\n\n- 优化字符画Python接口，可直接print量子程序\n- 添加量子线路适配芯片拓扑结构接口\n- 添加Grover算法接口\n- 添加获取量子线路所用到的qubit的接口\n- 添加线路适配异常处理\n- MPS 振幅模拟功能\n- 添加多控门分解独立接口\n- 云量子虚拟机支持链接真实芯片功能\n\nChanged\n*********\n\n- 修改windows控制台字符画乱码问题\n- 优化了测量部分\n- 优化Shor算法结果处理，使量子算法结果到输出逆元这一步更为可靠\n- 更新originir支持PI，自然对数\n\n\n[v2.1.3](https://github.com/OriginQ/QPanda-2/compare/v2.1.2...v2.1.3) - 2020-6-19\n==================================================================================\n\nQPanda\n--------\n\nAdded\n*******\n\n- 添加 `SU4` 线路映射功能\n- 添加含噪声虚拟机中添加角度旋转误差接口 `set_rotation_angle_error`\n- 添加通过泡利矩阵设置噪声模型的方法 `set_noise_kraus_matrix`\n- 添加通酉矩阵和概率设置噪声的方法 `set_noise_unitary_matrix`\n- 添加生成随机线路的功能 `RandomCircuit`\n- 添加 `Base_QCircuit` 文件夹存放基础量子线路，`QFT`，`QPE` 等\n- 添加 `HHL` 算法\n- 添加 `QARM` 算法\n- 添加 `QSVM` 算法\n- 添加 `QITE `算法\n\nChanged\n*********\n\n- `convert_qasm_to_qprog` 支持科学记数表达式：如 `1.0e-10`\n- 修改 `runwithconfiguration` 返回结果的显示方式\n- 修复 `free qubit` 内存泄漏\n- 修复 `U4 gamma` 值为nan的问题\n- 更新线路优化算法\n- 去掉噪声虚拟机的默认噪声参数的设置\n- 修复 `Psi4Wrapper` 中成员变量未赋初值的bug\n- 添加 `QGate::remap` 接口，映射逻辑门量子bit到不同的量子bit\n\npyQPanda\n----------\n\nAdded\n*******\n\n- 添加 `SU4` 线路映射功能\n- 添加含噪声虚拟机中添加角度旋转误差接口 `set_rotation_angle_error`\n- 添加通过泡利矩阵设置噪声模型的方法 `set_noise_kraus_matrix`\n- 添加通酉矩阵和概率设置噪声的方法 `set_noise_unitary_matrix`\n- 添加生成随机线路的功能 `RandomCircuit`\n- 添加 `Base_QCircuit` 文件夹存放基础量子线路，`QFT`，`QPE` 等\n- 添加 `HHL` 算法\n- 添加 `QARM` 算法\n- 添加 `QSVM` 算法\n- 添加 `QITE `算法\n\nChanged\n*********\n\n- `convert_qasm_to_qprog` 支持科学记数表达式：如 `1.0e-10`\n- 修改 `runwithconfiguration` 返回结果的显示方式\n- 修复 `free qubit` 内存泄漏\n- 修复 `U4 gamma` 值为nan的问题\n- 更新线路优化算法\n- 去掉噪声虚拟机的默认噪声参数的设置\n- 修复 `Psi4Wrapper` 中成员变量未赋初值的bug\n- 添加 `QGate::remap` 接口，映射逻辑门量子bit到不同的量子bit\n\n[v2.1.2](https://github.com/OriginQ/QPanda-2/compare/v2.1.1...v2.1.2) - 2020-3-31\n==================================================================================\n\nQPanda\n--------\n\nAdded\n*******\n\n- `QAdder` 量子加法器功能\n- `amplitude_encode` 实现经典数据的量子态振幅编码\n- `run_with_configuration` 添加测量次数的接口\n- `QCodar` 一种用于各种NISQ设备的上下文持续时间感知的Qubit映射\n\nChanged\n*********\n\n- 修改 `QCloudMachine` 接口\n- 修改 `SQISWAP` 、`U2` 、`U3` 门中的bug\n- 调整 `topology_match` 功能，使QVec完成物理比特映射\n\npyQPanda\n----------\n\nAdded\n*******\n\n- `QAdder` 量子加法器功能\n- `amplitude_encode` 实现经典数据的量子态振幅编码\n- `run_with_configuration` 添加测量次数的接口\n- `QCodar` 一种用于各种NISQ设备的上下文持续时间感知的Qubit映射\n\nChanged\n*********\n\n- 修复 `Shor` 算法测试代码的错误\n- 调整 `topology_match` 功能，使QVec完成物理比特映射\n- 修改虚拟机中调用 `pmeasure` 系列接口出错的问题\n\n\n[v2.1.1](https://github.com/OriginQ/QPanda-2/compare/v2.1.0...v2.1.1) - 2020-1-15\n==================================================================================\n\nQPanda\n--------\n\nAdded\n*******\n\n- `QCloudMachine` 添加商业云功能\n\nChanged\n*********\n\n- 修改 `GTEST` 测试框架\n- 修改 `NoiseQVM` 中的算法错误\n- 修改 `QIF` 和 `QWHILE` 中的执行错误\n- 修改注释部分的乱码引起的编译错误\n\npyQPanda\n----------\n\nAdded\n*******\n- 添加接口: `set_noise_model`: 设置噪声模型\n- `QCloudMachine` 添加商业云功能\n\nChanged\n*********\n\n- 修改 `NoiseQVM` 中的算法错误\n- 修改 `QIF` 和 `QWHILE` 中的执行错误\n\n\n[v2.1.0](https://github.com/OriginQ/QPanda-2/compare/v2.0.0...v2.1.0) - 2019-11-8\n==================================================================================\n\nQPanda\n--------\n\nAdded\n*******\n\n- 添加逻辑门：`I`门.\n- 添加接口：`fill_qprog_by_I`：通过I门填充QProg\n- 添加接口：`cast_qprog_qgate`：转换Qprog到QGate\n- 添加接口：`cast_qprog_qmeasure`：转换Qprog到QMeasure\n- 添加接口：`cast_qprog_qcircuit`：转换Qprog到QCircuit\n- 添加接口：`NoiseModel::set_noise_model`:设置NoiseModel配置接口\n- 添加接口：`flatten`：展开量子程序中的嵌套节点的功能\n- 新增功能：单振幅量子虚拟机中可运行`SWAP`门\n- 添加接口：`convert_qprog_to_binary`：转换QProg到二进制\n- 添加接口：`convert_binary_data_to_qprog`：转换二进制到QProg\n- 添加接口：`convert_originir_to_qprog`：转换Qoriginir到QProg\n- 添加接口：`convert_qasm_to_qprog`：新增QASM转QProg的方法\n- 添加新的含噪声虚拟机模型:`DECOHERENCE_KRAUS_OPERATOR_P1_P2`, `BITFLIP_KRAUS_OPERATOR`, `DEPOLARIZING_KRAUS_OPERATOR`, `BIT_PHASE_FLIP_OPRATOR`, `PHASE_DAMPING_OPRATOR`\n- 添加接口：`convert_qprog_to_originir`：转换QProg到Qoriginir\n- 添加接口：`convert_qprog_to_quil`：转换QProg到QUil\n- 添加接口：`convert_qprog_to_qasm`：转换QProg到QASM\n\nChanged\n*********\n\n- 原字符画接口`print_prog`改为：`draw_qprog`\n- 原`QVM::setConfigure`为 `QVM::setConfig`\n- 通过重载std::cout，直接输出目标线路的字符画\n\npyQPanda\n----------\n\nAdded\n*******\n\n- 添加逻辑门：`I`门\n- 添加接口：`fill_qprog_by_I`：通过I门填充QProg\n- 添加接口：`cast_qprog_qgate`：转换Qprog到QGate\n- 添加接口：`cast_qprog_qmeasure`：转换Qprog到QMeasure\n- 添加接口：`cast_qprog_qcircuit`：转换Qprog到QCircuit，遇到流控节点或者测量节点，返回false\n- 添加接口：`flatten`：添加量子程序或线路展开功能的python接口\n- 添加接口：`convert_qprog_to_binary`：转换QProg到二进制\n- 添加接口：`convert_binary_data_to_qprog`：转换二进制到QProg\n- 添加接口：`convert_originir_to_qprog`：转换Qoriginir到QProg\n- 添加接口：`convert_qprog_to_originir`：转换QProg到Qoriginir\n- 添加接口：`convert_qprog_to_quil`：转换QProg到QUil\n- 添加接口：`convert_qasm_to_qprog`：新增QASM转QProg的方法\n- 添加接口：`convert_qprog_to_qasm`：转换QProg到QASM\n\nChanged\n*********\n\n- 调整接口：打印字符画接口`print_qprog`修改为`draw_qprog`\n\n[v2.0.0](https://github.com/OriginQ/QPanda-2/compare/v1.3.5...v2.0.0) - 2019-9-30\n===============================================================================\n\nQPanda\n--------\n\nAdded\n*******\n- QPanda重构了项目框架把QPanda分为Applications、QAlg、Components、Core四层。\n- 添加接口`getAllocateCMemNum`：获取申请经典比特的数量\n- 添加接口`pMeasureNoIndex`：概率测量\n- 添加接口`createEmptyCircuit`：创建空的量子线路\n- 添加接口`QWhile::getClassicalCondition`： 获得经典表达式\n- 添加接口`createWhileProg`：创建QWhile\n- 添加接口`createIfProg`： 创建QIf\n- 添加接口`createEmptyQProg`：创建量子程序\n- 添加接口`QVM::setConfigure`: 设置比特数和经典寄存器数\n- 添加接口`QVM:: qAlloc`: 申请量子比特\n- 添加接口`QVM::qAllocMany`：申请多个量子比特\n- 添加接口`QVM::getAllocateQubitNum`：获取申请的量子比特数\n- 添加接口`QVM::getAllocateCMemNum` 获取申请的经典寄存器数\n- 添加接口`QVM::cAlloc`: 申请一个经典寄存器\n- 添加接口`QVM::cAllocMany`：申请多个经典寄存器\n- 添加接口`SingleAmplitudeQVM：pMeasureBinIndex`： 通过二进制下标进行PMeasure操作\n- 添加接口`SingleAmplitudeQVM：pMeasureDecIndex`： 通过十进制下标进行PMeasure操作\n- 添加接口`CPUQVM:: pMeasureNoIndex`: PMeasure操作\n- 添加接口`validateSingleQGateType`： 验证单量子逻辑门有效性\n- 添加接口`validateDoubleQGateType`：验证双量子逻辑门有效性\n- 添加接口`getUnsupportQGateNum`：统计量子程序（包含量子线路、QIF、QWHILE）中不支持的逻辑门的数量\n- 添加接口`getQGateNum`：统计量子程序（包含量子线路、QIF、QWHILE）中逻辑门的数量\n- 添加接口`transformBinaryDataToQProg`： 解析二进制数据转化为量子程序\n- 添加接口`transformQProgToBinary`：量子程序转化为二进制数据\n\npyQPanda\n----------\n\nAdded\n*******\n\n- 添加接口`cAlloc`: 申请一个固定位置上的经典比特\n- 添加接口`cFree_all`：释放传入的所有经典寄存器\n- 添加接口`get_allocate_qubit_num`： 获取申请量子比特的数量\n- 添加接口`get_allocate_cmem_num`：获取申请经典比特的数量\n- 添加接口`get_prob_tuple_list`：获得目标量子比特的概率测量结果， 其对应的下标为十进制，需先调用directlyRun\n- 添加接口`get_prob_list`：获得目标量子比特的概率测量结果， 并没有其对应的下标，需先调用directlyRun\n- 添加接口`get_prob_dict`：获得目标量子比特的概率测量结果， 其对应的下标为二进制，需先调用directlyRun\n- 添加接口`pmeasure_no_index`：概率测量\n- 添加接口`accumulate_probability`：累计概率\n- 添加接口`QGate::set_dagger`：设置逻辑门转置共轭\n- 添加接口`QGate::set_control`：设置逻辑门控制比特\n- 添加接口`QCircuit::set_dagger`：设置线路转置共轭\n- 添加接口`Circuit::set_control`：设置线路控制比特\n- 添加接口`create_empty_circuit`： 申请空线路\n- 添加接口`QWhileProg::get_true_branch`：获取正确分支\n- 添加接口`QWhileProg::get_classical_condition` 获取判断表达式\n- 添加接口`QIfProg::get_true_branch`：获取正确分支\n- 添加接口`QIfProg::get_classical_condition`： 获取判断表达式\n- 添加接口`QIfProg::get_false_branch`：获取失败分支\n- 添加接口`create_If_prog`：创建QIf\n- 添加接口`create_empty_qprog`：创建QProg\n- 添加接口`QVM::allocate_qubit_through_phy_address`：通过量子比特物理地址申请量子比特\n- 添加接口`QVM::allocate_qubit_through_vir_address`：通过量子比特虚拟地址申请量子比特\n- 添加接口`QVM::get_result_map`：获取结果map\n- 添加接口`QVM::get_allocate_qubit_num`：获取申请比特数\n- 添加接口`QVM::get_allocate_cmem_num`：获取申请经典寄存器数\n- 添加接口`QVM::init_qvm`：初始化量子虚拟机\n- 添加接口`PartialAmplitudeQVM::pmeasure_subset`：获取量子态任意子集的结果\n- 添加接口`validate_single_qgate_type`：验证单量子逻辑门有效性\n- 添加接口`validate_double_qgate_type`: 验证双量子逻辑门有效性\n- 添加接口`transform_qprog_to_originir`：量子程序转化OriginIR\n- 添加接口`transform_originir_to_qprog`：OriginIR转化量子程序\n- 添加接口`get_unsupport_qgate_num`：统计量子程序（包含量子线路、QIF、QWHILE）中不支持的逻辑门的数量\n- 添加接口`get_qgate_num`：统计量子程序（包含量子线路、QIF、QWHILE）中逻辑门的数量\n- 添加接口`get_qprog_clock_cycle`：统计量子程序时钟周期\n- 添加接口`transform_binary_data_to_qprog`：解析二进制数据转化为量子程序\n- 添加接口`transform_qprog_to_binary`：量子程序转化为二进制数据\n- 添加接口`transform_qprog_to_qasm`：量子程序转化为QASM指令集\n- 添加接口`transform_qprog_to_quil`：量子程序转化为Quil指令集\n\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## How to cite\n\nPlease cite this arXiv paper: [QPanda: high-performance quantum computing framework for multiple application scenarios](https://arxiv.org/abs/2212.14201)\n\n```\n@article{dou2022qpanda,\n  title={QPanda: high-performance quantum computing framework for multiple application scenarios},\n  author={Dou, Menghan and Zou, Tianrui and Fang, Yuan and Wang, Jing and Zhao, Dongyi and Yu, Lei and Chen, Boying and Guo, Wenbo and Li, Ye and Chen, Zhaoyun and Guo, Guoping},\n  journal={arXiv preprint arXiv:2212.14201},\n  year={2022}\n}\n```",
+    "doi": null
+  },
+  "channels": {
+    "readthedocs": [
+      "https://qpanda-tutorial.readthedocs.io/zh/latest/?badge=latest",
+      "https://pyqpanda-toturial.readthedocs.io/zh/latest/?badge=latest",
+      "https://pyqpanda-tutorial-en.readthedocs.io/en/latest/",
+      "https://quantum-book-by-originq.readthedocs.io/en/latest/#",
+      "https://qpanda-tutorial.readthedocs.io/zh/latest/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "QPanda-2",
+    "repo": "OriginQ/QPanda-2",
+    "current_version": {
+      "value": "v2.2.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "OriginQ"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "readthedocs": [
+          "https://qpanda-tutorial.readthedocs.io/zh/latest/?badge=latest",
+          "https://pyqpanda-toturial.readthedocs.io/zh/latest/?badge=latest",
+          "https://pyqpanda-tutorial-en.readthedocs.io/en/latest/",
+          "https://quantum-book-by-originq.readthedocs.io/en/latest/#",
+          "https://qpanda-tutorial.readthedocs.io/zh/latest/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://originqc.com.cn/en/quantum_soft.html?type=qpanda&lv2id=43&lv3id=72",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

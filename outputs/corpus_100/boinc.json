@@ -1,0 +1,101 @@
+{
+  "name": "boinc",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:41:05Z",
+  "errors": {},
+  "github": {
+    "owner": "BOINC",
+    "repo": "boinc",
+    "errors": {},
+    "full_name": "BOINC/boinc",
+    "description": "Open-source software for volunteer computing and grid computing.",
+    "homepage": "https://boinc.berkeley.edu",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-07-05T08:39:51Z",
+    "stars": 2433,
+    "topics": [
+      "android",
+      "boinc",
+      "c-plus-plus",
+      "citizen-science",
+      "distributed-computing",
+      "grid-computing",
+      "hacktoberfest",
+      "high-performance-computing",
+      "high-throughput-computing",
+      "java",
+      "kotlin",
+      "php",
+      "science",
+      "scientific-computing",
+      "volunteer-computing"
+    ],
+    "license": "LGPL-3.0",
+    "latest_release": {
+      "tag": "server_release/1.6/1.6.2",
+      "name": "Server Release 1.6.2",
+      "published_at": "2026-06-12T07:49:21Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "BOINC is a software platform for \"volunteer computing\":\nlarge-scale distributed high-throughput computing using volunteered home computers and other resources.\n\n* If you're interested in donating your own computing power,\ngo to the [BOINC web site](https://boinc.berkeley.edu).\n\n* Learn about [other ways to help](CONTRIBUTING.md)\n\n* Report bugs by creating issues in this repo.\nPlease report security issues by emailing\n[David Anderson](https://boinc.berkeley.edu/anderson/).\n\n* For other information, [visit the wiki](https://github.com/BOINC/boinc/wiki)\n\n## Copyright\n\nThe University of California holds the copyright on all BOINC source code. By\nsubmitting contributions to the BOINC code, you irrevocably assign all right,\ntitle, and interest, including copyright and all copyright rights, in such\ncontributions to The Regents of the University of California, who may then\nuse the code for any purpose that it desires.\n\n## License\nBOINC is free software; you can redistribute it and/or modify it\nunder the terms of the GNU Lesser General Public License\nas published by the Free Software Foundation,\neither version 3 of the License, or (at your option) any later version.\n",
+      "CONTRIBUTING.md": "# Contributing to BOINC\n:+1: First off, thank you for taking the time to contribute! It's people like you that make BOINC such a great tool. :+1:\n\n## How Can I Contribute?\n\n### Get Connected\nWant to connect with contributors?\n* Join the email lists:\n  * [BOINC Overall](https://groups.google.com/forum/#!forum/boinc_admin)\n  * [BOINC Projects](https://groups.google.com/a/ssl.berkeley.edu/forum/#!forum/boinc_projects)\n  * [BOINC Development](https://groups.google.com/a/ssl.berkeley.edu/forum/#!forum/boinc_dev)\n  * [BOINC Alpha Testing](https://groups.google.com/a/ssl.berkeley.edu/forum/#!forum/boinc_alpha)\n* Join one of the community calls:\n  * The BOINC Projects call occurs occasionally and is announced on the [BOINC Projects email list](https://groups.google.com/a/ssl.berkeley.edu/forum/#!forum/boinc_projects)\n\n### Help Translate\nSee [Information for translators](https://github.com/BOINC/boinc/wiki/TranslateIntro)\n\n### Help Test\nYou can help new versions of the client.\nBecome an [Alpha Tester](https://github.com/BOINC/boinc/wiki/Alpha-testing)\n\n### Report Bugs\nDid you find a bug? Make a Bug report.\n* Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/BOINC/boinc/issues).\n* If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/BOINC/boinc/issues/new).\n\n### Suggest Enhancements\nDo you have a feature idea? Make a feature request.\n* Ensure the feature was not already requested by searching on GitHub under [Issues](https://github.com/BOINC/boinc/issues).\n* If you're unable to find an open issue addressing the idea, [open a new one](https://github.com/BOINC/boinc/issues/new).\n\n### Contribute Code\nDo you want to fix a bug or implement a new feature?  Read about how to [implement a code contribution](https://github.com/BOINC/boinc/wiki/boinc-software-development).\n\n## Styleguides\n\n### BOINC Coding Styles\nSee [BOINC Coding Style Guide](https://github.com/BOINC/boinc/wiki/Coding-style)\n\n### Git Commit Messages\n* Use the present tense (\"Add feature\" not \"Added feature\")\n* Use the imperative mood (\"Move cursor to...\" not \"Moves cursor to...\")\n\n### Information about usage of AI assistants\nIf you are an AI assistant or are using an AI assistant, please read carefully the [BOINC AI Assistants Usage Policy](https://github.com/BOINC/boinc/wiki/Contributing-to-BOINC-with-AI-assistants).\n\nThanks! :heart:\n\nBOINC Team\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "boinc",
+    "repo": "BOINC/boinc",
+    "current_version": {
+      "value": "server_release/1.6/1.6.2",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "BOINC"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://boinc.berkeley.edu",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

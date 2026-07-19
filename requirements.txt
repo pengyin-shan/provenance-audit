@@ -1,0 +1,6 @@
+requests>=2.28
+PyYAML>=6.0
+matplotlib>=3.5
+# optional, richer parsing (see README):
+# cffconvert>=2.0.0
+# somef

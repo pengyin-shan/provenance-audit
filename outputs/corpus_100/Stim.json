@@ -1,0 +1,121 @@
+{
+  "name": "Stim",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:42:58Z",
+  "errors": {},
+  "github": {
+    "owner": "quantumlib",
+    "repo": "Stim",
+    "errors": {},
+    "full_name": "quantumlib/Stim",
+    "description": "A fast stabilizer circuit library.",
+    "homepage": "",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-05T05:03:36Z",
+    "stars": 776,
+    "topics": [
+      "quantum-computing",
+      "stabilizer-circuits"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v1.16.0",
+      "name": "v1.16.0 - Flowing Circuits",
+      "published_at": "2026-05-22T05:36:37Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "# Citation information for this repository.                         -*- yaml -*-\n#\n# CITATION.cff files provide human- & machine-readable citation information for\n# software and datasets. GitHub, Zenodo, and the Zotero browser plugin all use\n# CFF files automatically if provided. https://citation-file-format.github.io/.\n# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ncff-version: 1.2.0\nmessage: If you use Stim, please cite it using this metadata.\n\n# CITATION.cff files describe how to cite software or datasets, with the goal of\n# making software and data be citable in their own right. However, sometimes\n# projects want citations to go to a paper instead. 'Preferred-citation' serves\n# to communicate that. The distinction matters in different situations. If this\n# field is present, GitHub uses the value for the \"cite this repository\" button\n# and ignores the rest of this file; conversely, the Zenodo-GitHub integration\n# ignores this field when creating an entry for a new software release because\n# the Zenodo entry is specifically about the software in this repository.\npreferred-citation:\n  type: article\n  authors:\n    - family-names: Gidney\n      given-names: Craig\n  title: 'Stim: a fast stabilizer circuit simulator'\n  journal: Quantum\n  year: 2021\n  month: 7\n  volume: 5\n  start: 497\n  issn: 2521-327X\n  url: https://doi.org/10.22331/q-2021-07-06-497\n  publisher:\n    name: >-\n      Verein zur Förderung des Open Access Publizierens in den\n      Quantenwissenschaften\n\n# The remaining metadata in this file describes the current software release.\n\ntitle: Stim\nabstract: >-\n  Stim is a tool for high performance simulation and analysis of quantum\n  stabilizer circuits, especially quantum error correction (QEC) circuits.\nauthors:\n  - family-names: Gidney\n    given-names: Craig\nversion: 1.14.0\ndate-released: 2024-09-24\nurl: https://github.com/quantumlib/stim\nrepository-code: https://github.com/quantumlib/stim\nlicense: Apache-2.0\ntype: software\nidentifiers:\n  - description: The GitHub repository for Stim\n    value: https://github.com/quantumlib/Stim\n    type: url\n  - description: PyPI project for Stim\n    value: https://pypi.org/project/Stim\n    type: url\n  - description: Publication about Stim\n    value: 10.22331/q-2021-07-06-497\n    type: doi\nkeywords:\n  - algorithms\n  - API\n  - application programming interface\n  - C++\n  - Clifford gates\n  - Clifford operations\n  - high performance\n  - open-source software\n  - physics\n  - Python\n  - QEC\n  - quantum\n  - quantum algorithms\n  - quantum circuits\n  - quantum computing\n  - quantum error correction\n  - quantum error decoder\n  - quantum gates\n  - quantum programming\n  - quantum simulation\n  - quantum state\n  - qubit\n  - science\n  - SDK\n  - simulation\n  - simulator\n  - software\n  - software development toolkit\n  - stabilizer circuits\n",
+      "README.md": "# Stim\n\n<img align=\"right\" width=\"125em\" alt=\"Stim logo\" src=\"https://raw.githubusercontent.com/quantumlib/Stim/refs/heads/main/doc/logo_128x128.svg\">\n\nHigh-performance simulation of quantum stabilizer circuits for quantum error correction.\n\n◼︎︎&nbsp;&nbsp;[What is Stim?](#what-is-stim)<br>\n◼︎︎&nbsp;&nbsp;[How do I use Stim?](#how-use-stim)<br>\n◼︎&nbsp;&nbsp;[How does Stim work?](#how-stim-work)<br>\n◼︎&nbsp;&nbsp;[How do I cite Stim?](#how-cite-stim)<br>\n◼︎&nbsp;&nbsp;[*Subproject*: Sinter decoding sampler](glue/sample)<br>\n◼︎&nbsp;&nbsp;[*Subproject*: Crumble interactive editor](glue/crumble)<br>\n\n## <a name=\"what-is-stim\"></a>What is Stim?\n\nStim is a tool for high performance simulation and analysis of quantum stabilizer circuits,\nespecially quantum error correction (QEC) circuits.\nTypically Stim is used as a Python package (`pip install stim`), though Stim can also be used as\na command-line tool or a C++ library.\n\n*   [Watch the 15 minute lightning talk presenting Stim at QPL2021](https://youtu.be/7m_JrJIskPM?t=895)\n*   [Watch Stim being used to estimate the threshold of the honeycomb code over a\n    weekend](https://www.youtube.com/watch?v=E9yj0o1LGII)\n\nStim's key features:\n\n1.  **<em>Really</em> fast simulation of stabilizer circuits**.\n    Have a circuit with thousands of qubits and millions of operations?\n    [`stim.Circuit.compile_sampler()`](doc/python_api_reference_vDev.md#stim.Circuit.compile_sampler) will perform a few\n    seconds of analysis and then produce an object that can sample shots at kilohertz rates.\n\n2.  **Semi-automatic decoder configuration**.\n    [`stim.Circuit.detector_error_model()`](doc/python_api_reference_vDev.md#stim.Circuit.detector_error_model) converts\n    a noisy circuit into a detector error model (a [Tanner graph](https://en.wikipedia.org/wiki/Tanner_graph)) which can\n    be used to configure decoders.\n    Adding the option `decompose_operations=True` will additionally suggest how hyper errors can be decomposed into\n    graphlike errors, making it easier to configure matching-based decoders.\n\n3.  **Useful building blocks for working with stabilizers**, such as\n    [`stim.PauliString`](doc/python_api_reference_vDev.md#stim.PauliString),\n    [`stim.Tableau`](doc/python_api_reference_vDev.md#stim.Tableau),\n    and [`stim.TableauSimulator`](doc/python_api_reference_vDev.md#stim.TableauSimulator).\n\nStim's main limitations are:\n\n1.  There is no support for non-Clifford operations, such as T gates and Toffoli gates. Only stabilizer operations are\n    supported.\n\n2.  `stim.Circuit` only supports Pauli noise channels (eg. no amplitude decay). For more complex noise you must manually\n    drive a `stim.TableauSimulator`.\n\n3.  `stim.Circuit` only supports single-control Pauli feedback. For multi-control feedback, or non-Pauli feedback, you\n    must manually drive a `stim.TableauSimulator`.\n\nStim's design philosophy:\n\n*   **Performance is king.**\n    The goal is not to be fast *enough*, it is to be fast in an absolute sense.\n    Think of it this way.\n    The difference between doing one thing per second (human speeds) and doing ten billion things\n    per second (computer speeds) is 100 decibels (100 factors of 1.26).\n    Because software slowdowns tend to compound exponentially, the choices we make can be thought of multiplicatively;\n    they can be thought of as spending or saving decibels.\n    For example, under default usage, Python is 100 times slower than C++.\n    That's 20dB of the 100dB budget!\n    A *fifth* of the multiplicative performance budget allocated to *language choice*!\n    Too expensive!\n    Although Stim will never achieve the glory of [30 GiB per second of\n    FizzBuzz](https://codegolf.stackexchange.com/a/236630/74349), it at least *wishes* it could.\n\n*   **Bottom up.**\n    Stim is intended to be like an assembly language: a mostly straightforward layer upon which more complex layers\n    can be built.\n    The user may define QEC constructions at some high level, perhaps as a set of stabilizers or as a parity check\n    matrix, but these concepts are explained to Stim at a low level (e.g., as circuits).\n    Stim is not necessarily the abstraction that the user wants, but Stim wants to implement low-level\n    pieces simple enough and fast enough that the high-level pieces that the user wants can be built on top.\n\n*   **Backwards compatibility.**\n    Stim's Python package uses semantic versioning.\n    Within a major version (1.X), Stim guarantees backwards compatibility of its Python API and of its command-line API.\n    Note Stim DOESN'T guarantee backwards compatibility of the underlying C++ API.\n\n## <a name=\"how-use-stim\"></a>How do I use Stim?\n\nSee the [Getting Started Notebook](doc/getting_started.ipynb).\n\nStuck?\n[Get help on the quantum computing stack exchange](https://quantumcomputing.stackexchange.com)\nand use the [`stim`](https://quantumcomputing.stackexchange.com/questions/tagged/stim) tag.\n\nSee the reference documentation:\n\n*   [Stim Python API Reference](doc/python_api_reference_vDev.md)\n*   [Stim Supported Gates Reference](doc/gates.md)\n*   [Stim Command Line Reference](doc/usage_command_line.md)\n*   [Stim Circuit File Format (.stim)](doc/file_format_stim_circuit.md)\n*   [Stim Detector Error model Format (.dem)](doc/file_format_dem_detector_error_model.md)\n*   [Stim Results Format Reference](doc/result_formats.md)\n*   [Stim Internal Developer Reference](doc/developer_documentation.md)\n\n## <a name=\"how-stim-work\"></a>How does Stim work?\n\nSee [the paper describing Stim](https://quantum-journal.org/papers/q-2021-07-06-497/).\nStim makes three core improvements over previous stabilizer simulators:\n\n1.  **Vectorized code.**\n    Stim's hot loops are heavily vectorized, using 256 bit wide AVX instructions.\n    This makes them very fast.\n    For example, Stim can multiply Pauli strings with 100 billion terms in one second.\n\n2.  **Reference Frame Sampling.**\n    When bulk sampling, Stim only uses a general stabilizer simulator for an initial reference sample.\n    After that, it cheaply derives as many samples as needed by propagating simulated errors diffed against the\n    reference.\n    This simple trick is *ridiculously* cheaper than the alternative: constant cost per gate, instead of linear cost\n    or even quadratic cost.\n\n3.  **Inverted Stabilizer Tableau.**\n    When doing general stabilizer simulation, Stim tracks the inverse of the stabilizer tableau that was historically\n    used.\n    This has the unexpected benefit of making measurements that commute with the current stabilizers take\n    linear time instead of quadratic time. This is beneficial in error correcting codes, because the measurements\n    they perform are usually redundant and so commute with the current stabilizers.\n\n## <a name=\"how-cite-stim\"></a>How do I cite Stim?\n\nWhen using Stim for research, [please cite](https://quantum-journal.org/papers/q-2021-07-06-497/):\n\n```latex\n@article{gidney2021stim,\n  doi = {10.22331/q-2021-07-06-497},\n  url = {https://doi.org/10.22331/q-2021-07-06-497},\n  title = {Stim: a fast stabilizer circuit simulator},\n  author = {Gidney, Craig},\n  journal = {{Quantum}},\n  issn = {2521-327X},\n  publisher = {{Verein zur F{\\\"{o}}rderung des Open Access Publizierens\n                in den Quantenwissenschaften}},\n  volume = 5,\n  pages = 497,\n  month = jul,\n  year = 2021\n}\n```\n\n## Contact\n\nFor any questions or concerns not addressed here, please email quantum-oss-maintainers@google.com.\n\n## Disclaimer\n\nThis is not an officially supported Google product. This project is not eligible for the [Google Open Source Software\nVulnerability Rewards Program](https://bughunters.google.com/open-source-security).\n\nCopyright 2025 Google LLC.\n\n<div align=\"center\">\n  <a href=\"https://quantumai.google\">\n    <img width=\"15%\" alt=\"Google Quantum AI\"\n         src=\"./doc/quantum-ai-vertical.svg\">\n  </a>\n</div>\n",
+      "CONTRIBUTING.md": "# How to contribute\n\nWe'd love to accept your patches and contributions to this project. We do have\nsome guidelines to follow, covered in this document, but don't be concerned\nabout getting everything right the first time! Create a pull request (discussed\nbelow) and we'll nudge you in the right direction.\n\n## Before you begin\n\n### Sign our Contributor License Agreement\n\nContributions to this project must be accompanied by a [Contributor License\nAgreement](https://cla.developers.google.com/about) (CLA). You (or your\nemployer) retain the copyright to your contribution; the CLA simply gives us\npermission to use and redistribute your contributions as part of the project.\nPlease visit https://cla.developers.google.com/ to see your current agreements\non file or to sign a new one. You generally only need to submit a Google CLA\nonce, so if you've already submitted one (even if it was for a different\nproject), you probably don't need to do it again.\n\n> [!WARNING]\n> Please note carefully clauses [#5](https://cla.developers.google.com/about/google-corporate#:~:text=You%20represent%20that%20each%20of%20Your%20Contributions%20is%20Your%20original%20creation)\n> and [#7](https://cla.developers.google.com/about/google-corporate#:~:text=Should%20You%20wish%20to%20submit%20work%20that%20is%20not%20Your%20original%20creation%2C%20You%20may%20submit%20it%20to%20Google%20separately)\n> in the CLA. Any code that you contribute to this project must be **your**\n> original creation. Code generated by artificial intelligence tools **does\n> not** qualify as your original creation.\n\n### Review our community guidelines\n\nWe have a [code of conduct](CODE_OF_CONDUCT.md) to make the Stim project an open\nand welcoming community environment. Please make sure to read and abide by the\ncode of conduct.\n\n## Contribution process\n\nAll submissions, including submissions by project members, require review. We\nuse the tools provided by GitHub for [pull\nrequests](https://help.github.com/articles/about-pull-requests/) for this\npurpose. The preferred manner for submitting pull requests is to fork the Stim\n[repository](https://github.com/quantumlib/Stim), create a [git\nbranch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) in\nthis fork to do your work, and when ready, create a pull request from this\nbranch to the main Stim repository.\n\n### Repository forks\n\n1.  Fork the Stim repository (you can use the _Fork_ button in upper right\n    corner of the [repository page](https://github.com/quantumlib/Stim)).\n    Forking creates a new GitHub repo at the location\n    `https://github.com/USERNAME/Stim`, where `USERNAME` is your GitHub user\n    name.\n\n1.  Clone (using `git clone`) or otherwise download your forked repository to\n    your local computer, so that you have a local copy where you can do your\n    development work using your preferred editor and development tools.\n\n1.  Check out the `main` branch and create a new git branch from `main`:\n\n    ```shell\n    git checkout main -b YOUR_BRANCH_NAME\n    ```\n\n    where `YOUR_BRANCH_NAME` is the name of your new branch.\n\n### Development and testing\n\nPlease follow the detailed instructions in\n[`doc/developer_documentation.md`](doc/developer_documentation.md) for\ndeveloping and testing Stim.\n\n### Pull requests and code reviews\n\n1.  If your local copy has drifted out of sync with the `main` branch of the\n    main Stim repository, you may need to merge the latest changes into\n    your branch. To do this, first update your local `main` and then merge your\n    local `main` into your branch:\n\n    ```shell\n    # Track the upstream repo (if your local repo hasn't):\n    git remote add upstream https://github.com/quantumlib/Stim.git\n\n    # Update your local main.\n    git fetch upstream\n    git checkout main\n    git merge upstream/main\n    # Merge local main into your branch.\n    git checkout YOUR_BRANCH_NAME\n    git merge main\n    ```\n\n    If git reports conflicts during one or both of these merge processes, you\n    may need to [resolve the merge conflicts](\n    https://docs.github.com/articles/about-merge-conflicts) before continuing.\n\n1.  Finally, push your changes to your fork of the Stim repo on GitHub:\n\n    ```shell\n    git push origin YOUR_BRANCH_NAME\n    ```\n\n1.  Now when you navigate to the Stim repository on GitHub\n    (https://github.com/quantumlib/Stim), you should see the option to create a\n    new pull request from your forked repository. Alternatively, you can create\n    the pull request by navigating to the \"Pull requests\" tab near the top of\n    the page, and selecting the appropriate branches.\n\n1.  A reviewer from the Stim team will comment on your code and may ask for\n    changes. You can perform the necessary changes locally, commit them to your\n    branch as usual, and then push changes to your fork on GitHub following the\n    same process as above. When you do that, GitHub will update the code in the\n    pull request automatically.\n",
+      "SECURITY.md": "# Reporting security issues\n\nThe Stim developers and community take security bugs in Stim seriously. We\nappreciate your efforts to disclose your findings responsibly, and will make\nevery effort to acknowledge your contributions.\n\nPlease **do not** use GitHub issues to report security vulnerabilities; GitHub\nissues are public, and doing so could allow someone to exploit the information\nbefore the problem can be addressed. Instead, please use the GitHub [\"Report a\nVulnerability\"](https://github.com/quantumlib/Stim/security/advisories/new)\ninterface from the _Security_ tab of the Stim repository.\n\nPlease report security issues in third-party modules to the person or team\nmaintaining the module rather than the Stim project stewards, unless you\nbelieve that some action needs to be taken with Stim in order to guard\nagainst the effects of a security vulnerability in a third-party module.\n\n## Responses to security reports\n\nThe project stewards at Google Quantum AI will send a response indicating the\nnext steps in handling your report. After the initial reply to your report, the\nproject stewards will keep you informed of the progress towards a fix and full\nannouncement, and may ask for additional information or guidance.\n\n## Additional points of contact\n\nPlease contact the project stewards at Google Quantum AI via email at\nquantum-oss-maintainers@google.com if you have questions or other concerns. If\nfor any reason you are uncomfortable reaching out to the project stewards,\nplease email opensource@google.com.\n"
+    },
+    "has_security_md": true,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "Stim",
+    "version": "1.14.0",
+    "doi": null,
+    "authors": [
+      "Craig Gidney"
+    ],
+    "preferred_citation": {
+      "title": "Stim: a fast stabilizer circuit simulator",
+      "doi": null,
+      "year": 2021,
+      "authors": [
+        "Craig Gidney"
+      ]
+    },
+    "identifiers": [
+      {
+        "type": "url",
+        "value": "https://github.com/quantumlib/Stim"
+      },
+      {
+        "type": "url",
+        "value": "https://pypi.org/project/Stim"
+      },
+      {
+        "type": "doi",
+        "value": "10.22331/q-2021-07-06-497"
+      }
+    ]
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## <a name=\"how-cite-stim\"></a>How do I cite Stim?\n\nWhen using Stim for research, [please cite](https://quantum-journal.org/papers/q-2021-07-06-497/):\n\n```latex\n@article{gidney2021stim,\n  doi = {10.22331/q-2021-07-06-497},\n  url = {https://doi.org/10.22331/q-2021-07-06-497},\n  title = {Stim: a fast stabilizer circuit simulator},\n  author = {Gidney, Craig},\n  journal = {{Quantum}},\n  issn = {2521-327X},\n  publisher = {{Verein zur F{\\\"{o}}rderung des Open Access Publizierens\n                in den Quantenwissenschaften}},\n  volume = 5,\n  pages = 497,\n  month = jul,\n  year = 2021\n}\n```",
+    "doi": "10.22331/q-2021-07-06-497"
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "Stim",
+    "repo": "quantumlib/Stim",
+    "current_version": {
+      "value": "v1.16.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Craig Gidney"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": "SECURITY.md present",
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": null,
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "name": "qulacs",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:26Z",
+  "errors": {},
+  "github": {
+    "owner": "qulacs",
+    "repo": "qulacs",
+    "errors": {},
+    "full_name": "qulacs/qulacs",
+    "description": "Variational Quantum Circuit Simulator for Quantum Computation Research",
+    "homepage": "",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-05-04T14:11:25Z",
+    "stars": 522,
+    "topics": [
+      "nisq",
+      "quantum-circuit",
+      "quantum-circuit-simulator",
+      "quantum-computing",
+      "qulacs"
+    ],
+    "license": "MIT",
+    "latest_release": {
+      "tag": "v0.6.13",
+      "name": "v0.6.13",
+      "published_at": "2026-02-03T04:56:58Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "# Qulacs\n\n[![Ubuntu CI](https://github.com/qulacs/qulacs/actions/workflows/ci_ubuntu.yml/badge.svg)](https://github.com/qulacs/qulacs/actions/workflows/ci_ubuntu.yml)\n[![macOS CI](https://github.com/qulacs/qulacs/actions/workflows/ci_macos.yml/badge.svg)](https://github.com/qulacs/qulacs/actions/workflows/ci_macos.yml)\n[![Windows CI](https://github.com/qulacs/qulacs/actions/workflows/ci_windows.yml/badge.svg)](https://github.com/qulacs/qulacs/actions/workflows/ci_windows.yml)\n[![Wheel build](https://github.com/qulacs/qulacs/actions/workflows/wheel.yml/badge.svg)](https://github.com/qulacs/qulacs/actions/workflows/wheel.yml)\n[![Downloads](https://pepy.tech/badge/qulacs)](https://pepy.tech/project/qulacs)\n\n\nQulacs is a Python/C++ library for fast simulation of large, noisy, or parametric quantum circuits.\nQulacs is developed at QunaSys, Osaka University, NTT, and Fujitsu.\n\nQulacs is licensed under the [MIT license](https://github.com/qulacs/qulacs/blob/master/LICENSE).\n\n## Quick Install for Python\n\n```\npip install qulacs\n```\n\nIf your CPU is older than Intel Haswell architecture, the binary installed with the above command does not work. In this case, please install Qulacs with the following command.\nEven if your CPU is newer than Haswell, Qulacs installed with the below command shows better performance but takes a longer time. See \"Install Python library from source\" section for detail.\n\n```\npip install git+https://github.com/qulacs/qulacs.git\n```\n\nIf you have NVIDIA GPU and CUDA is installed, GPU-version can be installed with the following command:\n```\npip install qulacs-gpu\n```\n\n## Features\n\n**Note**\nQulacs-Osaka/qulacs-osaka was integrated into the qulacs/qulacs. For more details, please refer to [Information](#Information) section.\n\n- Fast quantum circuit simulation with parallelized C/C++ backend\n- Noisy quantum gate for simulation of NISQ devices\n- Parametric quantum gates for variational methods\n- Circuit compression for fast simulation\n- GPU support for fast simulation\n- Many utility functions for research\n\n## Performance\n\nThe time for simulating random quantum circuits is compared with several quantum circuit simulators in November 2020.\n\nSee [the benchmark repository](https://github.com/qulacs/benchmark-qulacs) and [Section VI and VII of our paper](https://arxiv.org/abs/2011.13524) for the detail of this benchmark.\n\nNote that the plots with names ending with \"opt\" and \"heavy opt\" perform circuit optimization for fast simulation, where the time for optimization is included in the execution time.\n\n### Single-thread benchmark\n\n![single thread benchmark](https://storage.googleapis.com/qunasys/fig_both_singlethread.png)\n\n### Multi-thread benchmark\n\n![multi thread benchmark](https://storage.googleapis.com/qunasys/fig_both_multithread.png)\n\n### GPU benchmark\n\n![GPU benchmark](https://storage.googleapis.com/qunasys/fig_both_gpu.png)\n\n## Install Python library from source\n\nTo install Qulacs optimized for your system, we recommend the following install procedure for faster simulation of quantum circuits, while this requires a compiler and takes time for installation. In addition, you can enable or disable optimization features such as SIMD optimization, OpenMP parallelization, and GPU support.\n\nA binary that is installed via pip command is optimized for Haswell architecture. Thus, Qulacs installed via pip command does not work with a CPU older than Haswell. If your CPU is newer than Haswell, Qualcs built from source shows the better performance.\n\n### Requirements\n\n- C++ compiler (gcc or VisualStudio)\n  - gcc/g++ >= 7.0.0 (checked in Linux, MacOS, cygwin, MinGW, and WSL)\n  - Microsoft VisualStudio C++ 2015 or later\n- [Boost](https://github.com/boostorg/boost) >= 1.71.0 (Development environment)  \n(Version tested in CI)\n  - macOS == 1.90.0\n  - Ubuntu == 1.76.0\n  - Windows == 1.83.0\n- Python >= 3.9\n- CMake >= 3.21\n- git\n- (option) CUDA >= 8.0\n- (option) AVX2 support\n\nIf your system supports AVX2 instructions, SIMD optimization is automatically enabled. \nIf you want to enable GPU simulator, install qulacs through `qulacs-gpu` package or build from source.\nNote that `qulacs-gpu` includes CPU simulator. You don't need to install both.\n\nQulacs is tested on the following systems.\n\n- Ubuntu 24.04\n- macOS 15\n- Windows Server 2022\n\nIf you encounter some troubles, see [troubleshooting](https://docs.qulacs.org/en/latest/intro/2_faq.html).\n\n### How to install\n\nInstall with default options (Multi-thread without GPU):\n\n```\npip install .\n```\n\nIf AVX2 instructions are not supported, SIMD optimization is automatically disabled.\n\n\nInstall with GPU support (CUDA is required):\n\n```\nUSE_GPU=Yes pip install .\n```\n\nInstall single-thread Qulacs:\n\n```\nUSE_OMP=No pip install .\n```\n\nThe number of threads used in Qulacs installed with default options can be controlled via the environment variable `OMP_NUM_THREADS` or `QULACS_NUM_THREADS`.\nWhile `OMP_NUM_THREADS` affects the parallelization of other libraries, `QULACS_NUM_THREADS` controls only the parallelization of QULACS.\nOr, if you want to force only Qulacs to use a single thread, You can install single-thread Qulacs with the above command.\n\nFor development purpose, optional dependencies can be installed as follows.\n```\n# Install development tools\npip install .[dev]\n# Install dependencies for document generation\npip install .[doc]\n```\n\nUninstall Qulacs:\n\n```\npip uninstall qulacs\n```\n\n## Use Qulacs as C++ library\n\n### Build with GCC\n\nStatic libraries of Qulacs can be built with the following commands:\n\n```\ngit clone https://github.com/qulacs/qulacs.git\ncd qulacs\n./script/build_gcc.sh\n```\n\nTo build shared libraries, execute `make shared` at `./qulacs/build` folder.\nWhen you want to build with GPU, use `build_gcc_with_gpu.sh` instead of `build_gcc.sh`.\n\nThen, you can build your codes with the following gcc command:\n\n```sh\ng++ -O2 -I ./<qulacs_path>/include -L ./<qulacs_path>/lib <your_code>.cpp -lvqcsim_static -lcppsim_static -lcsim_static -fopenmp\n```\n\nIf you want to run your codes with GPU, include `cppsim/state_gpu.hpp` and use `QuantumStateGpu` instead of `QuantumState` and build with the following command:\n\n```\nnvcc -O2 -I ./<qulacs_path>/include -L ./<qulacs_path>/lib <your_code>.cu -lvqcsim_static -lcppsim_static -lcsim_static -lgpusim_static -D _USE_GPU -lcublas -Xcompiler -fopenmp\n```\n\n### Build with MSVC\n\nStatic libraries of Qulacs can be built with the following command:\n\n```\ngit clone https://github.com/qulacs/qulacs.git\ncd qulacs\nscript/build_msvc_2017.bat\n```\n\nWhen you want to build with GPU, use `build_msvc_2017_with_gpu.bat`.\nIf you use MSVC with other versions, use `build_msvc_2015.bat` or edit the generator name in `build_msvc_2017.bat`.\n\nYour C++ codes can be built with Qulacs with the following process:\n\n1. Create an empty project.\n1. Select \"x64\" as an active solution platform.\n1. Right Click your project name in Solution Explorer, and select \"Properties\".\n1. At \"VC++ Directories\" section, add the full path to `./qulacs/include` to \"Include Directories\"\n1. At \"VC++ Directories\" section, add the full path to `./qulacs/lib` to \"Library Directories\"\n1. At \"C/C++ -> Code Generation\" section, change \"Runtime library\" to \"Multi-threaded (/MT)\".\n1. At \"Linker -> Input\" section, add `vqcsim_static.lib;cppsim_static.lib;csim_static.lib;` to \"Additional Dependencies\".\n\n## Tutorial and API documents\n\nSee the following documents for tutorials.\n\n- [Python Tutorial](http://docs.qulacs.org/en/latest/intro/4.1_python_tutorial.html)\n- [C++ Tutorial](http://docs.qulacs.org/en/latest/intro/4.2_cpp_tutorial.html)\n- [Manual](http://docs.qulacs.org/en/latest/guide/2.0_python_advanced.html)\n- [Examples](http://docs.qulacs.org/en/latest/apply/0_overview.html)  \n\n\n### Python sample code\n\n```python\nfrom qulacs import Observable, QuantumCircuit, QuantumState\nfrom qulacs.gate import Y,CNOT,merge\n\nstate = QuantumState(3)\nstate.set_Haar_random_state()\n\ncircuit = QuantumCircuit(3)\ncircuit.add_X_gate(0)\nmerged_gate = merge(CNOT(0,1),Y(1))\ncircuit.add_gate(merged_gate)\ncircuit.add_RX_gate(1,0.5)\ncircuit.update_quantum_state(state)\n\nobservable = Observable(3)\nobservable.add_operator(2.0, \"X 2 Y 1 Z 0\")\nobservable.add_operator(-3.0, \"Z 2\")\nvalue = observable.get_expectation_value(state)\nprint(value)\n```\n\nIf you want to run it on GPU, install GPU-enabled qulacs and replace `QuantumState` in the above codes with `QuantumStateGpu`.\n\n### C++ sample code\n\n```cpp\n#include <iostream>\n#include <cppsim/state.hpp>\n#include <cppsim/circuit.hpp>\n#include <cppsim/observable.hpp>\n#include <cppsim/gate_factory.hpp>\n#include <cppsim/gate_merge.hpp>\n\nint main(){\n    QuantumState state(3);\n    state.set_Haar_random_state();\n\n    QuantumCircuit circuit(3);\n    circuit.add_X_gate(0);\n    auto merged_gate = gate::merge(gate::CNOT(0,1),gate::Y(1));\n    circuit.add_gate(merged_gate);\n    circuit.add_RX_gate(1,0.5);\n    circuit.update_quantum_state(&state);\n\n    Observable observable(3);\n    observable.add_operator(2.0, \"X 2 Y 1 Z 0\");\n    observable.add_operator(-3.0, \"Z 2\");\n    auto value = observable.get_expectation_value(&state);\n    std::cout << value << std::endl;\n    return 0;\n}\n```\n\nIf you place the above codes in the root directory of this repository(e.g., `qulacs/main.cpp`), you can build your codes with the following command:\n\n```\ng++ -O2 -I ./include -L ./lib main.cpp -fopenmp -lcppsim_static -lcsim_static\n```\n\nIf you want to run it on GPU, include `cppsim/state_gpu.hpp` and replace `QuantumState` with `QuantumStateGpu`.\n\n\n## How to cite\n\nPlease cite this arXiv paper: [Qulacs: a fast and versatile quantum circuit simulator for research purpose](https://arxiv.org/abs/2011.13524)\n",
+      "CONTRIBUTING.md": "# Contributing to qulacs\n\nThank you for your interest in qulacs!\n\nThere are many ways to contribute not only for writing code.\nThis document provides a overview for contributing.\n## Asking Questions\nIf you have questions to qulacs, feel free to ask in Issue and community will assist you! Your question will be a knowledge to others seeking for help.\nIssue title should be prefixed with `[Question]` so that community can identify question.\n## Report bugs\nReporting problems are always welcome! Post in Issue and we'll understand caveats.\nIssue title should be prefixed with `[Bug]`.\nPlease include following details if you have:\n- Reproducible steps to cause the issue\n- What qulacs expected to do, and actually done\n- code snippet to demonstorate issue\n- Version of qulacs, OS info, etc...\n\n## Create feature requests\nHave a feature request you want? Post it in Issue!\nIssue title should be prefixed with `[Feat]`.\n\n## Pull Request\n\n### Pull Request Process\nPR is always welcome!\n\nWriting to Issue is not necessary (but recommended) to create single PR. Just create PR to the `main` branch.\n\nHowever, if you want to make changes that requires multiple PR, please discuss the change you wish to make via Issue.\n### Size of Pull Request\nWhen you want to create PR, non-automatically created diff should not be more than about 300 lines.\n\nIf you want to make large PR, then first ask to maintainers and feature branch will be created for review.\n## Requirements to merge Pull Request\n\n- Patch is legal under the LICENSE.\n- Pass GitHub Actions' check.\n- Approve of at least 1 maintainer.\n## How to test\n\nTesting locally is recommended before submitting PR.\nFirst you have to install [dependecies](https://github.com/qulacs/qulacs#requirement) to your computer\nbefore you build and test your patch.\nAnd you execute these commands at the root directory of this project:\n\n### For macOS and Linux\n\n```console\n$ USE_TEST=ON ./script/build_gcc.sh\n$ pip install .\n$ cd build\n$ make test\n$ make pythontest\n```\n\n### For Windows\n\n```console\n$ USE_TEST=ON ./script/build_msvc_2015.bat\n$ pip install .\n$ cmake --build ./visualstudio --target test --config Release\n$ cmake --build ./visualstudio --target pythontest --config Release\n```\n\n### Tips\n\nWe recommend use Python virtual environment from [uv](https://github.com/astral-sh/uv) for the local test.\n- Since we run `pip install .` at global Python unstable qulacs would be installed unintentionally.\n- And it would be difficult to show dependencies version when we need for debug\n\nWith uv, we can setup virtual environment with `uv venv` and activate by `source .venv/bin/activate`.\nThen, we can install qulacs by `uv pip install .`.\n\nIf you run `pythontest`, `openfermion` and `pyparsing` must be installed. With uv environment, you can install them by `uv pip install openfermion pyparsing`.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## How to cite\n\nPlease cite this arXiv paper: [Qulacs: a fast and versatile quantum circuit simulator for research purpose](https://arxiv.org/abs/2011.13524)",
+    "doi": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "qulacs",
+    "repo": "qulacs/qulacs",
+    "current_version": {
+      "value": "v0.6.13",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "qulacs"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": null,
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

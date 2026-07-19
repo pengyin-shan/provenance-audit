@@ -1,0 +1,88 @@
+{
+  "name": "qutip-notebooks",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:51Z",
+  "errors": {},
+  "github": {
+    "owner": "qutip",
+    "repo": "qutip-notebooks",
+    "errors": {},
+    "full_name": "qutip/qutip-notebooks",
+    "description": "A collection of IPython notebooks using QuTiP: examples, tutorials, development test, etc.",
+    "homepage": null,
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2023-08-01T02:55:49Z",
+    "stars": 259,
+    "topics": [],
+    "license": "BSD-3-Clause",
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "QuTiP notebooks\n===============\n\nThese files are [IPython notebooks](http://ipython.org/notebook.html) for\ntesting different parts of QuTiP. These tests serves a somewhat different\npurpose than the unit test suite that is installed as a part of QuTiP. Instead\nof being small isolated (unit) tests, these notebooks are often more like\nintegration tests, which exercise a larger part of the QuTiP codebase to make\nsure that different parts work together as expected, or tests that exercise\nvarious related parts in a module in a single location.\n\nTo open these files, start an IPython notebook server by running the following\ncommand in the directory that contains the files:\n\n    $ jupyter notebook\n    \nor, if you have an old version of IPython installed\n    \n    $ ipython notebook\n    \nThis will open a new page in your web browser, showing the IPython notebook\ndashboard page with an index of all the notebooks.\n\nOlder notebooks are in v3 format. The newer notebooks are in v4 format.\nIf you are using a version of IPython notebook that does not support v4 format.\n(which would be v3.0.0 or lower), then you can convert these notebooks using:\n\n    $ jupyter nbconvert --to notebook --nbformat 3 <nb_to_convert>\n    \n# Interactive online versions\n\nThis is currently (Jul 2019) running on the host service provided by My Binder.\n[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/qutip/qutip-notebooks/master?filepath=index.ipynb)\n    \n# Online read-only versions\n\nYou can also view the notebooks online, as read-only HTML pages rendered by\nhttp://nbviewer.ipython.org. The notebooks are rendered also by My Binder. [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/qutip/qutip-notebooks/master?filepath=index.ipynb).\n\n# Tutorials and lectures\n\nThe notebooks are organized with tutorials and lectures on [index.ipynb](index.ipynb).\n\n# Contribute\n\nYou are most welcome to contribute to the QuTiP notebooks  by forking this\nrepository and sending pull requests, or filing bug reports at the\n[issues page](http://github.com/qutip/qutip-notebooks/issues), or send us bug reports,\nquestions, or your proposed changes to our\n[QuTiP discussion group](http://groups.google.com/group/qutip).\n\nAll contributions are acknowledged in the\n[contributors](https://github.com/qutip/qutip/blob/master/doc/contributors.rst)\nsection in the documentation.\n\nNote that all notebook contributions must have a ```qutip.about()``` line at the end for reproducibility purposes. It is also encouraged to add the notebook to the [tutorial page](http://qutip.org/tutorials.html) and the [index](index.ipynb).\n\nFor more information, including technical advice, please see [Contributing to QuTiP development](https://qutip.org/docs/latest/development/contributing.html).\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "google_group": [
+      "http://groups.google.com/group/qutip"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "qutip-notebooks",
+    "repo": "qutip/qutip-notebooks",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "qutip"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "google_group": [
+          "http://groups.google.com/group/qutip"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": null,
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

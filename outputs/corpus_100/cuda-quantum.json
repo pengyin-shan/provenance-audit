@@ -1,0 +1,124 @@
+{
+  "name": "cuda-quantum",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:42:43Z",
+  "errors": {},
+  "github": {
+    "owner": "NVIDIA",
+    "repo": "cuda-quantum",
+    "errors": {},
+    "full_name": "NVIDIA/cuda-quantum",
+    "description": "C++ and Python support for the CUDA Quantum programming model for heterogeneous quantum-classical workflows",
+    "homepage": "https://nvidia.github.io/cuda-quantum/",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-05T00:55:03Z",
+    "stars": 1085,
+    "topics": [
+      "cpp",
+      "hacktoberfest",
+      "python",
+      "quantum",
+      "quantum-algorithms",
+      "quantum-computing",
+      "quantum-machine-learning",
+      "quantum-programming-language",
+      "unitaryhack"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "0.15.0",
+      "name": "0.15.0",
+      "published_at": "2026-07-02T12:06:23Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "cff-version: 1.2.0\ntitle: 'CUDA-Q'\nmessage: 'If you use this software, please cite it as below.'\nauthors:\n  - name: \"The CUDA-Q development team\"\nlicense: Apache-2.0\nlicense-url: \"https://github.com/NVIDIA/cuda-quantum/blob/main/LICENSE\"\nrepository-code: \"https://github.com/NVIDIA/cuda-quantum\"\ntype: software\nurl: \"https://github.com/NVIDIA/cuda-quantum\"\n# doi: \n",
+      "SECURITY.md": "# Security\n\nNVIDIA is dedicated to the security and trust of our software products and\nservices, including all source code repositories managed through our\norganization.\n\nIf you need to report a security issue, please use the appropriate contact points\noutlined below. **Please do not report security vulnerabilities through GitHub.**\n\n## Reporting Potential Security Vulnerability in an NVIDIA Product\n\nTo report a potential security vulnerability in any NVIDIA product:\n\n- Web: [Security Vulnerability Submission Form](https://www.nvidia.com/object/submit-security-vulnerability.html)\n- E-Mail: <psirt@nvidia.com>\n  - We encourage you to use the following PGP key for secure email communication:\n    [NVIDIA public PGP Key for communication](https://www.nvidia.com/en-us/security/pgp-key)\n  - Please include the following information:\n  - Product/Driver name and version/branch that contains the vulnerability\n  - Type of vulnerability (code execution, denial of service, buffer overflow, etc.)\n  - Instructions to reproduce the vulnerability\n  - Proof-of-concept or exploit code\n  - Potential impact of the vulnerability, including how an attacker could\n    exploit the vulnerability\n\nWhile NVIDIA currently does not have a bug bounty program, we do offer\nacknowledgement when an externally reported security issue is addressed under\nour coordinated vulnerability disclosure policy. Please visit our\n[Product Security Incident Response Team (PSIRT)](https://www.nvidia.com/en-us/security/psirt-policies/)\npolicies page for more information.\n\n## NVIDIA Product Security\n\nFor all security-related concerns, please visit [NVIDIA's Product Security portal](https://www.nvidia.com/en-us/security).\n",
+      "README.md": "# Welcome to the CUDA-Q repository\n\n<img align=\"right\" width=\"200\"\nsrc=\"https://developer.nvidia.com/sites/default/files/akamai/nvidia-cuquantum-icon.svg\"\n/>\n\n<img align=\"left\"\nsrc=\"https://github.com/NVIDIA/cuda-quantum/actions/workflows/deployments.yml/badge.svg?event=workflow_dispatch&branch=main\"\n/>\n\n<img align=\"left\"\nsrc=\"https://github.com/NVIDIA/cuda-quantum/actions/workflows/publishing.yml/badge.svg?branch=main\"\n/>\n\n<img align=\"left\"\nsrc=\"https://github.com/NVIDIA/cuda-quantum/actions/workflows/documentation.yml/badge.svg?branch=main\"\n/> <br/>\n\n<a href=\"https://zenodo.org/badge/latestdoi/614026597\"><img align=\"left\"\nsrc=\"https://zenodo.org/badge/614026597.svg\" alt=\"DOI\"></a><br/>\n\nThe CUDA-Q Platform for hybrid quantum-classical computers enables integration\nand programming of quantum processing units (QPUs), GPUs, and CPUs in one\nsystem. This repository contains the source code for all C++ and Python tools\nprovided by the CUDA-Q toolkit, including the `nvq++` compiler, the CUDA-Q\nruntime, as well as a selection of integrated CPU and GPU backends for rapid\napplication development and testing.\n\n## Getting Started\n\nTo learn more about how to work with CUDA-Q, please take a look at the [CUDA-Q\nDocumentation][cuda_quantum_docs]. The page also contains [installation\ninstructions][official_install] for officially released packages.\n\nIf you would like to install the latest iteration under development in this\nrepository and/or add your own modifications, take a look at the [latest\npackages][github_packages] deployed on the GitHub Container Registry. For more\ninformation about building CUDA-Q from source, see [these\ninstructions](./Building.md).\n\n[cuda_quantum_docs]: https://nvidia.github.io/cuda-quantum/latest\n[official_install]: https://nvidia.github.io/cuda-quantum/latest/using/quick_start.html#install-cuda-q\n[github_packages]:\n    https://github.com/orgs/NVIDIA/packages?repo_name=cuda-quantum\n\n## Contributing\n\nThere are many ways in which you can get involved with CUDA-Q. If you are\ninterested in developing quantum applications with CUDA-Q, this repository is a\ngreat place to get started! For more information about contributing to the\nCUDA-Q platform, please take a look at [Contributing.md](./Contributing.md).\n\n## License\n\nThe code in this repository is licensed under [Apache License 2.0](./LICENSE).\n\nContributing a pull request to this repository requires accepting the\nContributor License Agreement (CLA) declaring that you have the right to, and\nactually do, grant us the rights to use your contribution. A CLA-bot will\nautomatically determine whether you need to provide a CLA and decorate the PR\nappropriately. Simply follow the instructions provided by the bot. You will only\nneed to do this once.\n\n## Feedback\n\nPlease let us know your feedback and ideas for the CUDA-Q platform in the\n[Discussions][cuda_quantum_discussions] tab of this repository, or file an\n[issue][cuda_quantum_issues]. To report security concerns or [Code of\nConduct](./Code_of_Conduct.md) violations, please reach out to\n[cuda-quantum@nvidia.com](mailto:cuda-quantum@nvidia.com).\n\n[cuda_quantum_discussions]: https://github.com/NVIDIA/cuda-quantum/discussions\n[cuda_quantum_issues]: https://github.com/NVIDIA/cuda-quantum/issues\n"
+    },
+    "has_security_md": true,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "CUDA-Q",
+    "version": null,
+    "doi": null,
+    "authors": [
+      "The CUDA-Q development team"
+    ],
+    "preferred_citation": null,
+    "identifiers": []
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "gh_discussions": [
+      "https://github.com/NVIDIA/cuda-quantum/discussions"
+    ],
+    "gh_pages": [
+      "https://nvidia.github.io/cuda-quantum/latest",
+      "https://nvidia.github.io/cuda-quantum/latest/using/quick_start.html#install-cuda-q",
+      "https://nvidia.github.io/cuda-quantum/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "cuda-quantum",
+    "repo": "NVIDIA/cuda-quantum",
+    "current_version": {
+      "value": "0.15.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "The CUDA-Q development team"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "gh_discussions": [
+          "https://github.com/NVIDIA/cuda-quantum/discussions"
+        ],
+        "gh_pages": [
+          "https://nvidia.github.io/cuda-quantum/latest",
+          "https://nvidia.github.io/cuda-quantum/latest/using/quick_start.html#install-cuda-q",
+          "https://nvidia.github.io/cuda-quantum/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": "SECURITY.md present",
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://nvidia.github.io/cuda-quantum/",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "rsmpi",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:42:07Z",
+  "errors": {},
+  "github": {
+    "owner": "rsmpi",
+    "repo": "rsmpi",
+    "errors": {},
+    "full_name": "rsmpi/rsmpi",
+    "description": "MPI bindings for Rust",
+    "homepage": "https://docs.rs/mpi",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-05-23T16:10:37Z",
+    "stars": 591,
+    "topics": [
+      "mpi",
+      "rust"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "mpi-0.8.1",
+      "name": "mpi-0.8.1",
+      "published_at": "2025-12-07T03:04:37Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "# MPI bindings for Rust\n\n[![GitHub Actions][actions-shield]][actions]\n[![Documentation][doc-shield]][doc]\n[![Crates.io][crate-shield]][crate]\n[![License: Apache License 2.0 or MIT][license-shield]][license]\n\nThe [Message Passing Interface][MPI] (MPI) is a specification for a\nmessage-passing style concurrency library. Implementations of MPI are often used to structure\nparallel computation on High Performance Computing systems. The MPI specification describes\nbindings for the C programming language (and through it C++) as well as for the Fortran\nprogramming language. This library tries to bridge the gap into a more rustic world.\n\n[actions-shield]: https://github.com/rsmpi/rsmpi/workflows/Test/badge.svg\n[actions]: https://github.com/rsmpi/rsmpi/actions\n[doc-shield]: https://docs.rs/mpi/badge.svg\n[doc]: https://docs.rs/mpi\n[crate-shield]: https://img.shields.io/crates/v/mpi.svg?style=flat-square\n[crate]: https://crates.io/crates/mpi\n[license-shield]: https://img.shields.io/badge/license-Apache_License_2.0_or_MIT-blue.svg?style=flat-square\n[license]: https://github.com/rsmpi/rsmpi#license\n[MPI]: http://www.mpi-forum.org\n\n## Requirements\n\nAn implementation of the C language interface that conforms to MPI-3.1. `rsmpi` is currently tested with these implementations:\n- [OpenMPI][OpenMPI] 4.0.3 on Ubuntu-20.04, 4.1.2 on macOS\n- [MPICH][MPICH] 3.3.2 on Ubuntu 20.04\n- [MS-MPI (Windows)][MS-MPI] 10.1.2 on Windows 2022\n\nUsers have also had success with these MPI implementations, but they are not tested in CI:\n- [Spectrum MPI][Spectrum-MPI] 10.3.0.1\n- [Cray MPI][Cray-MPI] 8.1.16 with `PrgEnv-amd/8.3.3`\n\nFor a reasonable chance of success with `rsmpi` with any MPI implementation, you must have one of:\n\n- export `MPI_PKG_CONFIG` to be the name or path for pkg-config for your implementation\n  - `rsmpi` automatically uses `CRAY_MPICH_DIR` on Cray environments so the above need not be set\n  - `mpich` and `ompi` are tried by default as a last resort\n  - Tip: test with a command like `pkg-config --cflags --libs mpich`\n- The implementation provides a C compiler wrapper `mpicc`\n  - export `MPICC=/path/to/mpicc` to specify fully\n  - otherwise tries `mpicc` in `$PATH`\n  - `mpicc -show` should print the full command line that is used to invoke the wrapped C compiler in gcc-compatible syntax (e.g., `-lmpi`, `-I/usr/local/include`, ...)\n- On Windows,\n  - for MS-MPI the variables `MSMPI_INC` and either `MSMPI_LIB32` or `MSMPI_LIB64` should be set\n  - for Intel MPI the variable `I_MPI_ROOT` should be set\n\nSince the MPI standard leaves some details of the C API unspecified (whether to implement certain constants and even functions using preprocessor macros or native C constructs, the details of most types, etc.) `rsmpi` takes a two step approach to generating functional low-level bindings.\n\nFirst, it uses a thin static library written in C (see [rsmpi.h][rsmpih] and [rsmpi.c][rsmpic]) that tries to capture the underspecified identifiers and re-exports them with a fixed C API. This library is built from [build.rs][buildrs] using the `gcc` crate.\n\nSecond, to generate FFI definitions tailored to each MPI implementation, `rsmpi` uses `rust-bindgen` which needs `libclang`. See the [bindgen project page][bindgen] for more information.\n\nFurthermore, `rsmpi` uses the `libffi` crate which installs the native `libffi` which depends on certain build tools. See the [libffi project page][libffi] for more information.\n\n[OpenMPI]: https://www.open-mpi.org\n[MPICH]: https://www.mpich.org\n[MS-MPI]: https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi\n[Spectrum-MPI]: https://www.ibm.com/products/spectrum-mpi\n[Cray-MPI]: https://docs.nersc.gov/development/programming-models/mpi/cray-mpich/\n[rsmpih]: https://github.com/rsmpi/rsmpi/blob/main/mpi-sys/src/rsmpi.h\n[rsmpic]: https://github.com/rsmpi/rsmpi/blob/main/mpi-sys/src/rsmpi.c\n[buildrs]: https://github.com/rsmpi/rsmpi/blob/main/mpi-sys/build.rs\n[bindgen]: https://github.com/servo/rust-bindgen\n[libffi]: https://github.com/tov/libffi-rs\n\n## Usage\n\nAdd the `mpi` crate as a dependency in your `Cargo.toml`:\n\n```toml\n# \"features\" is optional\n[dependencies]\nmpi = { version = \"0.8.1\", features = [\"user-operations\", \"derive\"] }\n```\n\nThen use it in your program like this:\n\n```rust\n\nuse mpi::request::WaitGuard;\nuse mpi::traits::*;\n\nfn main() {\n    let universe = mpi::initialize().unwrap();\n    let world = universe.world();\n    let size = world.size();\n    let rank = world.rank();\n\n    let next_rank = (rank + 1) % size;\n    let previous_rank = (rank - 1 + size) % size;\n\n    let msg = vec![rank, 2 * rank, 4 * rank];\n    mpi::request::scope(|scope| {\n        let _sreq = WaitGuard::from(\n            world\n                .process_at_rank(next_rank)\n                .immediate_send(scope, &msg[..]),\n        );\n\n        let (msg, status) = world.any_process().receive_vec();\n\n        println!(\n            \"Process {} got message {:?}.\\nStatus is: {:?}\",\n            rank, msg, status\n        );\n        let x = status.source_rank();\n        assert_eq!(x, previous_rank);\n        assert_eq!(vec![x, 2 * x, 4 * x], msg);\n\n        let root_rank = 0;\n        let root_process = world.process_at_rank(root_rank);\n\n        let mut a;\n        if world.rank() == root_rank {\n            a = vec![2, 4, 8, 16];\n            println!(\"Root broadcasting value: {:?}.\", &a[..]);\n        } else {\n            a = vec![0; 4];\n        }\n        root_process.broadcast_into(&mut a[..]);\n        println!(\"Rank {} received value: {:?}.\", world.rank(), &a[..]);\n        assert_eq!(&a[..], &[2, 4, 8, 16]);\n    });\n}\n```\n\n## Features\n\nThe bindings follow the MPI 3.1 specification.\n\nCurrently supported:\n\n- **Groups, Contexts, Communicators**:\n  - Group and (Intra-)Communicator management from section 6 is mostly complete.\n  - no Inter-Communicators\n  - no process topologies\n- **Point to point communication**:\n  - standard, buffered, synchronous and ready mode send in blocking and non-blocking variants\n  - receive in blocking and non-blocking variants\n  - send-receive\n  - probe\n  - matched probe/receive\n- **Collective communication**:\n  - barrier\n  - broadcast\n  - (all) gather\n  - scatter\n  - all to all\n  - varying counts operations\n  - reductions/scans\n  - blocking and non-blocking variants\n- **Datatypes**: Bridging between Rust types and MPI basic types as well as custom MPI datatypes which can act as views into buffers.\n\nNot supported (yet):\n\n- One-sided communication (RMA)\n- MPI parallel I/O\n- A million small things\n\n\n### Optional Cargo Features\n\nThese optional features can be enabled in your cargo manifest. See the [Usage](#usage) section\nabove.\n\n`user-operations` enables capturing lambdas and safe creation in `UserOperation`. This feature\nrequires the `libffi` system library, which is not available on all systems out-of-the-box.\n\n```rust\nlet mut h = 0;\ncomm.all_reduce_into(\n    &(rank + 1),\n    &mut h,\n    &UserOperation::commutative(|x, y| {\n        let x: &[Rank] = x.downcast().unwrap();\n        let y: &mut [Rank] = y.downcast().unwrap();\n        for (&x_i, y_i) in x.iter().zip(y) {\n            *y_i += x_i;\n        }\n    }),\n);\n```\n\n`derive` enables the `Equivalence` derive macro, which makes it easy to send structs\nover-the-wire without worrying about safety around padding, and allowing arbitrary datatype\nmatching between structs with the same field order but different layout.\n\n```rust\n#[derive(Equivalence)]\nstruct MyProgramOpts {\n    name: [u8; 100],\n    num_cycles: u32,\n    material_properties: [f64; 20],\n}\n```\n\n### On disabling the `mpi-sys/runtime` feature\n\nFor a standard install of LLVM on Linux, the `runtime` feature can be disabled (e.g., via `--no-default-features`) with no consequences because `libclang.so` will be found in a default path. (To use a non-default path, `LD_LIBRARY_PATH` would have to be set.) On MacOS, standard installs (like Homebrew) do not put `libclang.dylib` in a default path. See [the CI configuration](.github/workflows/test.yaml) for examples of correctly setting `DYLD_LIBRARY_PATH` for MacOS. See [`clang-sys` documentation on linking](https://github.com/KyleMayes/clang-sys?tab=readme-ov-file#linking) for more details.\n\n## Documentation\n\nEvery public item of `rsmpi` should at least have a short piece of documentation associated with it. Documentation can be generated via:\n\n```\ncargo doc\n```\n\nDocumentation for the latest version of the crate released to crates.io is [hosted on Github pages][doc].\n\n## Examples\n\nSee files in [examples/][examples]. These examples also act as [integration tests][actions].\n\n[examples]: https://github.com/rsmpi/rsmpi/tree/master/examples\n\n## Python integration\n\nIt is possible to use `rsmpi` with a communicator provided by [mpi4py](https://mpi4py.readthedocs.io/en/stable/). An example project demonstrating this is [mpi4py_with_rsmpi](https://github.com/betckegroup/mpi4py_with_rsmpi).\n\n## License\n\nLicensed under either of\n\n * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)\n * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)\n\nat your option.\n\n### Contribution\n\nUnless you explicitly state otherwise, any contribution intentionally\nsubmitted for inclusion in the work by you, as defined in the Apache-2.0\nlicense, shall be dual licensed as above, without any additional terms or\nconditions.\n",
+      "CHANGELOG.md": "# RSMPI Release Notes\n\n## 0.8.1 (2025-12-07)\n\n**MSRV:** 1.78\n\n### New Features\n\n* [[PR 193]](https://github.com/rsmpi/rsmpi/pull/193) Allow custom crate paths for Equivalence derive macro.\n\n### Maintenance\n\n* Upgrade dependencies, fixing issues on MacOS\n  * See [README](README.md) for details on linking with the `mpi-sys/runtime` feature disabled.\n* [[PR 201]](https://github.com/rsmpi/rsmpi/pull/201) mpi-sys: bindgen: use `new_type_alias` for opaque types.\n* `build-probe-mpi`: [[PR 205]](https://github.com/rsmpi/rsmpi/pull/205) Add support for Intel MPI on Windows.\n* `build-probe-mpi`: [[PR 208]](https://github.com/rsmpi/rsmpi/pull/208) Improve error messages for improper MPI setup\n\n## 0.8.0 (2024-05-03)\n\n**MSRV:** 1.70\n\n### New Features\n\n* [[PR 184]](https://github.com/rsmpi/rsmpi/pull/184) Make ready send `unsafe` since improper use is often not detectable at the call site.\n* [[PR 171]](https://github.com/rsmpi/rsmpi/pull/171) Refactor attributes to safer approach; add `Communicator::set_attr()`.\n* [[PR 157]](https://github.com/rsmpi/rsmpi/pull/157) Object safety for `Communicator`\n\n## 0.7.0 (2023-10-21)\n\n**MSRV:** 1.65\n\n### New Features\n\n* [[PR 140]](https://github.com/rsmpi/rsmpi/pull/140) Support for attributes, inter-communicators, and process management.\n* [[PR 155]](https://github.com/rsmpi/rsmpi/pull/155) Remove type-distinction between system-communicators and user-communicators.\n* [[PR 159]](https://github.com/rsmpi/rsmpi/pull/159) Add `\"complex\"` feature to support send/receive of complex types from the [`num-complex` crate](https://crates.io/crates/num-complex).\n\n### Maintenance\n\n* More precise optional dependencies for features.\n* `build-probe-mpi`: support for Cray compilers and some quoting fixes\n\n## 0.6.0 (2022-08-05)\n\n**MSRV:** 1.54.0\n\n### Notes\n\nIn order to use the `user-operations` optional feature (enabled by default), you may want to check\nthat  you are using at least `libffi-sys` version 1.1.0. This can be done by running `cargo\nupdate`, but for most users this will likely be unnecessary.\n\n### New Features\n\n* [[PR 122]](https://github.com/rsmpi/rsmpi/pull/122) Multiple request completion via `MPI_Waitsome` and friends.\n* [[PR 113]](https://github.com/rsmpi/rsmpi/pull/113) Make `Communicator` and `Group` traits object-safe\n* [[PR 110]](https://github.com/rsmpi/rsmpi/pull/110) Implement `Buffer` and `BufferMut` for `Vec`,\n    allowing cleaner syntax\n- [[PR 52]](https://github.com/rsmpi/rsmpi/pull/52) Safely send and receive structs with arbitrary\n    data layout, including padding, using `#[derive(Equivalence)]`.\n- [[PR 88]](https://github.com/rsmpi/rsmpi/pull/88) Support for `MPI_Waitany` using `mpi::wait_any`.\n- [[PR 46]](https://github.com/rsmpi/rsmpi/pull/46)\n    [MS-MPI](https://docs.microsoft.com/en-us/message-passing-interface/microsoft-mpi) on Windows\n    is now supported.\n- [[PR 58]](https://github.com/rsmpi/rsmpi/pull/58) Support for \"cartesian\" communicators using\n    `CartestianCommunicator`\n- [[PR 51]](https://github.com/rsmpi/rsmpi/pull/51) Support `MPI_Pack` and `MPI_Unpack` using\n    `Communicator::pack`, `Communicator::pack_into`, and `Communicator::unpack_into`.\n- [[PR 49]](https://github.com/rsmpi/rsmpi/pull/49) Build compound datatypes without committing\n    intermediate types using `UncommittedUserDatatype`.\n- [[PR 53]](https://github.com/rsmpi/rsmpi/pull/53) Construct a `UserCommunicator` from an\n    `MPI_Comm` with `UserCommunicator::from_raw`.\n- [[PR 90]](https://github.com/rsmpi/rsmpi/pull/90) Support `MPI_Comm_split_type` using\n    `Communicator::split_shared`, which splits communicators into subcommunicators that are capable\n    of creating shared memory regions.\n- [[PR 27]](https://github.com/rsmpi/rsmpi/pull/27) Support for `MPI_Comm_get_name` and\n    `MPI_Comm_set_name` using `Communicator::set_name` and `Communicator::get_name`.\n\n### Changed APIs\n- [[PR 48]](https://github.com/rsmpi/rsmpi/pull/48) `UserDatatype::structured` no longer takes a\n    `count` argument.\n\n### Fixed Bugs\n- [[PR 77]](https://github.com/rsmpi/rsmpi/pull/77) Failure to complete scoped requests now results\n    in immediate process termination, rather than a panic.\n- [[PR 53]](https://github.com/rsmpi/rsmpi/pull/96) Portability improved with newer libffi and\n    bindgen\n\n### Deprecated APIs\n\n### Removed Features\n\n## Old Releases\nPrevious releases do not have discretized release notes. Please review the git commmit log to\nunderstand which features were added in each version.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "readthedocs": [
+      "https://mpi4py.readthedocs.io/en/stable/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "rsmpi",
+    "repo": "rsmpi/rsmpi",
+    "current_version": {
+      "value": "mpi-0.8.1",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "rsmpi"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "readthedocs": [
+          "https://mpi4py.readthedocs.io/en/stable/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://docs.rs/mpi",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

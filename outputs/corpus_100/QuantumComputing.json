@@ -1,0 +1,86 @@
+{
+  "name": "QuantumComputing",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:15Z",
+  "errors": {},
+  "github": {
+    "owner": "corbett",
+    "repo": "QuantumComputing",
+    "errors": {},
+    "full_name": "corbett/QuantumComputing",
+    "description": "This is an implementation of IBM's Quantum Experience in simulation; a 5-qubit quantum computer with a limited set of gates. Please cite me if you end up using this academically.",
+    "homepage": null,
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2022-12-29T04:35:18Z",
+    "stars": 626,
+    "topics": [
+      "gate",
+      "ibm-quantum-experience",
+      "ibm-syntax",
+      "quantum-computing",
+      "qubits"
+    ],
+    "license": "GPL-3.0",
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "# Quintuple\nThis is an implementation of IBM's Quantum Experience in simulation; a 5-qubit quantum computer with a limited set of gates \"the world’s first quantum computing platform delivered via the IBM Cloud\". Their implementation is available at [http://www.research.ibm.com/quantum/](http://www.research.ibm.com/quantum/).\n\nThis code allows you to execute code printed from the Quantum Composer in the following syntax: \n\n|   description       |    usage           |\n| ------------- | ------------- |\n|available qubit list| q[0], q[1], q[2], q[3], q[4]|\n|1-qubit gate list| h,t,tdg,s,sdg,x,y,z,id|\n|1-qubit gate action| gate q[i];|\n|2-qubit CNOT gate list | cx |\n| 2-qubit CNOT gate action| cx q[control], q[target];|\n| measurement operation list | measure, bloch|\n| measurement operation action | operation q[i]; |\n\nIt is much easier to dig into the internals of how the quantum computer computes by seeing and tracing the linear algebra representation of gates and states and their interactions as desired–for IBM's examples or for one's own code.\n\n100% of the examples on the IBM tutorial are provided here, tested for and supported, and many addition tests and examples are provided. In fact, the implementation of the 5-qubit quantum computer simulator is only 675 lines, with approximately twice as many lines of test programs and examples provided.\n\nCheck out any of the test functions for example usage, and the ```Programs``` class contains many example programs in IBM's syntax all available in one place.\n\nIf you make use of this work, please cite my paper available on the physics arXiv as [Quintuple: a Python 5-qubit quantum computer simulator to facilitate cloud quantum computing](http://arxiv.org/abs/1606.09225). For the making of story of this code, along with some pointers to resources on quantum computation, [check out my blog post](https://codexgalactic.com/2016/05/21/5-qubit-quantum-computing-simulator/).\n\n\n# Example usage \n```\nfrom QuantumComputer import *\nghz_example_code=\"\"\"h q[0];\n\t\th q[1];\n\t\tx q[2];\n\t\tcx q[1], q[2];\n\t\tcx q[0], q[2];\n\t\th q[0];\n\t\th q[1];\n\t\th q[2];\"\"\"\nqc=QuantumComputer()\nqc.execute(ghz_example_code)\nProbability.pretty_print_probabilities(qc.qubits.get_quantum_register_containing(\"q0\").get_state())\n```\nThis will print\n```\n|psi>=0.70710678118654724|000>+-0.70710678118654724|111>\nPr(|000>)=0.500000; Pr(|111>)=0.500000; \n```\n\nOr, using the swap Qubits example IBM tutorial Section IV, Page 2\n```\nswap_example_code=\"\"\"x q[2];\n\t\tcx q[1], q[2];\n\t\th q[1];\n\t\th q[2];\n\t\tcx q[1], q[2];\n\t\th q[1];\n\t\th q[2];\n\t\tcx q[1], q[2];\n\t\tmeasure q[1];\n\t\tmeasure q[2];\"\"\"\nqc.reset()\nqc.execute(swap_example_code)\nProbability.pretty_print_probabilities(qc.qubits.get_quantum_register_containing(\"q2\").get_state())\n```\nwill print\n```\n|psi>=|10>\nPr(|10>)=1.000000; \n<state>=-1.000000\n```\n\nWe'll continue with this example in pure python below.\n\nNote: using IBM's measurment code ```measure q[0];``` will actually collapse the state, but for convenience the internal state before collapse is stored in qubit.get_noop(). Nature doesn't give this to us, but I can give it to you!\n\n\n# Pure python quantum computing machinery \nQuantum computing operations can also be done in pure python, either with the QuantumComputer machinery or by directly manipulating gates.\n## QuantumComputer machinery\n\n```\n# Swap Qubits example IBM tutorial Section IV, Page 2\nqc=QuantumComputer()\nqc.apply_gate(Gate.X,\"q2\")\nqc.apply_two_qubit_gate_CNOT(\"q1\",\"q2\")\nqc.apply_gate(Gate.H,\"q1\")\nqc.apply_gate(Gate.H,\"q2\")\nqc.apply_two_qubit_gate_CNOT(\"q1\",\"q2\")\nqc.apply_gate(Gate.H,\"q1\")\nqc.apply_gate(Gate.H,\"q2\")\nqc.apply_two_qubit_gate_CNOT(\"q1\",\"q2\")\nqc.measure(\"q1\")\nqc.measure(\"q2\")\nProbability.pretty_print_probabilities(qc.qubits.get_quantum_register_containing(\"q1\").get_state())\n```\nWill print\n```\n|psi>=|10>\nPr(|10>)=1.000000; \n<state>=-1.000000\n```\n\n## Working with Individual States and gates\n\nNote that states are combined by using the Kronecker product. Gates that operate on entangled states are composed from single qubit gates by the Kronecker product of the gate with the Identity. See the internals of ```qc.apply_gate``` or ```qc.apply_two_qubit_gate_CNOT``` for general examples, or feel free to use them instead.\n\n```\n# Swap Qubits example IBM tutorial Section IV, Page 2\nq1=State.zero_state\nq2=State.zero_state\nq2=Gate.X*q2\nnew_state=Gate.CNOT2_01*np.kron(q1,q2)\nH2_0=np.kron(Gate.H,Gate.eye)\nH2_1=np.kron(Gate.eye,Gate.H)\nnew_state=H2_0*new_state\nnew_state=H2_1*new_state\nnew_state=Gate.CNOT2_01*new_state\nnew_state=H2_0*new_state\nnew_state=H2_1*new_state\nnew_state=Gate.CNOT2_01*new_state\nProbability.pretty_print_probabilities(new_state)\n```\n\nWill print \n```\n|psi>=0.99999999999999967|10>\nPr(|10>)=1.000000;\n<state>=-1.000000\n```\n\n This final manner of working with the library provides the most complete mathematical understanding of what's going on. Any individual state or gate can be printed, and it is clear how entanglement is represented as this is not done under the hood in this scenario.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "QuantumComputing",
+    "repo": "corbett/QuantumComputing",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "corbett"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": null,
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

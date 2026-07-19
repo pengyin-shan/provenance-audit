@@ -1,0 +1,107 @@
+{
+  "name": "NNPACK",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:43:52Z",
+  "errors": {},
+  "github": {
+    "owner": "Maratyszcza",
+    "repo": "NNPACK",
+    "errors": {},
+    "full_name": "Maratyszcza/NNPACK",
+    "description": "Acceleration package for neural networks on multi-core CPUs",
+    "homepage": "",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2024-06-11T14:51:27Z",
+    "stars": 1709,
+    "topics": [
+      "convolutional-layers",
+      "cpu",
+      "fast-fourier-transform",
+      "high-performance",
+      "high-performance-computing",
+      "inference",
+      "matrix-multiplication",
+      "multithreading",
+      "neural-network",
+      "neural-networks",
+      "simd",
+      "winograd-transform"
+    ],
+    "license": "BSD-2-Clause",
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "<p align=\"center\"><img src=\"https://maratyszcza.github.io/NNPACK/NNPACK.png\" alt=\"NNPACK Logo\" title=\"NNPACK\"/></p>\n\n# NNPACK\n\n[![BSD (2 clause) License](https://img.shields.io/badge/License-BSD%202--Clause%20%22Simplified%22%20License-blue.svg)](https://github.com/Maratyszcza/NNPACK/blob/master/LICENSE)\n[![Build Status](https://img.shields.io/travis/Maratyszcza/NNPACK.svg)](https://travis-ci.org/Maratyszcza/NNPACK)\n\nNNPACK is an acceleration package for neural network computations. NNPACK aims to provide high-performance implementations of convnet layers for multi-core CPUs.\n\nNNPACK is not intended to be directly used by machine learning researchers; instead it provides low-level performance primitives leveraged in leading deep learning frameworks, such as [PyTorch](http://pytorch.org/), [Caffe2](https://caffe2.ai/), [MXNet](http://mxnet.io), \n[tiny-dnn](https://tiny-dnn.readthedocs.io/), [Caffe](http://caffe.berkeleyvision.org/), [Torch](http://torch.ch/), and [Darknet](https://pjreddie.com/darknet/).\n\n## Platforms and requirements\n\n| Environment  | Architecture  | CPU requirements                 |\n| ------------ | ------------- | -------------------------------- |\n| Linux        | x86-64        | AVX2 and 3-level cache hierarchy |\n| Linux        | ARM           | NEON                             |\n| Linux        | ARM64         |                                  |\n| macOS        | x86-64        | AVX2 and 3-level cache hierarchy |\n| Android      | ARM           | NEON                             |\n| Android      | ARM64         |                                  |\n| Android      | x86           |                                  |\n| Android      | x86-64        |                                  |\n| iOS          | ARM           |                                  |\n| iOS          | ARM64         |                                  |\n| Emscripten   | Asm.js        |                                  |\n| Emscripten   | WebAssembly   |                                  |\n\n## Features\n\n- Multiple algorithms for convolutional layers:\n  - Fast convolution based on Fourier transform (for kernels up to 16x16 without stride)\n  - Fast convolution based on Winograd transform (for 3x3 kernels without stride)\n  - Implicit matrix-matrix multiplication algorithm (no limitations)\n  - Direct convolution algorithm (for 1x1 kernels without stride)\n- Multi-threaded SIMD-aware implementations of neural network layers\n- Implemented in C99 and Python without external dependencies\n- Extensive coverage with unit tests\n\n## Layers\n\n- Convolutional layer\n  - Inference-optimized forward propagation (`nnp_convolution_inference`)\n  - Training-optimized forward propagation (`nnp_convolution_output`)\n  - Training-optimized backward input gradient update (`nnp_convolution_input_gradient`)\n  - Training-optimized backward kernel gradient update (`nnp_convolution_kernel_gradient`)\n- Fully-connected layer\n  - Inference-optimized forward propagation (`nnp_fully_connected_inference` and `nnp_fully_connected_inference_f16f32` version for FP16 weights)\n  - Training-optimized forward propagation (`nnp_fully_connected_output`)\n- Max pooling layer\n  - Forward propagation, both for training and inference, (`nnp_max_pooling_output`)\n- ReLU layer (with parametrized negative slope)\n  - Forward propagation, both for training and inference, optionally in-place, (`nnp_relu_output`)\n  - Backward input gradient update (`nnp_relu_input_gradient`)\n- Softmax layer\n  - Forward propagation, both for training and inference, optionally in-place (`nnp_softmax_output`)\n\n## Building\n\nFor most users, the recommended way to build NNPACK is through CMake:\n\n```bash\nmkdir build\ncd build\ncmake -G Ninja ..\nninja\n```\n\nNote: if `ninja` is not available on your system, configure without `-G Ninja`, and use `make` instead of `ninja`.\n\n## Building NNPACK - Using vcpkg\n\nYou can download and install NNPACK using the [vcpkg](https://github.com/Microsoft/vcpkg) dependency manager:\n\n    git clone https://github.com/Microsoft/vcpkg.git\n    cd vcpkg\n    ./bootstrap-vcpkg.sh\n    ./vcpkg integrate install\n    ./vcpkg install NNPACK\n\nThe NNPACK port in vcpkg is kept up to date by Microsoft team members and community contributors. If the version is out of date, please [create an issue or pull request](https://github.com/Microsoft/vcpkg) on the vcpkg repository.\n\n### Cross-compilation for Android\n\nTo cross-compile for Android, add extra configuration options for `cmake`: `-DCMAKE_TOOLCHAIN_FILE=$ANDROID_NDK/build/cmake/android.toolchain.cmake` (where `$ANDROID_NDK` is the path to Android NDK directorory, e.g. `/opt/android-ndk-r15c`) **AND** arguments from the table below\n\n| ABI         | Extra cmake args                                    | Restrictions               |\n| ----------- | --------------------------------------------------- | -------------------------- |\n| armeabi     | `-DANDROID_ABI=armeabi -DANDROID_TOOLCHAIN=gcc`     | Requires CPU with ARM NEON |\n| armeabi-v7a | `-DANDROID_ABI=armeabi-v7a -DANDROID_TOOLCHAIN=gcc` | Requires CPU with ARM NEON |\n| arm64-v8a   | `-DANDROID_ABI=arm64-v8a -DANDROID_TOOLCHAIN=clang` | Requires clang toolchain   |\n| x86         | `-DANDROID_ABI=x86`                                 |                            |\n| x86_64      | `-DANDROID_ABI=x86_64`                              |                            |\n\nNotes:\n- On **armeabi** and **armeabi-v7a** `nnp_initialize` will fail with `nnp_status_unsupported_hardware` if the mobile CPU does not support ARM NEON. Don't set `-DANDROID_ARM_NEON=1` for NNPACK compilation as it can make `nnp_initialize` crash on CPUs without ARM NEON.\n- NNPACK builds for **armeabi** and **armeabi-v7a** are up to 2x slower if you use **clang** toolchain.\n- **mips** and **mips64** are not supported, and we have no plans to add it (pull request would be welcome, though)\n- **x86_64** build will use generic 128-bit (SSE2) micro-kernels rather than AVX2 micro-kernels in native build\n\n## Ecosystem\n\n### Deep Learning Frameworks\n- [PyTorch](http://pytorch.org/) supports NNPACK on mobile for inference in convolutional layers.\n- [TVM](https://tvm.apache.org/) supports NNPACK for inference in convolutional layers. See [these instructions](https://github.com/apache/incubator-tvm/blob/master/docs/install/nnpack.md) to enable NNPACK in TVM.\n- [MXNet](http://mxnet.io) supports NNPACK for inference in convolutional layers, fully-connected, and max-pooling layers. See [MXNet wiki](https://mxnet.incubator.apache.org/how_to/nnpack.html) for configuration instructions and performance benchmarks).\n- [Caffe2](http://caffe2.ai) supports NNPACK for inference in convolutional layers.\n- [darknet-nnpack](https://github.com/thomaspark-pkj/darknet-nnpack) - fork of [Darknet](https://pjreddie.com/darknet/) framework with NNPACK support.\n- [tiny-dnn](https://github.com/tiny-dnn/tiny-dnn) - header-only deep learning framework in C++11, which natively supports NNPACK.\n- [Maratyszcza/caffe](https://github.com/Maratyszcza/caffe) - up-to-date integration of NNPACK (convolutional, fully-connected, max-pooling, and ReLU layers) into Caffe based on `nnpack-pr` branch in [ajtulloch/caffe](https://github.com/ajtulloch/caffe/tree/nnpack-pr).\n- [Maratyszcza/caffe-nnpack](https://github.com/Maratyszcza/caffe-nnpack) - older and unmaintained integration of NNPACK (convolutional layers only) into Caffe.\n- [szagoruyko/nnpack.torch](https://github.com/szagoruyko/nnpack.torch) - integration of NNPACK into Lua Torch via ffi\n- See also discussion in [Issue #1](https://github.com/Maratyszcza/NNPACK/issues/1)\n\n### Languages and Environments\n- [nnpack-windows](https://github.com/zeno40/nnpack-windows) - unofficial port for Windows\n- [node-nnpack](https://www.npmjs.com/package/node-nnpack) - Node.js bindings\n- [peterhj/libnnpack](https://github.com/peterhj/libnnpack) - Rust bindings\n\n### Users\n\n- [Facebook](https://www.facebook.com) uses NNPACK in production.\n- [Prisma](https://prisma-ai.com) uses NNPACK in the mobile app.\n\n## Acknowledgements\n\n[![HPC Garage logo](https://github.com/Maratyszcza/PeachPy/blob/master/logo/hpcgarage.png)](http://hpcgarage.org)\n[![Georgia Tech College of Computing logo](https://github.com/Maratyszcza/PeachPy/blob/master/logo/college-of-computing.gif)](http://www.cse.gatech.edu/)\n\nThe library is developed by [Marat Dukhan](http://www.maratdukhan.com) of Georgia Tech with extensive advice from [Nicolas Vasilache](https://research.facebook.com/nicolas-vasilache) and [Soumith Chintala](http://soumith.ch/) of Facebook Artificial Intelligence Research. [Andrew Tulloch](http://tullo.ch/) of Facebook Artificial Intelligence Research contributed Caffe integration. We thank [Andrew Lavin](https://github.com/andravin) for fruitful discussions on Winograd transform-based implementations. NNPACK is a research project at [Richard Vuduc](http://vuduc.org)'s HPC Garage lab in the Georgia Institute of Technology, College of Computing, School of Computational Science and Engineering.\n\nThis material is based upon work supported by the U.S. National Science Foundation (NSF) Award Number 1339745. Any opinions, findings and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect those of NSF.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "readthedocs": [
+      "https://tiny-dnn.readthedocs.io/"
+    ],
+    "gh_pages": [
+      "https://maratyszcza.github.io/NNPACK/NNPACK.png"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "NNPACK",
+    "repo": "Maratyszcza/NNPACK",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Maratyszcza"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "readthedocs": [
+          "https://tiny-dnn.readthedocs.io/"
+        ],
+        "gh_pages": [
+          "https://maratyszcza.github.io/NNPACK/NNPACK.png"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": null,
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

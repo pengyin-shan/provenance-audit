@@ -1,0 +1,91 @@
+# Corpus B — Channel-provenance security posture (HPC, E4S/Spack ecosystem)
+# Feeds: Trusted CI plenary, SC26 poster, ground-truth answer key for EAGER/IEEE, CICI preliminary work.
+# Target: 15-25 projects across numerical libraries, I/O & storage, performance tools, workflow systems.
+# NOTE: a few repo slugs are best-known guesses; the collector prints ERR(repo:not_found) for any
+# bad slug so you can fix it. Add `registries:` and `zenodo:` blocks per project as you confirm them.
+
+- name: kokkos
+  repo: kokkos/kokkos
+  discipline: numerical
+  ecosystem: e4s
+
+- name: Trilinos
+  repo: trilinos/Trilinos
+  discipline: numerical
+  ecosystem: e4s
+
+- name: hypre
+  repo: hypre-space/hypre
+  discipline: numerical
+  ecosystem: e4s
+
+- name: SUNDIALS
+  repo: LLNL/sundials
+  discipline: numerical
+  ecosystem: e4s
+
+- name: MFEM
+  repo: mfem/mfem
+  discipline: numerical
+  ecosystem: e4s
+
+- name: deal.II
+  repo: dealii/dealii
+  discipline: numerical
+  ecosystem: spack
+
+- name: HDF5
+  repo: HDFGroup/hdf5
+  discipline: io_storage
+  ecosystem: e4s
+
+- name: ADIOS2
+  repo: ornladios/ADIOS2
+  discipline: io_storage
+  ecosystem: e4s
+
+- name: Darshan
+  repo: darshan-hpc/darshan
+  discipline: io_storage
+  ecosystem: e4s
+
+- name: PnetCDF            # verify slug
+  repo: Parallel-NetCDF/PnetCDF
+  discipline: io_storage
+  ecosystem: spack
+
+- name: Caliper
+  repo: LLNL/Caliper
+  discipline: performance
+  ecosystem: e4s
+
+- name: HPCToolkit         # verify slug/casing
+  repo: HPCToolkit/hpctoolkit
+  discipline: performance
+  ecosystem: e4s
+
+- name: Parsl
+  repo: Parsl/parsl
+  discipline: workflow
+  ecosystem: spack
+  registries:
+    - registry: pypi
+      package: parsl
+
+- name: flux-core
+  repo: flux-framework/flux-core
+  discipline: workflow
+  ecosystem: e4s
+
+- name: Snakemake
+  repo: snakemake/snakemake
+  discipline: workflow
+  ecosystem: spack
+  registries:
+    - registry: pypi
+      package: snakemake
+
+- name: Spack
+  repo: spack/spack
+  discipline: ecosystem
+  ecosystem: spack

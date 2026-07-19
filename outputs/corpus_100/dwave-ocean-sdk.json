@@ -1,0 +1,86 @@
+{
+  "name": "dwave-ocean-sdk",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:22Z",
+  "errors": {},
+  "github": {
+    "owner": "dwavesystems",
+    "repo": "dwave-ocean-sdk",
+    "errors": {},
+    "full_name": "dwavesystems/dwave-ocean-sdk",
+    "description": "Installer for D-Wave's Ocean tools",
+    "homepage": "https://docs.dwavequantum.com/",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-06-30T12:49:25Z",
+    "stars": 530,
+    "topics": [
+      "quantum-computing"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "9.4.0",
+      "name": "9.4.0",
+      "published_at": "2026-06-18T16:49:00Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.rst": ".. image:: https://raw.githubusercontent.com/dwavesystems/dwave-ocean-sdk/master/docs/_static/Ocean_SDK_Banner.png\n\n.. image:: https://img.shields.io/pypi/v/dwave-ocean-sdk.svg\n    :target: https://pypi.python.org/pypi/dwave-ocean-sdk\n\n.. image:: https://img.shields.io/pypi/pyversions/dwave-ocean-sdk.svg\n    :target: https://pypi.python.org/pypi/dwave-ocean-sdk\n\n.. image:: https://readthedocs.com/projects/d-wave-systems-dwave-ocean-sdk/badge\n    :target: https://docs.ocean.dwavesys.com\n\n.. image:: https://circleci.com/gh/dwavesystems/dwave-ocean-sdk.svg?style=svg\n    :target: https://circleci.com/gh/dwavesystems/dwave-ocean-sdk\n\n.. index-start-marker\n\n`Ocean SDK <https://docs.dwavequantum.com/en/latest/ocean/>`_ is\n`D-Wave's <https://www.dwavequantum.com/>`_ suite of tools for solving hard\nproblems with quantum computers.\n\n.. index-end-marker\n\nInstallation\n============\n\n.. installation-start-marker\n\nInstallation from `PyPI <https://pypi.org/project/dwave-ocean-sdk/>`_:\n\n.. code-block:: bash\n\n    pip install dwave-ocean-sdk\n\nFor more information, see the Ocean documentation's\n`installation <https://docs.dwavequantum.com/en/latest/ocean/install.html>`_\npage.\n\n.. installation-end-marker\n\nGetting Started\n===============\n\nSign up for the Leap quantum cloud service here:\n`Leap signup <https://cloud.dwavesys.com/leap/signup>`_. \n\nStart learning with the following D-Wave resources:\n\n*   `D-Wave Documentation <https://docs.dwavequantum.com/en/latest/index.html>`_\n    to learn about quantum computers and how to use them.\n\n*   `Get Started with Ocean Software <https://docs.dwavequantum.com/en/latest/ocean/index_get_started.html>`_\n    to install and start coding with Ocean software.\n\n*   `dwave-examples <https://github.com/dwave-examples>`_ for code examples\n    and Jupyter Notebooks.\n\n*   `Resource Library <https://www.dwavequantum.com/learn/resource-library>`_ on\n    D-Wave website for whitepapers and additional resources.\n\nExample Quantum Program\n-----------------------\n\nThe following lines of code solve and visualize a\n`random <https://docs.dwavequantum.com/en/latest/ocean/api_ref_dimod/generators.html#random>`_\n`problem <https://docs.dwavequantum.com/en/latest/concepts/models.html#binary-quadratic-models>`_\non a quantum computer.\n\n.. code-block:: python\n\n    import dimod\n    import dwave.inspector\n    import dwave.system\n\n    bqm = dimod.generators.ran_r(1, 20)\n    sampler = dwave.system.EmbeddingComposite(dwave.system.DWaveSampler())\n    sampleset = sampler.sample(bqm, num_reads=100)\n    dwave.inspector.show(sampleset)\n\nThe left side of the\n`visualized <https://docs.dwavequantum.com/en/latest/quantum_research/embedding_guidance.html>`_\nsolution represents the problem's variables as circles, with white dots for\nvariables assigned values of -1 and blue dots for values of +1; the colors of the\nconnecting lines represent values of the quadratic coefficients for each pair of\nvariables. The right side shows the qubits representing these variables on a\nquantum processing unit.\n\n.. image:: https://raw.githubusercontent.com/dwavesystems/dwave-ocean-sdk/master/docs/_static/inspector_bqm_ran_r_20.png\n\nYou can find introductory examples in the\n`documentation <https://docs.dwavequantum.com/en/latest/quantum_research/index_examples_beginner.html>`_\nand `dwave-examples <https://github.com/dwave-examples>`_ GitHub repository, and\nmany customer prototype applications on the\n`D-Wave website <https://www.dwavequantum.com/learn/featured-applications/>`_.\n\nSupport\n=======\n\nFind support here:\n\n*   `Leap user community <https://support.dwavesys.com/hc/en-us/community/topics>`_\n    to converse with a large community of D-Wave users.\n*   `Leap help center <https://support.dwavesys.com/hc/en-us>`_\n    to search the Leap knowledge base.\n*   `SDK GitHub repo <https://github.com/dwavesystems/dwave-ocean-sdk/issues>`_\n    to open issues or request features on the Ocean SDK or on any one of its\n    `packages <https://github.com/dwavesystems>`_.\n\nContributing\n============\n\nYour contributions are welcome!\n\nOcean's\n`contributing guide <https://docs.dwavequantum.com/en/latest/ocean/contribute.html>`_\nhas guidelines for contributing to Ocean packages.\n\nLicense\n=======\n\nReleased under the Apache License 2.0. See LICENSE file."
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "dwave-ocean-sdk",
+    "repo": "dwavesystems/dwave-ocean-sdk",
+    "current_version": {
+      "value": "9.4.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "dwavesystems"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://docs.dwavequantum.com/",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

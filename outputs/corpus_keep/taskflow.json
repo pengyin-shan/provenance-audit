@@ -1,0 +1,116 @@
+{
+  "name": "taskflow",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:43:48Z",
+  "errors": {},
+  "github": {
+    "owner": "taskflow",
+    "repo": "taskflow",
+    "errors": {},
+    "full_name": "taskflow/taskflow",
+    "description": "A General-purpose Task-parallel Programming System in C++",
+    "homepage": "https://taskflow.github.io",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-07-05T18:55:53Z",
+    "stars": 12036,
+    "topics": [
+      "concurrent-programming",
+      "cuda-programming",
+      "gpu-programming",
+      "heterogeneous-parallel-programming",
+      "high-performance-computing",
+      "multi-threading",
+      "multicore-programming",
+      "multithreading",
+      "parallel",
+      "parallel-computing",
+      "parallel-programming",
+      "taskflow",
+      "taskparallelism",
+      "threadpool",
+      "work-stealing"
+    ],
+    "license": "NOASSERTION",
+    "latest_release": {
+      "tag": "v4.1.0",
+      "name": "Taskflow v4.1.0",
+      "published_at": "2026-06-20T02:20:29Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "# Taskflow <img align=\"right\" width=\"10%\" src=\"images/taskflow_logo.png\">\n\n[![Ubuntu](https://github.com/taskflow/taskflow/workflows/Ubuntu/badge.svg)](https://github.com/taskflow/taskflow/actions?query=workflow%3AUbuntu)\n[![macOS](https://github.com/taskflow/taskflow/workflows/macOS/badge.svg)](https://github.com/taskflow/taskflow/actions?query=workflow%3AmacOS)\n[![Windows](https://github.com/taskflow/taskflow/workflows/Windows/badge.svg)](https://github.com/taskflow/taskflow/actions?query=workflow%3AWindows)\n[![Wiki](images/api-doc.svg)][documentation]\n[![TFProf](images/tfprof.svg)](https://taskflow.github.io/tfprof/)\n[![Cite](images/cite-tpds.svg)][TPDS22]\n\nTaskflow helps you quickly write high-performance task-parallel programs with high programming productivity.\nIt is faster, more expressive, fewer lines of code, and easier for drop-in integration\nthan many existing task programming libraries.\n\n## Start Your First Taskflow Program\n\nThe following program (`simple.cpp`) creates four tasks `A`, `B`, `C`, and `D`,\nwhere `A` runs before `B` and `C`, and `D` runs after `B` and `C`.\nWhen `A` finishes, `B` and `C` run in parallel.\nTry it live on [Compiler Explorer](https://godbolt.org/z/j8hx3xnnx)!\n\n```cpp\n#include <taskflow/taskflow.hpp>  // Taskflow is header-only\n\nint main(){\n  \n  tf::Executor executor;\n  tf::Taskflow taskflow;\n\n  auto [A, B, C, D] = taskflow.emplace(  // create four tasks\n    [] () { std::cout << \"TaskA\\n\"; },\n    [] () { std::cout << \"TaskB\\n\"; },\n    [] () { std::cout << \"TaskC\\n\"; },\n    [] () { std::cout << \"TaskD\\n\"; } \n  );                                  \n                                      \n  A.precede(B, C);  // A runs before B and C\n  D.succeed(B, C);  // D runs after  B and C\n                                      \n  executor.run(taskflow).wait(); \n\n  return 0;\n}\n```\n\nTaskflow is *header-only* and there is no struggle with installation.\nTo compile the program, clone the Taskflow project and\ntell the compiler to include the headers under `taskflow/`.\n\n```bash\n~$ git clone https://github.com/taskflow/taskflow.git  # clone it only once\n~$ g++ -std=c++20 simple.cpp -I taskflow/ -O2 -pthread -o simple\n~$ ./simple\nTaskA\nTaskC \nTaskB \nTaskD\n```\n\nTaskflow comes with a built-in profiler, [TFProf](https://taskflow.github.io/tfprof/),\nfor you to profile and visualize taskflow programs in an easy-to-use web-based interface.\n\n```bash\n# run the program with the environment variable TF_ENABLE_PROFILER enabled\n~$ TF_ENABLE_PROFILER=simple.tfp ./simple\n# drag the simple.tfp file to https://taskflow.github.io/tfprof/\n```\n\n![](doxygen/images/tfprof_overview.png)\n\n## Create a Subflow Graph\n\nTaskflow supports *recursive tasking* for you to create a subflow graph\nfrom the execution of a task to perform recursive parallelism.\nThe following program spawns a task dependency graph parented at task `B`.\n\n```cpp\ntf::Task A = taskflow.emplace([](){}).name(\"A\");  \ntf::Task C = taskflow.emplace([](){}).name(\"C\");  \ntf::Task D = taskflow.emplace([](){}).name(\"D\");  \n\ntf::Task B = taskflow.emplace([] (tf::Subflow& subflow) { // subflow task B\n  tf::Task B1 = subflow.emplace([](){}).name(\"B1\");  \n  tf::Task B2 = subflow.emplace([](){}).name(\"B2\");  \n  tf::Task B3 = subflow.emplace([](){}).name(\"B3\");  \n  B3.succeed(B1, B2);  // B3 runs after B1 and B2\n}).name(\"B\");\n\nA.precede(B, C);  // A runs before B and C\nD.succeed(B, C);  // D runs after  B and C\n```\n\n## Integrate Control Flow into a Task Graph\n\nTaskflow supports *conditional tasking* for you to make rapid\ncontrol-flow decisions across dependent tasks to implement cycles\nand conditions in an end-to-end task graph.\n\n```cpp\ntf::Task init = taskflow.emplace([](){}).name(\"init\");\ntf::Task stop = taskflow.emplace([](){}).name(\"stop\");\n\n// creates a condition task that returns a random binary\ntf::Task cond = taskflow.emplace([](){ return std::rand() % 2; }).name(\"cond\");\n\n// creates a feedback loop {0: cond, 1: stop}\ninit.precede(cond);\ncond.precede(cond, stop);  // moves on to 'cond' on returning 0, or 'stop' on 1\n```\n\n## Compose Task Graphs\n\nTaskflow is composable. You can create large parallel graphs through\ncomposition of modular and reusable blocks that are easier to optimize\nat an individual scope.\n\n```cpp\ntf::Taskflow f1, f2;\n\n// create taskflow f1 of two tasks\ntf::Task f1A = f1.emplace([]() { std::cout << \"Task f1A\\n\"; }).name(\"f1A\");\ntf::Task f1B = f1.emplace([]() { std::cout << \"Task f1B\\n\"; }).name(\"f1B\");\n\n// create taskflow f2 with one module task composed of f1\ntf::Task f2A = f2.emplace([]() { std::cout << \"Task f2A\\n\"; }).name(\"f2A\");\ntf::Task f2B = f2.emplace([]() { std::cout << \"Task f2B\\n\"; }).name(\"f2B\");\ntf::Task f2C = f2.emplace([]() { std::cout << \"Task f2C\\n\"; }).name(\"f2C\");\ntf::Task f1_module_task = f2.composed_of(f1).name(\"module\");\n\nf1_module_task.succeed(f2A, f2B)\n              .precede(f2C);\n```\n\n## Launch Asynchronous Tasks\n\nTaskflow supports *asynchronous* tasking.\nYou can launch tasks asynchronously to dynamically explore task graph parallelism.\n\n```cpp\ntf::Executor executor;\n\n// create asynchronous tasks directly from an executor\nstd::future<int> future = executor.async([](){ \n  std::cout << \"async task returns 1\\n\";\n  return 1;\n}); \nexecutor.silent_async([](){ std::cout << \"async task does not return\\n\"; });\n\n// create asynchronous tasks with dynamic dependencies\ntf::AsyncTask A = executor.silent_dependent_async([](){ printf(\"A\\n\"); });\ntf::AsyncTask B = executor.silent_dependent_async([](){ printf(\"B\\n\"); }, A);\ntf::AsyncTask C = executor.silent_dependent_async([](){ printf(\"C\\n\"); }, A);\ntf::AsyncTask D = executor.silent_dependent_async([](){ printf(\"D\\n\"); }, B, C);\n\nexecutor.wait_for_all();\n```\n\n## Leverage Standard Parallel Algorithms\n\nTaskflow defines algorithms for you to quickly express common parallel patterns\nusing standard C++ syntaxes, such as parallel iterations, reductions, and sort.\n\n```cpp\ntf::Task task1 = taskflow.for_each( // assign each element to 100 in parallel\n  first, last, [] (auto& i) { i = 100; }    \n);\ntf::Task task2 = taskflow.reduce(   // reduce a range of items in parallel\n  first, last, init, [] (auto a, auto b) { return a + b; }\n);\ntf::Task task3 = taskflow.sort(     // sort a range of items in parallel\n  first, last, [] (auto a, auto b) { return a < b; }\n);\n```\n\nTaskflow also provides composable graph building blocks for common parallel\nalgorithms such as parallel pipeline.\n\n```cpp\n// create a pipeline to propagate five tokens through three serial stages\ntf::Pipeline pl(num_lines,\n  tf::Pipe{tf::PipeType::SERIAL, [](tf::Pipeflow& pf) {\n    if(pf.token() == 5) pf.stop();\n  }},\n  tf::Pipe{tf::PipeType::SERIAL, [](tf::Pipeflow& pf) {\n    printf(\"stage 2: input buffer[%zu] = %d\\n\", pf.line(), buffer[pf.line()]);\n  }},\n  tf::Pipe{tf::PipeType::SERIAL, [](tf::Pipeflow& pf) {\n    printf(\"stage 3: input buffer[%zu] = %d\\n\", pf.line(), buffer[pf.line()]);\n  }}\n);\ntaskflow.composed_of(pl);\nexecutor.run(taskflow).wait();\n```\n\n## Offload Tasks to a GPU\n\nTaskflow supports GPU tasking for you to accelerate scientific computing\napplications by harnessing the power of CPU-GPU collaborative computing\nusing Nvidia CUDA Graph.\n\n```cpp\ntf::Task cudaflow = taskflow.emplace([&]() {\n  tf::cudaGraph cg;\n  tf::cudaTask h2d_x = cg.copy(dx, hx.data(), N);\n  tf::cudaTask h2d_y = cg.copy(dy, hy.data(), N);\n  tf::cudaTask d2h_x = cg.copy(hx.data(), dx, N);\n  tf::cudaTask d2h_y = cg.copy(hy.data(), dy, N);\n  tf::cudaTask saxpy = cg.kernel((N+255)/256, 256, 0, saxpy, N, 2.0f, dx, dy);\n  saxpy.succeed(h2d_x, h2d_y)\n       .precede(d2h_x, d2h_y);\n  tf::cudaGraphExec exec(cg);\n  tf::cudaStream stream;\n  stream.run(exec).synchronize();\n}).name(\"CUDA Graph Task\");\n```\n\n## Run a Taskflow through an Executor\n\nThe executor provides several *thread-safe* methods to run a taskflow.\nYou can run a taskflow once, multiple times, or until a stopping criteria is met.\nThese methods are non-blocking with a `tf::Future<void>` return\nto let you query the execution status.\n\n```cpp\n// runs the taskflow once\ntf::Future<void> run_once = executor.run(taskflow); \n\n// wait on this run to finish\nrun_once.get();\n\n// run the taskflow four times\nexecutor.run_n(taskflow, 4);\n\n// runs the taskflow five times\nexecutor.run_until(taskflow, [counter=5](){ return --counter == 0; });\n\n// blocks the executor until all submitted taskflows complete\nexecutor.wait_for_all();\n```\n\n## Visualize a Taskflow Graph\n\nYou can dump a taskflow graph to a DOT format and visualize it\nusing free [GraphViz][GraphViz] tools.\n\n```cpp\n// dump the taskflow graph to a DOT format through std::cout\ntaskflow.dump(std::cout); \n```\n\n## Supported Compilers\n\nTo use Taskflow v4.0.0, you need a compiler that supports C++20:\n\n+ GNU C++ Compiler at least v11.0 with -std=c++20\n+ Clang C++ Compiler at least v12.0 with -std=c++20\n+ Microsoft Visual Studio at least v19.29 (VS 2019) with /std:c++20\n+ Apple Clang (Xcode) at least v13.0 with -std=c++20\n+ NVIDIA CUDA Toolkit and Compiler (nvcc) at least v12.0 with host compiler supporting C++20\n+ Intel oneAPI DPC++/C++ Compiler at least v2022.0 with -std=c++20\n\nTaskflow works on Linux, Windows, and Mac OS X.\n\n## Get Involved\n\nVisit our [project website][Project Website] and [documentation][documentation]\nto learn more about Taskflow. To get involved:\n\n+ See [release notes][release notes] to stay up-to-date with newest versions\n+ Read the step-by-step tutorial at [cookbook][cookbook]\n+ Submit an issue at [GitHub issues][GitHub issues]\n+ Learn more about our technical details at [references][references]\n+ Watch our [technical talks](https://www.youtube.com/watch?v=u4vaY0cjzos) on YouTube\n\nWe are committed to support trustworthy developments for\nboth academic and industrial research projects in parallel\nand heterogeneous computing.\nIf you are using Taskflow, please cite the following paper we published at 2022 IEEE TPDS:\n\n+ Tsung-Wei Huang, Dian-Lun Lin, Chun-Xun Lin, and Yibo Lin, &quot;[Taskflow: A Lightweight Parallel and Heterogeneous Task Graph Computing System](https://tsung-wei-huang.github.io/papers/tpds21-taskflow.pdf),&quot; *IEEE Transactions on Parallel and Distributed Systems (TPDS)*, vol. 33, no. 6, pp. 1303-1320, June 2022\n\nMore importantly, we appreciate all Taskflow [contributors][contributors] and\nthe following organizations for sponsoring the Taskflow project!\n\n| | | | |\n|:---:|:---:|:---:|:---:|\n|<img src=\"doxygen/images/utah-ece-logo.png\">|<img src=\"doxygen/images/nsf.png\">|<img src=\"doxygen/images/darpa.png\">|<img src=\"doxygen/images/NumFocus.png\">|\n|<img src=\"doxygen/images/nvidia-logo.png\">|<img src=\"doxygen/images/uw-madison-ece-logo.png\">|||\n\n## License\n\nTaskflow is open-source under the permissive [MIT License](./LICENSE).\nYou are completely free to use, modify, and redistribute any work derived from Taskflow.\n\n* * *\n\n[GraphViz]:             https://www.graphviz.org/\n[Project Website]:      https://taskflow.github.io/\n[contributors]:         https://taskflow.github.io/taskflow/contributors.html\n[documentation]:        https://taskflow.github.io/taskflow/index.html\n[release notes]:        https://taskflow.github.io/taskflow/Releases.html\n[cookbook]:             https://taskflow.github.io/taskflow/pages.html\n[references]:           https://taskflow.github.io/taskflow/References.html\n[GitHub issues]:        https://github.com/taskflow/taskflow/issues\n[TPDS22]:               https://tsung-wei-huang.github.io/papers/tpds21-taskflow.pdf\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "gh_pages": [
+      "https://taskflow.github.io/tfprof/",
+      "https://tsung-wei-huang.github.io/papers/tpds21-taskflow.pdf),&quot",
+      "https://taskflow.github.io/",
+      "https://taskflow.github.io/taskflow/contributors.html",
+      "https://taskflow.github.io/taskflow/index.html"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "taskflow",
+    "repo": "taskflow/taskflow",
+    "current_version": {
+      "value": "v4.1.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "taskflow"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "gh_pages": [
+          "https://taskflow.github.io/tfprof/",
+          "https://tsung-wei-huang.github.io/papers/tpds21-taskflow.pdf),&quot",
+          "https://taskflow.github.io/",
+          "https://taskflow.github.io/taskflow/contributors.html",
+          "https://taskflow.github.io/taskflow/index.html"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://taskflow.github.io",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

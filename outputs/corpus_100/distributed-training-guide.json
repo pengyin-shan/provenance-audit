@@ -1,0 +1,103 @@
+{
+  "name": "distributed-training-guide",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:42:00Z",
+  "errors": {},
+  "github": {
+    "owner": "LambdaLabsML",
+    "repo": "distributed-training-guide",
+    "errors": {},
+    "full_name": "LambdaLabsML/distributed-training-guide",
+    "description": "Best practices & guides on how to write distributed pytorch training code",
+    "homepage": "",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2025-10-22T21:27:41Z",
+    "stars": 625,
+    "topics": [
+      "cluster",
+      "cuda",
+      "deepspeed",
+      "distributed-training",
+      "fsdp",
+      "gpu",
+      "gpu-cluster",
+      "kuberentes",
+      "lambdalabs",
+      "mpi",
+      "nccl",
+      "pytorch",
+      "sharding",
+      "slurm"
+    ],
+    "license": "MIT",
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "# Distributed Training Guide\n\n🔥 News 🔥\n\n- [Pytorch Conference 2025 slides](https://docs.google.com/presentation/d/126BQcCJti_z3NQ7cGbm2iMBDVG7-0ekitxU3pvJ_WQw/edit?usp=sharing)\n- [Neurips 2024 slides](https://docs.google.com/presentation/d/1ANMmkOGaruYKTvhnsAbZgI9GrdMliNvibWGuNYw6HX8/edit?usp=sharing)\n\n<img src=\"https://lambdalabs.com/hubfs/distriubuted-training-guide.png\" width=\"400px\" />\n\nEver wondered how to train a large neural network across a giant cluster? Look no further!\n\nThis is a comprehensive guide on best practices for distributed training, diagnosing errors, and fully utilizing all resources available. It is organized into sequential chapters, each with a `README.md` and a `train_llm.py` script in them. The readme will discuss both the high level concepts of distributed training, and the code changes introduced in that chapter.\n\nThe guide is written entirely in very minimal standard pytorch, using `transformers` and `datasets` for models and data, respectively. No other library is used for distributed code - the distributed stuff is entirely in pytorch.\n\n1. [Chapter 1](./01-single-gpu/) - A standard Causal LLM training script that runs on a **single GPU**.\n2. [Chapter 2](./02-distributed-data-parallel/) - Upgrades the training script to support **multiple GPUs and to use DDP**.\n3. [Chapter 3](./03-job-launchers/) - Covers how to **launch training jobs** across clusters with multiple nodes.\n4. [Chapter 4](./04-fully-sharded-data-parallel/) - Upgrades the training script to **use FSDP** instead of DDP for more optimal memory usage.\n5. [Chapter 5](./05-training-llama-405b/) - Upgrades the training script to **train Llama-405b**.\n6. [Chapter 6](./06-tensor-parallel/) - Upgrades our single GPU training script to support **tensor parallelism**.\n7. [Chapter 7](./06-2d-parallel/) - Upgrades our TP training script to use **2d parallelism (FSDP + TP)**.\n8. [Alternative Frameworks](./alternative-frameworks/) - Covers different frameworks that all work with pytorch under the hood.\n9. [Diagnosing Errors](./diagnosing-errors/) - Best practices and how tos for **quickly diagnosing errors** in your cluster.\n10. [Related Topics](./related-topics/) - Topics that you should be aware of when distributed training.\n\n\nQuestions this guide answers:\n\n- How do I update a single gpu training/fine tuning script to run on multiple GPUs or multiple nodes?\n- How do I diagnose hanging/errors that happen during training?\n- My model/optimizer is too big for a single gpu - how do I train/fine tune it on my cluster?\n- How do I schedule/launch training on a cluster?\n- How do I scale my hyperparameters when increasing the number of workers?\n\nBest practices for logging stdout/stderr and wandb are also included, as logging is vitally important in diagnosing/debugging training runs on a cluster.\n\nEach of the training scripts is aimed at training a causal language model (i.e. gpt/llama).\n\n## Set up\n\n### Clone this repo\n\n```bash\ngit clone https://github.com/LambdaLabsML/distributed-training-guide.git\n```\n\n### Virtual Environment\n\n```bash\ncd distributed-training-guide\npython3 -m venv venv\nsource venv/bin/activate\npython -m pip install -U pip\npip install -U setuptools wheel\npip install -r requirements.txt\npip install flash-attn --no-build-isolation\n```\n\n### wandb\n\nThis tutorial uses `wandb` as an experiment tracker.\n\n```bash\nwandb login\n```\n\n<p align=\"center\">\n🦄 Other exciting ML projects at Lambda: <a href=\"https://news.lambda.ai/news/today\">ML Times</a>, <a href=\"https://lambdalabsml.github.io/Open-Sora/introduction/\">Text2Video</a>, <a href=\"https://lambdalabs.com/gpu-benchmarks\">GPU Benchmark</a>.\n</p>\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "gh_pages": [
+      "https://lambdalabsml.github.io/Open-Sora/introduction/\">Text2Video</a"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "distributed-training-guide",
+    "repo": "LambdaLabsML/distributed-training-guide",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "LambdaLabsML"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "gh_pages": [
+          "https://lambdalabsml.github.io/Open-Sora/introduction/\">Text2Video</a"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": null,
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

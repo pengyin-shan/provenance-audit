@@ -1,0 +1,88 @@
+{
+  "name": "ompi",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:17Z",
+  "errors": {},
+  "github": {
+    "owner": "open-mpi",
+    "repo": "ompi",
+    "errors": {},
+    "full_name": "open-mpi/ompi",
+    "description": "Open MPI main development repository",
+    "homepage": "https://www.open-mpi.org",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-05T19:15:36Z",
+    "stars": 2613,
+    "topics": [
+      "c",
+      "fortran",
+      "hacktoberfest",
+      "hpc",
+      "mpi",
+      "openmpi"
+    ],
+    "license": "NOASSERTION",
+    "latest_release": null,
+    "release_state": "none",
+    "files": {
+      "README.md": "# Open MPI\n\n[The Open MPI Project](https://www.open-mpi.org/) is an open source\nimplementation of the [Message Passing Interface (MPI)\nspecification](https://www.mpi-forum.org/docs/) that is developed and\nmaintained by a consortium of academic, research, and industry\npartners.  Open MPI is therefore able to combine the expertise,\ntechnologies, and resources from all across the High Performance\nComputing community in order to build the best MPI library available.\nOpen MPI offers advantages for system and software vendors,\napplication developers and computer science researchers.\n\n## Official documentation\n\nThe Open MPI documentation can be viewed in the following ways:\n\n1. Online at https://docs.open-mpi.org/\n1. In self-contained (i.e., suitable for local viewing, without an\n   internet connection) in official distribution tarballs under\n   `docs/_build/html/index.html`.\n\n## Building the documentation locally\n\nThe source code for Open MPI's docs can be found in the Open MPI Git\nrepository under the `docs` folder.\n\nDevelopers who clone the Open MPI Git repository will not have the\nHTML documentation and man pages by default; it must be built.\nInstructions for how to build the Open MPI documentation can be found\nhere:\nhttps://docs.open-mpi.org/en/main/developers/prerequisites.html#sphinx-and-therefore-python.\n",
+      "CONTRIBUTING.md": "# How to contribute to Open MPI\n\nFirst off, thank you for taking the time to prepare a contribution to\nOpen MPI!\n\n![You're awesome!](https://www.open-mpi.org/images/youre-awesome.jpg)\n\nOpen MPI is hosted on GitHub, and we gladly accept pull requests.\nPlease see the [Contributing\nguidelines](https://docs.open-mpi.org/en/main/contributing.html) for\ndetails on how to contribute to Open MPI.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "ompi",
+    "repo": "open-mpi/ompi",
+    "current_version": {
+      "value": null,
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "open-mpi"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://www.open-mpi.org",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "name": "qsim",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:05Z",
+  "errors": {},
+  "github": {
+    "owner": "quantumlib",
+    "repo": "qsim",
+    "errors": {},
+    "full_name": "quantumlib/qsim",
+    "description": "Fast C++ and Python library for state-vector simulation of quantum circuits.",
+    "homepage": "https://quantumai.google/qsim",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-01T12:36:15Z",
+    "stars": 674,
+    "topics": [
+      "algorithms",
+      "api",
+      "cirq",
+      "cpp",
+      "google-quantum",
+      "nisq",
+      "python",
+      "quantum",
+      "quantum-algorithms",
+      "quantum-circuit",
+      "quantum-circuit-simulator",
+      "quantum-computing",
+      "quantum-information",
+      "quantum-programming",
+      "quantum-simulation",
+      "quantum-simulator",
+      "schrodinger-equation",
+      "sdk",
+      "simulation"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v0.22.0",
+      "name": "qsim v0.22.0",
+      "published_at": "2025-06-24T21:35:35Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "# Citation information for this repository.                         -*- yaml -*-\n#\n# CITATION.cff provide human- & machine-readable citation info for software and\n# datasets. GitHub, Zenodo, and the Zotero browser plugin all use CFF files\n# automatically. Tools exist to generate CITATION.cff files from other formats\n# such as BibTeX. For more info, visit https://citation-file-format.github.io/.\n# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\ncff-version: 1.2.0\nmessage: >-\n  Please cite your use of qsim using the reference metadata provided here.\n\n# If preferred-citation is present, GitHub uses its value for the \"cite this\n# repository\" button and ignores the rest of this file; conversely, the Zenodo-\n# GitHub integration ignores this field when archiving a new software release\n# and uses the metadata in the rest of this file.\npreferred-citation:\n  type: generic\n  authors:\n    - family-names: Isakov\n      given-names: Sergei V.\n      affiliation: Google LLC\n    - family-names: Kafri\n      given-names: Dvir\n      affiliation: Google LLC\n    - family-names: Martin\n      given-names: Orion\n      affiliation: Google LLC\n    - family-names: Vollgraff Heidweiller\n      given-names: Catherine\n      affiliation: Google LLC\n    - family-names: Mruczkiewicz\n      given-names: Wojciech\n      affiliation: Google LLC\n    - family-names: Harrigan\n      given-names: Matthew P.\n      affiliation: Google LLC\n    - family-names: Rubin\n      given-names: Nicholas C.\n      affiliation: Google LLC\n    - family-names: Thomson\n      given-names: Ross\n      affiliation: Google LLC\n    - family-names: Broughton\n      given-names: Michael B.\n      affiliation: Google LLC\n    - family-names: Kissell\n      given-names: Kevin\n      affiliation: Google LLC\n    - family-names: Peters\n      given-names: Evan\n      affiliation: Fermi National Accelerator Laboratory\n    - family-names: Gustafson\n      given-names: Erik\n      affiliation: Fermi National Accelerator Laboratory\n    - family-names: Li\n      given-names: Andy C. Y.\n      affiliation: Fermi National Accelerator Laboratory\n    - family-names: Lamm\n      given-names: Henry\n      affiliation: Fermi National Accelerator Laboratory\n    - family-names: Perdue\n      given-names: Gabriel\n      affiliation: Fermi National Accelerator Laboratory\n    - family-names: Ho\n      given-names: Alan K.\n      affiliation: Google LLC\n    - family-names: Strain\n      given-names: Doug\n      affiliation: Google LLC\n    - family-names: Boixo\n      given-names: Sergio\n      affiliation: Google LLC\n  title: >-\n    Simulations of Quantum Circuits with Approximate Noise using qsim and Cirq\n  year: 2021\n  date-published: 2021-11-03\n  doi: 10.48550/arXiv.2111.02396\n  url: https://arxiv.org/abs/2111.02396\n\n# The remaining metadata in this file describes the current software release.\n\ntitle: qsim\nauthors:\n  - name: Quantum AI team and collaborators\n    website: https://github.com/quantumlib/qsim/graphs/contributors\nabstract: High-performance quantum circuit simulator for C++ and Python.\nversion: 0.22.0\ndate-released: 2025-06-24\nurl: https://github.com/quantumlib/qsim\nrepository-code: https://github.com/quantumlib/qsim\nlicense: Apache-2.0\ntype: software\nidentifiers:\n  - description: The home page for qsim\n    value: https://quantumai.google/qsim\n    type: url\n  - description: GitHub repository for qsim\n    value: https://github.com/quantumlib/qsim\n    type: url\n  - description: Archival DOI for qsim software releases\n    value: 10.5281/zenodo.4067237\n    type: doi\n  - description: Publication about qsim\n    value: 10.48550/arXiv.2111.02396\n    type: doi\nkeywords:\n  - algorithms\n  - API\n  - C++\n  - Cirq\n  - CUDA\n  - gate fusion\n  - GPU\n  - NISQ\n  - noise modeling\n  - Noisy Intermediate-Scale Quantum\n  - Python\n  - quantum\n  - quantum circuit\n  - quantum computing\n  - quantum information\n  - quantum programming\n  - quantum simulation\n  - quantum trajectories\n  - research\n  - Schrödinger equation\n  - science\n  - SDK\n  - simulation\n  - software\n",
+      "README.md": "<div align=\"center\">\n\n# qsim\n\nHigh-performance quantum circuit simulator for C++ and Python.\n\n[![Licensed under the Apache 2.0\nlicense](https://img.shields.io/badge/License-Apache%202.0-3c60b1.svg?logo=opensourceinitiative&logoColor=white&style=flat-square)](https://github.com/quantumlib/qsim/blob/main/LICENSE)\n![C++](https://img.shields.io/badge/C%2B%2B17-fcbc2c.svg?logo=c%2B%2B&logoColor=white&style=flat-square&label=C%2B%2B)\n[![qsim project on\nPyPI](https://img.shields.io/pypi/v/qsim.svg?logo=python&logoColor=white&label=PyPI&style=flat-square&color=e57430)](https://pypi.org/project/qsim)\n[![Compatible with Python versions 3.10 and\nhigher](https://img.shields.io/badge/Python-3.10+-fcbc2c.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/downloads/)\n[![Archived in\nZenodo](https://img.shields.io/badge/10.5281%2Fzenodo.4023103-gray.svg?label=DOI&logo=doi&logoColor=white&style=flat-square&colorA=gray&colorB=3c60b1)](https://doi.org/10.5281/zenodo.4023103)\n\n[Features](#features) &ndash;\n[Usage](#usage) &ndash;\n[Documentation](#documentation) &ndash;\n[Citing qsim](#how-to-cite-qsim) &ndash;\n[Contact](#contact)\n\n</div>\n\n_qsim_ is a state-vector simulator for quantum circuits. Also known as a\n_Schrödinger_ simulator, it represents a quantum state as a vector of\ncomplex-valued amplitudes (a _state vector_) and applies matrix-vector\nmultiplication to simulate transformations that evolve the state over time.\n\nqsim was used to produce landmark cross-entropy benchmark results published\nin 2019 (Arute et al., \"Quantum Supremacy Using a Programmable Superconducting\nProcessor\", [Nature\nvol.&nbsp;574](https://www.nature.com/articles/s41586-019-1666-5), 2019).\n\n## Features\n\nBeing a _full_ state-vector simulator means that qsim computes all the\n_2<sup> n</sup>_ amplitudes of the state vector, where _n_ is the number of\nqubits. The total runtime is proportional to _g2<sup>n</sup>_, where _g_ is the\nnumber of 2-qubit gates.\n\n*   To speed up simulation, qsim uses gate fusion (Smelyanskiy et al.,\n    [arXiv:1601.07195](https://arxiv.org/abs/1601.07195), 2016; Häner and\n    Steiger, [arXiv:1704.01127](https://arxiv.org/abs/1704.01127), 2017),\n    single-precision arithmetic, AVX/FMA instructions for vectorization, and\n    OpenMP for multithreading (on hardware that provides those features).\n\n*   qsim is highly tuned to take advantage of vector arithmetic instruction sets\n    and multithreading on computers that provide them, as well as GPUs when\n    available.\n\n*   qsim includes a [Cirq](https://quantumai.google/cirq) interface (`qsimcirq`)\n    and can be used to simulate quantum circuits written in Cirq.\n\n## Usage\n\n### C++ usage\n\nThe code is designed as a library that can be included in users' applications.\nThe sample applications provided in the qsim\n[apps](https://github.com/quantumlib/qsim/tree/main/apps) directory can be used\nas starting points. More information about the sample applications can be found\nin the qsim\n[documentation](https://github.com/quantumlib/qsim/blob/main/docs/usage.md).\n\n### Python usage\n\nThe qsim-Cirq Python interface is called `qsimcirq` and is available as a PyPI\npackage for Linux, MacOS and Windows users. It can be installed by using the\nfollowing command:\n\n```shell\npip install qsimcirq\n```\n\n_Note_: The core qsim library (located in the source repository under the\n[`lib/`](https://github.com/quantumlib/qsim/blob/main/lib) subdirectory) can\nbe included directly in C++ programs without installing the Python interface.\n\n### Cirq usage\n\n[Cirq](https://github.com/quantumlib/cirq) is a framework for modeling and\ninvoking Noisy Intermediate-Scale Quantum (NISQ) circuits. Cirq can use qsim\nas its simulation library. To get started with simulating Cirq circuits using\nqsim, please refer to the\n[tutorial](https://github.com/quantumlib/qsim/blob/main/docs/tutorials/qsimcirq.ipynb).\n\nMore detailed information about the qsim-Cirq API can be found in the\n[docs](https://github.com/quantumlib/qsim/blob/main/docs/cirq_interface.md).\n\n### Unit tests\n\nUnit tests for C++ libraries use the\n[GoogleTest](https://github.com/google/googletest) framework, and are located in\n[tests](https://github.com/quantumlib/qsim/tree/main/tests). Python tests use\n[pytest](https://docs.pytest.org/en/stable/), and are located in\n[qsimcirq_tests](https://github.com/quantumlib/qsim/tree/main/qsimcirq_tests).\n\nTo build and run all tests, run:\n\n```shell\nmake run-tests\n```\n\nThis will compile all test binaries to files with `.x` extensions, and run each\ntest in series. Testing will stop early if a test fails. It will also run tests\nof the `qsimcirq` python interface. To run C++ or python tests only, run\n`make run-cxx-tests` or `make run-py-tests`, respectively.\n\nTo clean up generated test files, run `make clean` from the test directory\n\n## Documentation\n\nPlease visit the [qsim documentation site](https://quantumai.google/qsim)\nguides, tutorials, and API reference documentation.\n\n## How to cite qsim<a name=\"citing-qsim\"></a><a name=\"how-to-cite\"></a>\n\nWhen publishing articles or otherwise writing about qsim, please cite the qsim\nversion you use – it will help others reproduce your results. We use Zenodo to\npreserve releases. The following links let you download the bibliographic\nrecord for the latest stable release of qsim in some popular formats:\n\n<div align=\"center\">\n\n[![Download BibTeX bibliography record for latest qsim\nrelease](https://img.shields.io/badge/Download%20record-e0e0e0.svg?style=flat-square&logo=LaTeX&label=BibTeX&labelColor=106f6e)](https://zenodo.org/records/4067237/export/bibtex)&nbsp;&nbsp;\n[![Download CSL JSON bibliography record for latest qsim\nrelease](https://img.shields.io/badge/Download%20record-e0e0e0.svg?style=flat-square&label=CSL&labelColor=2d98e0&logo=json)](https://zenodo.org/records/4067237/export/csl)\n\n</div>\n\nFor formatted citations and records in other formats, as well as records for all\nreleases of qsim past and present, please visit the [qsim page on\nZenodo](https://doi.org/10.5281/zenodo.4023103).\n\n## Contact\n\nFor any questions or concerns not addressed here, please email\nquantum-oss-maintainers@google.com.\n\n## Disclaimer\n\nThis is not an officially supported Google product. This project is not\neligible for the [Google Open Source Software Vulnerability Rewards\nProgram](https://bughunters.google.com/open-source-security).\n\nCopyright 2019 Google LLC.\n\n<div align=\"center\">\n  <a href=\"https://quantumai.google\">\n    <img width=\"15%\" alt=\"Google Quantum AI\"\n         src=\"https://raw.githubusercontent.com/quantumlib/Cirq/refs/heads/main/docs/images/quantum-ai-vertical.svg\">\n  </a>\n</div>\n",
+      "CONTRIBUTING.md": "# How to Contribute\n\nWe'd love to accept your patches and contributions to this project. There are\njust a few small guidelines you need to follow, but don't worry about\n(or expect to) get everything right the first time! Create a pull request and\nwe'll nudge you in the right direction.\n\n## Contributor License Agreement\n\nContributions to this project must be accompanied by a Contributor License\nAgreement. You (or your employer) retain the copyright to your contribution;\nthis simply gives us permission to use and redistribute your contributions as\npart of the project. Head over to <https://cla.developers.google.com/> to see\nyour current agreements on file or to sign a new one.\n\nYou generally only need to submit a CLA once, so if you've already submitted one\n(even if it was for a different project), you probably don't need to do it\nagain.\n\n## Code reviews\n\nAll submissions, including submissions by project members, require review. We\nuse GitHub pull requests for this purpose. Consult\n[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more\ninformation on using pull requests.\n\n## Community Guidelines\n\nThis project follows\n[Google's Open Source Community Guidelines](https://opensource.google/conduct/).\n",
+      "SECURITY.md": "# Reporting security issues\n\nThis project's developers and community are committed to addressing security\nbugs promptly and effectively. We appreciate your efforts to disclose your\nfindings responsibly, and will make every effort to acknowledge your\ncontributions.\n\nPlease **do not** use GitHub issues to report security vulnerabilities; GitHub\nissues are public, and doing so could allow someone to exploit the information\nbefore the problem can be addressed. Instead, please use the *Report a\nvulnerability* button from the *Security* tab at the top of this GitHub\nrepository page.\n\nPlease report security issues in third-party modules to the person or team\nmaintaining the module rather than this project's stewards, unless you believe\nthat some action needs to be taken specifically with this project in order to\nguard against the effects of a security vulnerability in third-party software.\n\n## Responses to security reports\n\nThe project stewards at Google Quantum AI will send a response indicating the\nnext steps in handling your report. After the initial reply to your report, the\nproject stewards will keep you informed of the progress towards a fix and full\nannouncement, and may ask for additional information or guidance.\n\n## Additional points of contact\n\nPlease contact the project stewards at Google Quantum AI via email at\nquantum-oss-maintainers@google.com if you have questions or other concerns. If\nfor any reason you are uncomfortable reaching out to the project stewards,\nplease email opensource@google.com instead.\n"
+    },
+    "has_security_md": true,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "qsim",
+    "version": "0.22.0",
+    "doi": null,
+    "authors": [
+      "Quantum AI team and collaborators"
+    ],
+    "preferred_citation": {
+      "title": "Simulations of Quantum Circuits with Approximate Noise using qsim and Cirq",
+      "doi": "10.48550/arXiv.2111.02396",
+      "year": 2021,
+      "authors": [
+        "Sergei V. Isakov",
+        "Dvir Kafri",
+        "Orion Martin",
+        "Catherine Vollgraff Heidweiller",
+        "Wojciech Mruczkiewicz",
+        "Matthew P. Harrigan",
+        "Nicholas C. Rubin",
+        "Ross Thomson",
+        "Michael B. Broughton",
+        "Kevin Kissell",
+        "Evan Peters",
+        "Erik Gustafson",
+        "Andy C. Y. Li",
+        "Henry Lamm",
+        "Gabriel Perdue",
+        "Alan K. Ho",
+        "Doug Strain",
+        "Sergio Boixo"
+      ]
+    },
+    "identifiers": [
+      {
+        "type": "url",
+        "value": "https://quantumai.google/qsim"
+      },
+      {
+        "type": "url",
+        "value": "https://github.com/quantumlib/qsim"
+      },
+      {
+        "type": "doi",
+        "value": "10.5281/zenodo.4067237"
+      },
+      {
+        "type": "doi",
+        "value": "10.48550/arXiv.2111.02396"
+      }
+    ]
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## How to cite qsim<a name=\"citing-qsim\"></a><a name=\"how-to-cite\"></a>\n\nWhen publishing articles or otherwise writing about qsim, please cite the qsim\nversion you use – it will help others reproduce your results. We use Zenodo to\npreserve releases. The following links let you download the bibliographic\nrecord for the latest stable release of qsim in some popular formats:\n\n<div align=\"center\">\n\n[![Download BibTeX bibliography record for latest qsim\nrelease](https://img.shields.io/badge/Download%20record-e0e0e0.svg?style=flat-square&logo=LaTeX&label=BibTeX&labelColor=106f6e)](https://zenodo.org/records/4067237/export/bibtex)&nbsp;&nbsp;\n[![Download CSL JSON bibliography record for latest qsim\nrelease](https://img.shields.io/badge/Download%20record-e0e0e0.svg?style=flat-square&label=CSL&labelColor=2d98e0&logo=json)](https://zenodo.org/records/4067237/export/csl)\n\n</div>\n\nFor formatted citations and records in other formats, as well as records for all\nreleases of qsim past and present, please visit the [qsim page on\nZenodo](https://doi.org/10.5281/zenodo.4023103).",
+    "doi": "10.5281/zenodo.4023103"
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "qsim",
+    "repo": "quantumlib/qsim",
+    "current_version": {
+      "value": "v0.22.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Quantum AI team and collaborators"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": "SECURITY.md present",
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": "10.48550/arXiv.2111.02396",
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://quantumai.google/qsim",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

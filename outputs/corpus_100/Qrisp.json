@@ -1,0 +1,98 @@
+{
+  "name": "Qrisp",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:43:49Z",
+  "errors": {},
+  "github": {
+    "owner": "eclipse-qrisp",
+    "repo": "Qrisp",
+    "errors": {},
+    "full_name": "eclipse-qrisp/Qrisp",
+    "description": "Qrisp - The next generation of quantum algorithm development",
+    "homepage": "https://www.qrisp.eu",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-05T20:23:01Z",
+    "stars": 279,
+    "topics": [
+      "quantum-algorithms",
+      "quantum-chemistry",
+      "quantum-computing",
+      "quantum-programming-language"
+    ],
+    "license": "EPL-2.0",
+    "latest_release": {
+      "tag": "0.9",
+      "name": "0.9",
+      "published_at": "2026-06-22T21:56:36Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "<p align=\"center\" width=\"100%\"><img src=\"https://raw.githubusercontent.com/eclipse-qrisp/Qrisp/main/logo/logo_with_contour.png\" width=30%></p>\n\n</h1><br>\n<div align=\"center\">\n\n[![License](https://img.shields.io/badge/License-EPL_2.0-brightgreen.svg)](https://opensource.org/licenses/EPL-2.0)\n![PyPI - Version](https://img.shields.io/pypi/v/qrisp?color=brightgreen)\n[![Discord](https://img.shields.io/discord/1471858163908214870?style=plastic&logo=Discord&label=discord)](https://discord.gg/v5np7DeBaq)\n[![Pytest](https://github.com/eclipse-qrisp/Qrisp/actions/workflows/qrisp_test.yml/badge.svg)](https://github.com/eclipse-qrisp/Qrisp/actions/workflows/qrisp_test.yml)\n[![Downloads](https://img.shields.io/pypi/dm/qrisp.svg)](https://pypi.org/project/qrisp/)\n[![CodeFactor](https://www.codefactor.io/repository/github/eclipse-qrisp/qrisp/badge/main)](https://www.codefactor.io/repository/github/eclipse-qrisp/qrisp/overview/main)\n\n[![Paper](https://img.shields.io/badge/DOI-10.1038%2Fs41586--020--2649--2-brightgreen)](https://doi.org/10.48550/arXiv.2406.14792)\n[![Forks](https://img.shields.io/github/forks/eclipse-qrisp/Qrisp.svg)](https://github.com/eclipse-qrisp/Qrisp/network/members)\n[![Open Issues](https://img.shields.io/github/issues/eclipse-qrisp/Qrisp.svg)](https://github.com/eclipse-qrisp/Qrisp/issues)\n[![Stars](https://img.shields.io/github/stars/eclipse-qrisp/Qrisp.svg)](https://github.com/eclipse-qrisp/Qrisp/stargazers)\n[![Contributors](https://img.shields.io/github/contributors/eclipse-qrisp/Qrisp.svg)](https://github.com/eclipse-qrisp/Qrisp/graphs/contributors)\n\n</div>\n\n## About\n\nQrisp is a high-level quantum programming framework that allows for intuitive development of quantum algorithms. It provides a rich set of tools and abstractions to make quantum computing more accessible to developers and researchers. By automating many steps one usually encounters when programming a quantum computer, introducing quantum types, and many more features Qrisp makes quantum programming more user-friendly yet stays performant when it comes to compiling programs to the circuit level.\n\n## Features\n\n- Intuitive quantum program design\n- High-level quantum programming\n- Efficient quantum algorithm implementation\n- Extensive documentation and examples\n\n## Installation\n\nYou can install Qrisp using pip:\n\n```bash\npip install qrisp\n```\n\nQrisp has been confirmed to work with Python version 3.11 & 3.12.\n\nQrisp is compatible with any QASM-capable quantum backend! In particular, it offers convenient interfaces for using IBM, IQM and AQT quantum computers, and any quantum backend provider is invited to reach out for a tight integration! \n\nAdditional backends require extra dependencies:\n```bash\npip install qrisp[aqt]     # AQT quantum hardware\npip install qrisp[iqm]     # IQM quantum hardware\npip install qrisp[qiskit]  # Qiskit Aer simulator + IBM Quantum Runtime\n```\n\n## Documentation\nThe full documentation, alongside with many tutorials and examples, is available under [Qrisp Documentation](https://www.qrisp.eu/).\n\n## Shor's Algorithm with Qrisp\n\nShor's algorithm is among the most famous quantum algorithm since it provides a provably exponential speed-up for a practically relevant problem: Facotrizing integers. This is an important application because much of modern cryptography is based on RSA, which heavily relies on integer factorization being insurmountable.\n\nDespite this importance, the amount of software that is actually able to compile the algorithm to the circuit level is extremely limited. This is because a key operation within the algorithm (modular in-place multiplication) is difficult to implement and has strong requirements for the underlying compiler. These problems highlight how the Qrisp programming-model delivers significant advantages to quantum programmers because the quantum part of the algorithm can be expressend within a few lines of code:\n\n```python\n\nfrom qrisp import QuantumFloat, QuantumModulus, h, QFT, control\n\ndef find_order(a, N):\n    qg = QuantumModulus(N)\n    qg[:] = 1\n    qpe_res = QuantumFloat(2*qg.size + 1, exponent = -(2*qg.size + 1))\n    h(qpe_res)\n    for i in range(len(qpe_res)):\n        with control(qpe_res[i]):\n            qg *= a\n        a = (a*a)%N\n    QFT(qpe_res, inv = True)\n    return qpe_res.get_measurement()\n```\n\nTo find out how this can be used to break encryption be sure to check the [tutorial](https://qrisp.eu/general/tutorial/Shor.html).\n\nQrisp offers much more than just factoring! More examples, like simulating molecules at the quantum level or how to solve the Travelling Salesman Problem, can be found [here](https://qrisp.eu/general/tutorial/index.html).\n\n## Feedback and Contact\nIf you have comments, questions or love letters, here is how you can engange with the Qrisp Community and Developers:\n\n- Join the Discussions on [Discord](https://discord.gg/v5np7DeBaq).\n- Join the bi-weekly [Developer Call](https://github.com/eclipse-qrisp/Qrisp/wiki/Eclipse-Qrisp-Developer-Meetings).\n- Ask a question, request a new feature and file a bug with [GitHub issues](https://github.com/eclipse-qrisp/qrisp/issues/new/choose).\n- Vote on existing GitHub issues by reacting with a 👍. We regularly check issues with votes!\n- Star the repository to show your support.\n\n\n## Authors and Citation\nQrisp is the work of [many people](https://projects.eclipse.org/projects/technology.qrisp/who).\n\nIf you want to cite Qrisp in your work, please use:\n\n```\n@misc{seidel2024qrisp,\n      title={Qrisp: A Framework for Compilable High-Level Programming of Gate-Based Quantum Computers}, \n      author={Raphael Seidel and Sebastian Bock and René Zander and Matic Petrič and Niklas Steinmann and Nikolay Tcholtchev and Manfred Hauswirth},\n      year={2024},\n      eprint={2406.14792},\n      archivePrefix={arXiv},\n      primaryClass={quant-ph},\n      url={https://arxiv.org/abs/2406.14792}, \n}\n```\n\n\n## License\n[Eclipse Public License 2.0](https://github.com/fraunhoferfokus/Qrisp/blob/main/LICENSE)\n\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## Authors and Citation\nQrisp is the work of [many people](https://projects.eclipse.org/projects/technology.qrisp/who).\n\nIf you want to cite Qrisp in your work, please use:\n\n```\n@misc{seidel2024qrisp,\n      title={Qrisp: A Framework for Compilable High-Level Programming of Gate-Based Quantum Computers}, \n      author={Raphael Seidel and Sebastian Bock and René Zander and Matic Petrič and Niklas Steinmann and Nikolay Tcholtchev and Manfred Hauswirth},\n      year={2024},\n      eprint={2406.14792},\n      archivePrefix={arXiv},\n      primaryClass={quant-ph},\n      url={https://arxiv.org/abs/2406.14792}, \n}\n```",
+    "doi": null
+  },
+  "channels": {
+    "discord": [
+      "https://discord.gg/v5np7DeBaq"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "Qrisp",
+    "repo": "eclipse-qrisp/Qrisp",
+    "current_version": {
+      "value": "0.9",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "eclipse-qrisp"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "discord": [
+          "https://discord.gg/v5np7DeBaq"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://www.qrisp.eu",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

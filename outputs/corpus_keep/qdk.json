@@ -1,0 +1,116 @@
+{
+  "name": "qdk",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:09Z",
+  "errors": {},
+  "github": {
+    "owner": "microsoft",
+    "repo": "qdk",
+    "errors": {},
+    "full_name": "microsoft/qdk",
+    "description": "Microsoft Quantum Development Kit, including the Q# programming language, resource estimator, and Quantum Katas",
+    "homepage": "https://microsoft.github.io/qdk/",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-05T16:06:40Z",
+    "stars": 967,
+    "topics": [
+      "compilers",
+      "qsharp",
+      "quantum",
+      "quantum-computing",
+      "quantum-programming",
+      "quantum-programming-language",
+      "quantum-resource-estimation",
+      "tutorials",
+      "vscode"
+    ],
+    "license": "MIT",
+    "latest_release": {
+      "tag": "v1.29.0",
+      "name": "v1.29.0",
+      "published_at": "2026-05-23T18:06:24Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "cff-version: 1.2.0\nmessage: \"If you use this software in your work, please cite it using the following metadata\"\ntitle: \"Microsoft Quantum Development Kit\"\nrepository-code: \"https://github.com/microsoft/qdk\"\nlicense: MIT\nyear: 2024\nauthors:\n  - name: \"Microsoft\"\n",
+      "SECURITY.md": "<!-- BEGIN MICROSOFT SECURITY.MD V0.0.8 BLOCK -->\n\n## Security\n\nMicrosoft takes the security of our software products and services seriously, which includes all source code repositories managed through our GitHub organizations, which include [Microsoft](https://github.com/microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet), [Xamarin](https://github.com/xamarin), and [our GitHub organizations](https://opensource.microsoft.com/).\n\nIf you believe you have found a security vulnerability in any Microsoft-owned repository that meets [Microsoft's definition of a security vulnerability](https://aka.ms/opensource/security/definition), please report it to us as described below.\n\n## Reporting Security Issues\n\n**Please do not report security vulnerabilities through public GitHub issues.**\n\nInstead, please report them to the Microsoft Security Response Center (MSRC) at [https://msrc.microsoft.com/create-report](https://aka.ms/opensource/security/create-report).\n\nIf you prefer to submit without logging in, send email to [secure@microsoft.com](mailto:secure@microsoft.com). If possible, encrypt your message with our PGP key; please download it from the [Microsoft Security Response Center PGP Key page](https://aka.ms/opensource/security/pgpkey).\n\nYou should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Additional information can be found at [microsoft.com/msrc](https://aka.ms/opensource/security/msrc).\n\nPlease include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:\n\n- Type of issue (e.g. buffer overflow, SQL injection, cross-site scripting, etc.)\n- Full paths of source file(s) related to the manifestation of the issue\n- The location of the affected source code (tag/branch/commit or direct URL)\n- Any special configuration required to reproduce the issue\n- Step-by-step instructions to reproduce the issue\n- Proof-of-concept or exploit code (if possible)\n- Impact of the issue, including how an attacker might exploit the issue\n\nThis information will help us triage your report more quickly.\n\nIf you are reporting for a bug bounty, more complete reports can contribute to a higher bounty award. Please visit our [Microsoft Bug Bounty Program](https://aka.ms/opensource/security/bounty) page for more details about our active programs.\n\n## Preferred Languages\n\nWe prefer all communications to be in English.\n\n## Policy\n\nMicrosoft follows the principle of [Coordinated Vulnerability Disclosure](https://aka.ms/opensource/security/cvd).\n\n<!-- END MICROSOFT SECURITY.MD BLOCK -->\n",
+      "README.md": "# Microsoft Quantum Development Kit\n\nWelcome to the Microsoft Quantum Development Kit!\n\nThis repository contains tooling for the Q# language, specifically:\n\n- **[compiler](./source/compiler/qsc/)**: core compiler logic and command-line tooling\n- **[fuzz](./source/fuzz/)**: fuzz testing infrastructure\n- **[jupyterlab](./source/jupyterlab/)**: JupyterLab extension\n- **[language_service](./source/language_service/)**: Q# language service and editor features\n- **[library](./library/)**: Q# standard library\n- **[npm](./source/npm/)**: Q# npm package\n- **[pip](./source/pip/)**: Q# Python pip package\n- **[playground](./source/playground/)**: simple website for interacting with Q#\n- **[resource_estimator](./source/resource_estimator)**: Implementation for the Microsoft Quantum Resource Estimator\n- **[vscode](./source/vscode/)**: Visual Studio Code extension\n- **[wasm](./source/wasm/)**: The bindings and logic for the WebAssembly module\n- **[widgets](./source/widgets)**: The Q# Jupyter widgets Python package\n\nThere are also the tutorials and samples in the `./katas` and `./samples` directories, respectively.\n\nCode from this repository powers the Q# development experience on <https://quantum.microsoft.com>.\n\n## Building\n\nTo build this repository there are dependencies that need to be installed. These are:\n\n- Python (<https://python.org>)\n- Rust (<https://www.rust-lang.org/tools/install>)\n  - On all platforms, the `wasm32-unknown-unknown` must be installed to build the WASM based components\n    ```shell\n    rustup target add wasm32-unknown-unknown\n    ```\n  - On MacOS, ensure that both `aarch64` and `x86_64` targets are installed or you will encounter linking errors.\n    ```shell\n    rustup target add x86_64-apple-darwin\n    rustup target add aarch64-apple-darwin\n    ```\n- Node.js (<https://nodejs.org/>)\n- A [C compiler](https://docs.rs/cc/latest/cc/#compile-time-requirements)\n- wasm-bindgen (see <https://github.com/rustwasm/wasm-bindgen>)\n- wasm-opt (see <https://github.com/WebAssembly/binaryen>)\n\nThe last two can be installed into your HOME directory by running `python ./prereqs.py --install`\n\nThe build script will check these dependencies and their versions and fail if not met. (Or run\n`python ./prereqs.py` directly to check if the minimum required versions are installed).\n\nTo build, in the root directory run `python ./build.py`. By default this will run a release\nbuild of each project, including running tests and checks such as linting. Run with the\n`--help` option for detailed usage.\n\n### Playground\n\nThe `playground` is a small website that loads the Q# editor, compiler, samples, katas, and documentation for the standard library. It's a way to manually validate any changes you make to these components.\n\nTo see instructions for building the playground, refer to [Building the Playground Locally](./source/playground/README.md#building-the-playground-locally).\n\n### Python\n\nWhen building the Python packages (`pip` and `jupyterlab`), if the build script does not detect\na current Python virtual environment, it will automatically create one under `source/pip/.venv` or\n`source/jupyterlab/.venv`. When developing locally, you can use these virtual environments to run the\ntests by running `source .venv/bin/activate` (Linux/MacOS) or `.venv/Scripts/activate.bat` (Windows).\n\n## Code editing\n\nThe easiest way to develop in this repo is to use VS Code. When you open the project root, by\ndefault VS Code will recommend you install the extensions listed in `.vscode/extensions.json`.\nThese extensions provide language services for editing, as well as linters and formatters to\nensure the code meets the requirements (which are checked by the `build.py` script and CI).\n\nSome settings are recommended (but not enforced) to make development easier. These are in the\n`.vscode/*.shared.json` files. If the [Workspace Config+](https://marketplace.visualstudio.com/items?itemName=swellaby.workspace-config-plus)\nextension is installed, this will automatically apply these settings, as well as overrides from\nyour own corresponding `.vscode/*.local.json` settings. If you don't install this extension, you can\nuse these as a reference for editing your own `.vscode/*.json` settings files. (See the extension\nhome page for more details).\n\n## Debugging\n\nDebugging the VS Code extension is best done inside VS Code by launching with F5\n(or `Run / Start Debugging` from the VS Code menu). The `launch.shared.json`\nfile will be applied if using the `Workspace Config+` extension outlined above,\nand this includes a command-line flag to launch the development instance with a\nprofile named `dev`. (If not familiar with VS Code profiles see\n<https://code.visualstudio.com/docs/configure/profiles>).\n\nThis allows you to develop in the main VS Code instance with all your regular\nextensions enabled (including the QDK), but use a `dev` profile that only\nincludes the minimal extensions for testing (e.g. GitHub Copilot, Python,\nJupyter). This avoids the issue where launching with all extensions disabled\nstops you from testing Copilot, Python, etc., but launching with your default\nextensions enabled will cause conflicts with the installed QDK and the one being\ndebugged.\n\nBy default the debugger will launch a VS Code instance with the `./samples`\ndirectory open in the workspace. The directory `samples/scratch` is excluded\nfrom the repo via `.gitignore`, so you can work on temporary files in this\ndirectory without them cluttering your `git diff` or accidentally checking them\nin.\n\n## Citation\n\nIf you use Q#, Microsoft Quantum Development Kit, or Microsoft Quantum Resource Estimator, please cite as follows:\n\n- Microsoft Quantum Development Kit:\n\n```bibtex\n@software{Microsoft_Quantum_Development_Kit,\n   author = {{Microsoft}},\n   license = {MIT},\n   title = {{Microsoft Quantum Development Kit}},\n   url = {https://github.com/microsoft/qdk} }\n```\n\n- Q# programming language:\n\n```bibtex\n@inproceedings{Svore_2018, series={RWDSL2018},\n   title={{Q\\#: Enabling Scalable Quantum Computing and Development with a High-level DSL}},\n   url={http://dx.doi.org/10.1145/3183895.3183901},\n   DOI={10.1145/3183895.3183901},\n   booktitle={Proceedings of the Real World Domain Specific Languages Workshop 2018},\n   publisher={ACM},\n   author={Svore, Krysta and Geller, Alan and Troyer, Matthias and Azariah, John and Granade, Christopher and Heim, Bettina and Kliuchnikov, Vadym and Mykhailova, Mariia and Paz, Andres and Roetteler, Martin},\n   year={2018},\n   month=feb, collection={RWDSL2018} }\n```\n\n- Microsoft Quantum Resource Estimator:\n\n```bibtex\n@inproceedings{Microsoft_Quantum_Resource_Estimator,\n   author = {van Dam, Wim and Mykhailova, Mariia and Soeken, Mathias},\n   title = {{Using Azure Quantum Resource Estimator for Assessing Performance of Fault Tolerant Quantum Computation}},\n   year = {2023},\n   isbn = {9798400707858},\n   publisher = {Association for Computing Machinery},\n   address = {New York, NY, USA},\n   url = {https://doi.org/10.1145/3624062.3624211},\n   doi = {10.1145/3624062.3624211},\n   booktitle = {Proceedings of the SC '23 Workshops of The International Conference on High Performance Computing, Network, Storage, and Analysis},\n   pages = {1414–1419},\n   numpages = {6},\n   series = {SC-W '23} }\n```\n\n## Feedback\n\nIf you have feedback about the content in this repository, please let us know by filing a [new issue](https://github.com/microsoft/qdk/issues/new/choose)!\n\n## Reporting Security Issues\n\nSecurity issues and bugs should be reported privately following our [security issue documentation](./SECURITY.md#reporting-security-issues).\n\n## Contributing\n\nThis project welcomes contributions and suggestions. Most contributions require you to agree to a\nContributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us\nthe rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.\n\nWhen you submit a pull request, a CLA bot will automatically determine whether you need to provide\na CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions\nprovided by the bot. You will only need to do this once across all repos using our CLA.\n\nThis project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).\nFor more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or\ncontact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.\n\nFor more details, please see [CONTRIBUTING.md](./CONTRIBUTING.md).\n\n## Legal and Licensing\n\n### Trademarks\n\nThis project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft\ntrademarks or logos is subject to and must follow\n[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).\nUse of Microsoft trademarks or logos in modified versions of this project must not cause confusion\nor imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those\nthird-party's policies.\n",
+      "CONTRIBUTING.md": "# Contributing to Q#\n\nWelcome, and thank you for your interest in contributing to Q# and the Quantum Development Kit!\n\n## Asking and Answering Questions\n\nHave a question? The `q#` tags on [Stack Overflow](https://stackoverflow.com/questions/tagged/q%23) and [Quantum Computing StackExchange](https://quantumcomputing.stackexchange.com/questions/tagged/q%23) are great places to ask questions about Q#, Quantum Development Kit and quantum computing in general.\nYou can learn more about our work on the [Q# Development Blog](https://devblogs.microsoft.com/qsharp/) and ask questions in the comments as well.\nYour question will server as resource to others searching for help.\n\n## Reporting Issues\n\nHave you identified a reproducible problem in the Quantum Development Kit?\nHave a feature request?\nWe want to hear about it!\n\nYou can follow the [template](https://github.com/microsoft/qdk/issues/new?assignees=&labels=bug&template=bug_report.md&title=) for reporting issues on this repository.\n\n## Contributing Code\n\nIf you are interested in helping fix issues you or someone else encountered,\nplease make sure that the corresponding issue has been filed on the repository.\nCheck that nobody is currently working on it and that it has indeed been marked as bug.\nIf that's the case, indicate on the issue that you are working on it,\nand link to the corresponding GitHub page where the fix is being developed.\nIf someone is already working on a fix, ask if you can help or see what other things can be done.\nIf an issue is labeled as feature, please follow the guidelines related to contributing features.\nSometimes it may take a couple of days for us to label issues appropriately.\nIf an issue has not been labeled yet, please indicate that you would like to work on it and be patient -\nwe are a small team and are doing our best to be quick with responding to your inquiry!\n\n**Note:**\nIssues related to the design and evolution of the Q# language are marked with\n[Area-Language](https://github.com/microsoft/qdk/issues?q=is%3Aissue+is%3Aopen+label%3AArea-Language).\n\nIf you are interested in contributing a new feature,\nplease first check if a similar functionality has already been requested.\nIf so, consider contributing to the discussion around it rather than filing a separate issue.\nIf no open or closed issue with such a request already exists,\nplease file one following the [feature request template](https://github.com/microsoft/qdk/issues/new?assignees=&labels=feature&template=feature_request.md&title=).\nWe will respond to feature requests and follow up with a discussion around its feasibility,\nhow one might go about implementing it, and whether that is something we would consider adding to our repo.\nWe might not be able to eventually merge even a great feature for one reason or another.\nEven if we are not able to incorporate something into the packages and extensions we distribute,\nwe encourage you to pursue your passion project in your own fork,\nand share and discuss your thoughts and progress on the corresponding issue.\n\nIf you are looking for a place to get started with contributing code,\nsearch for example for the [good-first-issue](https://github.com/microsoft/qdk/labels/good%20first%20issue) or [help-wanted](https://github.com/microsoft/qdk/labels/help%20wanted) labels.\nAlso, look for issues that have already been discussed in more detail,\nand check if you can help someone who has already started working on it.\n\nAnd last but not least:\n\n# Thank You!\n\nYour contributions to open source, large or small, make great projects like this possible.\nThank you for taking the time to contribute.\n"
+    },
+    "has_security_md": true,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "Microsoft Quantum Development Kit",
+    "version": null,
+    "doi": null,
+    "authors": [
+      "Microsoft"
+    ],
+    "preferred_citation": null,
+    "identifiers": []
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## Citation\n\nIf you use Q#, Microsoft Quantum Development Kit, or Microsoft Quantum Resource Estimator, please cite as follows:\n\n- Microsoft Quantum Development Kit:\n\n```bibtex\n@software{Microsoft_Quantum_Development_Kit,\n   author = {{Microsoft}},\n   license = {MIT},\n   title = {{Microsoft Quantum Development Kit}},\n   url = {https://github.com/microsoft/qdk} }\n```\n\n- Q# programming language:\n\n```bibtex\n@inproceedings{Svore_2018, series={RWDSL2018},\n   title={{Q\\#: Enabling Scalable Quantum Computing and Development with a High-level DSL}},\n   url={http://dx.doi.org/10.1145/3183895.3183901},\n   DOI={10.1145/3183895.3183901},\n   booktitle={Proceedings of the Real World Domain Specific Languages Workshop 2018},\n   publisher={ACM},\n   author={Svore, Krysta and Geller, Alan and Troyer, Matthias and Azariah, John and Granade, Christopher and Heim, Bettina and Kliuchnikov, Vadym and Mykhailova, Mariia and Paz, Andres and Roetteler, Martin},\n   year={2018},\n   month=feb, collection={RWDSL2018} }\n```\n\n- Microsoft Quantum Resource Estimator:\n\n```bibtex\n@inproceedings{Microsoft_Quantum_Resource_Estimator,\n   author = {van Dam, Wim and Mykhailova, Mariia and Soeken, Mathias},\n   title = {{Using Azure Quantum Resource Estimator for Assessing Performance of Fault Tolerant Quantum Computation}},\n   year = {2023},\n   isbn = {9798400707858},\n   publisher = {Association for Computing Machinery},\n   address = {New York, NY, USA},\n   url = {https://doi.org/10.1145/3624062.3624211},\n   doi = {10.1145/3624062.3624211},\n   booktitle = {Proceedings of the SC '23 Workshops of The International Conference on High Performance Computing, Network, Storage, and Analysis},\n   pages = {1414–1419},\n   numpages = {6},\n   series = {SC-W '23} }\n```",
+    "doi": "10.1145/3183895.3183901"
+  },
+  "channels": {
+    "gh_pages": [
+      "https://microsoft.github.io/qdk/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "qdk",
+    "repo": "microsoft/qdk",
+    "current_version": {
+      "value": "v1.29.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Microsoft"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "gh_pages": [
+          "https://microsoft.github.io/qdk/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": "SECURITY.md present",
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://microsoft.github.io/qdk/",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

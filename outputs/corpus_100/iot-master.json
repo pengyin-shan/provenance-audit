@@ -1,0 +1,104 @@
+{
+  "name": "iot-master",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:41:39Z",
+  "errors": {},
+  "github": {
+    "owner": "god-jason",
+    "repo": "iot-master",
+    "errors": {},
+    "full_name": "god-jason/iot-master",
+    "description": "物联大师是开源免费的物联网平台，集成了标准Modbus和主流PLC等多种协议，支持数据采集、公式计算、定时控制、自动控制、异常报警、流量监控、Web组态、远程调试等功能，适用于大部分物联网和工业互联网应用场景。",
+    "homepage": "https://zgwit.com",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-04T19:54:03Z",
+    "stars": 837,
+    "topics": [
+      "645",
+      "fins",
+      "go",
+      "golang",
+      "hmi",
+      "hostlink",
+      "iot",
+      "melsec",
+      "mitsubishi",
+      "modbus",
+      "mpi",
+      "mqtt",
+      "omron",
+      "opc-ua",
+      "plc",
+      "ppi",
+      "s7",
+      "scada",
+      "xorm"
+    ],
+    "license": "GPL-3.0",
+    "latest_release": {
+      "tag": "v0.7.0",
+      "name": "v0.7.0",
+      "published_at": "2026-04-10T02:40:04Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "# 物联大师\n\n[![Go](https://github.com/god-jason/iot-master/actions/workflows/go.yml/badge.svg)](https://github.com/god-jason/iot-master/actions/workflows/go.yml)\n\n物联大师是开源免费的物联网数据中台，区别于传统的物联网平台，物联大师采用Go语言进行编程实现，有以下诸多优点：\n\n- 单一程序文件，免安装\n- 最低内存只需要12MB\n- 插件机制，支持功能自由扩展\n- 能够支持多种操作系统和处理器架构\n- 支持使用Lua脚本扩展协议\n- 支持使用JS脚本实现边缘计算\n- 支持智能家居应用场景，定时和联动控制\n- 支持WebRTC点对点视频传输\n\n\n# MQTT主题规范\n\n物联大师的插件主要通过MQTT总线相互通讯，\n\n## 一、连接消息\n\nMQTT主题：\n\n```javascript\n`link/${linker_name}/${link_id}/#`\n```\n\n| 消息   | 主题        | 内容   | 说明                        |\n|------|-----------|------|---------------------------|\n| 打开连接 | .../open  | json | {...options, remote:\"ip\"} |\n| 关闭连接 | .../close | none |                           |\n| 接收数据 | .../up    | bin  | 原始二进制                     |\n| 发送数据 | .../down  | bin  | 原始二进制                     |\n\n### 备注：\n\n1. linker_name：连接器名称，比如：serial、can、tcp-client、tcp-server、udp-client、udp-server、udp-group、gnet-server\n2. link_id：连接ID\n\n## 二、协议插件消息\n\nMQTT主题：\n\n```javascript\n`protocol/${protocol_name}/${linker_name}/${link_id}/#`\n```\n\n| 消息   | 主题         | 内容   | 说明                                          |\n|------|------------|------|---------------------------------------------|\n| 打开连接 | .../open   | json | {devices:[{product_id,device_id,slave...}]} |\n| 关闭连接 | .../close  | none |                                             |\n| 接收数据 | .../up     | bin  | 将原始数据定向发送到协议插件                              |\n| 数据轮询 | .../poll   | json | {msg_id, }                                  |\n| 数据同步 | .../sync   | json | {msg_id, device_id}                         |\n| 读取数据 | .../read   | json | {msg_id, device_id, points:[]}              |\n| 写入数据 | .../write  | json | {msg_id, device_id, values:{k:v}}           |\n| 执行操作 | .../action | json | {msg_id, device_id, action, parameters}     |\n\n### 备注：\n\n1. protocol_name：协议名称，推荐与插件名称一致，比如：modbus、dlt645、iec104……\n2. linker_name：连接器名称，目的是方便做数据下发，不用二次转换\n3. 修改设备，实际操作是先删除，再添加\n4. 发送数据使用 link/${linker_name}/${link_id}/down\n5. 插件需要订阅产品消息，同步产品配置\n6. msg_id：消息ID\n\n## 三、产品消息\n\nMQTT主题：\n\n```javascript\n`product/${product_id}/#`\n```\n\n| 消息   | 主题                        | 内容   | 说明 |\n|------|---------------------------|------|----|\n| 产品配置 | .../config/${config_name} | json |    |\n| 产品模型 | .../model                 | json |    |\n\n### 备注：\n\n1. config_name：配置名称，一般是协议名称，比如：modbus、dlt645、iec104……\n\n## 四、设备消息\n\nMQTT主题：\n\n```javascript\n`device/${device_id}/#`\n```\n\n| 消息     | 主题                  | 内容   | 说明                                       |\n|--------|---------------------|------|------------------------------------------|\n| 上传属性   | .../values          | json | {k:v}                                    |\n| 读取属性   | .../sync            | json | {msg_id}                                 |\n| 读取属性响应 | .../sync/response   | json | {msg_id, values:{k:v}}                   |\n| 读取属性   | .../read            | json | {msg_id, points:[k,]}                    |\n| 读取属性响应 | .../read/response   | json | {msg_id, values:{k:v}}                   |\n| 修改属性   | .../write           | json | {msg_id, values:{k:v}}                   |\n| 修改属性响应 | .../write/response  | json | {msg_id, results:{k:bool}}               |\n| 上报事件   | .../event           | json | {title, message, level,}                 |\n| 执行操作   | .../action          | json | {msg_id, action:\"reboot\", parameters:{}} |\n| 执行操作响应 | .../action/response | json | {msg_id, action:\"reboot\", result: {}}    |\n\n### 备注：\n\n1. device_id：设备ID\n2. msg_id：消息ID\n\n## 五、项目消息\n\nMQTT主题：\n\n```javascript\n`project/${project_id}/${device_id}/#`\n```\n\n| 消息   | 主题         | 内容   | 说明                       |\n|------|------------|------|--------------------------|\n| 上传属性 | .../values | json | {k:v}                    |\n| 上报事件 | .../event  | json | {title, message, level,} |\n\n### 备注：\n\n1. project_id：项目ID\n2.\n\n## 六、空间消息\n\nMQTT主题：\n\n```javascript\n`space/${space_id}/${device_id}/#`\n```\n\n| 消息   | 主题         | 内容   | 说明                       |\n|------|------------|------|--------------------------|\n| 上传属性 | .../values | json | {k:v}                    |\n| 上报事件 | .../event  | json | {title, message, level,} |\n\n### 备注：\n\n1. space_id：空间ID\n\n## 七、异常消息\n\n| 消息   | 主题                       | 内容   | 说明                             |\n|------|--------------------------|------|--------------------------------|\n| 推送消息 | push/${device_id}/values | json | {user_id, device_id, event:{}} |\n\n# 协议库支持统计\n\n- [x] Modbus RTU\n- [x] Modbus TCP\n- [ ] Modbus ASCII（使用比较少，暂不做支持）\n- [ ] PLC\n-\n    - [x] Siemens 西门子 s7 fetchwrite mpi ppi\n-\n    - [x] Mitsubishi 三菱 melsec\n-\n    - [x] Omron 欧姆龙 fins hostlink\n-\n    - [ ] AB df1\n-\n    - [ ] Delta 台达 dvp\n-\n    - [ ] Keyence 基恩士 melsec\n-\n    - [ ] Panasonic 松下 melsec newtocol\n-\n    - [ ] Fuji 富士 spb\n-\n    - [ ] Fatek 永宏\n- [ ] BACnet智能建筑协议\n- [ ] KNX智能建筑协议\n- [x] DL/T645-1997、2007 多功能电表通讯规约\n- [ ] DL/T698.45-2017 国网电力通讯规约\n- [x] CJ/T188-2004、2018 户用计量仪表数据传输技术条件\n- [ ] IEC 101/103/104 电力系统远程控制和监视的通信协议\n- [ ] IEC 61850 电力系统自动化领域全球通用协议\n- [ ] SL/T427-2021 水资源监测数据传输规约\n- [ ] SL/T651-2014 水文监测数据通信规约\n- [ ] SL/T812.1-2021 水利监测数据传输规约\n- [ ] SZY206-2016 水资源监测数据传输规约\n\n# 联系方式\n\n南京真格智能科技有限公司 [链接](https://zgwit.com)\n\n- 邮箱：[jason@zgwit.com](mailto:jason@zgwit.com)\n- 手机：[15161515197](tel:15161515197)(微信同号)\n\n# 开源协议\n\n[GNU GPLv3](https://github.com/god-jason/iot-master/blob/main/LICENSE)\n\n`补充：产品仅限个人免费使用，商业需求请联系我们`\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "iot-master",
+    "repo": "god-jason/iot-master",
+    "current_version": {
+      "value": "v0.7.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "god-jason"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://zgwit.com",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

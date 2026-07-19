@@ -1,0 +1,176 @@
+{
+  "name": "kernel",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:41:09Z",
+  "errors": {},
+  "github": {
+    "owner": "hermit-os",
+    "repo": "kernel",
+    "errors": {},
+    "full_name": "hermit-os/kernel",
+    "description": "A Rust-based, lightweight unikernel.",
+    "homepage": "https://hermit-os.org",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-07-04T09:22:28Z",
+    "stars": 1470,
+    "topics": [
+      "cloud-computing",
+      "high-performance-computing",
+      "kernel",
+      "operating-system",
+      "operating-systems",
+      "osdev",
+      "rust",
+      "rust-lang",
+      "unikernels",
+      "virtualization"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v0.13.2",
+      "name": "0.13.2",
+      "published_at": "2026-03-13T10:01:28Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "cff-version: 1.2.0\ntitle: The Hermit Kernel\nmessage: >-\n  If you use this software, please cite both the article\n  from preferred-citation and the software itself.\ntype: software\nauthors:\n  - family-names: Lankes\n    given-names: Stefan\n    orcid: 'https://orcid.org/0000-0003-4718-2238'\n  - family-names: Kröning\n    given-names: Martin\n    orcid: 'https://orcid.org/0009-0005-0622-4229'\n  - family-names: Klimt\n    given-names: Jonathan\n    orcid: 'https://orcid.org/0000-0002-5980-2214'\n  - family-names: Breitbart\n    given-names: Jens\n  - family-names: Finck\n    given-names: Colin\n  - family-names: Krebs\n    given-names: Daniel\n  - family-names: Schöning\n    given-names: Simon\n  - family-names: Schwender\n    given-names: Jonathan\n  - family-names: Şahin\n    given-names: Çağatay Yiğit\n  - family-names: Thomas\n    given-names: Lambertz\n  - name: The Hermit Project Developers\nidentifiers:\n  - type: doi\n    value: 10.5281/zenodo.14645534\n    description: The concept DOI of the software.\n  - type: doi\n    value: 10.5281/zenodo.14645535\n    description: The versioned DOI for version 0.8.0 of the software.\n  - type: url\n    value: >-\n      https://github.com/hermit-os/kernel/releases/tag/v0.8.0\n    description: The GitHub release URL of tag v0.8.0.\n  - type: url\n    value: >-\n      https://github.com/hermit-os/kernel/tree/742526984ee0094b0626ad6afddb17b11bc9caff\n    description: >-\n      The GitHub release URL of the commit tagged with\n      v0.8.0.\n  - type: url\n    value: >-\n      https://github.com/hermit-os/kernel/releases/tag/v0.10.0\n    description: The GitHub release URL of tag v0.10.0.\n  - type: url\n    value: >-\n      https://github.com/hermit-os/kernel/tree/791b9328b3a6b93944692c6dfa3e2f42c59672cb\n    description: >-\n      The GitHub release URL of the commit tagged with\n      v0.10.0.\nrepository-code: 'https://github.com/hermit-os/kernel'\nurl: 'https://hermit-os.org/'\nabstract: 'A Rust-based, lightweight unikernel.'\nkeywords:\n  - unikernel\n  - rust\n  - virtualization\n  - operating system\n  - high-performance computing\n  - cloud computing\ncommit: 791b9328b3a6b93944692c6dfa3e2f42c59672cb\nversion: 0.10.0\ndate-released: '2025-01-18'\npreferred-citation:\n  type: article\n  title: Exploring Rust for Unikernel Development\n  journal: >-\n    Proceedings of the 10th Workshop on Programming Languages and Operating\n    Systems\n  doi: 10.1145/3365137.3365395\n  year: 2019\n  month: 10\n  authors:\n    - family-names: Lankes\n      given-names: Stefan\n      orcid: 'https://orcid.org/0000-0003-4718-2238'\n    - family-names: Breitbart\n      given-names: Jens\n    - family-names: Pickartz\n      given-names: Simon\n      orcid: 'https://orcid.org/0000-0002-6316-6396'\n  pages: 8\n  start: 8\n  end: 15\n",
+      "README.md": "<img width=\"256\" align=\"right\" src=\"https://github.com/hermit-os/.github/blob/main/logo/hermit-logo.svg\" />\n\n# Hermit Kernel\n\n[![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://hermit-os.github.io/kernel)\n![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)\n[![Zulip Badge](https://img.shields.io/badge/chat-hermit-57A37C?logo=zulip)](https://hermit.zulipchat.com/)\n[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14645534.svg)](https://doi.org/10.5281/zenodo.14645534)\n\nThis is the kernel of the [Hermit](https://github.com/hermit-os) unikernel project.\n\nFor details, see the [docs].\n\n[docs]: https://hermit-os.github.io/kernel\n\n## Requirements\n\n* [`rustup`](https://www.rust-lang.org/tools/install)\n\n## Building the kernel\n\nUsually the kernel will be linked as static library to your applications.\n\n- **Rust applications:** Instructions can be found in the [hermit-rs](https://github.com/hermit-os/hermit-rs) repository.\n- **For C/C++ applications:** Instructions can be found in the [hermit-c](https://github.com/hermit-os/hermit-c) repository.\n \n\n### Standalone static library build\n\n```sh\ncargo xtask build --arch x86_64\n```\n\nOn completion, the script will print the path of `libhermit.a`.\nIf you want to build the kernel for aarch64, please replace `x86_64` by `aarch64`.\nIf you want to build the kernel for riscv64, please use `riscv64`. \n\n### Control the kernel messages verbosity\n\nThis kernel uses the lightweight logging crate [log](https://github.com/rust-lang/log) to print kernel messages.\nThe environment variable `HERMIT_LOG_LEVEL_FILTER` controls the verbosity and follows [the env_logger format](https://docs.rs/env_logger/latest/env_logger/) but without the regex support.\nYou can change it per module (including its submodules) by setting it to a string in the format `[target][=level][,...]`, where the level is a string matching the name of a [LevelFilter](https://docs.rs/log/0.4.8/log/enum.LevelFilter.html).\nIf the target is omitted, the level is set as the global level. If the level is\nomitted, logs of all levels are printed for the target. A substring search\npattern that will filter all modules can be provided after the target-level\npairs with `/<pattern>`.\nIf the variable is not set, cannot be parsed, or it does not provide a global level, then a global level `LevelFilter::Info` is used by default.\n\n> [!NOTE]\n> Although the logger only prints name of the lowest level for the kernel\n  modules, the match filter requires paths to start from the root, i.e. in the\n  format `hermit::MODULE_NAME::SUBMODULE_NAME`.\n\n```sh\n$ HERMIT_LOG_LEVEL_FILTER=\"hermit::drivers::net=debug,smoltcp,error\" cargo xtask build --arch x86_64\n```\n\n## Credits\n\nThis kernel is derived from following tutorials and software distributions:\n\n1. Philipp Oppermann's [excellent series of blog posts][opp].\n2. Erik Kidd's [toyos-rs][kidd], which is an extension of Philipp Opermann's kernel.\n3. The Rust-based teaching operating system [eduOS-rs][eduos].\n\n[opp]: http://blog.phil-opp.com/\n[kidd]: http://www.randomhacks.net/bare-metal-rust/\n[eduos]: http://rwth-os.github.io/eduOS-rs/\n\n## License\n\nLicensed under either of\n\n* Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)\n* MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)\n\nat your option.\n\n## Contribution\n\nUnless you explicitly state otherwise, any contribution intentionally submitted for inclusion in the work by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any additional terms or conditions.\n\nThe kernel is being developed on [hermit-os/kernel](https://github.com/hermit-os/kernel).\nCreate your own fork, send us a pull request, and chat with us on [Zulip](https://hermit.zulipchat.com/).\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "The Hermit Kernel",
+    "version": "0.10.0",
+    "doi": null,
+    "authors": [
+      "Stefan Lankes",
+      "Martin Kröning",
+      "Jonathan Klimt",
+      "Jens Breitbart",
+      "Colin Finck",
+      "Daniel Krebs",
+      "Simon Schöning",
+      "Jonathan Schwender",
+      "Çağatay Yiğit Şahin",
+      "Lambertz Thomas",
+      "The Hermit Project Developers"
+    ],
+    "preferred_citation": {
+      "title": "Exploring Rust for Unikernel Development",
+      "doi": "10.1145/3365137.3365395",
+      "year": 2019,
+      "authors": [
+        "Stefan Lankes",
+        "Jens Breitbart",
+        "Simon Pickartz"
+      ]
+    },
+    "identifiers": [
+      {
+        "type": "doi",
+        "value": "10.5281/zenodo.14645534"
+      },
+      {
+        "type": "doi",
+        "value": "10.5281/zenodo.14645535"
+      },
+      {
+        "type": "url",
+        "value": "https://github.com/hermit-os/kernel/releases/tag/v0.8.0"
+      },
+      {
+        "type": "url",
+        "value": "https://github.com/hermit-os/kernel/tree/742526984ee0094b0626ad6afddb17b11bc9caff"
+      },
+      {
+        "type": "url",
+        "value": "https://github.com/hermit-os/kernel/releases/tag/v0.10.0"
+      },
+      {
+        "type": "url",
+        "value": "https://github.com/hermit-os/kernel/tree/791b9328b3a6b93944692c6dfa3e2f42c59672cb"
+      }
+    ]
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": "10.5281/zenodo.14645534.svg"
+  },
+  "channels": {
+    "zulip": [
+      "https://hermit.zulipchat.com/"
+    ],
+    "gh_pages": [
+      "https://hermit-os.github.io/kernel",
+      "http://rwth-os.github.io/eduOS-rs/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "kernel",
+    "repo": "hermit-os/kernel",
+    "current_version": {
+      "value": "v0.13.2",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Stefan Lankes",
+        "Martin Kröning",
+        "Jonathan Klimt",
+        "Jens Breitbart",
+        "Colin Finck",
+        "Daniel Krebs",
+        "Simon Schöning",
+        "Jonathan Schwender",
+        "Çağatay Yiğit Şahin",
+        "Lambertz Thomas",
+        "The Hermit Project Developers"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "zulip": [
+          "https://hermit.zulipchat.com/"
+        ],
+        "gh_pages": [
+          "https://hermit-os.github.io/kernel",
+          "http://rwth-os.github.io/eduOS-rs/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": "10.1145/3365137.3365395",
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://hermit-os.org",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

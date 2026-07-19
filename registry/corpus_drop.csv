@@ -1,0 +1,19 @@
+name,repo,domain,reason
+course,parallel101/course,hpc,name matches non-software pattern /^course$/
+awesome-tensor-compilers,merrymercy/awesome-tensor-compilers,hpc,name matches non-software pattern /awesome[-_]/
+How_to_optimize_in_GPU,Liu-xiandong/How_to_optimize_in_GPU,hpc,known non-software (curated list/book/tutorial)
+sevendayshpc,kaityo256/sevendayshpc,hpc,known non-software (curated list/book/tutorial)
+distributed-training-guide,LambdaLabsML/distributed-training-guide,hpc,known non-software (curated list/book/tutorial)
+cs-video-courses,Developer-Y/cs-video-courses,qc,known non-software (curated list/book/tutorial)
+awesome-quantum-machine-learning,krishnakumarsekar/awesome-quantum-machine-learning,qc,name matches non-software pattern /awesome[-_]/
+awesome-quantum-computing,desireevl/awesome-quantum-computing,qc,name matches non-software pattern /awesome[-_]/
+Computer-Science-Resources,the-akira/Computer-Science-Resources,qc,known non-software (curated list/book/tutorial)
+awesome-quantum-software,qosf/awesome-quantum-software,qc,name matches non-software pattern /awesome[-_]/
+awesome-AI-books,zslucky/awesome-AI-books,qc,known non-software (curated list/book/tutorial)
+Quandoom,Lumorti/Quandoom,qc,known non-software (curated list/book/tutorial)
+quantumcomputingbook,JackHidary/quantumcomputingbook,qc,known non-software (curated list/book/tutorial)
+learning-cloud,lynnlangit/learning-cloud,qc,known non-software (curated list/book/tutorial)
+amazon-braket-examples,amazon-braket/amazon-braket-examples,qc,name matches non-software pattern /[-_]examples?$/
+observer-patch-holography,FloatingPragma/observer-patch-holography,qc,known non-software (curated list/book/tutorial)
+awesome-quantum-ml,artix41/awesome-quantum-ml,qc,name matches non-software pattern /awesome[-_]/
+qutip-notebooks,qutip/qutip-notebooks,qc,name matches non-software pattern /[-_]notebooks?$/

@@ -1,0 +1,61 @@
+# Corpus A — Citation-metadata consistency (multi-discipline)
+# Feeds: RDA27 poster (commits to 30+ projects + aggregate agreement rates), Sloan preliminary data.
+# This is a STARTER set (~8). Expand to 30+ across disciplines before the October poster.
+# Prefer projects that publish a CITATION.cff AND a registry record AND an archival DOI, so the
+# cross-channel comparison has something to compare.
+
+- name: Astropy
+  repo: astropy/astropy
+  discipline: astronomy
+  registries:
+    - registry: pypi
+      package: astropy
+
+- name: NumPy
+  repo: numpy/numpy
+  discipline: scientific_python
+  registries:
+    - registry: pypi
+      package: numpy
+
+- name: scikit-learn
+  repo: scikit-learn/scikit-learn
+  discipline: machine_learning
+  registries:
+    - registry: pypi
+      package: scikit-learn
+
+- name: yt
+  repo: yt-project/yt
+  discipline: astrophysics
+  registries:
+    - registry: pypi
+      package: yt
+
+- name: Biopython
+  repo: biopython/biopython
+  discipline: bioinformatics
+  registries:
+    - registry: pypi
+      package: biopython
+
+- name: QuTiP
+  repo: qutip/qutip
+  discipline: quantum
+  registries:
+    - registry: pypi
+      package: qutip
+
+- name: LAMMPS
+  repo: lammps/lammps
+  discipline: materials
+  registries:
+    - registry: pypi
+      package: lammps
+
+- name: nf-core-tools      # workflow/bioinformatics; verify
+  repo: nf-core/tools
+  discipline: bioinformatics
+  registries:
+    - registry: pypi
+      package: nf-core

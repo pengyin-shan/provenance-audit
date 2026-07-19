@@ -1,0 +1,107 @@
+{
+  "name": "ReCirq",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:14Z",
+  "errors": {},
+  "github": {
+    "owner": "quantumlib",
+    "repo": "ReCirq",
+    "errors": {},
+    "full_name": "quantumlib/ReCirq",
+    "description": "Python modules for quantum computing applications and experiments using Cirq. Research using Cirq!",
+    "homepage": "https://quantumai.google/cirq/experiments",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-04-29T18:00:10Z",
+    "stars": 308,
+    "topics": [
+      "algorithms",
+      "cirq",
+      "games",
+      "google-quantum",
+      "nisq",
+      "optimization",
+      "python",
+      "quantum",
+      "quantum-algorithms",
+      "quantum-circuit",
+      "quantum-circuits",
+      "quantum-computing",
+      "quantum-computing-research",
+      "quantum-information",
+      "quantum-information-science",
+      "quantum-programming",
+      "quantum-simulation",
+      "research",
+      "simulation"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v2020-10",
+      "name": "v2020-10",
+      "published_at": "2020-10-15T16:17:15Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "# ReCirq\n\nResearch using Cirq!\n\nThis project contains modules for running quantum computing applications and\nexperiments through Cirq. By way of example, we also document best practices\nfor setting up robust experimental pipelines.\n\n## Installation and Documentation\n\nReCirq is not available as a PyPI package. Please clone this repository and\ninstall from source:\n\n```shell\ncd recirq/\npip install .\n```\n\nDocumentation is available at https://quantumai.google/cirq/experiments.\n\n## See Also\n\nReCirq leverages [Cirq] as a quantum programming language and SDK.\n\nGoogle Quantum AI has a suite of open-source software.\nFrom high-performance simulators, to novel tools for expressing and\nanalyzing fault-tolerant quantum algorithms, our software stack lets you\ndevelop quantum programs for a variety of applications.\n\n<div align=\"center\">\n\n| Your interests | Software to explore  |\n|----------------|----------------------|\n| Programming NISQ quantum computers? | [Cirq] |\n| Quantum algorithms?<br>Fault-tolerant quantum computing (FTQC)? | [Qualtran] |\n| Large circuits and/or a lot of simulations? | [qsim] |\n| Circuits with thousands of qubits and millions of Clifford operations? | [Stim] |\n| Quantum error correction (QEC)? | [Stim]<br>[Tesseract Decoder] |\n| Chemistry and/or material science? | [OpenFermion]<br>[OpenFermion-FQE]<br>[OpenFermion-PySCF]<br>[OpenFermion-Psi4] |\n| Quantum machine learning (QML)? | [TensorFlow Quantum] |\n\n</div>\n\n[Cirq]: https://github.com/quantumlib/Cirq\n[Qualtran]: https://github.com/quantumlib/Qualtran\n[qsim]: https://github.com/quantumlib/qsim\n[Stim]: https://github.com/quantumlib/Stim\n[OpenFermion]: https://github.com/quantumlib/OpenFermion\n[OpenFermion-FQE]: https://github.com/quantumlib/OpenFermion-FQE\n[OpenFermion-PySCF]: https://github.com/quantumlib/OpenFermion-PySCF\n[OpenFermion-Psi4]: https://github.com/quantumlib/OpenFermion-Psi4\n[Tesseract Decoder]: https://github.com/quantumlib/Tesseract-decoder\n[TensorFlow Quantum]: https://github.com/tensorflow/quantum\n[ReCirq]: https://github.com/quantumlib/ReCirq\n\n## How to cite ReCirq\n\n<a href=\"https://doi.org/10.5281/zenodo.4091470\">\n  <img align=\"right\" src=\"https://img.shields.io/badge/10.5281%2Fzenodo.4091470-gray.svg?label=DOI&logo=doi&logoColor=white&style=flat-square&colorA=gray&colorB=3c60b1\">\n</a>\n\nNew releases of ReCirq are uploaded to [Zenodo] automatically. Click the badge at right to see all\ncitation formats for all versions, or use the following BibTeX:\n\n```bibtex\n@software{quantum_ai_team_and_collaborators_2020_4091470,\n  author       = {{Quantum AI team and collaborators}},\n  title        = {ReCirq},\n  month        = Oct,\n  year         = 2020,\n  publisher    = {Zenodo},\n  doi          = {10.5281/zenodo.4091470},\n  url          = {https://doi.org/10.5281/zenodo.4091470}\n}\n```\n\n[Zenodo]: https://doi.org/10.5281/zenodo.4091470\n\n## Contact\n\nFor any questions or concerns not addressed here, please email\nquantum-oss-maintainers@google.com.\n\n## Disclaimer\n\nThis is not an officially supported Google product. This project is not\neligible for the [Google Open Source Software Vulnerability Rewards\nProgram](https://bughunters.google.com/open-source-security).\n\nCopyright 2025 Google LLC.\n\n<div align=\"center\">\n  <a href=\"https://quantumai.google\">\n    <img align=\"center\" width=\"15%\" alt=\"Google Quantum AI\"\n         src=\"./docs/images/quantum-ai-vertical.svg\">\n  </a>\n</div>\n",
+      "CONTRIBUTING.md": "# How to contribute\n\nWe'd love to accept your patches and contributions to this project. We do have\nsome guidelines to follow, covered in this document, but don't be concerned\nabout getting everything right the first time! Create a pull request (discussed\nbelow) and we'll nudge you in the right direction.\n\n## Before you begin\n\n### Sign our Contributor License Agreement\n\nContributions to this project must be accompanied by a [Contributor License\nAgreement](https://cla.developers.google.com/about) (CLA). You (or your\nemployer) retain the copyright to your contribution; the CLA simply gives us\npermission to use and redistribute your contributions as part of the project.\nPlease visit https://cla.developers.google.com/ to see your current agreements\non file or to sign a new one. You generally only need to submit a Google CLA\nonce, so if you've already submitted one (even if it was for a different\nproject), you probably don't need to do it again.\n\n> [!WARNING]\n> Please note carefully clauses [#5](https://cla.developers.google.com/about/google-corporate#:~:text=You%20represent%20that%20each%20of%20Your%20Contributions%20is%20Your%20original%20creation)\n> and [#7](https://cla.developers.google.com/about/google-corporate#:~:text=Should%20You%20wish%20to%20submit%20work%20that%20is%20not%20Your%20original%20creation%2C%20You%20may%20submit%20it%20to%20Google%20separately)\n> in the CLA. Any code that you contribute to this project must be **your**\n> original creation. Code generated by artificial intelligence tools **does\n> not** qualify as your original creation.\n\n### Review our community guidelines\n\nWe have a [code of conduct](CODE_OF_CONDUCT.md) to make the ReCirq project an open\nand welcoming community environment. Please make sure to read and abide by the\ncode of conduct.\n\n## Contribution process\n\nAll submissions, including submissions by project members, require review. We\nuse the tools provided by GitHub for [pull\nrequests](https://help.github.com/articles/about-pull-requests/) for this\npurpose. The preferred manner for submitting pull requests is to fork the ReCirq\n[repository](https://github.com/quantumlib/ReCirq), create a [git\nbranch](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) in\nthis fork to do your work, and when ready, create a pull request from this\nbranch to the ReCirq repository. The subsections below describe the process\nin more detail.\n\nPlease make sure to follow the [Google Style\nGuides](https://google.github.io/styleguide/) in your code, particularly the\n[style guide for Python](https://google.github.io/styleguide/pyguide.html).\n\n### Repository forks\n\n1.  Fork the ReCirq repository (you can use the _Fork_ button in upper right\n    corner of the [repository page](https://github.com/quantumlib/ReCirq)).\n    Forking creates a new GitHub repo at the location\n    `https://github.com/USERNAME/ReCirq`, where `USERNAME` is your GitHub user\n    name.\n\n1.  Clone (using `git clone`) or otherwise download your forked repository to\n    your local computer, so that you have a local copy where you can do your\n    development work using your preferred editor and development tools.\n\n1.  Check out the `main` branch and create a new git branch from `main`:\n\n    ```shell\n    git checkout main -b YOUR_BRANCH_NAME\n    ```\n\n    where `YOUR_BRANCH_NAME` is the name of your new branch.\n\n### Development and testing\n\nBefore you begin developing ReCirq experiments and modules, we recommend you\nfirst create a virtual Python environment. You can use either Python's built-in\n[`venv`](https://docs.python.org/3/library/venv.html) module or another tool\nthat you are comfortable with.\n\nThen, in that virtual environment, install the core ReCirq dependencies using\n`pip`:\n\n```shell\npip install -r requirements.txt\n```\n\nYou _may_ need to install additional requirements, depending on the ReCirq\nexperiment you want to work on. These additional requirements will be in a\nfile named `extra-requirements.txt` in the experiment's subdirectory under\n`recirq/`. For example, if you were working with `recirq/optimize`, you would\nneed to install its extra dependencies like this:\n\n```shell\npip install -r recirq/optimize/extra-requirements.txt\n```\n\nOnce the environment is set up, you can do your work and `git commit` your\nchanges to your branch as needed.\n\n#### Running tests\n\nTo test your code when working on the module for a given experiment, run\n`pytest` with the path to the module. Continuing with the `recirq/optimize`\nmodule as an example, you would run the following command:\n\n```shell\npytest recirq/optimize\n```\n\n#### Writing and editing notebooks\n\nIf you are going to edit any of the Jupyter notebooks, install the\nadditional requirements needed to run the notebook format checks:\n\n```shell\npip install -r dev_tools/requirements/deps/tensorflow-docs.txt\n```\n\nAfter that, you can test notebooks for proper formatting and other issues with\nthis command:\n\n```shell\ndev_tools/nbformat\n```\n\n### Pull requests and code reviews\n\n1.  If your local copy has drifted out of sync with the `main` branch of the\n    ReCirq repo, you may need to merge the latest changes into your branch.\n    To do this, first update your local `main` and then merge your local `main`\n    into your branch:\n\n    ```shell\n    # Track the upstream repo (if your local repo hasn't):\n    git remote add upstream https://github.com/quantumlib/ReCirq.git\n\n    # Update your local copy.\n    git fetch upstream\n    git checkout main\n    git merge upstream/main\n    # Merge local main into your branch.\n    git checkout YOUR_BRANCH_NAME\n    git merge main\n    ```\n\n    If git reports conflicts during one or both of these merge processes, you\n    may need to [resolve the merge conflicts](\n    https://docs.github.com/articles/about-merge-conflicts) before continuing.\n\n1.  Finally, push your changes to your fork of the ReCirq repo on GitHub:\n\n    ```shell\n    git push origin YOUR_BRANCH_NAME\n    ```\n\n1.  Now when you navigate to the ReCirq repository on GitHub\n    (https://github.com/quantumlib/ReCirq), you should see the option to create\n    a new pull request from your forked repository. Alternatively, you can\n    create the pull request by navigating to the \"Pull requests\" tab near the\n    top of the page, and selecting the appropriate branches.\n\n1.  A reviewer from the ReCirq team will comment on your code and may ask for\n    changes. You can perform the necessary changes locally, commit them to your\n    branch as usual, and then push changes to your fork on GitHub following the\n    same process as above. When you do that, GitHub will update the code in the\n    pull request automatically.\n",
+      "SECURITY.md": "# Reporting security issues\n\nThis project's developers and community are committed to addressing security\nbugs promptly and effectively. We appreciate your efforts to disclose your\nfindings responsibly, and will make every effort to acknowledge your\ncontributions.\n\nPlease **do not** use GitHub issues to report security vulnerabilities; GitHub\nissues are public, and doing so could allow someone to exploit the information\nbefore the problem can be addressed. Instead, please use the *Report a\nvulnerability* button from the *Security* tab at the top of this GitHub\nrepository page.\n\nPlease report security issues in third-party modules to the person or team\nmaintaining the module rather than this project's stewards, unless you believe\nthat some action needs to be taken specifically with this project in order to\nguard against the effects of a security vulnerability in third-party software.\n\n## Responses to security reports\n\nThe project stewards at Google Quantum AI will send a response indicating the\nnext steps in handling your report. After the initial reply to your report, the\nproject stewards will keep you informed of the progress towards a fix and full\nannouncement, and may ask for additional information or guidance.\n\n## Additional points of contact\n\nPlease contact the project stewards at Google Quantum AI via email at\nquantum-oss-maintainers@google.com if you have questions or other concerns. If\nfor any reason you are uncomfortable reaching out to the project stewards,\nplease email opensource@google.com instead.\n"
+    },
+    "has_security_md": true,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## How to cite ReCirq\n\n<a href=\"https://doi.org/10.5281/zenodo.4091470\">\n  <img align=\"right\" src=\"https://img.shields.io/badge/10.5281%2Fzenodo.4091470-gray.svg?label=DOI&logo=doi&logoColor=white&style=flat-square&colorA=gray&colorB=3c60b1\">\n</a>\n\nNew releases of ReCirq are uploaded to [Zenodo] automatically. Click the badge at right to see all\ncitation formats for all versions, or use the following BibTeX:\n\n```bibtex\n@software{quantum_ai_team_and_collaborators_2020_4091470,\n  author       = {{Quantum AI team and collaborators}},\n  title        = {ReCirq},\n  month        = Oct,\n  year         = 2020,\n  publisher    = {Zenodo},\n  doi          = {10.5281/zenodo.4091470},\n  url          = {https://doi.org/10.5281/zenodo.4091470}\n}\n```\n\n[Zenodo]: https://doi.org/10.5281/zenodo.4091470",
+    "doi": "10.5281/zenodo.4091470"
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "ReCirq",
+    "repo": "quantumlib/ReCirq",
+    "current_version": {
+      "value": "v2020-10",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "quantumlib"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": "SECURITY.md present",
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://quantumai.google/cirq/experiments",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

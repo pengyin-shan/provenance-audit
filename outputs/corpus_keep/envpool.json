@@ -1,0 +1,127 @@
+{
+  "name": "envpool",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:43:54Z",
+  "errors": {},
+  "github": {
+    "owner": "sail-sg",
+    "repo": "envpool",
+    "errors": {},
+    "full_name": "sail-sg/envpool",
+    "description": "C++-based high-performance parallel environment execution engine (vectorized env) for general RL environments.",
+    "homepage": "https://envpool.readthedocs.io",
+    "default_branch": "main",
+    "archived": false,
+    "pushed_at": "2026-06-17T20:18:44Z",
+    "stars": 1477,
+    "topics": [
+      "atari-games",
+      "box2d",
+      "cpp17",
+      "dm-control",
+      "dm-env",
+      "gym",
+      "high-performance-computing",
+      "lock-free-queue",
+      "mujoco",
+      "parallel-processing",
+      "pybind11",
+      "reinforcement-learning",
+      "reinforcement-learning-environments",
+      "robotics",
+      "threadpool",
+      "vizdoom"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v1.2.5",
+      "name": "v1.2.5",
+      "published_at": "2026-05-20T20:07:04Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "<div align=\"center\">\n  <a href=\"http://envpool.readthedocs.io\"><img width=\"666px\" height=\"auto\" src=\"https://envpool.readthedocs.io/en/latest/_static/envpool-logo.png\"></a>\n</div>\n\n---\n\n[![PyPI](https://img.shields.io/pypi/v/envpool)](https://pypi.org/project/envpool/) [![Downloads](https://static.pepy.tech/personalized-badge/envpool?period=total&units=international_system&left_color=grey&right_color=orange&left_text=PyPI%20Download)](https://pepy.tech/project/envpool) [![arXiv](https://img.shields.io/badge/arXiv-2206.10558-b31b1b.svg)](https://arxiv.org/abs/2206.10558) [![Read the Docs](https://img.shields.io/readthedocs/envpool)](https://envpool.readthedocs.io/) [![Unittest](https://github.com/sail-sg/envpool/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/sail-sg/envpool/actions/workflows/test.yml) [![Coverage](https://sail-sg.github.io/envpool/coverage-badge.svg)](https://sail-sg.github.io/envpool/) [![GitHub issues](https://img.shields.io/github/issues/sail-sg/envpool)](https://github.com/sail-sg/envpool/issues) [![GitHub stars](https://img.shields.io/github/stars/sail-sg/envpool)](https://github.com/sail-sg/envpool/stargazers) [![GitHub forks](https://img.shields.io/github/forks/sail-sg/envpool)](https://github.com/sail-sg/envpool/network) [![GitHub license](https://img.shields.io/github/license/sail-sg/envpool)](https://github.com/sail-sg/envpool/blob/main/LICENSE)\n\n**EnvPool** is a C++-based batched environment pool with pybind11 and thread pool. It has high performance (\\~1M raw FPS with Atari games, \\~3M raw FPS with MuJoCo simulator on DGX-A100) and compatible APIs (supports Gymnasium and dm\\_env, both sync and async, both single and multi player environment). Currently it supports:\n\n- [x] [Atari games](https://envpool.readthedocs.io/en/latest/env/atari.html)\n- [x] [MuJoCo (Gymnasium)](https://envpool.readthedocs.io/en/latest/env/mujoco_gym.html)\n- [x] [Classic control RL envs](https://envpool.readthedocs.io/en/latest/env/classic_control.html): CartPole, MountainCar, Pendulum, Acrobot\n- [x] [Toy text RL envs](https://envpool.readthedocs.io/en/latest/env/toy_text.html): Catch, FrozenLake, Taxi, NChain, CliffWalking, Blackjack\n- [x] [ViZDoom single player](https://envpool.readthedocs.io/en/latest/env/vizdoom.html)\n- [x] [DeepMind Control Suite](https://envpool.readthedocs.io/en/latest/env/dm_control.html)\n- [x] [Box2D](https://envpool.readthedocs.io/en/latest/env/box2d.html)\n- [x] [Google Research Football](https://envpool.readthedocs.io/en/latest/env/gfootball.html)\n- [x] [Procgen](https://envpool.readthedocs.io/en/latest/env/procgen.html)\n- [x] [Minigrid](https://envpool.readthedocs.io/en/latest/env/minigrid.html)\n- [x] [MarlGrid](https://envpool.readthedocs.io/en/latest/env/marlgrid.html)\n- [x] [Highway](https://envpool.readthedocs.io/en/latest/env/highway.html)\n- [x] [MetaWorld](https://envpool.readthedocs.io/en/latest/env/metaworld.html)\n- [x] [MyoSuite](https://envpool.readthedocs.io/en/latest/env/myosuite.html)\n- [x] [PGX](https://envpool.readthedocs.io/en/latest/env/pgx.html)\n- [x] [Jumanji](https://envpool.readthedocs.io/en/latest/env/jumanji.html)\n- [x] [MuJoCo Playground](https://envpool.readthedocs.io/en/latest/env/mujoco_playground.html)\n\nHere are EnvPool's several highlights:\n\n- **All-platform support: Linux, macOS, and Windows** wheels for Python 3.11-3.14;\n- **Built-in rendering** with batched `rgb_array` output and `human` display mode;\n- Compatible with [`gymnasium`](https://github.com/Farama-Foundation/Gymnasium) APIs and DeepMind `dm_env` APIs;\n- Manage a pool of envs, interact with the envs in batched APIs by default;\n- Support both synchronous execution and asynchronous execution;\n- Support both single player and multi-player environment;\n- Easy C++ developer API to add new envs: [Customized C++ environment integration](https://envpool.readthedocs.io/en/latest/content/new_env.html);\n- Free **\\~2x** speedup with only single environment;\n- **1 Million** Atari frames / **3 Million** MuJoCo steps per second simulation with 256 CPU cores, **~20x** throughput of Python subprocess-based vector env;\n- **~3x** throughput of Python subprocess-based vector env on low resource setup like 12 CPU cores;\n- Comparing with existing GPU-based solution ([Brax](https://github.com/google/brax) / [Isaac-gym](https://developer.nvidia.com/isaac-gym)), EnvPool is a **general** solution for various kinds of speeding-up RL environment parallelization;\n- XLA support with JAX jit function: [XLA Interface](https://envpool.readthedocs.io/en/latest/content/xla_interface.html);\n- Compatible with some existing RL libraries, e.g., [Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3), [Tianshou](https://github.com/thu-ml/tianshou), [ACME](https://github.com/deepmind/acme), [CleanRL](https://github.com/vwxyzjn/cleanrl), or [rl\\_games](https://github.com/Denys88/rl_games).\n  - Stable-Baselines3 [`Pendulum-v1` example](https://github.com/sail-sg/envpool/blob/main/examples/sb3_examples/ppo.py);\n  - Tianshou [`CartPole` example](https://github.com/sail-sg/envpool/blob/main/examples/tianshou_examples/cartpole_ppo.py), [`Pendulum-v1` example](https://github.com/sail-sg/envpool/blob/main/examples/tianshou_examples/pendulum_ppo.py), [Atari example](https://github.com/thu-ml/tianshou/tree/master/examples/atari#envpool), [MuJoCo example](https://github.com/thu-ml/tianshou/tree/master/examples/mujoco#envpool), and [integration guideline](https://tianshou.readthedocs.io/en/master/tutorials/cheatsheet.html#envpool-integration);\n  - ACME [`HalfCheetah` example](https://github.com/sail-sg/envpool/blob/main/examples/acme_examples/ppo_continuous.py);\n  - CleanRL [`Pong-v5` example](https://github.com/sail-sg/envpool/blob/main/examples/cleanrl_examples/ppo_atari_envpool.py) ([Solving Pong in 5 mins](https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/#solving-pong-in-5-minutes-with-ppo--envpool) ([tracked experiment](https://wandb.ai/costa-huang/cleanRL/runs/opk2dmta)));\n  - rl\\_games [Atari example](https://github.com/Denys88/rl_games/blob/master/docs/ATARI_ENVPOOL.md) ([2 mins Pong](https://github.com/sail-sg/envpool/blob/main/demo/envpool_demo_pong.ipynb) and [15 mins Breakout](https://github.com/sail-sg/envpool/blob/main/demo/envpool_demo_breakout.ipynb)) and [MuJoCo example](https://github.com/Denys88/rl_games/blob/master/docs/MUJOCO_ENVPOOL.md) (5 mins [Ant](https://github.com/sail-sg/envpool/blob/main/demo/envpool_demo_ant.ipynb) and [HalfCheetah](https://github.com/sail-sg/envpool/blob/main/demo/envpool_demo_halfcheetah.ipynb)).\n\nCheck out our [arXiv paper](https://arxiv.org/abs/2206.10558) for more details!\n\n## Installation\n\n### PyPI\n\nEnvPool is currently hosted on [PyPI](https://pypi.org/project/envpool/). It supports Python 3.11-3.14 on Linux, macOS, and Windows.\n\nYou can simply install EnvPool with the following command:\n\n```bash\n$ pip install envpool\n```\n\nAfter installation, open a Python console and type\n\n```python\nimport envpool\nprint(envpool.__version__)\n```\n\nIf no error occurs, you have successfully installed EnvPool.\n\nPlatform notes:\n\n- Linux Procgen wheels intentionally do not vendor Qt. If making a Procgen\n  environment reports missing `libQt5Core.so.5` or `libQt5Gui.so.5`, install\n  the system Qt 5 runtime, for example with `apt install qtbase5-dev` or\n  `dnf install qt5-qtbase`.\n- Windows Procgen wheels bundle the required Qt runtime DLLs (`Qt5Core.dll`\n  and `Qt5Gui.dll`) next to the extension module.\n- Windows source/release CI validates MuJoCo rendering with Mesa software\n  OpenGL. To reproduce that setup locally, point `ENVPOOL_DLL_DIR` at a Mesa\n  DLL directory and set `GALLIUM_DRIVER=llvmpipe` plus\n  `MESA_GL_VERSION_OVERRIDE=4.5COMPAT`.\n- Building from source still requires platform-local build dependencies,\n  including Qt 5. The full per-platform setup is documented in\n  [Build From Source](https://envpool.readthedocs.io/en/latest/content/build.html).\n\n### From Source\n\nPlease refer to the [guideline](https://envpool.readthedocs.io/en/latest/content/build.html).\n\n## Documentation\n\nThe tutorials and API documentation are hosted on [envpool.readthedocs.io](https://envpool.readthedocs.io).\n\nThe example scripts are under [examples/](https://github.com/sail-sg/envpool/tree/main/examples) folder; benchmark scripts are under [benchmark/](https://github.com/sail-sg/envpool/tree/main/benchmark) folder.\n\n## Benchmark Results\n\nThe historical benchmark tables below were produced with ALE Atari environment\n`PongNoFrameskip-v4` (with environment wrappers from [OpenAI\nBaselines](https://github.com/openai/baselines/blob/master/baselines/common/atari_wrappers.py))\nand MuJoCo environment `Ant-v3` on different hardware setups, including a\nTPUv3-8 virtual machine (VM) of 96 CPU cores and 2 NUMA nodes, and an NVIDIA\nDGX-A100 of 256 CPU cores with 8 NUMA nodes. The current scripts under\n[`benchmark/`](https://github.com/sail-sg/envpool/tree/main/benchmark) use\nGymnasium's `ALE/Pong-v5` and `Ant-v5`. Baselines include 1) naive Python\nfor-loop; 2) the most popular RL environment parallelization execution by\nPython subprocess, e.g.,\n[gym.vector_env](https://github.com/openai/gym/blob/master/gym/vector/vector_env.py);\n3) to our knowledge, the fastest RL environment executor [Sample\nFactory](https://github.com/alex-petrenko/sample-factory) before EnvPool.\n\nWe report EnvPool performance with sync mode, async mode, and NUMA + async mode, compared with the baselines on different number of workers (i.e., number of CPU cores). As we can see from the results, EnvPool achieves significant improvements over the baselines on all settings. On the high-end setup, EnvPool achieves 1 Million frames per second with Atari and 3 Million frames per second with MuJoCo on 256 CPU cores, which is 14.9x / 19.6x of the `gym.vector_env` baseline. On a typical PC setup with 12 CPU cores, EnvPool's throughput is 3.1x / 2.9x of `gym.vector_env`.\n\n|  Atari Highest FPS   | Laptop (12) | Workstation (32) | TPU-VM (96) | DGX-A100 (256) |\n| :------------------: | :---------: | :--------------: | :---------: | :------------: |\n|       For-loop       |    4,893    |      7,914       |    3,993    |     4,640      |\n|      Subprocess      |   15,863    |      47,699      |   46,910    |     71,943     |\n|    Sample-Factory    |   28,216    |     138,847      |   222,327   |    707,494     |\n|    EnvPool (sync)    |   37,396    |     133,824      |   170,380   |    427,851     |\n|   EnvPool (async)    | **49,439**  |   **200,428**    |   359,559   |    891,286     |\n| EnvPool (numa+async) |      /      |        /         | **373,169** | **1,069,922**  |\n\n|  MuJoCo Highest FPS  | Laptop (12) | Workstation (32) | TPU-VM (96) | DGX-A100 (256) |\n| :------------------: | :---------: | :--------------: | :---------: | :------------: |\n|       For-loop       |   12,861    |      20,298      |   10,474    |     11,569     |\n|      Subprocess      |   36,586    |     105,432      |   87,403    |    163,656     |\n|    Sample-Factory    |   62,510    |     309,264      |   461,515   |   1,573,262    |\n|    EnvPool (sync)    |   66,622    |     380,950      |   296,681   |    949,787     |\n|   EnvPool (async)    | **105,126** |   **582,446**    |   887,540   |   2,363,864    |\n| EnvPool (numa+async) |      /      |        /         | **896,830** | **3,134,287**  |\n\n![](https://envpool.readthedocs.io/en/latest/_images/throughput.png)\n\n\nPlease refer to the [benchmark](https://envpool.readthedocs.io/en/latest/content/benchmark.html) page for more details.\n\n## API Usage\n\nThe following content shows both synchronous and asynchronous API usage of EnvPool. You can also run the full script at [examples/env_step.py](https://github.com/sail-sg/envpool/blob/main/examples/env_step.py)\n\n### Synchronous API\n\n```python\nimport envpool\nimport numpy as np\n\n# make Gymnasium env\nenv = envpool.make(\"Pong-v5\", env_type=\"gymnasium\", num_envs=100)\n# or use envpool.make_gymnasium(...)\nobs = env.reset()  # should be (100, 4, 84, 84)\nact = np.zeros(100, dtype=int)\nobs, rew, term, trunc, info = env.step(act)\n```\n\nUnder the synchronous mode, `envpool` closely resembles Gymnasium and `dm_env`. It has the `reset` and `step` functions with the same meaning. However, there is one exception in `envpool`: batch interaction is the default. Therefore, during the creation of the envpool, there is a `num_envs` argument that denotes how many envs you like to run in parallel.\n\n```python\nenv = envpool.make(\"Pong-v5\", env_type=\"gymnasium\", num_envs=100)\n```\n\nThe first dimension of `action` passed to the step function should equal `num_envs`.\n\n```python\nact = np.zeros(100, dtype=int)\n```\n\nYou don't need to manually reset one environment when any of `done` is true; instead, all envs in `envpool` have enabled auto-reset by default.\n\n### Asynchronous API\n\n```python\nimport envpool\nimport numpy as np\n\n# make asynchronous\nnum_envs = 64\nbatch_size = 16\nenv = envpool.make(\n    \"Pong-v5\", env_type=\"gymnasium\", num_envs=num_envs, batch_size=batch_size\n)\naction_num = env.action_space.n\nenv.async_reset()  # send the initial reset signal to all envs\nwhile True:\n    obs, rew, term, trunc, info = env.recv()\n    env_id = info[\"env_id\"]\n    action = np.random.randint(action_num, size=batch_size)\n    env.send(action, env_id)\n```\n\nIn the asynchronous mode, the `step` function is split into two parts: the `send`/`recv` functions. `send` takes two arguments, a batch of action, and the corresponding `env_id` that each action should be sent to. Unlike `step`, `send` does not wait for the envs to execute and return the next state, it returns immediately after the actions are fed to the envs. (The reason why it is called async mode).\n\n```python\nenv.send(action, env_id)\n```\nTo get the \"next states\", we need to call the `recv` function. However, `recv` does not guarantee that you will get back the \"next states\" of the envs you just called `send` on. Instead, whatever envs finishes execution gets `recv`ed first.\n\n```python\nstate = env.recv()\n```\n\nBesides `num_envs`, there is one more argument `batch_size`. While `num_envs` defines how many envs in total are managed by the `envpool`, `batch_size` specifies the number of envs involved each time we interact with `envpool`. e.g. There are 64 envs executing in the `envpool`, `send` and `recv` each time interacts with a batch of 16 envs.\n\n```python\nenvpool.make(\"Pong-v5\", env_type=\"gymnasium\", num_envs=64, batch_size=16)\n```\n\nThere are other configurable arguments with `envpool.make`; please check out [EnvPool Python interface introduction](https://envpool.readthedocs.io/en/latest/content/python_interface.html).\n\n### Rendering\n\nEnvPool exposes rendering through the Python wrapper. Create the env with\n`render_mode=\"rgb_array\"` to get batched RGB output, or\n`render_mode=\"human\"` to display a single env through OpenCV.\n\n```python\nimport envpool\n\nenv = envpool.make(\n    \"Ant-v5\",\n    env_type=\"gymnasium\",\n    num_envs=4,\n    render_mode=\"rgb_array\",\n    render_width=480,\n    render_height=480,\n)\nenv.reset()\nframes = env.render(env_ids=[0, 2])\nassert frames.shape == (2, 480, 480, 3)\n```\n\n`render()` is batch-first, so even a single render keeps the batch dimension:\n`env.render().shape == (1, H, W, 3)`. If `env_ids` is omitted, EnvPool renders\n`render_env_id` (default `0`). `camera_id` can be overridden per call, while\nthe output size is fixed at env creation time via `render_width` and\n`render_height`.\n\nThe repo test suite also exercises rendering. `make bazel-test` runs repeated\nrender checks for every render-capable env family, and `make release-test`\nincludes a wheel smoke that calls `render()` after `reset()`. On Windows, the\nMuJoCo render tests use the same `ENVPOOL_DLL_DIR` Mesa preload hook described\nabove when you want software OpenGL instead of the system driver.\n\n```python\nviewer = envpool.make(\n    \"WalkerWalk-v1\",\n    env_type=\"gymnasium\",\n    num_envs=1,\n    render_mode=\"human\",\n    render_env_id=0,\n)\nviewer.reset()\nviewer.render()\n```\n\n`render_mode=\"human\"` returns `None` and currently supports a single env id per\ncall. It also requires `opencv-python` to be installed.\n\n### Pixel Observations\n\nFor MuJoCo tasks, pixel observations can also be exposed directly through the\nregular observation API by passing `from_pixels=True`. This path is produced\nnatively in C++, without routing through Python-side `render()`.\n\n```python\npixels = envpool.make(\n    \"WalkerWalk-v1\",\n    env_type=\"gymnasium\",\n    num_envs=2,\n    from_pixels=True,\n    frame_stack=3,\n    render_width=84,\n    render_height=84,\n)\nobs, info = pixels.reset()\nassert obs.shape == (2, 9, 84, 84)\n```\n\nPixel observations use channel-first layout. With `frame_stack=1`, each\nenvironment returns `(3, H, W)`; with `frame_stack=3`, EnvPool stacks frames on\nthe channel dimension and returns `(9, H, W)`. This matches the usual PyTorch\n`BCHW` convention directly. If `render_width` / `render_height` are omitted,\nEnvPool defaults them to `84`.\n\n## Contributing\n\nEnvPool is still under development. More environments will be added, and we always welcome contributions to help EnvPool better. If you would like to contribute, please check out our [contribution guideline](https://envpool.readthedocs.io/en/latest/content/contributing.html).\n\n## License\n\nEnvPool is under Apache2 license.\n\nOther third-party source-code and data are under their corresponding licenses.\n\nWe do not include their source code and data in this repo.\n\n## Citing EnvPool\n\nIf you find EnvPool useful, please cite it in your publications.\n\n```latex\n@inproceedings{weng2022envpool,\n author = {Weng, Jiayi and Lin, Min and Huang, Shengyi and Liu, Bo and Makoviichuk, Denys and Makoviychuk, Viktor and Liu, Zichen and Song, Yufan and Luo, Ting and Jiang, Yukun and Xu, Zhongwen and Yan, Shuicheng},\n booktitle = {Advances in Neural Information Processing Systems},\n editor = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},\n pages = {22409--22421},\n publisher = {Curran Associates, Inc.},\n title = {Env{P}ool: A Highly Parallel Reinforcement Learning Environment Execution Engine},\n url = {https://proceedings.neurips.cc/paper_files/paper/2022/file/8caaf08e49ddbad6694fae067442ee21-Paper-Datasets_and_Benchmarks.pdf},\n volume = {35},\n year = {2022}\n}\n```\n\n## Disclaimer\n\nThis is not an official Sea Limited or Garena Online Private Limited product.\n",
+      "CONTRIBUTING.md": "# Contributing to EnvPool\n\nPlease refer to [envpool.readthedocs.io/en/latest/content/contributing.html](https://envpool.readthedocs.io/en/latest/content/contributing.html)\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## Citing EnvPool\n\nIf you find EnvPool useful, please cite it in your publications.\n\n```latex\n@inproceedings{weng2022envpool,\n author = {Weng, Jiayi and Lin, Min and Huang, Shengyi and Liu, Bo and Makoviichuk, Denys and Makoviychuk, Viktor and Liu, Zichen and Song, Yufan and Luo, Ting and Jiang, Yukun and Xu, Zhongwen and Yan, Shuicheng},\n booktitle = {Advances in Neural Information Processing Systems},\n editor = {S. Koyejo and S. Mohamed and A. Agarwal and D. Belgrave and K. Cho and A. Oh},\n pages = {22409--22421},\n publisher = {Curran Associates, Inc.},\n title = {Env{P}ool: A Highly Parallel Reinforcement Learning Environment Execution Engine},\n url = {https://proceedings.neurips.cc/paper_files/paper/2022/file/8caaf08e49ddbad6694fae067442ee21-Paper-Datasets_and_Benchmarks.pdf},\n volume = {35},\n year = {2022}\n}\n```",
+    "doi": null
+  },
+  "channels": {
+    "readthedocs": [
+      "http://envpool.readthedocs.io\"><img",
+      "https://envpool.readthedocs.io/en/latest/_static/envpool-logo.png\"></a",
+      "https://envpool.readthedocs.io/",
+      "https://envpool.readthedocs.io/en/latest/env/atari.html",
+      "https://envpool.readthedocs.io/en/latest/env/mujoco_gym.html"
+    ],
+    "gh_pages": [
+      "https://sail-sg.github.io/envpool/coverage-badge.svg)](https://sail-sg.github.io/envpool/",
+      "https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/#solving-pong-in-5-minutes-with-ppo--envpool"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "envpool",
+    "repo": "sail-sg/envpool",
+    "current_version": {
+      "value": "v1.2.5",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "sail-sg"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "readthedocs": [
+          "http://envpool.readthedocs.io\"><img",
+          "https://envpool.readthedocs.io/en/latest/_static/envpool-logo.png\"></a",
+          "https://envpool.readthedocs.io/",
+          "https://envpool.readthedocs.io/en/latest/env/atari.html",
+          "https://envpool.readthedocs.io/en/latest/env/mujoco_gym.html"
+        ],
+        "gh_pages": [
+          "https://sail-sg.github.io/envpool/coverage-badge.svg)](https://sail-sg.github.io/envpool/",
+          "https://iclr-blog-track.github.io/2022/03/25/ppo-implementation-details/#solving-pong-in-5-minutes-with-ppo--envpool"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://envpool.readthedocs.io",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

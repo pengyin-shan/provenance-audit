@@ -1,0 +1,117 @@
+{
+  "name": "qutip",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:05Z",
+  "errors": {},
+  "github": {
+    "owner": "qutip",
+    "repo": "qutip",
+    "errors": {},
+    "full_name": "qutip/qutip",
+    "description": "QuTiP: Quantum Toolbox in Python",
+    "homepage": "https://qutip.org",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-07-03T00:38:57Z",
+    "stars": 2038,
+    "topics": [
+      "python",
+      "quantum",
+      "quantum-computing",
+      "quantum-information",
+      "quantum-mechanics",
+      "quantum-optics",
+      "quantum-toolbox",
+      "qutip",
+      "unitaryhack"
+    ],
+    "license": "BSD-3-Clause",
+    "latest_release": {
+      "tag": "v5.3.0",
+      "name": "QuTiP 5.3.0",
+      "published_at": "2026-05-22T16:33:33Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "QuTiP: Quantum Toolbox in Python\n================================\n\n[A. Pitchford](https://github.com/ajgpitch),\n[C. Granade](https://github.com/cgranade),\n[A. Grimsmo](https://github.com/arnelg),\n[N. Shammah](https://github.com/nathanshammah),\n[S. Ahmed](https://github.com/quantshah),\n[N. Lambert](https://github.com/nwlambert),\n[E. Giguère](https://github.com/ericgig),\n[B. Li](https://github.com/boxili),\n[J. Lishman](https://github.com/jakelishman),\n[S. Cross](https://github.com/hodgestar),\n[A. Galicia](https://github.com/AGaliciaMartinez),\n[P. Menczel](https://github.com/pmenczel),\n[P. Hopf](https://github.com/flowerthrower/),\n[P. D. Nation](https://github.com/nonhermitian),\nand [J. R. Johansson](https://github.com/jrjohansson)\n\n[![Build Status](https://github.com/qutip/qutip/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/qutip/qutip/actions/workflows/tests.yml)\n[![Coverage Status](https://img.shields.io/coveralls/qutip/qutip.svg?logo=Coveralls)](https://coveralls.io/r/qutip/qutip)\n[![Maintainability](https://api.codeclimate.com/v1/badges/df502674f1dfa1f1b67a/maintainability)](https://codeclimate.com/github/qutip/qutip/maintainability)\n[![license](https://img.shields.io/badge/license-New%20BSD-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)\n[![PyPi Downloads](https://img.shields.io/pypi/dm/qutip?label=downloads%20%7C%20pip&logo=PyPI)](https://pypi.org/project/qutip)\n[![Conda-Forge Downloads](https://img.shields.io/conda/dn/conda-forge/qutip?label=downloads%20%7C%20conda&logo=Conda-Forge)](https://anaconda.org/conda-forge/qutip)\n\nQuTiP is open-source software for simulating the dynamics of closed and open quantum systems.\nIt uses the excellent Numpy, Scipy, and Cython packages as numerical backends, and graphical output is provided by Matplotlib.\nQuTiP aims to provide user-friendly and efficient numerical simulations of a wide variety of quantum mechanical problems, including those with Hamiltonians and/or collapse operators with arbitrary time-dependence, commonly found in a wide range of physics applications.\nQuTiP is freely available for use and/or modification, and it can be used on all Unix-based platforms and on Windows.\nBeing free of any licensing fees, QuTiP is ideal for exploring quantum mechanics in research as well as in the classroom.\n\nSupport\n-------\n\n[![Unitary Fund](https://img.shields.io/badge/Supported%20By-UNITARY%20FUND-brightgreen.svg?style=flat)](https://unitary.fund)\n[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)\n\nWe are proud to be affiliated with [Unitary Fund](https://unitary.fund) and [numFOCUS](https://numfocus.org).\n\nWe are grateful for [Nori's lab](https://dml.riken.jp/) at RIKEN and [Blais' lab](https://www.physique.usherbrooke.ca/blais/) at the Institut Quantique\nfor providing developer positions to work on QuTiP.\n\nWe also thank Google for supporting us by financing GSoC students to work on the QuTiP as well as [other supporting organizations](https://qutip.org/#supporting-organizations) that have been supporting QuTiP over the years.\n\n\nInstallation\n------------\n\n[![Pip Package](https://img.shields.io/pypi/v/qutip?logo=PyPI)](https://pypi.org/project/qutip)\n[![Conda-Forge Package](https://img.shields.io/conda/vn/conda-forge/qutip?logo=Conda-Forge)](https://anaconda.org/conda-forge/qutip)\n\nQuTiP is available on both `pip` and `conda` (the latter in the `conda-forge` channel).\nYou can install QuTiP from `pip` by doing\n\n```bash\npip install qutip\n```\n\nto get the minimal installation.\nYou can instead use the target `qutip[full]` to install QuTiP with all its optional dependencies.\nFor more details, including instructions on how to build from source, see [the detailed installation guide in the documentation](https://qutip.readthedocs.io/en/stable/installation.html).\n\nAll back releases are also available for download in the [releases section of this repository](https://github.com/qutip/qutip/releases), where you can also find per-version changelogs.\nFor the most complete set of release notes and changelogs for historic versions, see the [changelog](https://qutip.readthedocs.io/en/stable/changelog.html) section in the documentation.\n\n\nDocumentation\n-------------\n\n[![Documentation Status - Latest](https://readthedocs.org/projects/qutip/badge/?version=latest)](https://qutip.readthedocs.io/en/latest/?badge=latest)\n\nThe documentation for the latest [stable release](https://qutip.readthedocs.io/en/latest/) and the [master](https://qutip.readthedocs.io/en/master/) branch is available for reading on Read The Docs.\n\nThe documentation for official releases, in HTML and PDF formats, can be found in the [documentation section of the QuTiP website](https://qutip.org/documentation.html).\n\nThe latest development documentation is available in this repository in the `doc` folder.\n\nA [selection of demonstration notebooks is available](https://qutip.org/tutorials.html), which demonstrate some of the many features of QuTiP.\nThese are stored in the [qutip/qutip-tutorials repository](https://github.com/qutip/qutip-tutorials) here on GitHub.\n\n\nContribute\n----------\n\nYou are most welcome to contribute to QuTiP development by forking this repository and sending pull requests, or filing bug reports at the [issues page](https://github.com/qutip/qutip/issues).\nYou can also help out with users' questions, or discuss proposed changes in the [QuTiP discussion group](https://groups.google.com/g/qutip).\nAll code contributions are acknowledged in the [contributors](https://qutip.readthedocs.io/en/stable/contributors.html) section in the documentation.\n\nFor more information, including technical advice, please see the [\"contributing to QuTiP development\" section of the documentation](https://qutip.readthedocs.io/en/stable/development/contributing.html).\n\n\nCiting QuTiP\n------------\n\nIf you use QuTiP in your research, please cite the original QuTiP papers that are available [here](https://dml.riken.jp/?s=QuTiP).\n",
+      "CONTRIBUTING.md": "# Contributing to QuTiP Development\n\nYou are most welcome to contribute to QuTiP development by forking this repository and sending pull requests, or filing bug reports at the [issues page](https://github.com/qutip/qutip/issues).\nYou can also help out with users' questions, or discuss proposed changes in the [QuTiP discussion group](https://groups.google.com/g/qutip).\nAll code contributions are acknowledged in the [contributors](https://qutip.readthedocs.io/en/stable/contributors.html) section in the documentation.\n\nFor more information, including technical advice, please see the [\"contributing to QuTiP development\" section of the documentation](https://qutip.readthedocs.io/en/stable/development/contributing.html).\n\n\n## AI Tools Usage Policy\nWe acknowledge the use of AI tools to improve efficiency and enhance quality of work. Contributors may use such tools, provided they adhere to the following guidelines:\n\n### 1. Accountability\n\nThe human contributor is solely responsible for their contribution i.e. all the AI-generated outputs can be considered their own work. If you're submitting a Pull Request that includes AI-generated code or documentation:\n\n- You are responsible for ensuring that code you submit meets the project's standards.\n- You must fully understand every line of code in the submission.\n- You must be able to explain the \"why\" behind the implementation during the review process.\n\n### 2. Transparency\n\nAll Pull Requests must fill the **AI Tools Usage Disclosure** in the PR template. This disclosure is mandatory and must accurately reflect how AI Tools were used.\n\n### 3. Copyright & Legal\n\nBy submitting a contribution to qutip, you agree to\n\n1. Submit your contribution under the project's license.\n\n2. The contribution does not violate any third-party rights or the terms of service of the AI provider. And does not include \"regurgitated\" code from libraries with incompatible licenses (e.g., GPL-licensed code) being suggested into our BSD-3-clause licensed project.\n\n3. AI agents must not sign commits or be added to commit message trailer `Co-authored-by:` since copyright is fundamentally tied to the concept of human authorship as per the US Copyright law. You can instead use `Assisted-by: AI Model/Tool` as commit message trailer e.g. `Assisted-by: Cursor with Opus 4.6`.\n\n### 4. Good Use Cases\n\n- **Understand the codebase:** AI can be used to explore unfamiliar parts of the repository, summarize modules and clarify how components interact. It helps build the mental model of the project faster. \n\n- **Brainstorming and Design:**  AI may assist in generating ideas, evaluating different approaches and structuring designs. However, all final decisions regarding design and architecture should be independently validated and be made by the contributor.\n\n- **Reviewing your implementation:**  AI can be used to spot potential bugs, suggest improvements and help clarify unexpected behavior in code. Contributors should verify the correctness and relevance of AI-generated feedback before applying it.\n\n### 5. Prohibited Use\n\nThe following use cases are prohibited:\n\n- **Communication:** In project communications (GitHub Issues, Discussion, PR descriptions and review comments), we personally expect to communicate directly with other humans not with automated systems. Use of translation tools is completely welcome.\n\n- **Ban on Bots/Agents:** Fully autonomous or unsupervised AI agents (e.g. OpenClaw, SWE-agent) are not allowed to submit Pull Requests.\n\n- **Stance on Good First Issues:** The main purpose of a “good first issue” is to allow new human contributors to get familiar with `qutip`, with the GitHub workflow and to engage with the community. Submitting a fully AI-generated PR defeats that purpose. AI can be used as a learning aid to understand the codebase, but the final implementation must be your own.\n\n### 6. Enforcement\n\nMaintainers reserve the right to close any Pull Request that violates this Policy. Maintainers may restrict participation or report users to GitHub for repeated violations of this policy.\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {
+    "google_group": [
+      "https://groups.google.com/g/qutip"
+    ],
+    "readthedocs": [
+      "https://qutip.readthedocs.io/en/stable/installation.html",
+      "https://qutip.readthedocs.io/en/stable/changelog.html",
+      "https://qutip.readthedocs.io/en/latest/?badge=latest",
+      "https://qutip.readthedocs.io/en/latest/",
+      "https://qutip.readthedocs.io/en/master/"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "qutip",
+    "repo": "qutip/qutip",
+    "current_version": {
+      "value": "v5.3.0",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "qutip"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "google_group": [
+          "https://groups.google.com/g/qutip"
+        ],
+        "readthedocs": [
+          "https://qutip.readthedocs.io/en/stable/installation.html",
+          "https://qutip.readthedocs.io/en/stable/changelog.html",
+          "https://qutip.readthedocs.io/en/latest/?badge=latest",
+          "https://qutip.readthedocs.io/en/latest/",
+          "https://qutip.readthedocs.io/en/master/"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://qutip.org",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

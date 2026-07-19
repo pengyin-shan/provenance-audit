@@ -1,0 +1,154 @@
+{
+  "name": "Yao.jl",
+  "domain": "qc",
+  "discipline": "qc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-05T20:42:46Z",
+  "errors": {},
+  "github": {
+    "owner": "QuantumBFS",
+    "repo": "Yao.jl",
+    "errors": {},
+    "full_name": "QuantumBFS/Yao.jl",
+    "description": "Extensible, Efficient Quantum Algorithm Design for Humans.",
+    "homepage": "https://yaoquantum.org",
+    "default_branch": "master",
+    "archived": false,
+    "pushed_at": "2026-05-23T01:08:10Z",
+    "stars": 1034,
+    "topics": [
+      "machine-learning",
+      "quantum-algorithms",
+      "quantum-circuit",
+      "quantum-computing",
+      "quantum-information",
+      "unitaryhack",
+      "yao"
+    ],
+    "license": "NOASSERTION",
+    "latest_release": {
+      "tag": "v0.9.3",
+      "name": "v0.9.3",
+      "published_at": "2026-03-01T06:52:33Z"
+    },
+    "release_state": "release",
+    "files": {
+      "CITATION.cff": "cff-version: 1.2.0\nmessage: \"Cite this paper whenever you use Yao\"\nauthors:\n- family-names: \"Luo\"\n  given-names: \"Xiu-Zhe\"\n- family-names: \"Liu\"\n  given-names: \"Jin-Guo\"\n- family-names: \"Pan\"\n  given-names: \"Zhang\"\n- family-names: \"Wang\"\n  given-names: \"Lei\"\ntitle: \"Yao.jl: Extensible, Efficient Framework for Quantum Algorithm Design\"\nversion: \"v1\"\nlicense: \"MIT\"\ndoi: \"10.22331/q-2020-10-11-341\"\ndate-released: 2020-10-11\nurl: \"https://yaoquantum.org\"\npreferred-citation:\n  authors:\n    - family-names: \"Luo\"\n      given-names: \"Xiu-Zhe\"\n    - family-names: \"Liu\"\n      given-names: \"Jin-Guo\"\n    - family-names: \"Pan\"\n      given-names: \"Zhang\"\n    - family-names: \"Wang\"\n      given-names: \"Lei\"\n  doi: \"10.22331/q-2020-10-11-341\"\n  journal: \"Quantum\"\n  month: 10\n  pages: 341\n  title: \"Yao.jl: Extensible, Efficient Framework for Quantum Algorithm Design\"\n  type: article\n  volume: 4\n  year: 2020\n  publisher:\n    - name: \"Verein zur F{\\\"{o}}rderung des Open Access Publizierens in den Quantenwissenschaften\"\n",
+      "README.md": "<div align=\"center\"> <img\nsrc=\"https://yaoquantum.org/assets/logo.png\"\nalt=\"Yao Logo\" width=\"210\"></img>\n</div>\n\n\n[![CI][main-ci-img]][main-ci-url]\n[![codecov][main-codecov-img]][main-codecov-url]\n[![][docs-stable-img]][docs-stable-url]\n[![][docs-dev-img]][docs-dev-url]\n[![Unitary Fund][unitary-fund-img]](http://unitary.fund)\n[![ColPrac: Contributor's Guide on Collaborative Practices for Community Packages](https://img.shields.io/badge/ColPrac-Contributor's%20Guide-blueviolet)](https://github.com/SciML/ColPrac)\n\n**Yao** Extensible, Efficient Quantum Algorithm Design for Humans.\n\n## Introduction\n\nYao is an open source framework that aims to empower quantum information research with software tools. It is designed with following in mind:\n\n- quantum algorithm design;\n- quantum [software 2.0](https://medium.com/@karpathy/software-2-0-a64152b37c35);\n- quantum computation education.\n\n**We are in an early-release beta. Expect some adventures and rough edges.**\n\n## Try your first Yao program\n\nA 3 line Quantum Fourier Transformation with [Quantum Blocks](http://docs.yaoquantum.org/dev/man/blocks.html):\n\n```julia\nA(i, j) = control(i, j=>shift(2π/(1<<(i-j+1))))\nB(n, k) = chain(n, j==k ? put(k=>H) : A(j, k) for j in k:n)\nqft(n) = chain(B(n, k) for k in 1:n)\n```\n\n## Installation\n\n<p>\nYao is a &nbsp;\n    <a href=\"https://julialang.org\">\n        <img src=\"https://raw.githubusercontent.com/JuliaLang/julia-logo-graphics/master/images/julia.ico\" width=\"16em\">\n        Julia Language\n    </a>\n    &nbsp; package. To install Yao,\n    please <a href=\"https://docs.julialang.org/en/v1/manual/getting-started/\">open\n    Julia's interactive session (known as REPL)</a> and press <kbd>]</kbd> key in the REPL to use the package mode, then type the following command\n</p>\n\nFor stable release\n\n```julia\npkg> add Yao\n```\n\nFor current master\n\n```julia\npkg> add Yao#master\n```\n\nIf you have problem to install the package, please [file us an issue](https://github.com/QuantumBFS/Yao.jl/issues/new).\n\nFor CUDA support, see [CuYao.jl](https://github.com/QuantumBFS/CuYao.jl).\n\nFor tensor network based simulations, see [YaoToEinsum.jl](https://github.com/QuantumBFS/YaoToEinsum.jl).\n\n## Documentation\n\n### [Tutorial](https://yaoquantum.org/tutorials/) | Learn Quantum Computing with Yao\n\n### Algorithm Zoo\n\nSome quantum algorithms are implemented with Yao in [QuAlgorithmZoo](https://github.com/QuantumBFS/QuAlgorithmZoo.jl).\n\n### Online Documentation\n\n- [**STABLE**](https://quantumbfs.github.io/Yao.jl/stable) — most recently tagged version of the documentation.\n- [**LATEST**](https://quantumbfs.github.io/Yao.jl/latest) — in-development version of the documentation.\n\n## Monthly Community Call\n\nWe are running a monthly community call, please sign up in Julia slack channel\nby DM `Roger-luo` your email address. Or follow [our twitter](https://twitter.com/YaoProject).\n\nIf you have anything interesting to share up to 40min, or just want to talk about your experience in a brief 10min, let us know!\nPlease sign up with a topic using this [Google sheet](https://docs.google.com/spreadsheets/d/1b6hUvo5H3_ez42zibUji42iwMrq_nNpgPg7lqLBlWUw/edit?usp=sharing).\n\n## Communication\n\n- Github issues: Please feel free to ask questions and report bugs, feature request in issues\n- Slack: you can [join julia's slack channel](https://julialang.org/slack/) and ask Yao related questions in `#yao-dev` channel.\n- Julia discourse: You can also ask questions on [julia discourse](https://discourse.julialang.org/) or the [Chinese discourse](https://discourse.juliacn.com/)\n\n## The Team\n\nThis project is an effort of QuantumBFS, an open source organization for quantum science. Yao is currently maintained by [Xiu-Zhe (Roger) Luo](https://github.com/Roger-luo) and [Jin-Guo Liu](https://github.com/GiggleLiu) with contributions from open source community. All the contributors are listed in the [contributors](https://github.com/QuantumBFS/Yao.jl/graphs/contributors).\n\n## Cite Yao\nIf you use Yao in teaching and research, please cite our work:\n\n```bib\n@article{YaoFramework2019,\n  title={Yao.jl: Extensible, Efficient Framework for Quantum Algorithm Design},\n  author={Xiu-Zhe Luo and Jin-Guo Liu and Pan Zhang and Lei Wang},\n  journal={arXiv preprint arXiv:1912.10877},\n  year={2019}\n}\n```\n\n## License\n\n**Yao** is released under the Apache 2 license.\n\n[docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg\n[docs-dev-url]: https://QuantumBFS.github.io/Yao.jl/dev\n[docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg\n[docs-stable-url]: https://QuantumBFS.github.io/Yao.jl/stable\n\n[unitary-fund-img]: https://img.shields.io/badge/Supported%20By-UNITARY%20FUND-brightgreen.svg?style=flat-the-badge\n\n[main-url]: https://github.com/QuantumBFS/Yao.jl\n[main-ci-img]: https://github.com/QuantumBFS/Yao.jl/actions/workflows/CI.yml/badge.svg\n[main-ci-url]: https://github.com/QuantumBFS/Yao.jl/actions/workflows/CI.yml\n[main-codecov-img]: https://codecov.io/gh/QuantumBFS/Yao.jl/branch/master/graph/badge.svg\n[main-codecov-url]: https://codecov.io/gh/QuantumBFS/Yao.jl\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": true,
+    "has_codemeta": false
+  },
+  "citation_cff": {
+    "title": "Yao.jl: Extensible, Efficient Framework for Quantum Algorithm Design",
+    "version": "v1",
+    "doi": "10.22331/q-2020-10-11-341",
+    "authors": [
+      "Xiu-Zhe Luo",
+      "Jin-Guo Liu",
+      "Zhang Pan",
+      "Lei Wang"
+    ],
+    "preferred_citation": {
+      "title": "Yao.jl: Extensible, Efficient Framework for Quantum Algorithm Design",
+      "doi": "10.22331/q-2020-10-11-341",
+      "year": 2020,
+      "authors": [
+        "Xiu-Zhe Luo",
+        "Jin-Guo Liu",
+        "Zhang Pan",
+        "Lei Wang"
+      ]
+    },
+    "identifiers": []
+  },
+  "readme_citation": {
+    "found": true,
+    "section_text": "## Cite Yao\nIf you use Yao in teaching and research, please cite our work:\n\n```bib\n@article{YaoFramework2019,\n  title={Yao.jl: Extensible, Efficient Framework for Quantum Algorithm Design},\n  author={Xiu-Zhe Luo and Jin-Guo Liu and Pan Zhang and Lei Wang},\n  journal={arXiv preprint arXiv:1912.10877},\n  year={2019}\n}\n```",
+    "doi": null
+  },
+  "channels": {
+    "discourse_forum": [
+      "https://discourse.julialang.org/",
+      "https://discourse.juliacn.com/"
+    ],
+    "mastodon": [
+      "https://medium.com/@karpathy"
+    ],
+    "twitter_x": [
+      "https://twitter.com/YaoProject"
+    ],
+    "gh_pages": [
+      "https://quantumbfs.github.io/Yao.jl/stable",
+      "https://quantumbfs.github.io/Yao.jl/latest",
+      "https://QuantumBFS.github.io/Yao.jl/dev",
+      "https://QuantumBFS.github.io/Yao.jl/stable"
+    ]
+  },
+  "registries": [],
+  "ground_truth": {
+    "project": "Yao.jl",
+    "repo": "QuantumBFS/Yao.jl",
+    "current_version": {
+      "value": "v0.9.3",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "Xiu-Zhe Luo",
+        "Jin-Guo Liu",
+        "Zhang Pan",
+        "Lei Wang"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {
+        "discourse_forum": [
+          "https://discourse.julialang.org/",
+          "https://discourse.juliacn.com/"
+        ],
+        "mastodon": [
+          "https://medium.com/@karpathy"
+        ],
+        "twitter_x": [
+          "https://twitter.com/YaoProject"
+        ],
+        "gh_pages": [
+          "https://quantumbfs.github.io/Yao.jl/stable",
+          "https://quantumbfs.github.io/Yao.jl/latest",
+          "https://QuantumBFS.github.io/Yao.jl/dev",
+          "https://QuantumBFS.github.io/Yao.jl/stable"
+        ]
+      },
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": "10.22331/q-2020-10-11-341",
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "https://yaoquantum.org",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}

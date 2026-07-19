@@ -1,0 +1,93 @@
+{
+  "name": "ohpc",
+  "domain": "hpc",
+  "discipline": "hpc",
+  "ecosystem": "frame",
+  "collected_at": "2026-07-06T14:44:18Z",
+  "errors": {},
+  "github": {
+    "owner": "openhpc",
+    "repo": "ohpc",
+    "errors": {},
+    "full_name": "openhpc/ohpc",
+    "description": "OpenHPC Integration, Packaging, and Test Repo",
+    "homepage": "http://openhpc.community",
+    "default_branch": "4.x",
+    "archived": false,
+    "pushed_at": "2026-07-02T13:11:26Z",
+    "stars": 989,
+    "topics": [
+      "clusters-management",
+      "devtools",
+      "hpc",
+      "linuxfoundation",
+      "mpi",
+      "package-repository",
+      "scientific-computing"
+    ],
+    "license": "Apache-2.0",
+    "latest_release": {
+      "tag": "v4.1.GA",
+      "name": "v4.1.GA",
+      "published_at": "2026-04-25T15:52:04Z"
+    },
+    "release_state": "release",
+    "files": {
+      "README.md": "<!-- markdownlint-disable MD013 MD033 -->\n# <img src=\"https://github.com/openhpc/ohpc/blob/master/docs/recipes/install/common/figures/ohpc_logo.png\" width=\"170\" valign=\"middle\" hspace=\"5\" alt=\"OpenHPC\"/>\n<!-- markdownlint-enable MD013 MD033 -->\n\n## Community building blocks for HPC systems\n\n### Introduction\n\nThis stack provides a variety of common, pre-built ingredients required to\ndeploy and manage an HPC Linux cluster including provisioning tools, resource\nmanagement, I/O clients, runtimes, development tools, containers,\nand a variety of scientific libraries.\n\nThere are currently three release series: the [2.x][2xbranch], the\n[3.x][3xbranch] and the [4.x][4xbranch] which target different major Linux OS\ndistributions:\n\n- The 2.x series targets EL8 and Leap15.\n- The 3.x series targets EL9, Leap 15 and openEuler 22.03.\n- The 4.x series targets EL10 and openEuler 24.03.\n\n### Getting started\n\nOpenHPC provides pre-built binaries via repositories for use with standard\nLinux package manager tools (e.g. ```dnf``` or ```zypper```). To get started,\nyou can enable an OpenHPC repository locally through installation of an\n```ohpc-release``` RPM which includes gpg keys for package signing and defines\nthe URL locations for [base] and [update] package repositories. Installation\nguides tailored for each supported provisioning system and resource manager\nwith detailed example instructions for installing a cluster are also available.\nCopies of the ```ohpc-release``` package and installation guides along with\nmore information is available on the relevant release series pages\n([2.x][2xbranch], [3.x][3xbranch] or [4.x][4xbranch]).\n\n---\n\n### Questions, Comments, or Bug Reports?\n\nSubscribe to the [users email list][userlist] or see the\n<https://openhpc.community/> page for more pointers.\n\n### Additional Software Requests?\n\nIf you would like to see new software included in OpenHPC, please\n[open an issue](https://github.com/openhpc/ohpc/issues) with as much\ndetail as possible. Even better, consider opening a pull request directly.\nA PR for a new component should typically include tests and documentation,\nbut we are happy to guide contributors through the process.\n\n### Contributing to OpenHPC\n\nPlease see the steps described in [CONTRIBUTING.md](CONTRIBUTING.md).\n\n### Register your system\n\nIf you are using elements of OpenHPC, please consider registering your system(s)\nusing the [System Registration Form][register].\n\n[2xbranch]: https://github.com/openhpc/ohpc/wiki/2.x\n[3xbranch]: https://github.com/openhpc/ohpc/wiki/3.x\n[4xbranch]: https://github.com/openhpc/ohpc/wiki/4.x\n[register]: https://drive.google.com/open?id=1KvFM5DONJigVhOlmDpafNTDDRNTYVdolaYYzfrHkOWI\n[userlist]: https://groups.io/g/openhpc-users\n",
+      "CONTRIBUTING.md": "# How to contribute to OpenHPC\n\nGeneral information about participating in the OpenHPC project can be found at\nthe [OpenHPC Community site][community]. The instructions below are\nspecifically for opening issues and pull requests against OpenHPC.\n\n## **Did you find a bug?**\n\n* **Ensure the bug was not already reported** by searching on GitHub under [Issues][issues].\n\n* If you're unable to find an open issue addressing the problem, [open a new one][new].\n\n* You may also send a message to the OpenHPC [user mailing list][userlist].\n\n## **Did you write a patch that fixes a bug?**\n\n* Open a new GitHub pull request with the patch.\n\n* Ensure the PR description clearly describes the problem and solution.\n  If there is an existing GitHub issue open describing this bug, please include\n  it in the description so we can close it.\n\n* Ensure the PR is based on the latest branch of the OpenHPC GitHub repository.\n\n* Before submitting, please read the [Contributing to OpenHPC][contribute] wiki.\n  In particular, note that all git commits contributed to OpenHPC require a\n  `Signed-off-by:` line.\n\n## **Do you have a component suggestion for inclusion in the OpenHPC distribution?**\n\n* [Open an issue][new] with details about the component you would like to see\n  included. Even better, consider opening a pull request directly. A PR for a\n  new component should typically include tests and documentation, but we are\n  happy to guide contributors through the process.\n\n[community]: https://openhpc.community/about/participate\n[contribute]: https://github.com/openhpc/ohpc/wiki/Contributions\n[issues]: https://github.com/openhpc/ohpc/issues\n[new]: https://github.com/openhpc/ohpc/issues/new\n[userlist]: https://groups.io/g/OpenHPC-users/topics\n"
+    },
+    "has_security_md": false,
+    "has_citation_cff": false,
+    "has_codemeta": false
+  },
+  "readme_citation": {
+    "found": false,
+    "any_doi_in_readme": null
+  },
+  "channels": {},
+  "registries": [],
+  "ground_truth": {
+    "project": "ohpc",
+    "repo": "openhpc/ohpc",
+    "current_version": {
+      "value": "v4.1.GA",
+      "source": "github_release|cff|codemeta|pypi",
+      "verified": false
+    },
+    "maintainers": {
+      "value": [
+        "openhpc"
+      ],
+      "source": "cff_authors|codemeta_authors|github_owner",
+      "verified": false
+    },
+    "official_channels": {
+      "value": {},
+      "source": "readme/homepage_scan",
+      "verified": false
+    },
+    "security_reporting": {
+      "value": null,
+      "source": "github_security_md",
+      "verified": false
+    },
+    "citation_doi": {
+      "value": null,
+      "source": "cff_doi|preferred_citation_doi|zenodo_conceptdoi",
+      "verified": false
+    },
+    "homepage": {
+      "value": "http://openhpc.community",
+      "source": "github_homepage",
+      "verified": false
+    },
+    "_needs_human_verification": [
+      "current_version",
+      "maintainers",
+      "official_channels",
+      "security_reporting",
+      "citation_doi",
+      "homepage"
+    ]
+  }
+}
