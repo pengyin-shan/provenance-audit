@@ -1,5 +1,11 @@
 # provenance-audit
 
+<!-- TODO(owner): replace the DOI badge placeholder with the real Zenodo badge after the first deposit. -->
+[![DOI](https://img.shields.io/badge/DOI-TODO_Zenodo-lightgrey.svg)](https://zenodo.org)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/pengyin-shan/provenance-audit)](https://github.com/pengyin-shan/provenance-audit/releases)
+[![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://github.com/pengyin-shan/provenance-audit/blob/main/.github/workflows/release.yml)
+
 Toolkit and dataset for **channel-based provenance** assessment of open-source
 research software: the 18-signal framework, collectors, scoring, and figures
 behind the SC26 poster *"The Unassessed Attack Surface: Channel-Based Provenance
@@ -41,6 +47,22 @@ provenance-audit/
     verify_worklist_30_CANONICAL.csv      hand-verified 30-project panel (dataset of record)
     figures/                              generated heatmaps + prevalence table
 ```
+
+## Official channels
+
+The official channels of this project are, exhaustively:
+
+- **[GitHub Issues](https://github.com/pengyin-shan/provenance-audit/issues)**:
+  bug reports, dataset corrections, and feature requests.
+- **[GitHub Discussions](https://github.com/pengyin-shan/provenance-audit/discussions)**:
+  questions about the framework, methodology, and use of the dataset.
+- **Email <pengyins@illinois.edu>**: private contact with the maintainer,
+  including security reports and impersonation reports (see
+  [SECURITY.md](SECURITY.md)).
+
+Any other account, package, or channel claiming to represent this project is
+not official. If you encounter one, please report it as described in
+[SECURITY.md](SECURITY.md#reporting-impersonation).
 
 ## Setup
 
@@ -109,6 +131,19 @@ curation of the subsample output during verification.
 Append to the registry YAML. Minimum is `name` + `repo: owner/name`. Add
 `registries:` (e.g. `- {registry: pypi, package: numpy}`) and
 `zenodo: {record_id: ...}` when you know them.
+
+## Citing
+
+See [CITATION.cff](CITATION.cff). The dataset is archived on Zenodo
+(DOI: TODO, pending the first deposit); the corpus is a point-in-time
+snapshot collected in July 2026.
+
+## License, security, governance
+
+Apache-2.0 ([LICENSE](LICENSE)). Vulnerability disclosure and impersonation
+reporting: [SECURITY.md](SECURITY.md). Maintainership, including an honest
+account of the project's solo-maintainer status and its mitigations:
+[GOVERNANCE.md](GOVERNANCE.md). Contributions: [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Optional richer parsing
 

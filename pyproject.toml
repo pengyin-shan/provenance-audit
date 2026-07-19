@@ -33,9 +33,8 @@ dependencies = [
   "numpy==2.4.6",
 ]
 
-# TODO(owner): replace with the real GitHub URL once the repository is created.
 [project.urls]
-Repository = "https://github.com/TODO-OWNER/provenance-audit"
+Repository = "https://github.com/pengyin-shan/provenance-audit"
 
 [tool.setuptools]
 packages = ["provenance_audit"]
