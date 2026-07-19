@@ -71,7 +71,7 @@ python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**Set a GitHub token** (strongly recommended — raises the API limit from 60 to
+**Set a GitHub token** (strongly recommended; it raises the API limit from 60 to
 5,000 requests/hour; a full corpus run will rate-limit without it):
 
 ```bash
@@ -107,19 +107,19 @@ python -m provenance_audit.figures --scored outputs/corpus_keep_scored --out out
 ```
 
 Each collect run prints a line per project and writes `outputs/<corpus>/<project>.json`
-plus `_summary.json`. Bad repo slugs show as `ERR(repo:not_found)` — fix them in the
+plus `_summary.json`. Bad repo slugs show as `ERR(repo:not_found)`; fix them in the
 registry YAML and re-run (`--only <name>` to redo just that one).
 
 Scoring writes, into the output dir:
-- `matrix.csv` — projects × 4 categories (auto-score 0-1); this is the poster heatmap.
-- `manual_checklist.csv` — every `manual` signal still needing human verification.
-- `gap_analysis.json` — which framework signals are unique vs. already covered by
+- `matrix.csv`: projects x 4 categories (auto-score 0-1); this is the poster heatmap.
+- `manual_checklist.csv`: every `manual` signal still needing human verification.
+- `gap_analysis.json`: which framework signals are unique vs. already covered by
   Scorecard / SLSA / Sigstore.
-- `<project>.scorecard.json` — per-project signal-by-signal results.
+- `<project>.scorecard.json`: per-project signal-by-signal results.
 
 ## The manual verification step
 
-Collection and `auto` scoring are automated; `manual` signals are not — and that is
+Collection and `auto` scoring are automated; `manual` signals are not, and that is
 the point of the framework. The subsampled panel is verified by hand against each
 project's authoritative sources (repository, releases, documentation site,
 README-linked pages; ~10-20 min/project). The verified result of that process for
