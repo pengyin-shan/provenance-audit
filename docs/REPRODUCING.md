@@ -1,7 +1,7 @@
 # Reproducing the SC26 dataset
 
 This document gives the exact commands behind the published dataset. Read the
-point-in-time note first; it determines what "reproducing" can mean here.
+point-in-time note first; it determines what "reproducing" can mean here. You should be able to find all codes/doc in https://github.com/pengyin-shan/provenance-audit.
 
 ## Point-in-time note
 
@@ -11,7 +11,8 @@ measured projects change continuously: they add security policies, publish
 releases, and reorganize channels. Re-running collection today reproduces the
 *pipeline*, not the *numbers*. To analyze the published dataset, use the
 frozen outputs in this repository or the Zenodo deposit
-(DOI: TODO, pending the first deposit); do not re-collect.
+(DOI: [10.5281/zenodo.21443211](https://doi.org/10.5281/zenodo.21443211));
+do not re-collect.
 
 ## Requirements
 
@@ -78,4 +79,4 @@ projects and is recorded as unknown.
 | Frozen scored set | `outputs/corpus_keep_scored_FROZEN_20260706/` |
 | Hand-verified 30-project panel | `outputs/verify_worklist_30_CANONICAL.csv` |
 | Figures | `outputs/figures/` |
-| Archived deposit | Zenodo, DOI: TODO (pending first deposit) |
+| Archived deposit | Zenodo, DOI: [10.5281/zenodo.21443211](https://doi.org/10.5281/zenodo.21443211) |

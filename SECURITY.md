@@ -37,7 +37,7 @@ If you encounter a fake maintainer account, a spoofed or typosquatted package
 1. Email <pengyins@illinois.edu> with subject `[IMPERSONATION]`, including the
    URL of the fake account, package, or channel.
 2. If the impersonation is on a platform with its own reporting path, please
-   also report it there (GitHub: report abuse; PyPI: <security@pypi.org>).
+   also report it there.
 
 Reports are acknowledged within the same 5-business-day window.
 

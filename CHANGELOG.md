@@ -7,9 +7,7 @@ project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 The project predates its version control history; entries before the first
 release are reconstructed from file timestamps and the maintainer's records.
 
-## [Unreleased]
-
-## [1.0.0] - TBD
+## [1.0.0] - 2026-07-19
 
 First public release, accompanying the SC26 poster "The Unassessed Attack
 Surface: Channel-Based Provenance in HPC and Quantum-Computing Open-Source

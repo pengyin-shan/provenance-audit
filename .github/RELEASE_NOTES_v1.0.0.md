@@ -13,8 +13,8 @@ Software" (Pengyin Shan, NCSA, University of Illinois Urbana-Champaign).
 - **Dataset.** The 87-project corpus (44 HPC, 43 quantum computing) collected
   and scored in July 2026, frozen as
   `outputs/corpus_keep_scored_FROZEN_20260706/`, and the hand-verified
-  30-project panel `outputs/verify_worklist_30_CANONICAL.csv`.
-  <!-- TODO(owner): add the Zenodo DOI link once minted. -->
+  30-project panel `outputs/verify_worklist_30_CANONICAL.csv`. The dataset is
+  archived on Zenodo: [10.5281/zenodo.21443211](https://doi.org/10.5281/zenodo.21443211).
 
 ## Release artifacts
 

@@ -3,10 +3,14 @@ message: "If you use this software or dataset, please cite it as below."
 title: "provenance-audit: channel-based provenance assessment for HPC and quantum-computing open-source software"
 type: software
 version: 1.0.0
-# TODO(owner): set the release date when v1.0.0 is tagged.
 date-released: "2026-07-19"
-# TODO(owner): replace with the Zenodo concept DOI after the first deposit.
-# doi: 10.5281/zenodo.XXXXXXX
+# The DOI below is the Zenodo deposit of the SC26 dataset. If a separate
+# software concept DOI is later minted via the GitHub-Zenodo integration,
+# add it as the top-level `doi:` field.
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21443211"
+    description: "Zenodo deposit of the SC26 dataset (corpus, frozen scored outputs, hand-verified panel)"
 repository-code: "https://github.com/pengyin-shan/provenance-audit"
 license: Apache-2.0
 authors:

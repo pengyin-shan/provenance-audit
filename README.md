@@ -1,7 +1,6 @@
 # provenance-audit
 
-<!-- TODO(owner): replace the DOI badge placeholder with the real Zenodo badge after the first deposit. -->
-[![DOI](https://img.shields.io/badge/DOI-TODO_Zenodo-lightgrey.svg)](https://zenodo.org)
+[![Dataset DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21443211.svg)](https://doi.org/10.5281/zenodo.21443211)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/pengyin-shan/provenance-audit)](https://github.com/pengyin-shan/provenance-audit/releases)
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://github.com/pengyin-shan/provenance-audit/blob/main/.github/workflows/release.yml)
@@ -162,16 +161,24 @@ v1.0.0 tag is pushed; they are marked accordingly.
 | `disclosure_depth` | Yes | [SECURITY.md](SECURITY.md#reporting-a-vulnerability) | Beyond a contact address, state the process: acknowledgment window, triage, disclosure timeline, and scope. |
 | **C4: Distribution metadata** | | | |
 | `has_release` | Yes (at v1.0.0 tag) | [Releases](https://github.com/pengyin-shan/provenance-audit/releases) | Publish tagged, versioned releases rather than pointing users at the default branch. |
-| `archival_doi` | Pending Zenodo deposit (TODO) | [CITATION.cff](CITATION.cff) | Link the repository to Zenodo, publish a release, and record the concept DOI in CITATION.cff. |
+| `archival_doi` | Yes, dataset DOI [10.5281/zenodo.21443211](https://doi.org/10.5281/zenodo.21443211) | [CITATION.cff](CITATION.cff) | Deposit the dataset (or link the repository) on Zenodo and record the DOI in CITATION.cff so the archived copy is discoverable from the repository. |
 | `signed_releases` | Yes (at v1.0.0 tag) | [release.yml](.github/workflows/release.yml) | Publish checksums and a provenance attestation with every release. Signing that assessors can verify beats signing that they cannot. |
 | `sbom` | Yes (at v1.0.0 tag) | [release.yml](.github/workflows/release.yml) | Generate an SPDX or CycloneDX SBOM in CI and attach it to the release. One workflow step (for example anchore/sbom-action) is sufficient. |
 | `provenance_attestation` | Yes (at v1.0.0 tag) | [release.yml](.github/workflows/release.yml) | Generate SLSA build provenance in CI (slsa-github-generator or GitHub artifact attestations) so consumers can verify artifacts came from your repository's CI, not from a hijacked account. |
 
 ## Citing
 
-See [CITATION.cff](CITATION.cff). The dataset is archived on Zenodo
-(DOI: TODO, pending the first deposit); the corpus is a point-in-time
-snapshot collected in July 2026.
+See [CITATION.cff](CITATION.cff). The dataset is archived on Zenodo,
+DOI [10.5281/zenodo.21443211](https://doi.org/10.5281/zenodo.21443211);
+the corpus is a point-in-time snapshot collected in July 2026.
+
+## Acknowledgments
+
+Conducted under the author's 2025-2026 Trusted CI Fellowship. Portions of the
+code and documentation in this repository were drafted with assistance from
+Claude (Anthropic), which therefore appears as a co-author on commits and in
+the contributor list; all content, code, and data were reviewed and verified
+by the maintainer.
 
 ## License, security, governance
 
